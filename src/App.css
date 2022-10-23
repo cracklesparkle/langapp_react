@@ -285,6 +285,25 @@ h1 {
   opacity: 1;
 }
 
+/* Carousel */
+.item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.item-1{
+  background-color: cornflowerblue;
+}
+
+.item-2{
+  background-color: coral;
+}
+
+.item-3{
+  background-color: darkseagreen;
+}
 
 @media screen and (max-width: 600px) {
   .app {

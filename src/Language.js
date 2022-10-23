@@ -8,6 +8,7 @@ import yukaghir1_3 from './images/languages/yukaghir/yukaghir1-3.jpg';
 import yukaghir1_4 from './images/languages/yukaghir/yukaghir1-4.jpg';
 import './Language.css';
 
+import Slider from './components/Carousel';
 
 import {Navigate, Link} from 'react-router-dom';
 
