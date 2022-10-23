@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.css": "/langapp_react/static/css/main.f66ef64e.css",
-    "main.js": "/langapp_react/static/js/main.d4eea534.js",
+    "main.css": "/langapp_react/static/css/main.ba291e56.css",
+    "main.js": "/langapp_react/static/js/main.2b7ff474.js",
     "static/media/allLanguages.png": "/langapp_react/static/media/allLanguages.4ea2a07bf8e1dae139c1.png",
     "static/media/yukaghir-bg.png": "/langapp_react/static/media/yukaghir-bg.e9ef5a1ba9c335836dfa.png",
+    "static/media/ring06.wav": "/langapp_react/static/media/ring06.ae2dfc3665882233fd39.wav",
+    "static/media/g_1.png": "/langapp_react/static/media/g_1.d8682373eb573168d4f2.png",
     "static/media/yukaghir1-4.jpg": "/langapp_react/static/media/yukaghir1-4.fcfaefc82ade3c2c1291.jpg",
+    "static/media/b_1.png": "/langapp_react/static/media/b_1.104761171d70f191b905.png",
     "static/media/family.png": "/langapp_react/static/media/family.411a9636ef626b40da46.png",
     "static/media/4.png": "/langapp_react/static/media/4.c29af95a7cc52a4717ae.png",
     "static/media/yukaghir1-1.jpg": "/langapp_react/static/media/yukaghir1-1.c18de000c0d862b04af0.jpg",
@@ -26,11 +29,11 @@
     "static/media/animals.png": "/langapp_react/static/media/animals.677277c1b9bdde6454e5.png",
     "static/media/introduction.png": "/langapp_react/static/media/introduction.c9247e5d18c69c52e329.png",
     "index.html": "/langapp_react/index.html",
-    "main.f66ef64e.css.map": "/langapp_react/static/css/main.f66ef64e.css.map",
-    "main.d4eea534.js.map": "/langapp_react/static/js/main.d4eea534.js.map"
+    "main.ba291e56.css.map": "/langapp_react/static/css/main.ba291e56.css.map",
+    "main.2b7ff474.js.map": "/langapp_react/static/js/main.2b7ff474.js.map"
   },
   "entrypoints": [
-    "static/css/main.f66ef64e.css",
-    "static/js/main.d4eea534.js"
+    "static/css/main.ba291e56.css",
+    "static/js/main.2b7ff474.js"
   ]
 }
