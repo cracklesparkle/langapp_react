@@ -5,9 +5,35 @@ import AnswerCard from "./components/AnswerCard";
 import Status from "./components/Status";
 import EndQuiz from "./components/EndQuiz";
 
+import Bubble from "./components/Bubble";
+
 import questions from "./questions.json";
 
 import {motion} from 'framer-motion';
+
+import boy_1 from './images/languages/yukaghir/subject1/b_1.png';
+import girl_1 from './images/languages/yukaghir/subject1/g_1.png';
+
+import ringer from './sounds/misc/ring06.wav';
+
+const Sound = () => {
+    const audio = new Audio(ringer);
+    audio.loop = true;
+  
+    return (
+      <div>
+        <button
+          onClick={() => {
+            audio.loop = false;
+            audio.play();
+          }}
+        >
+          Play
+        </button>
+        <button onClick={() => (audio.loop = false)}>Pause</button>
+      </div>
+    );
+  };
 
 class Quiz extends React.Component {
     constructor(props) {
@@ -43,8 +69,7 @@ class Quiz extends React.Component {
         } else {
             this.setState({ currentQuestionCorrect: false });
         }
-
-        setTimeout(() => this.switchQuestion(), 750);
+        setTimeout(() => this.switchQuestion(), 5);
     }
 
     switchQuestion() {
@@ -56,29 +81,39 @@ class Quiz extends React.Component {
     }
 
     render() {
+        const audio = new Audio(ringer);
+        audio.loop = true;
+
         if (this.state.questionNumber !== false) {
             const question = this.questions[this.state.questionNumber].question;
             const answers = this.questions[this.state.questionNumber].answers;
             const translation = this.questions[this.state.questionNumber].translation;
 
             return (
-                <motion.div className='container' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
-                    <Header>{question}</Header>
-                    <div className="flex justify-center mt-16">
-                        <AnswerCard
-                            answers={answers}
-                            onClick={this.handleClick}
-                            translation={translation}
-                        />
+                <motion.div className='quizPage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
+                    <div className="dialogueContainer">
+                        <motion.div className="dialogue">
+                            <div className="speech">
+                                <Bubble sentence={question} translation={translation} audio={ringer}/>
+                                <img className="personImage " src={boy_1}></img>
+                            </div>
+                            <div className="speech">
+                                <Bubble sentence={question} translation={translation}/>
+                                <img className="personImage " src={girl_1}></img>
+                            </div>
+                        </motion.div>
+                        {/* {this.state.statusShown && (
+                            <Status correct={this.state.currentQuestionCorrect} />
+                        )} */}
                     </div>
-                    {/* {this.state.statusShown && (
-                        <Status correct={this.state.currentQuestionCorrect} />
-                    )} */}
+                    <div className="bottomNavbar">
+                        <button onClick={this.handleClick} className='buttonLearn'>Далее</button>
+                    </div>
                 </motion.div>
             );
         }
 
-        return <EndQuiz numCorrect={this.state.numCorrect} />;
+        //return <EndQuiz numCorrect={this.state.numCorrect} />;
     }
 }
 

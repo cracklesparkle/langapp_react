@@ -1,6 +1,5 @@
 import React, {useContext} from 'react';
 import {Link} from 'react-router-dom';
-import './NavBar.css';
 import { ViewContext } from './ViewContext';
 
 function NavBar(){

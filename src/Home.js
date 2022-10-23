@@ -6,8 +6,11 @@ import {ViewContext, currentView} from './ViewContext';
 import Languages from './Languages';
 import Subjects from './Subjects';
 import Subject from './Subject';
+import Language from './Language';
 
-const TypeScreen = ['home', 'languageSelect', 'subjectSelect', 'subjectView']
+import { languages } from './Data';
+
+const TypeScreen = ['home', 'languageSelect', 'subjectSelect', 'subjectView', 'languageView']
 
 function Home(){
 
@@ -20,6 +23,7 @@ function Home(){
         
         return(
             <motion.div 
+                className='homeContainer'
                 initial={{opacity: 0}}
                 animate={{opacity: 1}}
                 exit={{opacity: 0}}
@@ -67,6 +71,21 @@ function Home(){
                     exit={{opacity: 0}}
                     >
                     <Subject/>
+                </motion.div>
+            </ViewContext.Provider>
+        )
+    }
+
+    if (currentView == TypeScreen[4]){
+        console.log(currentView);
+        return(
+            <ViewContext.Provider value={{currentView, setView}}>
+                <motion.div
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    exit={{opacity: 0}}
+                    >
+                    <Language language={languages[0]}/>
                 </motion.div>
             </ViewContext.Provider>
         )

@@ -4,7 +4,6 @@ import { ViewContext } from './ViewContext';
 
 import Language from './Language';
 
-import './Language.css';
 
 import { languages } from './Data';
 
@@ -79,11 +78,8 @@ function Subjects(){
         }
     ];
     return(
-        <motion.div className='container' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
+        <motion.div className='subjectsPage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
             <ViewContext.Provider value={{currentView, setView}}>
-                <div>
-                    <Language language={languages[0]}/>
-                </div>
                 <div className='buttonsContainer'>
                     <SubjectCard subject={subjects[0]}/>
                     <SubjectCard subject={subjects[1]}/>

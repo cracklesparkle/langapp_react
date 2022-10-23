@@ -1,7 +1,6 @@
 import React, {useState, useContext} from 'react';
 import LanguageCard from './LanguageCard';
 import {motion} from 'framer-motion';
-import './Languages.css';
 
 import { languages } from './Data';
 
@@ -23,7 +22,7 @@ function Languages(props){
 
     return(
         <ViewContext.Provider value={{currentView, setView}}>
-            <motion.div className='container' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
+            <motion.div className='languagesPage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
                 {/* <ul className='circle-container'>
                     <li className='triangle'><img src={Lang1}/></li>
                     <li className='triangle'><img src={Lang2}/></li>

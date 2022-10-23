@@ -1,0 +1,48 @@
+.bubble {
+	position: relative;
+	max-width: 15em;
+	background-color: #fff;
+	padding: 1.125em 1.5em;
+	font-size: 1.25em;
+	border-radius: 1rem;
+	box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.3), 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
+  }
+  
+  .bubble::after {
+	content: "";
+	position: relative;
+	width: 0;
+	height: 0;
+	/* bottom: -20%; */
+	top: 2.9em;
+	left: 1.5em;
+	border: 0.75rem solid transparent;
+	border-bottom: none;
+	border-top-color: #fff;
+	filter: drop-shadow(-0.0625rem 0.0625rem 0 rgba(0, 0, 0, 0.1));
+  }
+
+.sentence{
+	font-weight: 700;
+	padding-bottom: 15px;
+}
+
+.translation{
+	text-decoration: underline;
+}
+
+.soundButton{
+	width: 30px;
+	height: 30px;
+	background: transparent;
+}
+
+.soundButton img{
+	width: 30px;
+	height: 30px;
+}
+
+.soundButton:hover{
+	transition: 0.3s;
+	filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(160deg) brightness(100%) contrast(80%);
+}
