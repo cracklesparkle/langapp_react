@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+
+import React, {useState} from 'react';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import NavBar from './NavBar';
+
+import Home from './Home';
+
+import {BrowserRouter as Router} from 'react-router-dom';
+
+import { ViewContext } from './ViewContext';
+
+const TypeScreen = ['home', 'languageSelect', 'subjectSelect', 'subjectView'];
+
+function App(){
+    const [currentView, setView] = useState(TypeScreen[0]);
+
+    return (
+        <div className='app'>
+            <Router>
+                <ViewContext.Provider value={{currentView, setView}}>
+                    <NavBar />
+                    <Home/>
+                </ViewContext.Provider>
+            </Router>
+        </div>
+    );
 }
 
 export default App;

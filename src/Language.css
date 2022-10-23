@@ -1,0 +1,30 @@
+.language-page{
+    background: rgb(192,204,255);
+    border-radius: 30px;
+    display: flex;
+    width: 60vw;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.language-page h1{
+    padding: 10px;
+}
+
+.language-page p{
+    padding: 30px;
+}
+
+.language-page h3{
+    padding: 30px;
+}
+
+
+.photo{
+    width:500px;
+    border-radius: 10px;
+}
+
+.subjectButtons{
+    display: flex;
+}
