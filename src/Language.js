@@ -1,8 +1,5 @@
 import React, {useContext, useState} from 'react';
 
-import AliceCarousel from 'react-alice-carousel';
-import 'react-alice-carousel/lib/alice-carousel.css';
-
 import { ViewContext } from './ViewContext';
 
 import SubjectCard from './SubjectCard';
@@ -16,11 +13,8 @@ import {Navigate, Link} from 'react-router-dom';
 
 import {motion} from 'framer-motion';
 
-const responsive = {
-    0: { items: 1 },
-    568: { items: 2 },
-    1024: { items: 3 },
-};
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Carousel } from 'react-responsive-carousel';
 
 const items = [
     <div className="item" data-value="1"></div>,
@@ -30,31 +24,49 @@ const items = [
     <div className="item" data-value="5"></div>,
 ];
 
-const Carousel = () => (
-    <AliceCarousel
-        autoWidth
-        mouseTracking
-        items={items}
-        responsive={responsive}
-        controlsStrategy="alternate"
-    />
-);
-
 const Language = ({language}) =>{
     const {setView} = useContext(ViewContext);
 
     return(
             <motion.div className='language-page' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>    
                 <ViewContext.Provider value={{setView}}>
-                    <h1>{language.Heading}</h1>
-                    <div>
+                    <h1 className='language-page-heading'>{language.Heading}</h1>
+                    {/* <div>
                         <img className="photo" src={`${yukaghir1}`} alt=""></img>
-                    </div>
-                    <div>
-                        
-                    </div>
+                    </div> */}
                     <p>{language.Description}</p>
                     <button onClick={()=>setView('subjectSelect')} className='buttonLearn'>Перейти к изучению</button>
+                    <div>
+                        <Carousel className='carousel' 
+                                emulateTouch
+                                autoPlay
+                                dynamicHeight={false}
+                                centerMode
+                                centerSlidePercentage={100}
+                                showStatus={false}
+                                showArrows={false}
+                                showIndicators={false}
+                                showThumbs={false}
+                                axis={'horizontal'}
+                                interval={5000}
+                                transitionTime={1000}
+                                infiniteLoop={true}
+                            >
+                            <div>
+                                <img className="photo" src={`${yukaghir1}`} alt=""></img>
+                            </div>
+                            <div>
+                                <img className="photo" src={`${yukaghir1_1}`} alt=""></img>
+                            </div>
+                            <div>
+                                <img className="photo" src={`${yukaghir1_3}`} alt=""></img>
+                            </div>
+                            <div>
+                                <img className="photo" src={`${yukaghir1_4}`} alt=""></img>
+                            </div>
+                        </Carousel>
+                    </div>
+                    
                 </ViewContext.Provider>
                 
             </motion.div>     

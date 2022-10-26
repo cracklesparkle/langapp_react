@@ -45,4 +45,5 @@
 .soundButton:hover{
 	transition: 0.3s;
 	filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(160deg) brightness(100%) contrast(80%);
+	cursor: pointer;
 }

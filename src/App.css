@@ -21,8 +21,12 @@ body {
   background-color: #ccdeeb;
 }
 
+.carousel{
+  padding: 20px 20px 20px 20px;
+}
+
 .bottomNavbar {
-  background-color: rgba(182, 194, 245, 0.9);
+  background-color: rgba(255, 255, 255, 0.8);
   overflow: hidden;
   position: sticky;
   bottom: 0;
@@ -52,6 +56,7 @@ body {
   box-shadow: 0px 15px 10px -8px rgba(0, 0, 0, 0.1);
   transform: scale(1.005, 1.005);
   background: rgb(90, 171, 218);
+  cursor: pointer;
 }
 
 .app {
@@ -178,6 +183,10 @@ h3{
   position: inherit;
 }
 
+.language-page-heading{
+  margin-top: 20px;
+}
+
 .language {
   width: 160px;
   height: 60px;
@@ -272,7 +281,7 @@ h3{
 }
 
 .language-page{
-  background: rgb(192,204,255);
+  background: rgba(255,255,255,0.8);
   border-radius: 30px;
   display: flex;
   width: 60vw;
@@ -359,6 +368,7 @@ display:flex;
   box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
   transform: scale(1.05, 1.05);
   filter: brightness(80%);
+  cursor: pointer;
 }
 
 .subject div:nth-of-type(1) {

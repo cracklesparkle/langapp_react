@@ -13,6 +13,9 @@ import {motion} from 'framer-motion';
 
 import boy_1 from './images/languages/yukaghir/subject1/b_1.png';
 import girl_1 from './images/languages/yukaghir/subject1/g_1.png';
+import boy_2 from './images/languages/yukaghir/subject1/b_2.png';
+import girl_2 from './images/languages/yukaghir/subject1/g_2.png';
+
 
 import ringer from './sounds/misc/ring06.wav';
 
@@ -95,11 +98,11 @@ class Quiz extends React.Component {
                         <motion.div className="dialogue">
                             <div className="speech">
                                 <Bubble sentence={question} translation={translation} audio={ringer}/>
-                                <img className="personImage " src={boy_1}></img>
+                                <img className="personImage " src={boy_2}></img>
                             </div>
                             <div className="speech">
                                 <Bubble sentence={question} translation={translation}/>
-                                <img className="personImage " src={girl_1}></img>
+                                <img className="personImage " src={girl_2}></img>
                             </div>
                         </motion.div>
                         {/* {this.state.statusShown && (
