@@ -2,6 +2,7 @@
 import React, {useState} from 'react';
 
 import './App.css';
+import './fonts/stylesheet.css';
 
 import NavBar from './NavBar';
 
