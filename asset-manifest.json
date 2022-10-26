@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/langapp_react/static/css/main.ba291e56.css",
-    "main.js": "/langapp_react/static/js/main.2b7ff474.js",
+    "main.css": "/langapp_react/static/css/main.772eb43e.css",
+    "main.js": "/langapp_react/static/js/main.c70e25c2.js",
     "static/media/allLanguages.png": "/langapp_react/static/media/allLanguages.4ea2a07bf8e1dae139c1.png",
     "static/media/yukaghir-bg.png": "/langapp_react/static/media/yukaghir-bg.e9ef5a1ba9c335836dfa.png",
     "static/media/ring06.wav": "/langapp_react/static/media/ring06.ae2dfc3665882233fd39.wav",
@@ -24,16 +24,18 @@
     "static/media/nature.png": "/langapp_react/static/media/nature.71974e11eb2ce7f066ca.png",
     "static/media/yukaghir1-3.jpg": "/langapp_react/static/media/yukaghir1-3.c92a716614eda6f717a8.jpg",
     "static/media/famous-people.png": "/langapp_react/static/media/famous-people.522bb5437df89650aa1b.png",
+    "static/media/g_2.png": "/langapp_react/static/media/g_2.b84dad8b2e7f9a176de9.png",
+    "static/media/b_2.png": "/langapp_react/static/media/b_2.3c577cf015a8b3c08977.png",
     "static/media/folklore.png": "/langapp_react/static/media/folklore.7d945d17d5eee7f2358c.png",
     "static/media/moon-girl.png": "/langapp_react/static/media/moon-girl.b60286ad00a5a5d6172b.png",
     "static/media/animals.png": "/langapp_react/static/media/animals.677277c1b9bdde6454e5.png",
     "static/media/introduction.png": "/langapp_react/static/media/introduction.c9247e5d18c69c52e329.png",
     "index.html": "/langapp_react/index.html",
-    "main.ba291e56.css.map": "/langapp_react/static/css/main.ba291e56.css.map",
-    "main.2b7ff474.js.map": "/langapp_react/static/js/main.2b7ff474.js.map"
+    "main.772eb43e.css.map": "/langapp_react/static/css/main.772eb43e.css.map",
+    "main.c70e25c2.js.map": "/langapp_react/static/js/main.c70e25c2.js.map"
   },
   "entrypoints": [
-    "static/css/main.ba291e56.css",
-    "static/js/main.2b7ff474.js"
+    "static/css/main.772eb43e.css",
+    "static/js/main.c70e25c2.js"
   ]
 }
