@@ -79,7 +79,7 @@ class Quiz extends React.Component {
         this.setState(state => ({
             statusShown: false,
             questionNumber:
-                state.questionNumber < 4 ? state.questionNumber + 1 : false,
+                state.questionNumber < 11 ? state.questionNumber + 1 : false,
         }));
     }
 
@@ -116,7 +116,7 @@ class Quiz extends React.Component {
             );
         }
 
-        //return <EndQuiz numCorrect={this.state.numCorrect} />;
+        // return <EndQuiz numCorrect={this.state.numCorrect} />;
     }
 }
 

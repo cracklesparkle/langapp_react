@@ -33,6 +33,62 @@
             ],
             "correctAnswer": "The Parthenon",
             "translation": "Прими привет!"
+        },
+        {
+            "question": "Тэт кирийэ кинэк?",
+            "answers": [
+                "The Great Pyramid of Giza"
+            ],
+            "correctAnswer": "The Parthenon",
+            "translation": "Как тебя зовут?"
+        },
+        {
+            "question": "Мэт кирийэ Wадулика.",
+            "answers": [
+                "The Great Pyramid of Giza"
+            ],
+            "correctAnswer": "The Parthenon",
+            "translation": "Меня зовут Wадулика."
+        },
+        {
+            "question": "Хуодэбандьэ классха ураанук?",
+            "answers": [
+                "The Great Pyramid of Giza"
+            ],
+            "correctAnswer": "The Parthenon",
+            "translation": "В каком классе учишься?"
+        },
+        {
+            "question": "Мэт йалмасчэ классха ураануйэҥ.",
+            "answers": [
+                "The Great Pyramid of Giza"
+            ],
+            "correctAnswer": "The Parthenon",
+            "translation": "Я учусь в третьем классе."
+        },
+        {
+            "question": "Тэт хабун сукунмольҕалньэк?",
+            "answers": [
+                "The Great Pyramid of Giza"
+            ],
+            "correctAnswer": "The Parthenon",
+            "translation": "Тебе сколько лет?"
+        },
+        {
+            "question": "Мэтха wальҕарумкуруонь сукунмольҕал.",
+            "answers": [
+                "The Great Pyramid of Giza"
+            ],
+            "correctAnswer": "The Parthenon",
+            "translation": "Мне 9 лет."
+        },
+        {
+            "question": "Ньийуолгитньэр.",
+            "answers": [
+                "The Great Pyramid of Giza"
+            ],
+            "correctAnswer": "The Parthenon",
+            "translation": "Пока! До свидания!"
         }
     ],
 
