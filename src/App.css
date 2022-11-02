@@ -46,6 +46,8 @@ body {
   left: 0;
   border-radius: 0% 0% 30px 30px;
   border-top: 3px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
 }
 
 
