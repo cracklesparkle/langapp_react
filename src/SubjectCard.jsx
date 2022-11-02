@@ -6,7 +6,7 @@ function SubjectCard ({subject}) {
     const {setView} = useContext(ViewContext);
     return (
             
-            <div onClick={()=>setView('subjectView')} className='subject'>
+            <div onClick={()=>setView(subject.View)} className='subject'>
                 <div>
                     <h3>{subject.Title}</h3>
                 </div>

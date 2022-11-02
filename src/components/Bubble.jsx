@@ -21,7 +21,7 @@ export default function Bubble (props) {
                 
                 <div className="translation">{props.translation}</div>
             </div>
-            <div class="pointer"></div>
+            <div className="pointer"></div>
         </div>
   )
 }

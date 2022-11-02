@@ -15,7 +15,7 @@ import { ViewContext } from './ViewContext';
 const TypeScreen = ['home', 'languageSelect', 'subjectSelect', 'subjectView'];
 
 function App(){
-    const [currentView, setView] = useState(TypeScreen[0]);
+    const [currentView, setView] = useState(TypeScreen[1]);
 
     return (
         <div className='app'>

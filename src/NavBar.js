@@ -7,9 +7,9 @@ function NavBar(){
     return(
         <div className='navbar'>
             <ul>
-                <li onClick={()=>{setView('home')}}>Главная</li>
-                <li onClick={()=>{setView('subjectSelect')}}>Темы</li>
-                <li onClick={()=>{setView('languageSelect')}}>Языки</li>
+                <li onClick={()=>{setView('languageSelect')}}>Главная</li>
+                {/* <li onClick={()=>{setView('subjectSelect')}}>Темы</li>
+                <li onClick={()=>{setView('languageSelect')}}>Языки</li> */}
             </ul>
         </div>
     )

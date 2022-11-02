@@ -29,52 +29,62 @@ function Subjects(){
         {
         "Title": "Введение",
         "Image": IntroductionIcon,
-        "Link": 'introduction'
+        "Link": 'introduction',
+        "View": 'languageView'
         },
         {
         "Title": "Приветствие, знакомство",
         "Image": GreetingIcon,
-        "Link": 'greeting'
+        "Link": 'greeting',
+        "View": 'subjectView'
         },
         {
         "Title": "Семья",
         "Image": FamilyIcon,
-        "Link": 'family'
+        "Link": 'family',
+        "View": 'subjectView'
         },
         {
         "Title": "Природа",
         "Image": NatureIcon,
-        "Link": 'nature'
+        "Link": 'nature',
+        "View": 'subjectView'
         },
         {
         "Title": "Животные",
         "Image": AnimalsIcon,
-        "Link": 'animals'
+        "Link": 'animals',
+        "View": 'subjectView'
         },
         {
         "Title": "Культура и еда",
         "Image": CultureFoodIcon,
-        "Link": 'culture-food'
+        "Link": 'culture-food',
+        "View": 'subjectView'
         },
         {
         "Title": "Одежда",
         "Image": ClothesIcon,
-        "Link": 'clothes'
+        "Link": 'clothes',
+        "View": 'subjectView'
         },
         {
         "Title": "Девочка и луна",
         "Image": MoonGirlIcon,
-        "Link": 'moon-girl'
+        "Link": 'moon-girl',
+        "View": 'subjectView'
         },
         {
         "Title": "Фольклор",
         "Image": FolkloreIcon,
-        "Link": 'folklore'
+        "Link": 'folklore',
+        "View": 'subjectView'
         },
         {
         "Title": "Известные люди",
         "Image": FamousPeopleIcon,
-        "Link": 'famous-people'
+        "Link": 'famous-people',
+        "View": 'subjectView'
         }
     ];
     return(
