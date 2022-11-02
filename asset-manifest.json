@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/langapp_react/static/css/main.96932354.css",
+    "main.css": "/langapp_react/static/css/main.2797aed3.css",
     "main.js": "/langapp_react/static/js/main.3dde5485.js",
     "static/media/allLanguages.png": "/langapp_react/static/media/allLanguages.4ea2a07bf8e1dae139c1.png",
     "static/media/yukaghir-bg.png": "/langapp_react/static/media/yukaghir-bg.e9ef5a1ba9c335836dfa.png",
@@ -85,11 +85,11 @@
     "static/media/animals.png": "/langapp_react/static/media/animals.677277c1b9bdde6454e5.png",
     "static/media/introduction.png": "/langapp_react/static/media/introduction.c9247e5d18c69c52e329.png",
     "index.html": "/langapp_react/index.html",
-    "main.96932354.css.map": "/langapp_react/static/css/main.96932354.css.map",
+    "main.2797aed3.css.map": "/langapp_react/static/css/main.2797aed3.css.map",
     "main.3dde5485.js.map": "/langapp_react/static/js/main.3dde5485.js.map"
   },
   "entrypoints": [
-    "static/css/main.96932354.css",
+    "static/css/main.2797aed3.css",
     "static/js/main.3dde5485.js"
   ]
 }
