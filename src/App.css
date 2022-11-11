@@ -443,7 +443,7 @@ a:active { text-decoration: none; }
 
 /* Nature */
 .naturePage h1{
-  font-size: 30px !important;
+  font-size: 2em !important;
 }
 
 .naturePage .container{
@@ -623,6 +623,10 @@ a:active { text-decoration: none; }
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+  }
+
+  .naturePage h1{
+    font-size: 1em !important;
   }
 }
 

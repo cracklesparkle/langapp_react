@@ -15,6 +15,28 @@ import imgRiver from './images/languages/yukaghir/nature/river.jpg';
 import imgLake from './images/languages/yukaghir/nature/lake.jpg';
 import imgTundra from './images/languages/yukaghir/nature/tundra.jpg';
 import imgMountain from './images/languages/yukaghir/nature/mountain.jpg';
+import imgPlace1 from './images/languages/yukaghir/nature/places1.jpg';
+import imgPlace2 from './images/languages/yukaghir/nature/places2.jpg';
+import imgPlace3 from './images/languages/yukaghir/nature/places3.jpg';
+import imgPlace4 from './images/languages/yukaghir/nature/places4.jpg';
+import imgAnimals from './images/languages/yukaghir/nature/animals.jpg';
+import imgSaveNature from './images/languages/yukaghir/nature/savenature.jpg';
+
+import imgPlant1 from './images/languages/yukaghir/nature/plants/image1.jpg';
+import imgPlant2 from './images/languages/yukaghir/nature/plants/image2.jpg';
+import imgPlant3 from './images/languages/yukaghir/nature/plants/image3.jpg';
+import imgPlant4 from './images/languages/yukaghir/nature/plants/image4.jpg';
+import imgPlant5 from './images/languages/yukaghir/nature/plants/image5.jpg';
+import imgPlant6 from './images/languages/yukaghir/nature/plants/image6.jpg';
+import imgPlant7 from './images/languages/yukaghir/nature/plants/image7.jpg';
+import imgPlant8 from './images/languages/yukaghir/nature/plants/image8.jpg';
+import imgPlant9 from './images/languages/yukaghir/nature/plants/image9.jpg';
+import imgPlant10 from './images/languages/yukaghir/nature/plants/image10.jpg';
+import imgPlant11 from './images/languages/yukaghir/nature/plants/image11.jpg';
+import imgPlant12 from './images/languages/yukaghir/nature/plants/image12.jpg';
+import imgPlant13 from './images/languages/yukaghir/nature/plants/image13.jpg';
+import imgPlant14 from './images/languages/yukaghir/nature/plants/image14.jpg';
+import imgPlant15 from './images/languages/yukaghir/nature/plants/image15.jpg';
 
 function Nature() {
     const {setView} = useContext(ViewContext);
@@ -61,66 +83,109 @@ function Earth(){
             <div className='block'>
                 <h1>Лэwэйнбурэбэ</h1>
                 <h1>Родина. Природа</h1>
+                <div className='image'>
+                    <img src={imgNature}></img>
+                </div>
             </div>
     
             <div className='block'>
                 <h1>Лаwйэ</h1>
                 <h1>Вода</h1>
+                <div className='image'>
+                    <img src={imgWater}></img>
+                </div>
             </div>
     
             <div className='block'>
                 <h1>Өнидьэ</h1>
                 <h1>Земля, песок.</h1>
+                <div className='image'>
+                    <img src={imgDirt}></img>
+                    <img src={imgSand}></img>
+                </div>
             </div>
             
             <div className='block'>
                 <h1>Йоссо</h1>
                 <h1>Мерзлота</h1>
+                <div className='image'>
+                    <img src={imgPermafrost}></img>
+                </div>
             </div>
             
             <div className='block'>
                 <h1>Саал</h1>
                 <h1>Дерево</h1>
+                <div className='image'>
+                    <img src={imgTree}></img>
+                </div>
             </div>
     
             <div className='block'>
                 <h1>Чаwул</h1>
                 <h1>Море, океан</h1>
+                <div className='image'>
+                    <img src={imgSeaOcean}></img>
+                </div>
             </div>
     
             <div className='block'>
                 <h1>Эну</h1>
                 <h1>Река</h1>
+                <div className='image'>
+                    <img src={imgRiver}></img>
+                </div>
             </div>
     
             <div className='block'>
                 <h1>Йалҕил</h1>
                 <h1>Озеро</h1>
+                <div className='image'>
+                    <img src={imgLake}></img>
+                </div>
             </div>
     
             <div className='block'>
                 <h1>Йуорпурэ</h1>
                 <h1>Тундра</h1>
+                <div className='image'>
+                    <img src={imgTundra}></img>
+                </div>
             </div>
     
             <div className='block'>
                 <h1>Анаа</h1>
                 <h1>Гора</h1>
+                <div className='image'>
+                    <img src={imgMountain}></img>
+                </div>
             </div>
     
             <div className='block'>
                 <h1>Лукулҕа пойуодьэ нотинэй льуолуол льэй.</h1>
                 <h1>На Земле есть много красивых мест.</h1>
+                <div className='image'>
+                    <img src={imgPlace1}></img>
+                    <img src={imgPlace2}></img>
+                    <img src={imgPlace3}></img>
+                    <img src={imgPlace4}></img>
+                </div>
             </div>
     
             <div className='block'>
                 <h1>Лукулҕа пойуодьэ пулгидьилэ льэй.  Мит лукулҕа көдьэпэ, уйэньэйрукунпэ, йэлукунугурчэндьэрукунпэ эннуҥи.</h1>
                 <h1>Лукул – мит нимэ.</h1>
+                <div className='image'>
+                    <img src={imgAnimals}></img>
+                </div>
             </div>
     
             <div className='block'>
                 <h1>Мит Лукул нотинэй, чайлэндьэ wиэҕа!</h1>
                 <h1>Сохраним нашу Планету красивой и чистой!</h1>
+                <div className='image'>
+                    <img src={imgSaveNature}></img>
+                </div>
             </div>
         </div>
       )
@@ -132,87 +197,125 @@ function Plants(){
             <div className='block'>
                 <h1>Пулгидьилэпэ</h1>
                 <h1>Растения</h1>
+                <div className='image'>
+                    <img src={imgPlant1}></img>
+                </div>
             </div>
     
             <div className='block'>
                 <h1>Ульэгэ</h1>
                 <h1>Трава</h1>
                 <p>Ульэгэ хомоньэй. Трава зелёная.</p>
+                <div className='image'>
+                    <img src={imgPlant2}></img>
+                </div>
             </div>
     
             <div className='block'>
                 <h1>Хаҕимэwуол</h1>
                 <h1>Багульник</h1>
                 <p>У багульника белые цветы. Хаҕимэwуол пулгидьилэги ньааwэй.</p>
+                <div className='image'>
+                    <img src={imgPlant3}></img>
+                </div>
             </div>
     
             <div className='block'>
                 <h1>Пулгидьилэ</h1>
                 <h1>Цветок</h1>
                 <p>Пөдьэлдэ амучэ пулгидьилэк. Цветок с приятным запахом.</p>
+                <div className='image'>
+                    <img src={imgPlant4}></img>
+                </div>
             </div>
             
             <div className='block'>
                 <h1>Саал</h1>
                 <h1>Дерево</h1>
                 <p>Саал хомоньэй. Дерево зеленое.</p>
-            </div>
-            
-            <div className='block'>
-                <h1>Саал</h1>
-                <h1>Дерево</h1>
+                <div className='image'>
+                    <img src={imgPlant5}></img>
+                </div>
             </div>
     
             <div className='block'>
                 <h1>Йаа(ҥ)</h1>
                 <h1>Берёза</h1>
+                <div className='image'>
+                    <img src={imgPlant6}></img>
+                </div>
             </div>
     
             <div className='block'>
                 <h1>Морхэ</h1>
                 <h1>Карликовая берёза</h1>
                 <p>Морхэ йуорпурэҕа пулгэйнуни. Карликовая береза растет в тундре.</p>
+                <div className='image'>
+                    <img src={imgPlant7}></img>
+                </div>
             </div>
     
             <div className='block'>
                 <h1>Ньанмэ</h1>
                 <h1>Тальник, ива, верба</h1>
                 <p>Ньанмэролхэ. Заросли тальника.</p>
+                <div className='image'>
+                    <img src={imgPlant8}></img>
+                </div>
             </div>
     
             <div className='block'>
                 <h1>Ньамучэндьэ пуриэ</h1>
                 <h1>Брусника</h1>
                 <p>Ньамучэндьэ пуриэ ньамучэньи. Брусника красного цвета.</p>
+                <div className='image'>
+                    <img src={imgPlant9}></img>
+                </div>
             </div>
     
             <div className='block'>
                 <h1>Хомоньэй пуриэ</h1>
                 <h1>Голубика</h1>
                 <p>Хомоньэй пуриэ ньанбэличэ пуриэ. Голубика - вкусная ягода</p>
+                <div className='image'>
+                    <img src={imgPlant10}></img>
+                </div>
             </div>
     
             <div className='block'>
                 <h1>Ньоронпуриэ</h1>
                 <h1>Морошка</h1>
                 <p>Ньоронпуриэ йуорпурэҕа пулгэйнуни. Морошка растет в тундре.</p>
+                <div className='image'>
+                    <img src={imgPlant11}></img>
+                </div>
             </div>
     
             <div className='block'>
                 <h1>Тороньэй пуриэ</h1>
                 <h1>Шикша, черника.</h1>
                 <p>Тороньэй пуриэ мэ тороньэй. Шикша черного цвета.</p>
+                <div className='image'>
+                    <img src={imgPlant12}></img>
+                </div>
             </div>
     
             <div className='block'>
                 <h1>Хапньэпуриэ</h1>
                 <h1>Смородина</h1>
                 <p>Хапньэбуриэ амутнэҥ wалдьич. Смородина очень кислая.</p>
+                <div className='image'>
+                    <img src={imgPlant13}></img>
+                    <img src={imgPlant14}></img>
+                </div>
             </div>
 
             <div className='block'>
                 <h1>Самналдаҥньэ</h1>
                 <h1>Гриб</h1>
+                <div className='image'>
+                    <img src={imgPlant15}></img>
+                </div>
             </div>
         </div>
       )
