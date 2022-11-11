@@ -438,6 +438,96 @@ a:visited { text-decoration: none; }
 a:hover { text-decoration: none; }
 a:active { text-decoration: none; }
 
+
+/* PAGES */
+
+/* Nature */
+.naturePage h1{
+  font-size: 30px !important;
+}
+
+.naturePage .container{
+  display: flex;
+  background-color: white;
+  border-radius: 15px 15px 0px 0px;
+}
+.naturePage .earth, .naturePage .plants{
+  display: flex;
+  flex-direction: column;
+}
+.naturePage .earth .block, .naturePage .plants .block{
+  padding: 30px;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.1);
+}
+
+.naturePage h1, .naturePage p, .naturePage img{
+  text-align: center !important;
+  margin: auto;
+  width: 100%;
+}
+
+/* Animals */
+.animalsPage h1{
+  font-size: 30px !important;
+}
+
+.animalsPage .container{
+  background-color: white;
+  border-radius: 15px 15px 0px 0px;
+}
+.animalsPage .animals, .animalsPage .birds{
+  display: flex;
+  flex-direction: column;
+}
+.animalsPage .animals .animal, .animalsPage .birds .animal{
+  width: 100%;
+  padding: 30px;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.1);
+}
+
+.animalsPage h1, .animalsPage p{
+  text-align: center !important;
+  margin: auto;
+}
+
+/* Family */
+.familyPage .container{
+  background-color: white;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.familyPage .aside{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.familyPage .text{
+  padding: 30px;
+}
+
+.familyPage span{
+  font-weight: bold;
+  font-style: italic;
+}
+
+.familyPage .family{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.familyPage .member{
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.familyPage .a{
+  font-weight: bold;
+}
+
 @media screen and (max-width: 600px) {
   .app {
     padding: 4rem 2rem;
@@ -523,6 +613,16 @@ a:active { text-decoration: none; }
     left: 0;
     border-radius: 0% 0% 30px 30px;
     border-top: 3px solid rgba(0, 0, 0, 0.1);
+  }
+
+
+  .familyPage .container, .naturePage .container, .animalsPage .container{
+    width: auto;
+  }
+  .familyPage .aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
 }
 

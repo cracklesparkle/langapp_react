@@ -42,31 +42,31 @@ function Subjects(){
         "Title": "Семья",
         "Image": FamilyIcon,
         "Link": 'family',
-        "View": 'subjectView'
+        "View": 'familyView'
         },
         {
         "Title": "Природа",
         "Image": NatureIcon,
         "Link": 'nature',
-        "View": 'subjectView'
+        "View": 'natureView'
         },
         {
         "Title": "Животные",
         "Image": AnimalsIcon,
         "Link": 'animals',
-        "View": 'subjectView'
+        "View": 'animalsView'
         },
         {
         "Title": "Культура и еда",
         "Image": CultureFoodIcon,
         "Link": 'culture-food',
-        "View": 'subjectView'
+        "View": 'cultureFoodView'
         },
         {
         "Title": "Одежда",
         "Image": ClothesIcon,
         "Link": 'clothes',
-        "View": 'subjectView'
+        "View": 'clothesView'
         },
         {
         "Title": "Девочка и луна",

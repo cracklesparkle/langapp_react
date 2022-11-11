@@ -8,9 +8,15 @@ import Subjects from './Subjects';
 import Subject from './Subject';
 import Language from './Language';
 
+import Family from './Family';
+import Nature from './Nature';
+import Animals from './Animals';
+import CultureFood from './CultureFood';
+import Clothes from './Clothes';
+
 import { languages } from './Data';
 
-const TypeScreen = ['home', 'languageSelect', 'subjectSelect', 'subjectView', 'languageView']
+const TypeScreen = ['home', 'languageSelect', 'subjectSelect', 'subjectView', 'languageView', 'familyView', 'natureView', 'animalsView', 'cultureFoodView', 'clothesView']
 
 function Home(){
 
@@ -86,6 +92,80 @@ function Home(){
                     exit={{opacity: 0}}
                     >
                     <Language language={languages[0]}/>
+                </motion.div>
+            </ViewContext.Provider>
+        )
+    }
+
+    if (currentView == TypeScreen[5]){
+        console.log(currentView);
+        return(
+            <ViewContext.Provider value={{currentView, setView}}>
+                <motion.div
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    exit={{opacity: 0}}
+                    >
+                    <Family/>
+                </motion.div>
+            </ViewContext.Provider>
+        )
+    }
+
+    if (currentView == TypeScreen[6]){
+        console.log(currentView);
+        return(
+            <ViewContext.Provider value={{currentView, setView}}>
+                <motion.div
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    exit={{opacity: 0}}
+                    >
+                    <Nature/>
+                </motion.div>
+            </ViewContext.Provider>
+        )
+    }
+
+    if (currentView == TypeScreen[7]){
+        console.log(currentView);
+        return(
+            <ViewContext.Provider value={{currentView, setView}}>
+                <motion.div
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    exit={{opacity: 0}}
+                    >
+                    <Animals/>
+                </motion.div>
+            </ViewContext.Provider>
+        )
+    }
+
+    if (currentView == TypeScreen[8]){
+        console.log(currentView);
+        return(
+            <ViewContext.Provider value={{currentView, setView}}>
+                <motion.div
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    exit={{opacity: 0}}
+                    >
+                    <CultureFood/>
+                </motion.div>
+            </ViewContext.Provider>
+        )
+    }
+    if (currentView == TypeScreen[9]){
+        console.log(currentView);
+        return(
+            <ViewContext.Provider value={{currentView, setView}}>
+                <motion.div
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    exit={{opacity: 0}}
+                    >
+                    <Clothes/>
                 </motion.div>
             </ViewContext.Provider>
         )
