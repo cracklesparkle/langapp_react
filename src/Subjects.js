@@ -72,19 +72,19 @@ function Subjects(){
         "Title": "Девочка и луна",
         "Image": MoonGirlIcon,
         "Link": 'moon-girl',
-        "View": 'subjectView'
+        "View": 'taleView'
         },
         {
         "Title": "Фольклор",
         "Image": FolkloreIcon,
         "Link": 'folklore',
-        "View": 'subjectView'
+        "View": 'folkloreView'
         },
         {
         "Title": "Известные люди",
         "Image": FamousPeopleIcon,
         "Link": 'famous-people',
-        "View": 'subjectView'
+        "View": 'famousPeopleView'
         }
     ];
     return(

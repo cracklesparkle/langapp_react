@@ -480,14 +480,19 @@ a:active { text-decoration: none; }
   flex-direction: column;
 }
 .animalsPage .animals .animal, .animalsPage .birds .animal{
-  width: 100%;
   padding: 30px;
   border-bottom: 5px solid rgba(0, 0, 0, 0.1);
 }
 
-.animalsPage h1, .animalsPage p{
+.animalsPage h1, .animalsPage p, .animalsPage img{
   text-align: center !important;
+  width: 100%;
   margin: auto;
+}
+
+.animalsPage span{
+  font-weight: bold;
+  font-style: italic;
 }
 
 /* Family */
@@ -522,11 +527,89 @@ a:active { text-decoration: none; }
   display: flex;
   flex-direction: column;
   padding: 40px;
+  align-items: center;
+}
+
+.familyPage .memberImg{
+  width: 100px;
 }
 
 .familyPage .a{
   font-weight: bold;
 }
+
+
+/* TALE */
+.talePage h1{
+  font-size: 30px !important;
+  padding: 15px;
+}
+
+.talePage .container{
+  background-color: white;
+  border-radius: 15px 15px 0px 0px;
+}
+.talePage .culture, .talePage .birds{
+  display: flex;
+  flex-direction: column;
+}
+.talePage .culture .animal, .talePage .birds .animal{
+  padding: 30px;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.1);
+}
+
+.talePage h1, .talePage p, .talePage img{
+  text-align: center !important;
+  width: 100%;
+  margin: auto;
+}
+
+.talePage span{
+  font-weight: bold;
+  font-style: italic;
+}
+
+.talePage .header{
+  padding: 30px;
+}
+
+.talePage video{
+  width: 100%;
+}
+
+/* CULTURE AND FOOD */
+.cultureFoodPage h1{
+  font-size: 30px !important;
+}
+
+.cultureFoodPage .container{
+  background-color: white;
+  border-radius: 15px 15px 0px 0px;
+}
+.cultureFoodPage .culture, .cultureFoodPage .birds{
+  display: flex;
+  flex-direction: column;
+}
+.cultureFoodPage .culture .animal, .cultureFoodPage .birds .animal{
+  padding: 30px;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.1);
+}
+
+.cultureFoodPage h1, .cultureFoodPage p, .cultureFoodPage img{
+  text-align: center !important;
+  width: 100%;
+  margin: auto;
+}
+
+.cultureFoodPage span{
+  font-weight: bold;
+  font-style: italic;
+}
+
+.cultureFoodPage .header{
+  padding: 30px;
+}
+
 
 @media screen and (max-width: 600px) {
   .app {
@@ -616,7 +699,7 @@ a:active { text-decoration: none; }
   }
 
 
-  .familyPage .container, .naturePage .container, .animalsPage .container{
+  .familyPage .container, .naturePage .container, .animalsPage .container, .talePage .container{
     width: auto;
   }
   .familyPage .aside{
@@ -625,7 +708,7 @@ a:active { text-decoration: none; }
     justify-content: space-around;
   }
 
-  .naturePage h1{
+  .naturePage h1, .animalsPage h1, .talePage h1{
     font-size: 1em !important;
   }
 }

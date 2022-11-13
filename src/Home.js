@@ -13,10 +13,13 @@ import Nature from './Nature';
 import Animals from './Animals';
 import CultureFood from './CultureFood';
 import Clothes from './Clothes';
+import Tale from './Tale';
+import Folklore from './Folklore';
+import FamousPeople from './FamousPeople';
 
 import { languages } from './Data';
 
-const TypeScreen = ['home', 'languageSelect', 'subjectSelect', 'subjectView', 'languageView', 'familyView', 'natureView', 'animalsView', 'cultureFoodView', 'clothesView']
+const TypeScreen = ['home', 'languageSelect', 'subjectSelect', 'subjectView', 'languageView', 'familyView', 'natureView', 'animalsView', 'cultureFoodView', 'clothesView', 'taleView', 'folkloreView', 'famousPeopleView'];
 
 function Home(){
 
@@ -166,6 +169,48 @@ function Home(){
                     exit={{opacity: 0}}
                     >
                     <Clothes/>
+                </motion.div>
+            </ViewContext.Provider>
+        )
+    }
+    if (currentView == TypeScreen[10]){
+        console.log(currentView);
+        return(
+            <ViewContext.Provider value={{currentView, setView}}>
+                <motion.div
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    exit={{opacity: 0}}
+                    >
+                    <Tale/>
+                </motion.div>
+            </ViewContext.Provider>
+        )
+    }
+    if (currentView == TypeScreen[11]){
+        console.log(currentView);
+        return(
+            <ViewContext.Provider value={{currentView, setView}}>
+                <motion.div
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    exit={{opacity: 0}}
+                    >
+                    <Folklore/>
+                </motion.div>
+            </ViewContext.Provider>
+        )
+    }
+    if (currentView == TypeScreen[12]){
+        console.log(currentView);
+        return(
+            <ViewContext.Provider value={{currentView, setView}}>
+                <motion.div
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    exit={{opacity: 0}}
+                    >
+                    <FamousPeople/>
                 </motion.div>
             </ViewContext.Provider>
         )

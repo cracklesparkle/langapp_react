@@ -1,12 +1,12 @@
 import React from "react";
 
-import Lang1 from './images/languages/1.png';
-import Lang2 from './images/languages/2.png';
-import Lang3 from './images/languages/3.png';
-import Lang4 from './images/languages/4.png';
-import Lang5 from './images/languages/5.png';
-import Lang6 from './images/languages/6.png';
-import Lang7 from './images/languages/7.png';
+import Lang1 from './languages/1.png';
+import Lang2 from './languages/2.png';
+import Lang3 from './languages/3.png';
+import Lang4 from './languages/4.png';
+import Lang5 from './languages/5.png';
+import Lang6 from './languages/6.png';
+import Lang7 from './languages/7.png';
 
 export const languages = [
     {

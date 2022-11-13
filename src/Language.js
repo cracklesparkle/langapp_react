@@ -3,11 +3,11 @@ import React, {useContext, useState} from 'react';
 import { ViewContext } from './ViewContext';
 
 import SubjectCard from './SubjectCard';
-import Background from './images/languages/yukaghir/yukaghir-bg.png';
-import yukaghir1 from './images/languages/yukaghir/yukaghir1.jpg';
-import yukaghir1_1 from './images/languages/yukaghir/yukaghir1-1.jpg';
-import yukaghir1_3 from './images/languages/yukaghir/yukaghir1-3.jpg';
-import yukaghir1_4 from './images/languages/yukaghir/yukaghir1-4.jpg';
+import Background from './languages/yukaghir/yukaghir-bg.png';
+import yukaghir1 from './languages/yukaghir/yukaghir1.jpg';
+import yukaghir1_1 from './languages/yukaghir/yukaghir1-1.jpg';
+import yukaghir1_3 from './languages/yukaghir/yukaghir1-3.jpg';
+import yukaghir1_4 from './languages/yukaghir/yukaghir1-4.jpg';
 
 import {Navigate, Link} from 'react-router-dom';
 

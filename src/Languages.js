@@ -6,7 +6,7 @@ import { languages } from './Data';
 
 import { ViewContext } from './ViewContext';
 
-import allLanguages from './images/languages/allLanguages.png';
+import allLanguages from './languages/allLanguages.png';
 
 function Languages(props){
     

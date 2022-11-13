@@ -2,6 +2,17 @@ import React, {useContext, useState} from 'react';
 
 import {motion} from 'framer-motion';
 import { ViewContext } from './ViewContext';
+
+
+import imgMember1 from './languages/yukaghir/family/image1.png';
+import imgMember2 from './languages/yukaghir/family/image2.png';
+import imgMember3 from './languages/yukaghir/family/image3.png';
+import imgMember4 from './languages/yukaghir/family/image4.png';
+import imgMember5 from './languages/yukaghir/family/image5.png';
+import imgMember6 from './languages/yukaghir/family/image6.png';
+import imgMember7 from './languages/yukaghir/family/image7.png';
+import imgMember8 from './languages/yukaghir/family/image8.png';
+
 function Family() {
     const {setView} = useContext(ViewContext);
     var current = 0;
@@ -46,70 +57,91 @@ function Page1(){
                     </thead>
                     <tbody className='family'>
                         <tr className='member'>
+                            <img className='memberImg' src={imgMember5}></img>
                             <td className='a'>Мама</td>
                             <td>Эньиэ</td>
                         </tr>
                         <tr className='member'>
+                            <img className='memberImg' src={imgMember6}></img>
                             <td className='a'>Папа</td>
                             <td>Амаа</td>
                         </tr>
                         <tr className='member'>
+                            <img className='memberImg' src={imgMember2}></img>
                             <td className='a'>Бабушка</td>
                             <td>Абучиэ</td>
                         </tr>
                         <tr className='member'>
+                            <img className='memberImg' src={imgMember3}></img>
                             <td className='a'>Дедушка</td>
                             <td>Хайчиэ</td>
                         </tr>
                         <tr className='member'>
+                            <img className='memberImg' src={imgMember6}></img>
                             <td className='a'>Старший брат</td>
                             <td>Акаа</td>
                         </tr>
                         <tr className='member'>
+                            <img className='memberImg' src={imgMember8}></img>
                             <td className='a'>Старшая сестра</td>
                             <td>Экыа</td>
                         </tr>
                         <tr className='member'>
+                            <div className='aside'>
+                            <img className='memberImg' src={imgMember4}></img>
+                            <img className='memberImg' src={imgMember7}></img>
+                            </div>
+                            
                             <td className='a'>Младший брат, сестра</td>
                             <td>Эмдьэ</td>
                         </tr>
                         <tr className='member'>
+                            <img className='memberImg' src={imgMember1}></img>
                             <td className='a'>Дядя (старший брат мамы)</td>
                             <td>Хаwдьаа</td>
                         </tr>
                         <tr className='member'>
+                            <img className='memberImg' src={imgMember1}></img>
                             <td className='a'>Дядя (младший брат мамы)</td>
                             <td>Хаwдьидиэ</td>
                         </tr>
                         <tr className='member'>
+                            <img className='memberImg' src={imgMember1}></img>
                             <td className='a'>Тётя (старшая сестра мамы)</td>
                             <td>Чамийа</td>
                         </tr>
                         <tr className='member'>
+                            <img className='memberImg' src={imgMember1}></img>
                             <td className='a'>Тётя (младшая сестра мамы)</td>
                             <td>Йаадиэ</td>
                         </tr>
                         <tr className='member'>
+                            <img className='memberImg' src={imgMember1}></img>
                             <td className='a'>Дядя (старший брат папы)</td>
                             <td>Чумуочиэ</td>
                         </tr>
                         <tr className='member'>
+                            <img className='memberImg' src={imgMember1}></img>
                             <td className='a'>Дядя (младший брат папы)</td>
                             <td>Өчидиэ</td>
                         </tr>
                         <tr className='member'>
+                            <img className='memberImg' src={imgMember1}></img>
                             <td className='a'>Тётя (старшая сестра папы)</td>
                             <td>Эпиэ</td>
                         </tr>
                         <tr className='member'>
+                            <img className='memberImg' src={imgMember1}></img>
                             <td className='a'>Тётя (младшая сестра папы)</td>
                             <td>Эwдьуо</td>
                         </tr>
                         <tr className='member'>
+                            <img className='memberImg' src={imgMember1}></img>
                             <td className='a'>Невестка (жена брата)</td>
                             <td>Иидиэ </td>
                         </tr>
                         <tr className='member'>
+                            <img className='memberImg' src={imgMember1}></img>
                             <td className='a'>Зять (муж сестры)</td>
                             <td>Пулийэ </td>
                         </tr>
@@ -137,7 +169,7 @@ function Page2(){
                     <br></br>Туҥ чии, нимэндуул чии!
                     <br></br>Йаwнэр маархан нимэн чии – 
                     <br></br>Нимэндуул чии ҥотэйли!
-                    <br></br><br></br><span>Николай Курилов</span>
+                    <br></br><br></br><span>Николай Курилов</span><br></br>
                 </p>               
             </div>
 
