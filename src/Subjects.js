@@ -69,7 +69,7 @@ function Subjects(){
         "View": 'clothesView'
         },
         {
-        "Title": "Девочка и луна",
+        "Title": "Сказки",
         "Image": MoonGirlIcon,
         "Link": 'moon-girl',
         "View": 'taleView'

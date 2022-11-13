@@ -94,6 +94,7 @@ h1 {
 
 h3{
   text-align: center;
+
 }
 
 .subHeader{
@@ -433,6 +434,10 @@ box-shadow: 0 0 100px 100px rgb(204, 222, 235) inset;
   background-color: #ee204e;
 }
 
+.navbar .back{
+  float: right;
+}
+
 a:link { text-decoration: none; }
 a:visited { text-decoration: none; }
 a:hover { text-decoration: none; }
@@ -444,6 +449,7 @@ a:active { text-decoration: none; }
 /* Nature */
 .naturePage h1{
   font-size: 2em !important;
+  padding-bottom: 10px;
 }
 
 .naturePage .container{
@@ -526,7 +532,7 @@ a:active { text-decoration: none; }
 .familyPage .member{
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  padding: 35px;
   align-items: center;
 }
 
@@ -541,7 +547,7 @@ a:active { text-decoration: none; }
 
 /* TALE */
 .talePage h1{
-  font-size: 30px !important;
+  font-size: 25px !important;
   padding: 15px;
 }
 
@@ -577,6 +583,44 @@ a:active { text-decoration: none; }
   width: 100%;
 }
 
+/* CLOTHES */
+.clothesPage h1{
+  font-size: 30px !important;
+}
+
+.clothesPage h2{
+  text-align: center;
+  padding: 10px;
+}
+
+.clothesPage .container{
+  background-color: white;
+  border-radius: 15px 15px 0px 0px;
+}
+.clothesPage .culture, .clothesPage .birds{
+  display: flex;
+  flex-direction: column;
+}
+.clothesPage .culture .animal, .clothesPage .birds .animal{
+  padding: 30px;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.1);
+}
+
+.clothesPage h1, .clothesPage p, .clothesPage img{
+  text-align: center !important;
+  width: 100%;
+  margin: auto;
+}
+
+.clothesPage span{
+  font-weight: bold;
+  font-style: italic;
+}
+
+.clothesPage .header{
+  padding: 30px;
+}
+
 /* CULTURE AND FOOD */
 .cultureFoodPage h1{
   font-size: 30px !important;
@@ -610,6 +654,89 @@ a:active { text-decoration: none; }
   padding: 30px;
 }
 
+.cultureFoodPage .aside{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.cultureFoodPage .aside :nth-child(1), .cultureFoodPage .aside :nth-child(2){
+  flex: 1;
+  margin: 15px;
+}
+
+/* FAMOUS PEOPLE */
+.famousPeoplePage h1{
+  font-size: 30px !important;
+}
+
+.famousPeoplePage p{
+  font-size: large;
+  text-align: justify;
+}
+
+.famousPeoplePage .asideVert p{
+  padding-top: 20px;
+}
+
+.famousPeoplePage .container{
+  background-color: white;
+  border-radius: 15px 15px 0px 0px;
+}
+.famousPeoplePage .person{
+  display: flex;
+  flex-direction: column;
+}
+.famousPeoplePage .person .page{
+  padding: 30px;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.1);
+}
+
+.famousPeoplePage h1, .famousPeoplePage h2, .famousPeoplePage img{
+  text-align: center !important;
+  width: 100%;
+  margin: auto;
+}
+
+.famousPeoplePage span{
+  font-weight: bold;
+  font-style: italic;
+}
+
+.famousPeoplePage .header{
+  padding: 30px;
+}
+
+.famousPeoplePage .aside{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.famousPeoplePage .aside :nth-child(1), .famousPeoplePage .aside :nth-child(2){
+  flex: 1;
+  margin: 15px;
+}
+
+.famousPeoplePage .asideVert{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.famousPeoplePage .asideImg{
+  display: flex;
+  flex-direction: row;
+}
+
+.famousPeoplePage .asideImg :nth-child(1), .famousPeoplePage .asideImg :nth-child(2), .famousPeoplePage .asideImg :nth-child(3){
+  flex: 1;
+  margin: 10px;
+}
+
+.cultureFoodPage img, .clothesPage img, .naturePage img, .famousPeoplePage img, .talePage img, .animalsPage img{
+  border-radius: 10px;
+}
 
 @media screen and (max-width: 600px) {
   .app {
@@ -699,7 +826,7 @@ a:active { text-decoration: none; }
   }
 
 
-  .familyPage .container, .naturePage .container, .animalsPage .container, .talePage .container{
+  .familyPage .container, .naturePage .container, .animalsPage .container, .talePage .container, .clothesPage .container, .cultureFoodPage .container, .famousPeoplePage .container{
     width: auto;
   }
   .familyPage .aside{
@@ -708,8 +835,35 @@ a:active { text-decoration: none; }
     justify-content: space-around;
   }
 
-  .naturePage h1, .animalsPage h1, .talePage h1{
-    font-size: 1em !important;
+  .cultureFoodPage .aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  
+  }
+
+  .cultureFoodPage .aside :nth-child(1), .cultureFoodPage .aside :nth-child(2){
+    flex: 1;
+    margin: 0px;
+  }
+
+  .famousPeoplePage .aside :nth-child(1), .famousPeoplePage .aside :nth-child(2){
+    flex: 1;
+    margin: 0px;
+  }
+  .famousPeoplePage .aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .famousPeoplePage h3, .famousPeoplePage h2{
+    padding: 10px;
+  }
+  
+
+  .naturePage h1, .animalsPage h1, .talePage h1, .famousPeoplePage h1, .cultureFoodPage h1, .clothesPage h1{
+    font-size: 1.2em !important;
   }
 }
 

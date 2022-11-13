@@ -46,7 +46,7 @@ function Family() {
 
 function Page1(){
     return (
-        <div>
+        <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
             <div>
                 <table>
                     <thead>
@@ -96,52 +96,52 @@ function Page1(){
                             <td>Эмдьэ</td>
                         </tr>
                         <tr className='member'>
-                            <img className='memberImg' src={imgMember1}></img>
+                            {/* <img className='memberImg' src={imgMember1}></img> */}
                             <td className='a'>Дядя (старший брат мамы)</td>
                             <td>Хаwдьаа</td>
                         </tr>
                         <tr className='member'>
-                            <img className='memberImg' src={imgMember1}></img>
+                            {/* <img className='memberImg' src={imgMember1}></img> */}
                             <td className='a'>Дядя (младший брат мамы)</td>
                             <td>Хаwдьидиэ</td>
                         </tr>
                         <tr className='member'>
-                            <img className='memberImg' src={imgMember1}></img>
+                            {/* <img className='memberImg' src={imgMember1}></img> */}
                             <td className='a'>Тётя (старшая сестра мамы)</td>
                             <td>Чамийа</td>
                         </tr>
                         <tr className='member'>
-                            <img className='memberImg' src={imgMember1}></img>
+                            {/* <img className='memberImg' src={imgMember1}></img> */}
                             <td className='a'>Тётя (младшая сестра мамы)</td>
                             <td>Йаадиэ</td>
                         </tr>
                         <tr className='member'>
-                            <img className='memberImg' src={imgMember1}></img>
+                            {/* <img className='memberImg' src={imgMember1}></img> */}
                             <td className='a'>Дядя (старший брат папы)</td>
                             <td>Чумуочиэ</td>
                         </tr>
                         <tr className='member'>
-                            <img className='memberImg' src={imgMember1}></img>
+                            {/* <img className='memberImg' src={imgMember1}></img> */}
                             <td className='a'>Дядя (младший брат папы)</td>
                             <td>Өчидиэ</td>
                         </tr>
                         <tr className='member'>
-                            <img className='memberImg' src={imgMember1}></img>
+                            {/* <img className='memberImg' src={imgMember1}></img> */}
                             <td className='a'>Тётя (старшая сестра папы)</td>
                             <td>Эпиэ</td>
                         </tr>
                         <tr className='member'>
-                            <img className='memberImg' src={imgMember1}></img>
+                            {/* <img className='memberImg' src={imgMember1}></img> */}
                             <td className='a'>Тётя (младшая сестра папы)</td>
                             <td>Эwдьуо</td>
                         </tr>
                         <tr className='member'>
-                            <img className='memberImg' src={imgMember1}></img>
+                            {/* <img className='memberImg' src={imgMember1}></img> */}
                             <td className='a'>Невестка (жена брата)</td>
                             <td>Иидиэ </td>
                         </tr>
                         <tr className='member'>
-                            <img className='memberImg' src={imgMember1}></img>
+                            {/* <img className='memberImg' src={imgMember1}></img> */}
                             <td className='a'>Зять (муж сестры)</td>
                             <td>Пулийэ </td>
                         </tr>
@@ -149,13 +149,13 @@ function Page1(){
 
                 </table>
             </div>
-        </div>
+        </motion.div>
     );
 }
 
 function Page2(){
     return (
-        <div className='aside'>
+        <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}} className='aside'>
             <div className='text'>
                 <h3>«Мит нимэндуул»</h3>
                 <p>
@@ -188,15 +188,7 @@ function Page2(){
                     <br></br>будем мы семьёй!
                 </p>               
             </div>
-        </div>
-    );
-}
-
-function Page3(){
-    return (
-        <div>
-            Page3
-        </div>
+        </motion.div>
     );
 }
 

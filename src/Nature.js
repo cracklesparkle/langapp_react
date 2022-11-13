@@ -71,7 +71,7 @@ function Nature() {
 
 function Earth(){
     return (
-        <div className='earth'>
+        <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}} className='earth'>
             <div className='block'>
                 <h1>Лукул</h1>
                 <h1>Земля</h1>
@@ -187,13 +187,13 @@ function Earth(){
                     <img src={imgSaveNature}></img>
                 </div>
             </div>
-        </div>
+        </motion.div>
       )
 }
 
 function Plants(){
     return (
-        <div className='plants'>
+        <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}} className='plants'>
             <div className='block'>
                 <h1>Пулгидьилэпэ</h1>
                 <h1>Растения</h1>
@@ -317,7 +317,7 @@ function Plants(){
                     <img src={imgPlant15}></img>
                 </div>
             </div>
-        </div>
+        </motion.div>
       )
 }
 

@@ -7,7 +7,7 @@
 //   return (
 //     <div>
 //         <div>
-//             <h3>О нац.одежде юкагиров.</h3>
+//             <h3>О национальной одежде юкагиров.</h3>
 //             <p>Фото зимнего и летнего юкагирского костюма.</p>
 //             <p>Wадун чии хандьэльэ, лэwэйльэ сукунньэҥи. У юкагиров есть зимняя и летняя одежда. Илэн  саwаҕат иириэнунҥа. Шьют из шкуры оленя.  Летняя одежда из замши. Лэwэймэҥ эл пугучэндьэ маҕиньаанунҥи.</p>
 //         </div>
@@ -22,10 +22,9 @@ import React, {useContext, useState} from 'react';
 import {motion} from 'framer-motion';
 import { ViewContext } from './ViewContext';
 
-import imgCulture1 from './languages/yukaghir/cultureFood/image1.jpg';
-import imgCulture2 from './languages/yukaghir/cultureFood/image2.jpg';
-import imgCulture3 from './languages/yukaghir/cultureFood/image3.jpg';
-import imgCulture4 from './languages/yukaghir/cultureFood/image4.jpg';
+import image1 from './languages/yukaghir/clothes/image1.jpg';
+import image2 from './languages/yukaghir/clothes/image2.jpg';
+import image3 from './languages/yukaghir/clothes/image3.jpg';
 
 function Clothes() {
     const {setView} = useContext(ViewContext);
@@ -33,25 +32,18 @@ function Clothes() {
     const [page, setPage] = useState(0);
 
     const handleClick = event =>{
-        if(page == 0){
-            setPage(1)
-            
-        }
-        if(page == 1){
-            setView('subjectSelect');
-        }
+        setView('subjectSelect');
     };
 
   return (
-    <motion.div className='cultureFoodPage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
+    <motion.div className='clothesPage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
         <ViewContext.Provider value={{setView}}>
         
         <div className="container">
-                        {page == 0 && <Animal/>}
-                        {page == 1 && <Birds/>}
+                        {page == 0 && <Page1/>}
                     </div>
                     <div className="bottomNavbar">
-                        <button className='buttonLearn' onClick={handleClick}>Далее</button>
+                        <button className='buttonLearn' onClick={handleClick}>Вернуться к темам</button>
                     </div>
         </ViewContext.Provider>
 
@@ -59,125 +51,41 @@ function Clothes() {
   )
 }
 
-function Animal(){
+function Page1(){
     return (
         <div className='culture'>
-            <h1 className='header'>Культура юкагиров (яранга, оленеводство, рыболовство).</h1>
+            <h1 className='header'>О национальной одежде юкагиров</h1>
+            
             <div className='animal'>
-                <h1>Яранга – традиционное переносное жилище из жердей и оленьих шкур.</h1>
-                <h1>Wадун нимэ- тидаатэҥ хануойирэҥ иwильҕат wиэнунҥа, илэн саwаҕат иирэйуолнуни. </h1>
+                <h3>Wадун чии хандьэльэ, лэwэйльэ сукунньэҥи.</h3>
+                <br></br>
+                <h3>У юкагиров есть зимняя и летняя одежда.</h3>
+                <br></br>
                 <div className='image'>
-                    <img src={imgCulture1}></img>
+                    <img src={image1}></img>
                 </div>
             </div>
     
             <div className='animal'>
-                <h1>Оленеводство – основная традиционная отрасль юкагиров.</h1>
-                <h1>Wадун чии тидаатэҥ илэлэк саҕанаҥи, эwрэҥи, эньҥи.</h1>
+                <h3>Илэн  саwаҕат иириэнунҥа.</h3>
+                <br></br>
+                <h3>Шьют из шкуры оленя.</h3>
+                <br></br>
                 <div className='image'>
-                    <img src={imgCulture2}></img>
+                    <img src={image2}></img>
                 </div>
             </div>
     
             <div className='animal'>
-                <h1>Тэн альҕа.</h1>
-                <h1>Это рыба.</h1>
+                <h3>Летняя одежда из замши.</h3>
+                <br></br>
+                <h3>Лэwэймэҥ эл пугучэндьэ маҕиньаанунҥи.</h3>
+                <br></br>
                 <div className='image'>
-                    <img src={imgCulture3}></img>
+                    <img src={image3}></img>
                 </div>
             </div>
 
-            <div className='animal'>
-                <h1>Муоха.</h1>
-                <h1>Чир.</h1>
-                <div className='image'>
-                    <img src={imgCulture3}></img>
-                </div>
-            </div>
-
-            <div className='animal'>
-                <h1>Муоха чамуонь.</h1>
-                <h1>Чир большой.</h1>
-                <div className='image'>
-                    <img src={imgCulture3}></img>
-                </div>
-            </div>
-
-            <div className='animal'>
-                <h1>Тэльиэдальҕа.</h1>
-                <h1>Юкола.</h1>
-                <div className='image'>
-                    <img src={imgCulture3}></img>
-                </div>
-            </div>
-
-            <div className='animal'>
-                <h1>Тэльиэдальҕа wалуонь.</h1>
-                <h1>Юкола висит.</h1>
-                <div className='image'>
-                    <img src={imgCulture3}></img>
-                </div>
-            </div>
-
-            <div className='animal'>
-                <h1>Чааха.</h1>
-                <h1>Чааха ньанбэлич.</h1>
-                <div className='image'>
-                    <img src={imgCulture3}></img>
-                </div>
-            </div>
-
-            <div className='animal'>
-                <h1>Умуйэ.</h1>
-                <h1>Щука.</h1>
-                <div className='image'>
-                    <img src={imgCulture3}></img>
-                </div>
-            </div>
-
-            <div className='animal'>
-                <h1>Умуйэ пойуодьэ сальҕарииньэй.</h1>
-                <h1>У щуки много зубов.</h1>
-                <div className='image'>
-                    <img src={imgCulture3}></img>
-                </div>
-            </div>
-
-            <div className='animal'>
-                <h1>Көсльэ.</h1>
-                <h1>Налим.</h1>
-                <div className='image'>
-                    <img src={imgCulture3}></img>
-                </div>
-            </div>
-        </div>
-      )
-}
-
-function Birds(){
-    return (
-        <div className='birds'>
-            <div className='animal'>
-                <h1>Уйэньэйрукунпэ</h1>
-                <h1>Птицы</h1>
-                <div className='image'>
-                    <img src={imgCulture1}></img>
-                </div>
-            </div>
-
-            <div className='text'>
-                <p>
-                    <br></br>Муоха, суокур, ньуодьийэ,
-                    <br></br>Лимха, көсльэ, умуйэ,
-                    <br></br>Энуҕанэ – угурчиэ
-                    <br></br>Пойуолнуни йуорпурэ.
-                    <br></br>Муоха чуулҕат, суокурҕат
-                    <br></br>Тэльиэдальҕак wиэнунул
-                    <br></br>Пуогэрэпха сэwрэллэк
-                    <br></br>Чаахаснунуй көнмэльэ.
-                    <br></br><br></br><span>Улуро Адо</span><br></br>
-                </p>
-            </div>
         </div>
       )
 }

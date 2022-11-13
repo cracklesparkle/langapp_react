@@ -32,7 +32,7 @@ function Tale() {
 
         </div>
                     <div className="bottomNavbar">
-                        <button className='buttonLearn' onClick={handleClick}>Вернуться</button>
+                        <button className='buttonLearn' onClick={handleClick}>Вернуться к темам</button>
                     </div>
         </ViewContext.Provider>
 
