@@ -68,7 +68,7 @@ function Animal(){
                 <div className='aside'>
                     <div>
                             <h3>Тэн альҕа.</h3>
-                        <br></br>
+                        
                         <h3>Это рыба.</h3>
                         <br></br>
                     </div>
@@ -83,14 +83,16 @@ function Animal(){
             <div className='animal'>
                 <div className='aside'>
                     <div>
-                    <h3>Муоха.</h3>
-                <br></br>
-                <h3>Чир.</h3>
-                <br></br>
-                <h3>Муоха чамуонь.</h3>
-                <br></br>
-                <h3>Чир большой.</h3>
-                <br></br>
+                        <h3>Муоха.</h3>
+                        
+                        <h3>Чир.</h3>
+                        
+                        <br></br>
+
+                        <h3>Муоха чамуонь.</h3>
+                        
+                        <h3>Чир большой.</h3>
+                        <br></br>
                     </div>
                     <div className='image'>
                     <img src={imgCulture9}></img>
@@ -149,13 +151,19 @@ function Animal(){
             </div>
 
             <div className='animal'>
-                <h3>Көсльэ.</h3>
-                <br></br>
-                <h3>Налим.</h3>
-                <br></br>
-                <div className='image'>
-                    <img src={imgCulture5}></img>
+                <div className='aside'>
+                    <div className='image'>
+                        <img src={imgCulture5}></img>
+                    </div>
+                    <div>
+                        <h3>Көсльэ.</h3>
+                        <br></br>
+                        <h3>Налим.</h3>
+                        <br></br>
+                    </div>
                 </div>
+
+                
             </div>
         </motion.div>
       )

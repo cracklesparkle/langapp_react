@@ -452,6 +452,11 @@ a:active { text-decoration: none; }
   padding-bottom: 10px;
 }
 
+.naturePage p{
+  
+  padding-top: 10px;
+}
+
 .naturePage .container{
   display: flex;
   background-color: white;
@@ -466,11 +471,38 @@ a:active { text-decoration: none; }
   border-bottom: 5px solid rgba(0, 0, 0, 0.1);
 }
 
-.naturePage h1, .naturePage p, .naturePage img{
+.naturePage h1, .naturePage p{
   text-align: center !important;
   margin: auto;
   width: 100%;
 }
+
+.naturePage img{
+  text-align: center !important;
+  margin: auto;
+  width: 100%;
+}
+
+.naturePage .image{
+  width: 150px;
+  margin: auto;
+  
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.naturePage .aside{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.naturePage .aside :nth-child(1), .naturePage .aside :nth-child(2), .naturePage .aside :nth-child(3){
+  flex: 1;
+  
+}
+
+
 
 /* Animals */
 .animalsPage h1{
@@ -513,6 +545,24 @@ a:active { text-decoration: none; }
   justify-content: space-around;
 }
 
+.familyPage .asideKeep{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.familyPage .asideVert{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 10px;
+}
+
+.familyPage .soundButton img{
+  width: 25px;
+  height: 25px;
+}
+
 .familyPage .text{
   padding: 30px;
 }
@@ -544,6 +594,12 @@ a:active { text-decoration: none; }
   font-weight: bold;
 }
 
+.familyPage .otherMembers{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
 /* TALE */
 .talePage h1{
@@ -660,9 +716,72 @@ a:active { text-decoration: none; }
   justify-content: space-around;
 }
 
+.cultureFoodPage .image{
+  
+}
+
 .cultureFoodPage .aside :nth-child(1), .cultureFoodPage .aside :nth-child(2){
   flex: 1;
   margin: 15px;
+}
+
+/* Folklore */
+.folklorePage h1{
+  font-size: 30px !important;
+}
+
+
+.folklorePage .container{
+  background-color: white;
+  border-radius: 15px 15px 0px 0px;
+}
+.folklorePage .folklore, .folklorePage .folklore{
+  display: flex;
+  flex-direction: column;
+}
+.folklorePage .folklore .page, .folklorePage .folklore .page{
+  padding: 30px;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.1);
+}
+
+.folklorePage h1, .folklorePage img{
+  text-align: center !important;
+  width: 100%;
+  margin: auto;
+}
+
+.folklorePage p{
+  text-align: justify;
+  width: 100%;
+  margin: auto;
+}
+
+.folklorePage span{
+  font-weight: bold;
+  font-style: italic;
+}
+
+.folklorePage .header{
+  padding: 30px;
+}
+
+.folklorePage .aside{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.folklorePage .aside :nth-child(1), .folklorePage .aside :nth-child(2){
+  flex: 1;
+  margin: 15px;
+}
+
+.folklorePage .player{
+  padding: 10px;
+}
+
+.folklorePage audio{
+  width: 100%;
 }
 
 /* FAMOUS PEOPLE */
@@ -826,7 +945,7 @@ a:active { text-decoration: none; }
   }
 
 
-  .familyPage .container, .naturePage .container, .animalsPage .container, .talePage .container, .clothesPage .container, .cultureFoodPage .container, .famousPeoplePage .container{
+  .familyPage .container, .naturePage .container, .animalsPage .container, .talePage .container, .clothesPage .container, .cultureFoodPage .container, .famousPeoplePage .container, .folklorePage .container{
     width: auto;
   }
   .familyPage .aside{
@@ -840,6 +959,12 @@ a:active { text-decoration: none; }
     flex-direction: column;
     justify-content: space-around;
   
+  }
+
+  .naturePage .aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
 
   .cultureFoodPage .aside :nth-child(1), .cultureFoodPage .aside :nth-child(2){
@@ -862,7 +987,17 @@ a:active { text-decoration: none; }
   }
   
 
-  .naturePage h1, .animalsPage h1, .talePage h1, .famousPeoplePage h1, .cultureFoodPage h1, .clothesPage h1{
+  .folklorePage .aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .folklorePage h3, .folklorePage h2, .folklorePage span{
+    font-size: 1em;
+  }
+
+  .naturePage h1, .animalsPage h1, .talePage h1, .famousPeoplePage h1, .cultureFoodPage h1, .clothesPage h1, .folklorePage h1{
     font-size: 1.2em !important;
   }
 }

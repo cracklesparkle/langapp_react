@@ -13,11 +13,37 @@ import imgMember6 from './languages/yukaghir/family/image6.png';
 import imgMember7 from './languages/yukaghir/family/image7.png';
 import imgMember8 from './languages/yukaghir/family/image8.png';
 
+import ringer from './sounds/misc/ring06.wav';
+import SoundButton from './components/SoundButton';
+
+
+const Sound = () => {
+    const audio = new Audio(ringer);
+    audio.loop = true;
+  
+    return (
+      <div>
+        <button
+          onClick={() => {
+            audio.loop = false;
+            audio.play();
+          }}
+        >
+          Play
+        </button>
+        <button onClick={() => (audio.loop = false)}>Pause</button>
+      </div>
+    );
+  };
+
 function Family() {
     const {setView} = useContext(ViewContext);
     var current = 0;
 
     const [page, setPage] = useState(0);
+
+    const audio = new Audio(ringer);
+    audio.loop = true;
 
     const handleClick = event =>{
         if(page == 0){
@@ -26,6 +52,8 @@ function Family() {
         if(page == 1){
             setView('subjectSelect');
         }
+
+        window.scrollTo(0, 0);
     };
 
   return (
@@ -58,96 +86,184 @@ function Page1(){
                     <tbody className='family'>
                         <tr className='member'>
                             <img className='memberImg' src={imgMember5}></img>
-                            <td className='a'>Мама</td>
-                            <td>Эньиэ</td>
+                            <div className='asideKeep'>
+                                <SoundButton audio={ringer}/>
+                                <div className='asideVert'>
+                                    <td className='a'>Мама</td>
+                                    <td>Эньиэ</td>
+                                </div>
+                            </div>
                         </tr>
                         <tr className='member'>
                             <img className='memberImg' src={imgMember6}></img>
-                            <td className='a'>Папа</td>
-                            <td>Амаа</td>
+                            <div className='asideKeep'>
+                                <SoundButton audio={ringer}/>
+                                <div className='asideVert'>
+                                    <td className='a'>Папа</td>
+                                    <td>Амаа</td>
+                                </div>
+                            </div>
                         </tr>
                         <tr className='member'>
                             <img className='memberImg' src={imgMember2}></img>
-                            <td className='a'>Бабушка</td>
-                            <td>Абучиэ</td>
+                            <div className='asideKeep'>
+                                <SoundButton audio={ringer}/>
+                                <div className='asideVert'>
+                                    <td className='a'>Бабушка</td>
+                                    <td>Абучиэ</td>
+                                </div>
+                            </div>
                         </tr>
                         <tr className='member'>
                             <img className='memberImg' src={imgMember3}></img>
-                            <td className='a'>Дедушка</td>
-                            <td>Хайчиэ</td>
+                            <div className='asideKeep'>
+                                <SoundButton audio={ringer}/>
+                                <div className='asideVert'>
+                                    <td className='a'>Дедушка</td>
+                                    <td>Хайчиэ</td>
+                                </div>
+                            </div>
                         </tr>
                         <tr className='member'>
                             <img className='memberImg' src={imgMember6}></img>
-                            <td className='a'>Старший брат</td>
-                            <td>Акаа</td>
+                            <div className='asideKeep'>
+                                <SoundButton audio={ringer}/>
+                                <div className='asideVert'>
+                                    <td className='a'>Старший брат</td>
+                                    <td>Акаа</td>
+                                </div>
+                            </div>
                         </tr>
                         <tr className='member'>
                             <img className='memberImg' src={imgMember8}></img>
-                            <td className='a'>Старшая сестра</td>
-                            <td>Экыа</td>
+                            <div className='asideKeep'>
+                                <SoundButton audio={ringer}/>
+                                <div className='asideVert'>
+                                    <td className='a'>Старшая сестра</td>
+                                    <td>Экыа</td>
+                                </div>
+                            </div>
                         </tr>
                         <tr className='member'>
-                            <div className='aside'>
+                            <div className='asideKeep'>
                             <img className='memberImg' src={imgMember4}></img>
                             <img className='memberImg' src={imgMember7}></img>
                             </div>
                             
-                            <td className='a'>Младший брат, сестра</td>
-                            <td>Эмдьэ</td>
+                            <div className='asideKeep'>
+                                <SoundButton audio={ringer}/>
+                                <div className='asideVert'>
+                                    <td className='a'>Младший брат, сестра</td>
+                                    <td>Эмдьэ</td>
+                                </div>
+                            </div>
                         </tr>
-                        <tr className='member'>
-                            {/* <img className='memberImg' src={imgMember1}></img> */}
-                            <td className='a'>Дядя (старший брат мамы)</td>
-                            <td>Хаwдьаа</td>
-                        </tr>
-                        <tr className='member'>
-                            {/* <img className='memberImg' src={imgMember1}></img> */}
-                            <td className='a'>Дядя (младший брат мамы)</td>
-                            <td>Хаwдьидиэ</td>
-                        </tr>
-                        <tr className='member'>
-                            {/* <img className='memberImg' src={imgMember1}></img> */}
-                            <td className='a'>Тётя (старшая сестра мамы)</td>
-                            <td>Чамийа</td>
-                        </tr>
-                        <tr className='member'>
-                            {/* <img className='memberImg' src={imgMember1}></img> */}
-                            <td className='a'>Тётя (младшая сестра мамы)</td>
-                            <td>Йаадиэ</td>
-                        </tr>
-                        <tr className='member'>
-                            {/* <img className='memberImg' src={imgMember1}></img> */}
-                            <td className='a'>Дядя (старший брат папы)</td>
-                            <td>Чумуочиэ</td>
-                        </tr>
-                        <tr className='member'>
-                            {/* <img className='memberImg' src={imgMember1}></img> */}
-                            <td className='a'>Дядя (младший брат папы)</td>
-                            <td>Өчидиэ</td>
-                        </tr>
-                        <tr className='member'>
-                            {/* <img className='memberImg' src={imgMember1}></img> */}
-                            <td className='a'>Тётя (старшая сестра папы)</td>
-                            <td>Эпиэ</td>
-                        </tr>
-                        <tr className='member'>
-                            {/* <img className='memberImg' src={imgMember1}></img> */}
-                            <td className='a'>Тётя (младшая сестра папы)</td>
-                            <td>Эwдьуо</td>
-                        </tr>
-                        <tr className='member'>
-                            {/* <img className='memberImg' src={imgMember1}></img> */}
-                            <td className='a'>Невестка (жена брата)</td>
-                            <td>Иидиэ </td>
-                        </tr>
-                        <tr className='member'>
-                            {/* <img className='memberImg' src={imgMember1}></img> */}
-                            <td className='a'>Зять (муж сестры)</td>
-                            <td>Пулийэ </td>
-                        </tr>
+                        
                     </tbody>
 
                 </table>
+                <div className='otherMembers'>
+                        <tr className='member'>
+                            <div className='asideKeep'>
+                                <SoundButton audio={ringer}/>
+                                <div className='asideVert'>
+                                    <td className='a'>Дядя (старший брат мамы)</td>
+                                    <td>Хаwдьаа</td>
+                                </div>
+                            </div>
+                        </tr>
+                        <tr className='member'>
+                            {/* <img className='memberImg' src={imgMember1}></img> */}
+                            <div className='asideKeep'>
+                                <SoundButton audio={ringer}/>
+                                <div className='asideVert'>
+                                    <td className='a'>Дядя (младший брат мамы)</td>
+                                    <td>Хаwдьидиэ</td>
+                                </div>
+                            </div>
+                        </tr>
+                        <tr className='member'>
+                            {/* <img className='memberImg' src={imgMember1}></img> */}
+                            <div className='asideKeep'>
+                                <SoundButton audio={ringer}/>
+                                <div className='asideVert'>
+                                    <td className='a'>Тётя (старшая сестра мамы)</td>
+                                    <td>Чамийа</td>
+                                </div>
+                            </div>
+                        </tr>
+                        <tr className='member'>
+                            {/* <img className='memberImg' src={imgMember1}></img> */}
+                            <div className='asideKeep'>
+                                <SoundButton audio={ringer}/>
+                                <div className='asideVert'>
+                                    <td className='a'>Тётя (младшая сестра мамы)</td>
+                                    <td>Йаадиэ</td>
+                                </div>
+                            </div>
+                        </tr>
+                        <tr className='member'>
+                            {/* <img className='memberImg' src={imgMember1}></img> */}
+                            <div className='asideKeep'>
+                                <SoundButton audio={ringer}/>
+                                <div className='asideVert'>
+                                    <td className='a'>Дядя (старший брат папы)</td>
+                                    <td>Чумуочиэ</td>
+                                </div>
+                            </div>
+                        </tr>
+                        <tr className='member'>
+                            {/* <img className='memberImg' src={imgMember1}></img> */}
+                            <div className='asideKeep'>
+                                <SoundButton audio={ringer}/>
+                                <div className='asideVert'>
+                                    <td className='a'>Дядя (младший брат папы)</td>
+                                    <td>Өчидиэ</td>
+                                </div>
+                            </div>
+                        </tr>
+                        <tr className='member'>
+                            {/* <img className='memberImg' src={imgMember1}></img> */}
+                            <div className='asideKeep'>
+                                <SoundButton audio={ringer}/>
+                                <div className='asideVert'>
+                                    <td className='a'>Тётя (старшая сестра папы)</td>
+                                    <td>Эпиэ</td>
+                                </div>
+                            </div>
+                        </tr>
+                        <tr className='member'>
+                            {/* <img className='memberImg' src={imgMember1}></img> */}
+                            <div className='asideKeep'>
+                                <SoundButton audio={ringer}/>
+                                <div className='asideVert'>
+                                    <td className='a'>Тётя (младшая сестра папы)</td>
+                                    <td>Эwдьуо</td>
+                                </div>
+                            </div>
+                        </tr>
+                        <tr className='member'>
+                            {/* <img className='memberImg' src={imgMember1}></img> */}
+                            <div className='asideKeep'>
+                                <SoundButton audio={ringer}/>
+                                <div className='asideVert'>
+                                    <td className='a'>Невестка (жена брата)</td>
+                                    <td>Иидиэ</td>
+                                </div>
+                            </div>
+                        </tr>
+                        <tr className='member'>
+                            {/* <img className='memberImg' src={imgMember1}></img> */}
+                            <div className='asideKeep'>
+                                <SoundButton audio={ringer}/>
+                                <div className='asideVert'>
+                                    <td className='a'>Зять (муж сестры)</td>
+                                    <td>Пулийэ</td>
+                                </div>
+                            </div>
+                        </tr>
+                    
+                </div>
             </div>
         </motion.div>
     );

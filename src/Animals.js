@@ -49,6 +49,7 @@ function Animals() {
         if(page == 1){
             setView('subjectSelect');
         }
+        window.scrollTo(0, 0);
     };
 
   return (

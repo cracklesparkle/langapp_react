@@ -52,6 +52,8 @@ function FamousPeople() {
         if(page == 2){
             setView('subjectSelect');
         }
+
+        window.scrollTo(0, 0);
     };
 
   return (
