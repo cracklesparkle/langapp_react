@@ -470,6 +470,11 @@ a:active { text-decoration: none; }
   bottom: 20vh;
 }
 
+.greetingPage .header{
+  font-size: 2vw;
+  text-align: center;
+}
+
 .greetingPage .aside{
   display: flex;
   flex-direction: row;

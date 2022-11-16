@@ -200,9 +200,9 @@ function Greeting() {
   return (
     <ViewContext.Provider value={{setView}}>
     <motion.div className='greetingPage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
-        
             
             <div className="container">
+            <h1 className='header'>Приветствие и знакомство на тундренном юкагирском языке.</h1>
                             {currentDialogue < data.length && <Dialogue sentence={data[currentDialogue]} translation={data[currentDialogue]}/>}
                             {/* {page == 0 && <Animal/>}
                             {page == 1 && <Birds/>} */}
