@@ -54,6 +54,9 @@ function Nature() {
         }
         if(page == 1){
             setView('subjectSelect');
+            var key = JSON.parse(localStorage.getItem('4'));
+            key.available = 1;
+            localStorage.setItem(4, JSON.stringify(key));
         }
 
         window.scrollTo(0, 0)

@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 
 import { ViewContext } from './ViewContext';
 
@@ -25,6 +25,66 @@ function Subjects(){
 
     const {currentView, setView} = useContext(ViewContext);
 
+    if (localStorage.getItem(0) == null){
+        var ldata = [
+            {
+                "subject": 0,
+                "progress": 0,
+                "available": 1
+            },
+            {
+                "subject": 1,
+                "progress": 0,
+                "available": 0
+            },
+            {
+                "subject": 2,
+                "progress": 0,
+                "available": 0
+            },
+            {
+                "subject": 3,
+                "progress": 0,
+                "available": 0
+            },
+            {
+                "subject": 4,
+                "progress": 0,
+                "available": 0
+            },
+            {
+                "subject": 5,
+                "progress": 0,
+                "available": 0
+            },
+            {
+                "subject": 6,
+                "progress": 0,
+                "available": 0
+            },
+            {
+                "subject": 7,
+                "progress": 0,
+                "available": 0
+            },
+            {
+                "subject": 8,
+                "progress": 0,
+                "available": 0
+            },
+            {
+                "subject": 9,
+                "progress": 0,
+                "available": 0
+            },
+        ]
+    
+        ldata.forEach((element, i) => {
+            //console.log(i)
+            localStorage.setItem(i, JSON.stringify(element));
+        });
+    }
+
     const subjects = [
         {
         "Title": "Введение",
@@ -36,7 +96,7 @@ function Subjects(){
         "Title": "Приветствие, знакомство",
         "Image": GreetingIcon,
         "Link": 'greeting',
-        "View": 'subjectView'
+        "View": 'greetingView'
         },
         {
         "Title": "Семья",
@@ -91,16 +151,16 @@ function Subjects(){
         <motion.div className='subjectsPage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
             <ViewContext.Provider value={{currentView, setView}}>
                 <div className='buttonsContainer'>
-                    <SubjectCard subject={subjects[0]}/>
-                    <SubjectCard subject={subjects[1]}/>
-                    <SubjectCard subject={subjects[2]}/>
-                    <SubjectCard subject={subjects[3]}/>
-                    <SubjectCard subject={subjects[4]}/>
-                    <SubjectCard subject={subjects[5]}/>
-                    <SubjectCard subject={subjects[6]}/>
-                    <SubjectCard subject={subjects[7]}/>
-                    <SubjectCard subject={subjects[8]}/>
-                    <SubjectCard subject={subjects[9]}/>
+                    <SubjectCard subject={subjects[0]} index={0}/>
+                    <SubjectCard subject={subjects[1]} index={1}/>
+                    <SubjectCard subject={subjects[2]} index={2}/>
+                    <SubjectCard subject={subjects[3]} index={3}/>
+                    <SubjectCard subject={subjects[4]} index={4}/>
+                    <SubjectCard subject={subjects[5]} index={5}/>
+                    <SubjectCard subject={subjects[6]} index={6}/>
+                    <SubjectCard subject={subjects[7]} index={7}/>
+                    <SubjectCard subject={subjects[8]} index={8}/>
+                    <SubjectCard subject={subjects[9]} index={9}/>
                 </div>
             </ViewContext.Provider>
         </motion.div>

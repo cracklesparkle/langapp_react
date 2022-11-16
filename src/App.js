@@ -12,7 +12,7 @@ import {BrowserRouter as Router} from 'react-router-dom';
 
 import { ViewContext } from './ViewContext';
 
-const TypeScreen = ['home', 'languageSelect', 'subjectSelect', 'subjectView', 'languageView', 'familyView', 'natureView', 'animalsView', 'cultureFoodView', 'clothesView', 'taleView', 'folkloreView', 'famousPeopleView']
+const TypeScreen = ['home', 'languageSelect', 'subjectSelect', 'greetingView', 'languageView', 'familyView', 'natureView', 'animalsView', 'cultureFoodView', 'clothesView', 'taleView', 'folkloreView', 'famousPeopleView']
 
 function App(){
     const [currentView, setView] = useState(TypeScreen[1]);

@@ -35,7 +35,12 @@ const Language = ({language}) =>{
                         <img className="photo" src={`${yukaghir1}`} alt=""></img>
                     </div> */}
                     <p>{language.Description}</p>
-                    <button onClick={()=>setView('subjectSelect')} className='buttonLearn'>Перейти к изучению</button>
+                    <button onClick={()=> {
+                        setView('subjectSelect');
+                        var key = JSON.parse(localStorage.getItem('1'));
+                        key.available = 1;
+                        localStorage.setItem(1, JSON.stringify(key));
+                    }} className='buttonLearn'>Перейти к изучению</button>
                     <div>
                         <Carousel className='carousel' 
                                 emulateTouch

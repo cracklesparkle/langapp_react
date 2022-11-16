@@ -6,6 +6,7 @@ import {ViewContext, currentView} from './ViewContext';
 import Languages from './Languages';
 import Subjects from './Subjects';
 import Subject from './Subject';
+import Greeting from './Greeting';
 import Language from './Language';
 
 import Family from './Family';
@@ -19,7 +20,7 @@ import FamousPeople from './FamousPeople';
 
 import { languages } from './Data';
 
-const TypeScreen = ['home', 'languageSelect', 'subjectSelect', 'subjectView', 'languageView', 'familyView', 'natureView', 'animalsView', 'cultureFoodView', 'clothesView', 'taleView', 'folkloreView', 'famousPeopleView'];
+const TypeScreen = ['home', 'languageSelect', 'subjectSelect', 'greetingView', 'languageView', 'familyView', 'natureView', 'animalsView', 'cultureFoodView', 'clothesView', 'taleView', 'folkloreView', 'famousPeopleView'];
 
 function Home(){
 
@@ -79,7 +80,7 @@ function Home(){
                     animate={{opacity: 1}}
                     exit={{opacity: 0}}
                     >
-                    <Subject/>
+                    <Greeting/>
                 </motion.div>
             </ViewContext.Provider>
         )

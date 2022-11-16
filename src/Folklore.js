@@ -40,7 +40,9 @@ function Folklore() {
     const handleClick = event =>{
         if(page == 0){
             setView('subjectSelect');
-            
+            var key = JSON.parse(localStorage.getItem('9'));
+            key.available = 1;
+            localStorage.setItem(9, JSON.stringify(key));
         }
 
     };
@@ -77,7 +79,7 @@ function Page1(){
     
             <div className='page'>
                 <div className='aside'>
-                <p>
+                <div>
                     <h3>Йахтэ «Лабунмэдэну»</h3>
                     <span>Муз. И.Курилов</span>
                     <span>Сл.Улуро Адо</span>
@@ -98,8 +100,8 @@ function Page1(){
                     <br></br>Абучиэ, льукумуй.
                     <br></br>Энгэнэҥ маархуонь льиэ
                     <br></br>Абучиэ, льукумуй.
-                </p>
-                <p>
+                </div>
+                <div>
                     <h3>Песня “Лабунмэдэну”</h3>
                     <br></br>
                     <br></br>Милая Лабунмэдэну,
@@ -118,7 +120,7 @@ function Page1(){
                     <br></br>Бабушка, постарела.
                     <br></br>Только уж очень ты,
                     <br></br>Бабушка, постарела.
-                </p>
+                </div>
                 </div>
                 <div className='player'>
                     <audio src={Song1} controls controlsList='nodownload'>
@@ -129,7 +131,7 @@ function Page1(){
 
             <div className='page'> 
                 <div className='aside'>
-                <p>
+                <div>
                     <h3>Йахтэ “Мэт йуорпурэ”</h3>
                     <span>Муз. И. Курилов</span>
                     <span>Сл. Улуро Адо</span>
@@ -151,9 +153,9 @@ function Page1(){
                     <br></br>Мэ йуорпурэ – тэт йуорпурэ,
                     <br></br>Мэт аҕарэ – тэт аҕарэ.
 
-                </p>
+                </div>
 
-                <p>
+                <div>
                     <h3>Песня “Моя тундра”</h3>
                     <br></br>
                     <br></br>Моя тундра – твое дыхание
@@ -172,7 +174,7 @@ function Page1(){
                     <br></br>Моё дыхание – твоё дыхание.
                     <br></br>Моя тундра – твоя тундра,
                     <br></br>Моё дыхание – твоё дыхание.
-                </p>                  
+                </div>                  
                 </div>
                 <div className='player'>
                     <audio src={Song2} controls controlsList='nodownload'>
@@ -183,7 +185,7 @@ function Page1(){
 
             <div className='page'> 
                 <div className='aside'>
-                <p>
+                <div>
                     <h3>Йахтэ “Мит эньиэ”</h3>
                     <span>Муз. И. Курилов</span>
                     <span>Сл. И. Курилов</span>
@@ -204,8 +206,8 @@ function Page1(){
                     <br></br>Мит эньиэ,
                     <br></br>Мит эньиэ,
                     <br></br>Тэтул чамариинунуй.
-                </p>
-                <p>
+                </div>
+                <div>
                     <h3>Песня “Наша мама”</h3>
                     <br></br>
                     <br></br>Где бы далеко не находились,
@@ -224,7 +226,7 @@ function Page1(){
                     <br></br>Наша мама,
                     <br></br>Наша мама,
                     <br></br>Тебя всегда почитаем.
-                </p>                 
+                </div>                 
                 </div>
                 <div className='player'>
                     <audio src={Song3} controls controlsList='nodownload'>
@@ -235,7 +237,7 @@ function Page1(){
 
             <div className='page'> 
                 <div className='aside'>
-                    <p>
+                    <div>
                         <h3>Йахтэ “Йэрэгуутэгэ”</h3>
                         <span>Муз. И. Курилов</span>
                         <span>Сл. Н. Курилов</span>
@@ -256,8 +258,8 @@ function Page1(){
                         <br></br>Маанум мэтханэ мэт көнмиэ!
                         <br></br>Хок-хок-хок, аньмилпиэ,
                         <br></br>Маанум мэтханэ мэт көнмиэ!
-                    </p>
-                    <p>
+                    </div>
+                    <div>
                         <h3>Песня “По широкой равнине”</h3>
                         <br></br>
                         <br></br>На оленях скача,
@@ -276,7 +278,7 @@ function Page1(){
                         <br></br>Ждёт меня моя подруга!
                         <br></br>Хок-хок-хок, мои ездовые,
                         <br></br>Ждёт меня моя подруга!
-                    </p>
+                    </div>
                 </div>
                 <div className='player'>
                     <audio src={Song4} controls controlsList='nodownload'>

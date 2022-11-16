@@ -21,6 +21,9 @@ function CultureFood() {
     const handleClick = event =>{
         if(page == 0){
             setView('subjectSelect');
+            var key = JSON.parse(localStorage.getItem('6'));
+            key.available = 1;
+            localStorage.setItem(6, JSON.stringify(key));
         }
     };
 

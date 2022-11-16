@@ -51,6 +51,9 @@ function Family() {
         }
         if(page == 1){
             setView('subjectSelect');
+            var key = JSON.parse(localStorage.getItem('3'));
+            key.available = 1;
+            localStorage.setItem(3, JSON.stringify(key));
         }
 
         window.scrollTo(0, 0);
@@ -162,7 +165,8 @@ function Page1(){
                     </tbody>
 
                 </table>
-                <div className='otherMembers'>
+                <table className='otherMembers'>
+                    <tbody>
                         <tr className='member'>
                             <div className='asideKeep'>
                                 <SoundButton audio={ringer}/>
@@ -262,8 +266,8 @@ function Page1(){
                                 </div>
                             </div>
                         </tr>
-                    
-                </div>
+                    </tbody>
+                </table>
             </div>
         </motion.div>
     );
