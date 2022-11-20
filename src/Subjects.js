@@ -24,7 +24,7 @@ import {motion} from 'framer-motion';
 function Subjects(){
 
     const {currentView, setView} = useContext(ViewContext);
-
+    
     if (localStorage.getItem(0) == null){
         var ldata = [
             {
@@ -86,11 +86,12 @@ function Subjects(){
     }
 
     const subjects = [
+        [
         {
         "Title": "Введение",
         "Image": IntroductionIcon,
         "Link": 'introduction',
-        "View": 'languageView'
+        "View": 'introductionView'
         },
         {
         "Title": "Приветствие, знакомство",
@@ -145,22 +146,23 @@ function Subjects(){
         "Image": FamousPeopleIcon,
         "Link": 'famous-people',
         "View": 'famousPeopleView'
-        }
+        }]
+
     ];
     return(
         <motion.div className='subjectsPage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
             <ViewContext.Provider value={{currentView, setView}}>
                 <div className='buttonsContainer'>
-                    <SubjectCard subject={subjects[0]} index={0}/>
-                    <SubjectCard subject={subjects[1]} index={1}/>
-                    <SubjectCard subject={subjects[2]} index={2}/>
-                    <SubjectCard subject={subjects[3]} index={3}/>
-                    <SubjectCard subject={subjects[4]} index={4}/>
-                    <SubjectCard subject={subjects[5]} index={5}/>
-                    <SubjectCard subject={subjects[6]} index={6}/>
-                    <SubjectCard subject={subjects[7]} index={7}/>
-                    <SubjectCard subject={subjects[8]} index={8}/>
-                    <SubjectCard subject={subjects[9]} index={9}/>
+                    <SubjectCard subject={subjects[0][0]} index={0}/>
+                    <SubjectCard subject={subjects[0][1]} index={1}/>
+                    <SubjectCard subject={subjects[0][2]} index={2}/>
+                    <SubjectCard subject={subjects[0][3]} index={3}/>
+                    <SubjectCard subject={subjects[0][4]} index={4}/>
+                    <SubjectCard subject={subjects[0][5]} index={5}/>
+                    <SubjectCard subject={subjects[0][6]} index={6}/>
+                    <SubjectCard subject={subjects[0][7]} index={7}/>
+                    <SubjectCard subject={subjects[0][8]} index={8}/>
+                    <SubjectCard subject={subjects[0][9]} index={9}/>
                 </div>
             </ViewContext.Provider>
         </motion.div>

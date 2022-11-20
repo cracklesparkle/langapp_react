@@ -132,8 +132,10 @@ h3{
   display: flex;
   justify-content: center;
   flex-direction: column;
-  /* align-items: center; */
   flex-wrap: wrap;
+
+  background-color: white;
+  border-radius: 15px 15px 0px 0px;
 }
 
 .buttonsContainer {
@@ -145,6 +147,12 @@ h3{
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+
+
+.flex-row-3{
+    display: flex;
+    flex-direction: row;
 }
 
 .language-page {
@@ -213,6 +221,13 @@ padding: 1.5rem;
 display:flex;
 justify-content: center;
 }
+
+.languagesPage .buttonsContainer{
+  padding: 1.5rem;
+  width: 100%;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  }
 
 .allLanguages img{
 width: 40vw;
@@ -419,13 +434,19 @@ a:active { text-decoration: none; }
 
 
 /* PAGES */
-
-/* Family */
-.greetingPage .container{
-  background-color: white;
-  border-radius: 15px 15px 0px 0px;
-  height: 70vh;
+.header{
+  padding: 30px;
+  margin: auto;
+  font-size: 1.5em;
+  text-align: center;
 }
+
+
+/* Placeholder */
+
+
+
+/* Greeting */
 
 .greetingPage .bottomNavbar{
   position: sticky;
@@ -440,101 +461,38 @@ a:active { text-decoration: none; }
 }
 
 .speechBubble{
-  position: absolute;
-  bottom: 65vh;
+  position: relative;
+
 }
 
 .personImage{
   width: 12vw;
   position: relative;
-  bottom: -10vh;
 }
 
 .dialogue{
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 50px;
-  
-}
-
-.dialogue :nth-child(1) .speech{
-  position: relative;
-  left: 0;
-  bottom: 20vh;
-}
-
-.dialogue :nth-child(2) .speech{
-  position: relative;
-  
-  bottom: 20vh;
-}
-
-.greetingPage .header{
-  font-size: 2vw;
-  text-align: center;
-}
-
-.greetingPage .aside{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.greetingPage .asideKeep{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.greetingPage .asideVert{
-  display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.dialogue .speechBubbles{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-height: 300px;
+}
+
+.dialogue .speechText{
+  display: flex;
+  flex-direction: row;
   justify-content: space-around;
-  padding-left: 10px;
 }
 
 .greetingPage .soundButton img{
   width: 25px;
   height: 25px;
-}
-
-.greetingPage .text{
-  padding: 30px;
-}
-
-.greetingPage span{
-  font-weight: bold;
-  font-style: italic;
-}
-
-.greetingPage .family{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.greetingPage .member{
-  display: flex;
-  flex-direction: column;
-  padding: 35px;
-  align-items: center;
-}
-
-.greetingPage .memberImg{
-  width: 100px;
-}
-
-.greetingPage .a{
-  font-weight: bold;
-}
-
-.greetingPage .otherMembers{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
 }
 
 /* Nature */
@@ -595,6 +553,16 @@ a:active { text-decoration: none; }
   width: 100%;
 }
 
+.naturePage .block .asiderow{
+  display: block;
+}
+
+.naturePage .block .soundButton{
+  margin: 0;
+  padding: 0;
+}
+
+
 .naturePage .aside :nth-child(1), .naturePage .aside :nth-child(2), .naturePage .aside :nth-child(3){
   flex: 1;
 }
@@ -631,10 +599,6 @@ a:active { text-decoration: none; }
 }
 
 /* Family */
-.familyPage .container{
-  background-color: white;
-  border-radius: 15px 15px 0px 0px;
-}
 
 .familyPage .aside{
   display: flex;
@@ -645,7 +609,12 @@ a:active { text-decoration: none; }
 .familyPage .asideKeep{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
+  margin: 10px;
+}
+
+.familyPage .asideKeepLeft .asideVert h3{
+  text-align: left;
 }
 
 .familyPage .asideVert{
@@ -674,17 +643,20 @@ a:active { text-decoration: none; }
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  width: 100%;
 }
 
 .familyPage .member{
   display: flex;
   flex-direction: column;
   padding: 35px;
+  margin: auto;
+  
   align-items: center;
 }
 
 .familyPage .memberImg{
-  width: 100px;
+  width: 250px;
 }
 
 .familyPage .a{
@@ -693,10 +665,14 @@ a:active { text-decoration: none; }
 
 .familyPage .otherMembers{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
+.familyPage .otherMembers .member{
+  margin-left: 25%;
+}
+
 
 /* TALE */
 .talePage h1{
@@ -726,10 +702,6 @@ a:active { text-decoration: none; }
 .talePage span{
   font-weight: bold;
   font-style: italic;
-}
-
-.talePage .header{
-  padding: 30px;
 }
 
 .talePage video{
@@ -770,9 +742,6 @@ a:active { text-decoration: none; }
   font-style: italic;
 }
 
-.clothesPage .header{
-  padding: 30px;
-}
 
 /* CULTURE AND FOOD */
 .cultureFoodPage h1{
@@ -803,18 +772,11 @@ a:active { text-decoration: none; }
   font-style: italic;
 }
 
-.cultureFoodPage .header{
-  padding: 30px;
-}
 
 .cultureFoodPage .aside{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-}
-
-.cultureFoodPage .image{
-  
 }
 
 .cultureFoodPage .aside :nth-child(1), .cultureFoodPage .aside :nth-child(2){
@@ -856,10 +818,6 @@ a:active { text-decoration: none; }
 .folklorePage span{
   font-weight: bold;
   font-style: italic;
-}
-
-.folklorePage .header{
-  padding: 30px;
 }
 
 .folklorePage .aside{
@@ -917,10 +875,6 @@ a:active { text-decoration: none; }
 .famousPeoplePage span{
   font-weight: bold;
   font-style: italic;
-}
-
-.famousPeoplePage .header{
-  padding: 30px;
 }
 
 .famousPeoplePage .aside{
@@ -997,82 +951,63 @@ a:active { text-decoration: none; }
     font-size: 0.7em !important;
   }
 
-  .buttonsContainer{
+  .buttonsContainer, .languagesPage .buttonsContainer{
     width: 100vw;
     margin: 0 0 0 0;
     margin-top: 1rem;
   
-    display: flex;
+    display: flex !important;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
   }
-  
-  
 
-  .speech{
-    display: block;
-    flex-direction: column;
-    padding: 10px;
-    justify-content: flex-start;
-  }
-  
-  .speechBubble{
-    position: absolute;
-    bottom: 65vh;
-  }
-  
-  .personImage{
-    width: 20vw;
-    position: relative;
-    bottom: -10vh;
-  }
-  
-  .dialogue{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-  
-  .dialogue :nth-child(1) .speechBubble{
-    position: absolute;
-    bottom: 65vh;
-    left: 10vw;
-  }
-  
-  .dialogue :nth-child(2) .speechBubble{
-    position: absolute;
-    bottom: 30vh;
-    left: 10vw;
-  }
+  /* Greeting */
+.greetingPage .bottomNavbar{
+  position: sticky;
+  bottom: 0;
+}
 
-  .dialogue :nth-child(1) .speechBubble .bubble{
-    width: 80vw;
-  }
-  
-  .dialogue :nth-child(2) .speechBubble .bubble{
-    width: 80vw;
-  }
+.speech{
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
 
-  .dialogue :nth-child(1) .speechBubble .bubble::after{
-    
-  }
-  
-  .dialogue :nth-child(2) .speechBubble .bubble::after{
-    left: 55vw;
-  }
+.speechBubble{
+  position: relative;
+}
 
-  .dialogue :nth-child(1) .personImage{
-    width: 20vw;
-    position: relative;
-    bottom: 5vh;
-  }
-  
-  .dialogue :nth-child(2) .personImage{
-    width: 20vw;
-    position: relative;
-    bottom: -27vh;
-  }
+.personImage{
+  width: 30vw;
+  position: relative;
+}
+
+.dialogue{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.dialogue .speechBubbles{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.dialogue .speechText{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.greetingPage .soundButton img{
+  width: 25px;
+  height: 25px;
+}
 
 
   .bottomNavbar {
@@ -1087,9 +1022,10 @@ a:active { text-decoration: none; }
   }
 
 
-  .familyPage .container, .naturePage .container, .animalsPage .container, .talePage .container, .clothesPage .container, .cultureFoodPage .container, .famousPeoplePage .container, .folklorePage .container, .greetingPage .container{
+  .container{
     width: auto;
   }
+
   .familyPage .aside{
     display: flex;
     flex-direction: column;
@@ -1156,6 +1092,16 @@ a:active { text-decoration: none; }
     font-size: 1.2em !important;
     padding-bottom: 10px;
   }
+
+  
+.naturePage .block .asiderow{
+  display: block;
+}
+
+.naturePage .block .soundButton{
+  margin: 0;
+  padding: 0;
+}
 }
 
 @media screen and (max-width: 400px) {

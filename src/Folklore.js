@@ -66,7 +66,7 @@ function Folklore() {
 function Page1(){
     return(
         <motion.div className='folklore' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
-            <h1 className='header'>Фольклор</h1>
+            <h1 className='header'>Юкагирские песни</h1>
             <div className='page'>
                 <p>
                     Илья Иванович Курилов – юкагирский мелодист, композитор.

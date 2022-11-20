@@ -28,10 +28,13 @@ function Languages(props){
                     <div className='allLanguages'><img src={allLanguages}></img></div>
                     <h3>Выберите язык для изучения:</h3>
                     <div className='buttonsContainer'>
-                        <LanguageCard language={languages[0]} colorId='coloredCard1'/>
-                        <LanguageCard language={languages[1]} colorId='coloredCard2'/>
-                        <LanguageCard language={languages[2]} colorId='coloredCard3'/>
-                        <LanguageCard language={languages[3]} colorId='coloredCard4'/>
+                            <LanguageCard language={languages[0]} colorId='coloredCard1' langId={0}/>
+                            <LanguageCard language={languages[1]} colorId='coloredCard2' langId={1}/>
+                            <LanguageCard language={languages[2]} colorId='coloredCard3' langId={2}/>
+                            <LanguageCard language={languages[3]} colorId='coloredCard4' langId={3}/>
+                            <LanguageCard language={languages[4]} colorId='coloredCard5' langId={4}/>
+                            <LanguageCard language={languages[5]} colorId='coloredCard6' langId={5}/>
+                        
                     </div>
                     
                 

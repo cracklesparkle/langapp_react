@@ -17,6 +17,9 @@ function Tale() {
 
     const handleClick = event =>{
         setView('subjectSelect');
+        var key = JSON.parse(localStorage.getItem('8'));
+        key.available = 1;
+        localStorage.setItem(8, JSON.stringify(key));
     };
 
   return (
@@ -27,9 +30,7 @@ function Tale() {
                         <h1>Юкагирская сказка</h1>
                         <h1>Н. Курилов "Почему у куропатки на лапах щётки"</h1>
                         <video width="750" height="500" controls controlsList='nodownload' onEnded={() => {
-                            var key = JSON.parse(localStorage.getItem('8'));
-                            key.available = 1;
-                            localStorage.setItem(8, JSON.stringify(key));
+                            
                         }}>
                             <source src={video} type="video/mp4"/>
                         </video>

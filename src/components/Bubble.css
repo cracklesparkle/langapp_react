@@ -1,22 +1,21 @@
 .bubble {
 	position: relative;
-	max-width: 20vw;
+	vertical-align: bottom;
 	background-color: #fff;
 	padding: 1.125em 1.5em;
-	font-size: 15px;
+	font-size: 1.2vw;
 	border-radius: 1rem;
 	box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.3), 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
 	width: auto;
   }
   
   .bubble::after {
+	display: none;
 	content: "";
 	position: relative;
+	bottom: -135%;
 	width: 0;
 	height: 0;
-	/* bottom: -20%; */
-	top: 3em;
-	left: 1.5em;
 	border: 0.75rem solid transparent;
 	border-bottom: none;
 	border-top-color: #fff;
@@ -24,12 +23,13 @@
   }
 
 .bubble .row{
-	width: 100%;
+	width: auto;
 }
 
 .sentence{
 	font-weight: 700;
 	padding-bottom: 15px;
+	word-wrap: normal;
 }
 
 .translation{
@@ -54,11 +54,21 @@
 }
 
 @media screen and (max-width: 600px){
+	.sentence{
+		font-size: 3vw;
+		font-weight: 600;
+		padding-bottom: 15px;
+		
+	}
+	.translation{
+		font-size: 2.5vw;
+	}
+
 	.bubble {
 		position: relative;
 		max-width: 100%;
 		background-color: #fff;
-		padding: 1.125em 1.5em;
+		padding: 0.5em;
 		font-size: 1rem;
 		border-radius: 1rem;
 		box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.3), 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);

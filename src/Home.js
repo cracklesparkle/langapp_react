@@ -18,12 +18,15 @@ import Tale from './Tale';
 import Folklore from './Folklore';
 import FamousPeople from './FamousPeople';
 
+import PlaceholderPage from './PlaceholderPage';
+
 import { languages } from './Data';
 
-const TypeScreen = ['home', 'languageSelect', 'subjectSelect', 'greetingView', 'languageView', 'familyView', 'natureView', 'animalsView', 'cultureFoodView', 'clothesView', 'taleView', 'folkloreView', 'famousPeopleView'];
+const TypeScreen = ['home', 'languageSelect', 'subjectSelect', 'introductionView', 'greetingView', 'familyView', 'natureView', 'animalsView', 'cultureFoodView', 'clothesView', 'taleView', 'folkloreView', 'famousPeopleView', 'placeholderView'];
 
 function Home(){
 
+    
     //const [currentView, setView] = useState(TypeScreen[0]);
 
     const {currentView, setView} = useContext(ViewContext);
@@ -71,6 +74,7 @@ function Home(){
             </ViewContext.Provider>
         )
     }
+
     if (currentView == TypeScreen[3]){
         console.log(currentView);
         return(
@@ -80,7 +84,7 @@ function Home(){
                     animate={{opacity: 1}}
                     exit={{opacity: 0}}
                     >
-                    <Greeting/>
+                    <Language language={languages[localStorage.getItem('langId')]}/>
                 </motion.div>
             </ViewContext.Provider>
         )
@@ -95,11 +99,13 @@ function Home(){
                     animate={{opacity: 1}}
                     exit={{opacity: 0}}
                     >
-                    <Language language={languages[0]}/>
+                    <Greeting/>
                 </motion.div>
             </ViewContext.Provider>
         )
     }
+
+    
 
     if (currentView == TypeScreen[5]){
         console.log(currentView);
@@ -212,6 +218,20 @@ function Home(){
                     exit={{opacity: 0}}
                     >
                     <FamousPeople/>
+                </motion.div>
+            </ViewContext.Provider>
+        )
+    }
+    if (currentView == TypeScreen[13]){
+        console.log(currentView);
+        return(
+            <ViewContext.Provider value={{currentView, setView}}>
+                <motion.div
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    exit={{opacity: 0}}
+                    >
+                    <PlaceholderPage/>
                 </motion.div>
             </ViewContext.Provider>
         )
