@@ -8,6 +8,8 @@ import { ViewContext } from './ViewContext';
 
 import allLanguages from './languages/allLanguages.png';
 
+import allLanguagesSvg from './languages/allLanguages.svg';
+
 function Languages(props){
     
     const {currentView, setView} = useContext(ViewContext);
@@ -25,8 +27,10 @@ function Languages(props){
                     <li className='triangle'><img src={Lang7}/></li>
                 </ul> */}
                 
-                    <div className='allLanguages'><img src={allLanguages}></img></div>
-                    <h3>Выберите язык для изучения:</h3>
+                    <div className='allLanguages'>
+                        <img src={allLanguagesSvg} className='rotate'></img>
+                    </div>
+                    <h2>ВЫБЕРИТЕ ЯЗЫК ДЛЯ ИЗУЧЕНИЯ:</h2>
                     <div className='buttonsContainer'>
                             <LanguageCard language={languages[0]} colorId='coloredCard1' langId={0}/>
                             <LanguageCard language={languages[1]} colorId='coloredCard2' langId={1}/>
