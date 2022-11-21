@@ -39,6 +39,7 @@ import image14 from './languages/yukaghir/clothes/image14.jpeg';
 import image15 from './languages/yukaghir/clothes/image15.jpeg';
 import image16 from './languages/yukaghir/clothes/image16.jpeg';
 import image17 from './languages/yukaghir/clothes/image17.jpeg';
+import image18 from './languages/yukaghir/clothes/image18.jpeg';
 
 import audio1  from "./languages/yukaghir/clothes/audio/1. у юкагиров есть зимняя и летняя одежда.mp3";
 import audio2  from "./languages/yukaghir/clothes/audio/2. шьют из шкуры оленя.mp3";
@@ -63,7 +64,247 @@ import audio20 from "./languages/yukaghir/clothes/audio/20. обувь.mp3";
 import audio21 from "./languages/yukaghir/clothes/audio/21. шарфик.mp3";
 import audio22 from "./languages/yukaghir/clothes/audio/22 штаны брюки.mp3";
 
-var clothesProgress = false;
+const data = [
+        {
+            "header": "Wадун чии хандьэльэ, лэwэйльэ сукунньэҥи.",
+            "subheader": "У юкагиров есть зимняя и летняя одежда.",
+            "audio": audio1,
+            "images": "",
+            "imgpos": "center"
+        },
+        {
+            "header": "Илэн саwаҕат иириэнунҥа.",
+            "subheader": "Шьют из шкуры оленя.",
+            "audio": audio2,
+            "images": "",
+            "imgpos": "center"
+        },
+        {
+            "header": "Летняя одежда из замши.",
+            "subheader": "Лэwэймэҥ эл пугучэндьэ маҕиньаанунҥи.",
+            "audio": audio3,
+            "images": "",
+            "imgpos": "center"
+        },
+        {
+            "header": "Wадун сукун",
+            "subheader": "Одежда юкагиров",
+            "audio": audio4,
+            "images": [image1, image2],
+            "imgpos": "center"
+        },
+        {
+            "header": "Тэн пайпэн хандьэмэльэ сукун.",
+            "subheader": "Это зимняя женская одежда.",
+            "audio": audio5,
+            "images": [image1],
+            "imgpos": "left"
+        },
+        {
+            "header": "Тэн пайпэн лэwэймэльэ сукун.",
+            "subheader": "Это летняя женская одежда.",
+            "audio": audio6,
+            "images": [image2],
+            "imgpos": "left"
+        },
+        {
+            "header": "Тэн кэйпэн хандьэмэльэ сукун.",
+            "subheader": "Это мужская зимняя одежда.",
+            "audio": audio7,
+            "images": [image3],
+            "imgpos": "center-top"
+        },
+        {
+            "header": "Маҕил",
+            "subheader": "Шуба",
+            "audio": audio8,
+            "images": [image4],
+            "imgpos": "center"
+        },
+        {
+            "header": "Ньуҥурукун.",
+            "subheader": "Передник",
+            "audio": audio9,
+            "images": [image5],
+            "imgpos": "center"
+        },
+        {
+            "header": "Маҕинбурэбэ",
+            "subheader": "Верхняя кукашка",
+            "audio": audio10,
+            "images": [image6],
+            "imgpos": "center"
+        },
+        {
+            "header": "Саwдаҕиль",
+            "subheader": "Нижняя кукашка",
+            "audio": audio11,
+            "images": [image7],
+            "imgpos": "center"
+        },
+        {
+            "header": "Оонбурэбэ",
+            "subheader": "Верхние меховые штаны",
+            "audio": audio12,
+            "images": [image8],
+            "imgpos": "center"
+        },
+        {
+            "header": "Оон ходирэ",
+            "subheader": "Нижние нательные меховые штаны",
+            "audio": audio13,
+            "images": [image9],
+            "imgpos": "right"
+        },
+        {
+            "header": "Тэн хандьэмэльэ моҥо.",
+            "subheader": "Это зимний головной убор",
+            "audio": audio14,
+            "images": [image10],
+            "imgpos": "left"
+        },
+        {
+            "header": "Чалдьэдаwур",
+            "subheader": "Рукавицы",
+            "audio": audio15,
+            "images": [image11],
+            "imgpos": "center"
+        },
+        {
+            "header": "Силхадугурчэ",
+            "subheader": "Летняя обувь",
+            "audio": audio16,
+            "images": [image12],
+            "imgpos": "center"
+        },
+        {
+            "header": "Саскариидугурчэ",
+            "subheader": "Зимняя обувь",
+            "audio": audio17,
+            "images": [image13],
+            "imgpos": "center"
+        },
+        {
+            "header": "Ньиҥиэдигийэ",
+            "subheader": "Ремень",
+            "audio": audio18,
+            "images": [image14],
+            "imgpos": "center"
+        },
+        {
+            "header": "Сисхадоҥой.",
+            "subheader": "Перчатки",
+            "audio": audio19,
+            "images": [image15],
+            "imgpos": "center"
+        },
+        {
+            "header": "Угурчэ.",
+            "subheader": "Обувь.",
+            "audio": audio20,
+            "images": [image16],
+            "imgpos": "center"
+        },
+        {
+            "header": "Ньамиирукун.",
+            "subheader": "Шарфик.",
+            "audio": audio21,
+            "images": [image17],
+            "imgpos": "center"
+        },
+        {
+            "header": "Туурии.",
+            "subheader": "Штаны, брюки.",
+            "audio": audio22,
+            "images": [image18],
+            "imgpos": "center"
+        }
+];
+
+function Images({props}){
+    if (props.length > 1){
+        return(
+            <div className='multipleImages'>
+                {props.map((image, i) => {
+                    return (
+                        <img src={image} key={i}></img>
+                    );
+                })}
+            </div>
+            
+        );
+    }
+    if (props.length == 1){
+        return(
+            <div className='singleImage'>
+                {props.map((image, i) => {
+                    return (
+                        <img src={image} key={i}></img>
+                    );
+                })}
+            </div>
+            
+        );
+    }
+}
+
+function Text({props}){
+    //image position
+    if (props.imgpos == 'left'){
+        return(
+            <div className='cloth'>
+                <div className='row'>
+                    <Images props={props.images}/>
+                    <div className='info'>
+                        <h1>{props.header}</h1>
+                        <h1>{props.subheader}</h1>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+    if (props.imgpos == 'right'){
+        return(
+            <div className='cloth'>
+                <div className='row'>
+                    <div className='info'>
+                        <h1>{props.header}</h1>
+                        <h1>{props.subheader}</h1>
+                    </div>
+                    <Images props={props.images}/>
+                </div>
+            </div>
+        );
+    }
+    //by default text is at the top of the image
+    if (props.imgpos == 'center'){
+        return(
+            <div className='cloth'>
+                <div className='column'>
+                    <div className='info'>
+                        <h1>{props.header}</h1>
+                        <h1>{props.subheader}</h1>
+                    </div>
+                    <Images props={props.images}/>
+                </div>
+            </div>
+        );
+    }
+    if (props.imgpos == 'center-top'){
+        return(
+            <div className='cloth'>
+                <div className='column'>
+                    <Images props={props.images}/>
+                    <div className='info'>
+                        <h1>{props.header}</h1>
+                        <h1>{props.subheader}</h1>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+    
+}
 
 function Clothes() {
     const {setView} = useContext(ViewContext);
@@ -77,12 +318,40 @@ function Clothes() {
         localStorage.setItem(7, JSON.stringify(key));
     };
 
+
+
   return (
     <motion.div className='clothesPage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
         <ViewContext.Provider value={{setView}}>
         
         <div className="container">
-                        {page == 0 && <Page1/>}
+                        {/* {page == 0 && <Page1/>} */}
+                        <div className='culture'>
+                           <h1 className='header'>О национальной одежде юкагиров</h1>
+                           <Text props={data[0]}/>
+                           <Text props={data[1]}/>
+                           <Text props={data[2]}/>
+                           <Text props={data[3]}/>
+                           <Text props={data[4]}/>
+                           <Text props={data[5]}/>
+                           <Text props={data[6]}/>
+                           <Text props={data[7]}/>
+                           <Text props={data[8]}/>
+                           <Text props={data[9]}/>
+                           <Text props={data[10]}/>
+                           <Text props={data[11]}/>
+                           <Text props={data[12]}/>
+                           <Text props={data[13]}/>
+                           <Text props={data[14]}/>
+                           <Text props={data[15]}/>
+                           <Text props={data[16]}/>
+                           <Text props={data[17]}/>
+                           <Text props={data[18]}/>
+                           <Text props={data[19]}/>
+                           <Text props={data[20]}/>
+                           <Text props={data[21]}/>
+                        </div>
+                        
                     </div>
                     <div className="bottomNavbar">
                         <button className='buttonLearn' onClick={handleClick}>Вернуться к темам</button>
@@ -94,33 +363,6 @@ function Clothes() {
 }
 
 function Page1(){
-    const containerRef = useRef(null)
-    const [isVisible, setIsVisible] = useState(false)
-
-    const callbackFunction = (entries) => {
-        const [entry] = entries
-        setIsVisible(entry.isIntersecting)
-        
-        console.log(clothesProgress)
-    }
-    const options = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.6
-    }
-    useEffect(() => {
-        const observer = new IntersectionObserver(callbackFunction, options)
-        if (containerRef.current) {
-            observer.observe(containerRef.current)
-        }
-        return () => {
-            if (containerRef.current){
-                observer.unobserve(containerRef.current)
-                clothesProgress = true
-            }
-        }
-    }, [containerRef, options])
-
     return (
         <div className='culture'>
             <h1 className='header'>О национальной одежде юкагиров</h1>
@@ -151,7 +393,7 @@ function Page1(){
                 <h3>Лэwэймэҥ эл пугучэндьэ маҕиньаанунҥи.</h3>
                 <br></br>
                 <div className='image'>
-                    <img src={image3} ref={containerRef}></img>
+                    <img src={image3}></img>
                 </div>
             </div>
 

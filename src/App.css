@@ -33,6 +33,29 @@ body {
   background-color: #ccdeeb;
 }
 
+
+h1{
+  padding-bottom: 10px;
+  font-size: 2vw !important;
+
+  text-align: center !important;
+  width: 100%;
+  margin: auto;
+}
+
+h3{
+  font-size: 1vw;
+}
+
+p{
+  padding-top: 10px;
+  font-size: 1.2vw !important;
+
+  text-align: center !important;
+  width: 100%;
+  margin: auto;
+}
+
 .carousel{
   padding: 20px 20px 20px 20px;
 }
@@ -94,7 +117,6 @@ h1 {
 
 h3{
   text-align: center;
-
 }
 
 .subHeader{
@@ -709,32 +731,47 @@ a:active { text-decoration: none; }
 }
 
 /* CLOTHES */
-.clothesPage h1{
-  font-size: 30px !important;
-}
 
-.clothesPage h2{
-  text-align: center;
-  padding: 10px;
-}
-
-.clothesPage .container{
-  background-color: white;
-  border-radius: 15px 15px 0px 0px;
-}
-.clothesPage .culture, .clothesPage .birds{
-  display: flex;
-  flex-direction: column;
-}
-.clothesPage .culture .animal, .clothesPage .birds .animal{
+.clothesPage .cloth{
   padding: 30px;
   border-bottom: 5px solid rgba(0, 0, 0, 0.1);
 }
 
-.clothesPage h1, .clothesPage p, .clothesPage img{
-  text-align: center !important;
+.clothesPage .cloth .info{
+  padding-bottom: 30px;
+}
+
+.clothesPage .cloth .column{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.clothesPage .cloth .row{
+  display: flex;
+  flex-direction: row;
+}
+
+.clothesPage .cloth .row :nth-child(1), .clothesPage .cloth .row :nth-child(2){
+  flex: 1;
+}
+
+.clothesPage .singleImage, .clothesPage .multipleImages{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0;
   width: 100%;
-  margin: auto;
+}
+
+.clothesPage .cloth .multipleImages img{
+  max-width: 40%;
+  margin: 0;
+}
+
+.clothesPage .cloth .singleImage img{
+  max-width: 100%;
+  margin: 0;
 }
 
 .clothesPage span{

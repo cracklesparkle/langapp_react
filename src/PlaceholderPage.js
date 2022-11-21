@@ -3,14 +3,6 @@ import React, {useContext, useState} from 'react';
 import {motion} from 'framer-motion';
 import { ViewContext } from './ViewContext';
 
-import imgCulture1 from './languages/yukaghir/cultureFood/image1.jpg';
-import imgCulture2 from './languages/yukaghir/cultureFood/image2.jpg';
-import imgCulture3 from './languages/yukaghir/cultureFood/image3.jpg';
-import imgCulture4 from './languages/yukaghir/cultureFood/image4.jpg';
-
-import Bubble from './components/Bubble';
-
-import ringer from './sounds/misc/ring06.wav';
 
 function PlaceholderPage() {
     const {setView} = useContext(ViewContext);
