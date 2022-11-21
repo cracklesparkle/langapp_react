@@ -64,6 +64,8 @@ import audio20 from "./languages/yukaghir/clothes/audio/20. обувь.mp3";
 import audio21 from "./languages/yukaghir/clothes/audio/21. шарфик.mp3";
 import audio22 from "./languages/yukaghir/clothes/audio/22 штаны брюки.mp3";
 
+import SoundButton from './components/SoundButton';
+
 const data = [
         {
             "header": "Wадун чии хандьэльэ, лэwэйльэ сукунньэҥи.",
@@ -256,7 +258,10 @@ function Text({props}){
                 <div className='row'>
                     <Images props={props.images}/>
                     <div className='info'>
-                        <h1>{props.header}</h1>
+                        <div className='audio-text'>
+                            <SoundButton audio={props.audio}/>
+                            <h1>{props.header}</h1>
+                        </div>
                         <h1>{props.subheader}</h1>
                     </div>
                 </div>
@@ -268,7 +273,10 @@ function Text({props}){
             <div className='cloth'>
                 <div className='row'>
                     <div className='info'>
-                        <h1>{props.header}</h1>
+                        <div className='audio-text'>
+                            <SoundButton audio={props.audio}/>
+                            <h1>{props.header}</h1>
+                        </div>
                         <h1>{props.subheader}</h1>
                     </div>
                     <Images props={props.images}/>
@@ -282,7 +290,10 @@ function Text({props}){
             <div className='cloth'>
                 <div className='column'>
                     <div className='info'>
-                        <h1>{props.header}</h1>
+                        <div className='audio-text'>
+                            <SoundButton audio={props.audio}/>
+                            <h1>{props.header}</h1>
+                        </div>
                         <h1>{props.subheader}</h1>
                     </div>
                     <Images props={props.images}/>
@@ -296,7 +307,10 @@ function Text({props}){
                 <div className='column'>
                     <Images props={props.images}/>
                     <div className='info'>
-                        <h1>{props.header}</h1>
+                        <div className='audio-text'>
+                            <SoundButton audio={props.audio}/>
+                            <h1>{props.header}</h1>
+                        </div>
                         <h1>{props.subheader}</h1>
                     </div>
                 </div>
@@ -328,28 +342,12 @@ function Clothes() {
                         {/* {page == 0 && <Page1/>} */}
                         <div className='culture'>
                            <h1 className='header'>О национальной одежде юкагиров</h1>
-                           <Text props={data[0]}/>
-                           <Text props={data[1]}/>
-                           <Text props={data[2]}/>
-                           <Text props={data[3]}/>
-                           <Text props={data[4]}/>
-                           <Text props={data[5]}/>
-                           <Text props={data[6]}/>
-                           <Text props={data[7]}/>
-                           <Text props={data[8]}/>
-                           <Text props={data[9]}/>
-                           <Text props={data[10]}/>
-                           <Text props={data[11]}/>
-                           <Text props={data[12]}/>
-                           <Text props={data[13]}/>
-                           <Text props={data[14]}/>
-                           <Text props={data[15]}/>
-                           <Text props={data[16]}/>
-                           <Text props={data[17]}/>
-                           <Text props={data[18]}/>
-                           <Text props={data[19]}/>
-                           <Text props={data[20]}/>
-                           <Text props={data[21]}/>
+                           {data.map((e, i) => {
+                                return (
+                                            <Text props={e} key={i}/>
+                                        );
+                                })
+                            }
                         </div>
                         
                     </div>

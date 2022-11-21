@@ -128,10 +128,8 @@ import audio85 from "./languages/yukaghir/nature/audio/85. щука.mp3";
 import audio86 from "./languages/yukaghir/nature/audio/86. у щуки много зубов.mp3";
 import audio87 from "./languages/yukaghir/nature/audio/87. налим.mp3";
 
-
 import ringer from './sounds/misc/ring06.wav';
 import SoundButton from './components/SoundButton';
-
 
 const Sound = () => {
     const audio = new Audio(ringer);
@@ -196,7 +194,7 @@ function Earth(){
         <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}} className='earth'>
             <div className='aside'>
                 <div className='block'>
-                    <div className='asiderow'>
+                    <div className='audio-text'>
                         <SoundButton audio={ringer}/>
                         <h1>Лукул</h1>
                     </div>
@@ -207,7 +205,7 @@ function Earth(){
                 </div>
         
                 <div className='block'>
-                <div className='asiderow'>
+                <div className='audio-text'>
                         <SoundButton audio={ringer}/>
                     <h1>Лэwэйнбурэбэ</h1>
                     </div>
@@ -218,7 +216,7 @@ function Earth(){
                 </div>
         
                 <div className='block'>
-                <div className='asiderow'>
+                <div className='audio-text'>
                         <SoundButton audio={ringer}/>
                     <h1>Лаwйэ</h1>
                     </div>
@@ -231,7 +229,7 @@ function Earth(){
             
             <div className='aside'>
                 <div className='block'>
-                <div className='asiderow'>
+                <div className='audio-text'>
                         <SoundButton audio={ringer}/>
                     <h1>Өнидьэ</h1>
                     </div>
@@ -242,7 +240,7 @@ function Earth(){
                 </div>
                 
                 <div className='block'>
-                <div className='asiderow'>
+                <div className='audio-text'>
                         <SoundButton audio={ringer}/>
                     <h1>Йоссо</h1>
                     </div>
@@ -253,7 +251,7 @@ function Earth(){
                 </div>
                 
                 <div className='block'>
-                <div className='asiderow'>
+                <div className='audio-text'>
                         <SoundButton audio={ringer}/>
                     <h1>Саал</h1>
                     </div>
@@ -266,7 +264,7 @@ function Earth(){
             
             <div className='aside'>
                 <div className='block'>
-                <div className='asiderow'>
+                <div className='audio-text'>
                         <SoundButton audio={ringer}/>
                         </div>
                     <h1>Чаwул</h1>
@@ -277,7 +275,7 @@ function Earth(){
                 </div>
         
                 <div className='block'>
-                <div className='asiderow'>
+                <div className='audio-text'>
                         <SoundButton audio={ringer}/>
                     <h1>Эну</h1>
                     </div>
@@ -288,7 +286,7 @@ function Earth(){
                 </div>
         
                 <div className='block'>
-                <div className='asiderow'>
+                <div className='audio-text'>
                         <SoundButton audio={ringer}/>
                     <h1>Йалҕил</h1>
                 </div>
@@ -301,7 +299,7 @@ function Earth(){
             
             <div className='aside'>
                 <div className='block'>
-                <div className='asiderow'>
+                <div className='audio-text'>
                         <SoundButton audio={ringer}/>
                     <h1>Йуорпурэ</h1>
                     </div>
@@ -312,7 +310,7 @@ function Earth(){
                 </div>
         
                 <div className='block'>
-                <div className='asiderow'>
+                <div className='audio-text'>
                         <SoundButton audio={ringer}/>
                     <h1>Анаа</h1>
                     </div>
@@ -325,63 +323,43 @@ function Earth(){
             
     
             <div className='block'>
-            <div className='asiderow'>
+            <div className='audio-text'>
                         <SoundButton audio={ringer}/>
                 <h1>Лукулҕа пойуодьэ нотинэй льуолуол льэй.</h1>
                 </div>
                 <h3>На Земле есть много красивых мест.</h3>
-                {/* <div className='image'>
-                    <img src={imgPlace1}></img>
-                    <img src={imgPlace2}></img>
-                    <img src={imgPlace3}></img>
-                    <img src={imgPlace4}></img>
-                </div> */}
             </div>
     
             <div className='block'>
-            <div className='asiderow'>
+            <div className='audio-text'>
                         <SoundButton audio={ringer}/>
                 <h1>Лукулҕа пойуодьэ пулгидьилэ льэй.  </h1>
                 </div>
                 <h3>На земле есть много растений.</h3>
-                
-                
-                {/* <div className='image'>
-                    <img src={imgAnimals}></img>
-                </div> */}
             </div>
             
             <div className='block'>
-            <div className='asiderow'>
+            <div className='audio-text'>
                         <SoundButton audio={ringer}/>
             <h1>Мит лукулҕа көдьэпэ, уйэньэйрукунпэ, йэлукунугурчэндьэрукунпэ эннуҥи.</h1>
             </div>
                 <h3>На нашей земле живут насекомые, птицы, животные.</h3>
-                {/* <div className='image'>
-                    <img src={imgSaveNature}></img>
-                </div> */}
             </div>
 
             <div className='block'>
-            <div className='asiderow'>
-                        <SoundButton audio={ringer}/>
-            <h1>Лукул – мит нимэ.</h1>
-            </div>
+                <div className='audio-text'>
+                    <SoundButton audio={ringer}/>
+                    <h1>Лукул – мит нимэ.</h1>
+                </div>
                 <h3>Земля - наш дом</h3>
-                {/* <div className='image'>
-                    <img src={imgSaveNature}></img>
-                </div> */}
             </div>
 
             <div className='block'>
-            <div className='asiderow'>
+            <div className='audio-text'>
                         <SoundButton audio={ringer}/>
                 <h1>Мит Лукул нотинэй, чайлэндьэ wиэҕа!</h1>
                 </div>
                 <h3>Сохраним нашу Планету красивой и чистой!</h3>
-                {/* <div className='image'>
-                    <img src={imgSaveNature}></img>
-                </div> */}
             </div>
         </motion.div>
       )
