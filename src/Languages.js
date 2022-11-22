@@ -30,7 +30,10 @@ function Languages(props){
                     <div className='allLanguages'>
                         <img src={allLanguagesSvg} className='rotate'></img>
                     </div>
-                    <h2>ВЫБЕРИТЕ ЯЗЫК ДЛЯ ИЗУЧЕНИЯ:</h2>
+                    <div className='chooseLang'>
+                        <h2>ВЫБЕРИТЕ ЯЗЫК ДЛЯ ИЗУЧЕНИЯ:</h2>
+                    </div>
+                    
                     <div className='buttonsContainer'>
                             <LanguageCard language={languages[0]} colorId='coloredCard1' langId={0}/>
                             <LanguageCard language={languages[1]} colorId='coloredCard2' langId={1}/>

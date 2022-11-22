@@ -2,12 +2,11 @@ import React, {useContext, useState} from 'react';
 
 import {motion} from 'framer-motion';
 import { ViewContext } from './ViewContext';
-
+import Button from './components/Button';
 import imgCulture1 from './languages/yukaghir/cultureFood/image1.jpg';
 import imgCulture2 from './languages/yukaghir/cultureFood/image2.jpg';
 import imgCulture3 from './languages/yukaghir/cultureFood/image3.jpg';
 import imgCulture4 from './languages/yukaghir/cultureFood/image4.jpg';
-
 import video from './languages/yukaghir/tale/tale.mp4';
 
 function Tale() {
@@ -37,7 +36,8 @@ function Tale() {
 
         </div>
                     <div className="bottomNavbar">
-                        <button className='buttonLearn' onClick={handleClick}>Вернуться к темам</button>
+                        {/* <button className='buttonLearn' onClick={handleClick}>Вернуться к темам</button> */}
+                        <Button text='Вернуться к темам' handleClick={handleClick}/>
                     </div>
         </ViewContext.Provider>
 

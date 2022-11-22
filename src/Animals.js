@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react';
 
 import {motion} from 'framer-motion';
 import { ViewContext } from './ViewContext';
+import Button from './components/Button';
 
 import imgAnimal1 from './languages/yukaghir/animals/image1.jpg';
 import imgAnimal2 from './languages/yukaghir/animals/image2.jpg';
@@ -63,7 +64,8 @@ function Animals() {
                         {page == 1 && <Birds/>}
                     </div>
                     <div className="bottomNavbar">
-                        <button className='buttonLearn' onClick={handleClick}>Далее</button>
+                        {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
+                        <Button text='Далее' handleClick={handleClick}/>
                     </div>
         </ViewContext.Provider>
 

@@ -12,19 +12,23 @@ import {BrowserRouter as Router} from 'react-router-dom';
 
 import { ViewContext } from './ViewContext';
 
+import Background1 from './languages/bg/background1.jpeg';
+
 const TypeScreen = ['home', 'languageSelect', 'subjectSelect', 'introductionView', 'greetingView', 'familyView', 'natureView', 'animalsView', 'cultureFoodView', 'clothesView', 'taleView', 'folkloreView', 'famousPeopleView', 'placeholderView']
 
 function App(){
     const [currentView, setView] = useState(TypeScreen[1]);
-
+    // style={{backgroundImage: `url(${Background1})`, backgroundSize:"cover", backgroundPosition: "center"}}
     return (
         <div className='app'>
+            <img className='appBackground' src={Background1}></img>
             <Router>
                 <ViewContext.Provider value={{currentView, setView}}>
                     <NavBar />
                     <Home/>
                 </ViewContext.Provider>
             </Router>
+            
         </div>
     );
 }

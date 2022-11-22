@@ -2,6 +2,7 @@ import React, {useContext, useState, useRef} from 'react';
 
 import {motion} from 'framer-motion';
 import { ViewContext } from './ViewContext';
+import Button from './components/Button';
 
 import imgEarth from './languages/yukaghir/nature/image1.png';
 import imgNature from './languages/yukaghir/nature/image2.png';
@@ -176,12 +177,15 @@ function Nature() {
   return (
     <motion.div className='naturePage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
         <ViewContext.Provider value={{setView}} >
+            
         <div className="container">
+                    <h1 className='header'>Природа</h1>
                         {page == 0 && <Earth/>}
                         {page == 1 && <Plants/>}
                     </div>
                     <div className="bottomNavbar">
-                        <button className='buttonLearn' onClick={handleClick}>Далее</button>
+                        {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
+                        <Button text='Далее' handleClick={handleClick}/>
                     </div>
         </ViewContext.Provider>
                     
@@ -195,7 +199,7 @@ function Earth(){
             <div className='aside'>
                 <div className='block'>
                     <div className='audio-text'>
-                        <SoundButton audio={ringer}/>
+                        <SoundButton audio={audio1}/>
                         <h1>Лукул</h1>
                     </div>
                     <h3>Земля</h3>
@@ -206,7 +210,7 @@ function Earth(){
         
                 <div className='block'>
                 <div className='audio-text'>
-                        <SoundButton audio={ringer}/>
+                        <SoundButton audio={audio3}/>
                     <h1>Лэwэйнбурэбэ</h1>
                     </div>
                     <h3>Родина. Природа</h3>
@@ -217,7 +221,7 @@ function Earth(){
         
                 <div className='block'>
                 <div className='audio-text'>
-                        <SoundButton audio={ringer}/>
+                        <SoundButton audio={audio4}/>
                     <h1>Лаwйэ</h1>
                     </div>
                     <h3>Вода</h3>
@@ -230,7 +234,7 @@ function Earth(){
             <div className='aside'>
                 <div className='block'>
                 <div className='audio-text'>
-                        <SoundButton audio={ringer}/>
+                        <SoundButton audio={audio5}/>
                     <h1>Өнидьэ</h1>
                     </div>
                     <h3>Земля, песок.</h3>
@@ -241,7 +245,7 @@ function Earth(){
                 
                 <div className='block'>
                 <div className='audio-text'>
-                        <SoundButton audio={ringer}/>
+                        <SoundButton audio={audio6}/>
                     <h1>Йоссо</h1>
                     </div>
                     <h3>Мерзлота</h3>
@@ -252,7 +256,7 @@ function Earth(){
                 
                 <div className='block'>
                 <div className='audio-text'>
-                        <SoundButton audio={ringer}/>
+                        <SoundButton audio={audio7}/>
                     <h1>Саал</h1>
                     </div>
                     <h3>Дерево</h3>
@@ -265,7 +269,7 @@ function Earth(){
             <div className='aside'>
                 <div className='block'>
                 <div className='audio-text'>
-                        <SoundButton audio={ringer}/>
+                        <SoundButton audio={audio8}/>
                         </div>
                     <h1>Чаwул</h1>
                     <h3>Море, океан</h3>
@@ -276,7 +280,7 @@ function Earth(){
         
                 <div className='block'>
                 <div className='audio-text'>
-                        <SoundButton audio={ringer}/>
+                        <SoundButton audio={audio9}/>
                     <h1>Эну</h1>
                     </div>
                     <h3>Река</h3>
@@ -287,7 +291,7 @@ function Earth(){
         
                 <div className='block'>
                 <div className='audio-text'>
-                        <SoundButton audio={ringer}/>
+                        <SoundButton audio={audio10}/>
                     <h1>Йалҕил</h1>
                 </div>
                     <h3>Озеро</h3>
@@ -300,7 +304,7 @@ function Earth(){
             <div className='aside'>
                 <div className='block'>
                 <div className='audio-text'>
-                        <SoundButton audio={ringer}/>
+                        <SoundButton audio={audio11}/>
                     <h1>Йуорпурэ</h1>
                     </div>
                     <h3>Тундра</h3>
@@ -311,7 +315,7 @@ function Earth(){
         
                 <div className='block'>
                 <div className='audio-text'>
-                        <SoundButton audio={ringer}/>
+                        <SoundButton audio={audio12}/>
                     <h1>Анаа</h1>
                     </div>
                     <h3>Гора</h3>
@@ -324,7 +328,7 @@ function Earth(){
     
             <div className='block'>
             <div className='audio-text'>
-                        <SoundButton audio={ringer}/>
+                        <SoundButton audio={audio13}/>
                 <h1>Лукулҕа пойуодьэ нотинэй льуолуол льэй.</h1>
                 </div>
                 <h3>На Земле есть много красивых мест.</h3>
@@ -340,7 +344,7 @@ function Earth(){
             
             <div className='block'>
             <div className='audio-text'>
-                        <SoundButton audio={ringer}/>
+                        <SoundButton audio={audio14}/>
             <h1>Мит лукулҕа көдьэпэ, уйэньэйрукунпэ, йэлукунугурчэндьэрукунпэ эннуҥи.</h1>
             </div>
                 <h3>На нашей земле живут насекомые, птицы, животные.</h3>
@@ -356,7 +360,7 @@ function Earth(){
 
             <div className='block'>
             <div className='audio-text'>
-                        <SoundButton audio={ringer}/>
+                        <SoundButton audio={audio15}/>
                 <h1>Мит Лукул нотинэй, чайлэндьэ wиэҕа!</h1>
                 </div>
                 <h3>Сохраним нашу Планету красивой и чистой!</h3>
@@ -372,36 +376,54 @@ function Plants(){
 
             </div>
             <div className='block'>
+            <div className='audio-text'>
+                    <SoundButton audio={audio16}/>
                 <h1>Пулгидьилэпэ</h1>
-                <h1>Растения</h1>
-                <div className='image'>
-                    <img src={imgPlant1}></img>
                 </div>
+                <h1>Растения</h1>
+                
             </div>
 
             <div className='aside'>
             <div className='block'>
+            <div className='audio-text'>
+                    <SoundButton audio={audio17}/>
                 <h1>Ульэгэ</h1>
+                </div>
                 <h3>Трава</h3>
+                <div className='audio-text'>
+                    <SoundButton audio={audio18}/>
                 <p>Ульэгэ хомоньэй. Трава зелёная.</p>
+                </div>
                 <div className='image'>
                     <img src={imgPlant2}></img>
                 </div>
             </div>
     
-            <div className='block'>
+            <div className='block'><div className='audio-text'>
+                    <SoundButton audio={audio19}/>
                 <h1>Хаҕимэwуол</h1>
+                </div>
                 <h3>Багульник</h3>
+                <div className='audio-text'>
+                    <SoundButton audio={audio20}/>
                 <p>У багульника белые цветы. Хаҕимэwуол пулгидьилэги ньааwэй.</p>
+                </div>
                 <div className='image'>
                     <img src={imgPlant3}></img>
                 </div>
             </div>
     
             <div className='block'>
+            <div className='audio-text'>
+                    <SoundButton audio={audio21}/>
                 <h1>Пулгидьилэ</h1>
+                </div>
                 <h3>Цветок</h3>
+                <div className='audio-text'>
+                    <SoundButton audio={audio22}/>
                 <p>Пөдьэлдэ амучэ пулгидьилэк. Цветок с приятным запахом.</p>
+                </div>
                 <div className='image'>
                     <img src={imgPlant4}></img>
                 </div>
@@ -411,16 +433,25 @@ function Plants(){
             
             <div className='aside'>
             <div className='block'>
+            <div className='audio-text'>
+                    <SoundButton audio={audio23}/>
                 <h1>Саал</h1>
+                </div>
                 <h3>Дерево</h3>
+                <div className='audio-text'>
+                    <SoundButton audio={audio24}/>
                 <p>Саал хомоньэй. Дерево зеленое.</p>
+                </div>
                 <div className='image'>
                     <img src={imgPlant5}></img>
                 </div>
             </div>
     
             <div className='block'>
+            <div className='audio-text'>
+                    <SoundButton audio={audio25}/>
                 <h1>Йаа(ҥ)</h1>
+                </div>
                 <h3>Берёза</h3>
                 <div className='image'>
                     <img src={imgPlant6}></img>
@@ -428,9 +459,15 @@ function Plants(){
             </div>
     
             <div className='block'>
+            <div className='audio-text'>
+                    <SoundButton audio={audio26}/>
                 <h1>Морхэ</h1>
+                </div>
                 <h3>Карликовая берёза</h3>
+                <div className='audio-text'>
+                    <SoundButton audio={audio27}/>
                 <p>Морхэ йуорпурэҕа пулгэйнуни. Карликовая береза растет в тундре.</p>
+                </div>
                 <div className='image'>
                     <img src={imgPlant7}></img>
                 </div>
@@ -440,27 +477,45 @@ function Plants(){
         
             <div className='aside'>
             <div className='block'>
+            <div className='audio-text'>
+                    <SoundButton audio={audio28}/>
                 <h1>Ньанмэ</h1>
+                </div>
                 <h3>Тальник, ива, верба</h3>
+                <div className='audio-text'>
+                    <SoundButton audio={audio29}/>
                 <p>Ньанмэролхэ. Заросли тальника.</p>
+                </div>
                 <div className='image'>
                     <img src={imgPlant8}></img>
                 </div>
             </div>
     
             <div className='block'>
+            <div className='audio-text'>
+                    <SoundButton audio={audio30}/>
                 <h1>Ньамучэндьэ пуриэ</h1>
+                </div>
                 <h3>Брусника</h3>
+                <div className='audio-text'>
+                    <SoundButton audio={audio31}/>
                 <p>Ньамучэндьэ пуриэ ньамучэньи. Брусника красного цвета.</p>
+                </div>
                 <div className='image'>
                     <img src={imgPlant9}></img>
                 </div>
             </div>
     
             <div className='block'>
+            <div className='audio-text'>
+                    <SoundButton audio={audio32}/>
                 <h1>Хомоньэй пуриэ</h1>
+                </div>
                 <h3>Голубика</h3>
+                <div className='audio-text'>
+                    <SoundButton audio={audio33}/>
                 <p>Хомоньэй пуриэ ньанбэличэ пуриэ. Голубика - вкусная ягода</p>
+                </div>
                 <div className='image'>
                     <img src={imgPlant10}></img>
                 </div>
@@ -470,27 +525,45 @@ function Plants(){
 
             <div className='aside'>
             <div className='block'>
+            <div className='audio-text'>
+                    <SoundButton audio={audio34}/>
                 <h1>Ньоронпуриэ</h1>
+                </div>
                 <h3>Морошка</h3>
+                <div className='audio-text'>
+                    <SoundButton audio={audio35}/>
                 <p>Ньоронпуриэ йуорпурэҕа пулгэйнуни. Морошка растет в тундре.</p>
+                </div>
                 <div className='image'>
                     <img src={imgPlant11}></img>
                 </div>
             </div>
     
             <div className='block'>
+            <div className='audio-text'>
+                    <SoundButton audio={audio36}/>
                 <h1>Тороньэй пуриэ</h1>
+                </div>
                 <h3>Шикша, черника.</h3>
+                <div className='audio-text'>
+                    <SoundButton audio={audio37}/>
                 <p>Тороньэй пуриэ мэ тороньэй. Шикша черного цвета.</p>
+                </div>
                 <div className='image'>
                     <img src={imgPlant12}></img>
                 </div>
             </div>
     
             <div className='block'>
+            <div className='audio-text'>
+                    <SoundButton audio={audio38}/>
                 <h1>Хапньэпуриэ</h1>
+                </div>
                 <h3>Смородина</h3>
+                <div className='audio-text'>
+                    <SoundButton audio={audio39}/>
                 <p>Хапньэбуриэ амутнэҥ wалдьич. Смородина очень кислая.</p>
+                </div>
                 <div className='image'>
                     <img src={imgPlant13}></img>
                     
@@ -500,7 +573,12 @@ function Plants(){
             
 
             <div className='block'>
+            <div className='audio-text'>
+            <div className='audio-text'>
+                    <SoundButton audio={audio40}/>
                 <h1>Самналдаҥньэ</h1>
+                </div>
+                </div>
                 <h3>Гриб</h3>
                 <div className='image'>
                     <img src={imgPlant15}></img>

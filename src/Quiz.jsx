@@ -11,10 +11,10 @@ import questions from "./questions.json";
 
 import {motion} from 'framer-motion';
 
-import boy_1 from './languages/yukaghir/greeting/b_1.png';
-import girl_1 from './languages/yukaghir/greeting/g_1.png';
-import boy_2 from './languages/yukaghir/greeting/b_2.png';
-import girl_2 from './languages/yukaghir/greeting/g_2.png';
+import boy_1 from './languages/yukaghir/greeting/b_left.png';
+import girl_1 from './languages/yukaghir/greeting/g_left.png';
+import boy_2 from './languages/yukaghir/greeting/b_right.png';
+import girl_2 from './languages/yukaghir/greeting/g_right.png';
 
 
 import ringer from './sounds/misc/ring06.wav';

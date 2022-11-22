@@ -2,7 +2,8 @@ import React, {useContext, useState} from 'react';
 
 import {motion} from 'framer-motion';
 import { ViewContext } from './ViewContext';
-
+import Button from './components/Button';
+import SoundButton from './components/SoundButton';
 
 import imgMember1 from './languages/yukaghir/family/image1.png';
 import imgMember2 from './languages/yukaghir/family/image2.png';
@@ -48,7 +49,154 @@ import audio32 from "./languages/yukaghir/family/audio/32. невестка жи
 import audio33 from "./languages/yukaghir/family/audio/33. зять муж сестры.mp3";
 import audio34 from "./languages/yukaghir/family/audio/34. зятя зовут дима.mp3";
 
-import SoundButton from './components/SoundButton';
+const data = [
+    {
+        "header1": "Мама",
+        "subheader1": "Эньиэ",
+        "audio1": audio1,
+        "header2": "Маму зовут Анна.",
+        "subheader2": "Эньиэ кирийэ Анна.",
+        "audio2": audio2,
+        "images": [imgMember5]
+    },
+    {
+        "header1": "Папа",
+        "subheader1": "Амаа",
+        "audio1": audio3,
+        "header2": "Папу зовут Николай",
+        "subheader2": "Эньиэ кирийэ Николай.",
+        "audio2": audio4,
+        "images": [imgMember6]
+    },
+    {
+        "header1": "Бабушка",
+        "subheader1": "Абучиэ",
+        "audio1": audio5,
+        "header2": "Бабушка красиво поёт",
+        "subheader2": "Абучиэ амутнэ йахтаануй",
+        "audio2": audio6,
+        "images": [imgMember2]
+    },
+    {
+        "header1": "Дедушка",
+        "subheader1": "Хайчиэ",
+        "audio1": audio7,
+        "header2": "Мой дедушка рыбак",
+        "subheader2": "Мэт хайчиэ саабандьэбаниэчэ.",
+        "audio2": audio8,
+        "images": [imgMember3]
+    },
+    {
+        "header1": "Старший брат",
+        "subheader1": "Акаа",
+        "audio1": audio9,
+        "header2": "Мой старший брат учится в десятом классе",
+        "subheader2": "Мэт акаа кунильисчэ классха ураануй.",
+        "audio2": audio10,
+        "images": [imgMember6]
+    },
+    {
+        "header1": "Старшая сестра",
+        "subheader1": "Экыа",
+        "audio1": audio11,
+        "header2": "Старшая сестра учится в университете",
+        "subheader2": "Экыа университетха ураануй",
+        "audio2": audio12,
+        "images": [imgMember8]
+    },
+    {
+        "header1": "Младший брат, сестра",
+        "subheader1": "Эмдьэ",
+        "audio1": audio13,
+        "header2": "Моя сестрёнка учится в четвертом классе",
+        "subheader2": "Мэт эмдьэ йэлэклисчэ классха ураануй",
+        "audio2": audio14,
+        "images": [imgMember4, imgMember7]
+    }
+]
+
+const data1 = [
+    {
+        "header1": "Дядя (старший брат мамы)",
+        "subheader1": "Хаwдьаа",
+        "audio1": audio15,
+        "header2": "Дядя работает на электростанции",
+        "subheader2": "Xawдьаа электростанцияҕа чаҕадьаануй",
+        "audio2": audio16
+    },
+    {
+        "header1": "Дядя (младший брат мамы)",
+        "subheader1": "Хаwдьидиэ",
+        "audio1": audio17,
+        "header2": "Дядя работает в ЖКХ",
+        "subheader2": "Xawдьидиэ ЖКХҕа чаҕадьаануй",
+        "audio2": audio18
+    },
+    {
+        "header1": "Тётя (старшая сестра мамы)",
+        "subheader1": "Чамийа",
+        "audio1": audio19,
+        "header2": "Моя тётя врач",
+        "subheader2": "Мэт чамийа амаладьаачэ",
+        "audio2": audio20
+    },
+    {
+        "header1": "Тётя (младшая сестра мамы)",
+        "subheader1": "Йаадиэ",
+        "audio1": audio21,
+        "header2": "У тёти трое детей",
+        "subheader2": "Йаадиэ йаан уоньэй",
+        "audio2": audio22
+    },
+    {
+        "header1": "Дядя (старший брат папы)",
+        "subheader1": "Чумуочиэ",
+        "audio1": audio23,
+        "header2": "Дядя учитель русского языка",
+        "subheader2": "Чумуочиэ waawэч аруу ураричиичэлэҥ",
+        "audio2": audio24
+    },
+    {
+        "header1": "Дядя (младший брат папы)",
+        "subheader1": "Өчидиэ",
+        "audio1": audio25,
+        "header2": "Мой дядя спортсмен",
+        "subheader2": "Мэт өчидиэ спортсменлэҥ",
+        "audio2": audio26
+    },
+    {
+        "header1": "Тётя (старшая сестра папы)",
+        "subheader1": "Эпиэ",
+        "audio1": audio27,
+        "header2": "Тётя работает в детском саду, она бухгалтер",
+        "subheader2": "Эпиэ детсадха чаҕадьаануй, тудэл бухгалтер",
+        "audio2": audio28
+    },
+    {
+        "header1": "Тётя (младшая сестра папы)",
+        "subheader1": "Эwдьуо",
+        "audio1": audio29,
+        "header2": "Моя тётя швея",
+        "subheader2": "Мэт эwдьуо иҥдьийиэ",
+        "audio2": audio30
+    },
+    {
+        "header1": "Невестка (жена брата)",
+        "subheader1": "Иидиэ",
+        "audio1": audio31,
+        "header2": "Невестка живет в Москве",
+        "subheader2": "Иидиэ Москваҕа эннуй",
+        "audio2": audio32
+    },
+    {
+        "header1": "Зять (муж сестры)",
+        "subheader1": "Пулийэ",
+        "audio1": audio33,
+        "header2": "Зятя зовут Дима",
+        "subheader2": "Мэт пулийэ кирийэ Дима",
+        "audio2": audio34
+    }
+]
 
 function Family() {
     const {setView} = useContext(ViewContext);
@@ -74,12 +222,15 @@ function Family() {
   return (
     <motion.div className='familyPage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
         <ViewContext.Provider value={{setView}}>
+        
         <div className="container">
+                    <h1 className='header'>Семья</h1>
                         {page == 0 && <Page1/>}
                         {page == 1 && <Page2/>}
                     </div>
                     <div className="bottomNavbar">
-                        <button className='buttonLearn' onClick={handleClick}>Далее</button>
+                        {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
+                        <Button text='Далее' handleClick={handleClick}/>
                     </div>
         </ViewContext.Provider>
 
@@ -87,329 +238,96 @@ function Family() {
   )
 }
 
+function FamilyMember({props}){
+    return(
+        <div className='member'>
+            {/* <img className='memberImg' src={imgMember5}></img> */}
+            <Images props={props.images}/>
+            <div className='asideKeepLeft'>
+                <div className='asideKeep'>
+                    <SoundButton audio={props.audio1}/>
+                    <div className='asideVert'>
+                        <h3 className='a'>{props.header1}</h3>
+                        <p>{props.subheader1}</p>
+                    </div>
+                </div>
+                <div className='asideKeep'>
+                    <SoundButton audio={props.audio2}/>
+                    <div className='asideVert'>
+                        <h3 className='a'>{props.header2}</h3>
+                        <p>{props.subheader2}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+function OtherFamilyMember({props}){
+    return(
+        <div className='member'>
+            <div className='asideKeepLeft'>
+                <div className='asideKeep'>
+                    <SoundButton audio={props.audio1}/>
+                    <div className='asideVert'>
+                        <h3 className='a'>{props.header1}</h3>
+                        <p>{props.subheader1}</p>
+                    </div>
+                </div>
+                <div className='asideKeep'>
+                    <SoundButton audio={props.audio2}/>
+                    <div className='asideVert'>
+                        <h3 className='a'>{props.header2}</h3>
+                        <p>{props.subheader2}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+function Images({props}){
+    if (props.length > 1){
+        return(
+            <div className='asideKeep'>
+                {props.map((image, i) => {
+                    return (
+                        <img className='memberImg' src={image} key={i}></img>
+                    );
+                })}
+            </div>
+        );
+    }
+    if (props.length == 1){
+        return(
+            props.map((image, i) => {
+                return (
+                    <img className='memberImg' src={image} key={i}></img>
+                );
+            })
+        )
+    }
+}
+
 function Page1(){
     return (
         <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
             <div className='tables'>
                 <div className='family'>
-                        <div className='member'>
-                            <img className='memberImg' src={imgMember5}></img>
-                            <div className='asideKeepLeft'>
-                                <div className='asideKeep'>
-                                    <SoundButton audio={audio1}/>
-                                    <div className='asideVert'>
-                                        <h3 className='a'>Мама</h3>
-                                        <p>Эньиэ</p>
-                                    </div>
-                                </div>
-                                <div className='asideKeep'>
-                                    <SoundButton audio={audio2}/>
-                                    <div className='asideVert'>
-                                        <h3 className='a'>Маму зовут Анна.</h3>
-                                        <p>Эньиэ кирийэ Анна.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div className='member'>
-                            <img className='memberImg' src={imgMember6}></img>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio3}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Папа</h3>
-                                    <p>Амаа</p>
-                                </div>
-                            </div>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio4}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Папу зовут Николай</h3>
-                                    <p>Эньиэ кирийэ Николай.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='member'>
-                            <img className='memberImg' src={imgMember2}></img>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio5}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Бабушка</h3>
-                                    <p>Абучиэ</p>
-                                </div>
-                            </div>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio6}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Бабушка красиво поёт</h3>
-                                    <p>Абучиэ амутнэ йахтаануй</p>
-                                </div>
-                            </div>
-                            </div>
-                        <div className='member'>
-                            <img className='memberImg' src={imgMember3}></img>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio7}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Дедушка</h3>
-                                    <p>Хайчиэ</p>
-                                </div>
-                            </div>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio8}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Мой дедушка рыбак</h3>
-                                    <p>Мэт хайчиэ саабандьэбаниэчэ</p>
-                                </div>
-                            </div>
-                            </div>
-                        <div className='member'>
-                            <img className='memberImg' src={imgMember6}></img>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio9}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Старший брат</h3>
-                                    <p>Акаа</p>
-                                </div>
-                            </div>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio10}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Мой старший брат учится в десятом классе</h3>
-                                    <p>Мэт акаа кунильисчэ классха ураануй</p>
-                                </div>
-                            </div>
-                            </div>
-                        <div className='member'>
-                            <img className='memberImg' src={imgMember8}></img>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio11}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Старшая сестра</h3>
-                                    <p>Экыа</p>
-                                </div>
-                            </div>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio12}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Старшая сестра учится в университете</h3>
-                                    <p>Экыа университетха ураануй</p>
-                                </div>
-                            </div>
-                            </div>
-                        <div className='member'>
-                            <div className='asideKeep'>
-                            <img className='memberImg' src={imgMember4}></img>
-                            <img className='memberImg' src={imgMember7}></img>
-                            </div>
-                            
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio13}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Младший брат, сестра</h3>
-                                    <p>Эмдьэ</p>
-                                </div>
-                            </div>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio14}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Моя сестрёнка учится в четвертом классе</h3>
-                                    <p>Мэт эмдьэ йэлэклисчэ классха ураануй</p>
-                                </div>
-                            </div>
-                            </div>
-                        
+                        {data.map((e, i) => {
+                                return (
+                                        <FamilyMember props={e} key={i}/>
+                                    );
+                                })
+                        }
                     </div>
                 <div className='otherMembers'>
-                        <div className='member'>
-                            <div className='asideKeepLeft'>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio15}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Дядя (старший брат мамы)</h3>
-                                    <p>Хаwдьаа</p>
-                                </div>
-                            </div>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio16}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Дядя работает на электростанции</h3>
-                                    <p>Xawдьаа электростанцияҕа чаҕадьаануй</p>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div className='member'>
-                            {/* <img className='memberImg' src={imgMember1}></img> */}
-                            <div className='asideKeepLeft'>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio17}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Дядя (младший брат мамы)</h3>
-                                    <p>Хаwдьидиэ</p>
-                                </div>
-                            </div>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio18}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Дядя работает в ЖКХ</h3>
-                                    <p>Xawдьидиэ ЖКХҕа чаҕадьаануй</p>
-                                </div>
-                            </div>
-                            </div>
-                            </div>
-                        <div className='member'>
-                            {/* <img className='memberImg' src={imgMember1}></img> */}
-                            <div className='asideKeepLeft'>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio19}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Тётя (старшая сестра мамы)</h3>
-                                    <p>Чамийа</p>
-                                </div>
-                            </div>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio20}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Моя тётя врач</h3>
-                                    <p>Мэт чамийа амаладьаачэ</p>
-                                </div>
-                            </div>
-                            </div>
-                            </div>
-                        <div className='member'>
-                            {/* <img className='memberImg' src={imgMember1}></img> */}
-                            <div className='asideKeepLeft'>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio21}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Тётя (младшая сестра мамы)</h3>
-                                    <p>Йаадиэ</p>
-                                </div>
-                            </div>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio22}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>У тёти трое детей</h3>
-                                    <p>Йаадиэ йаан уоньэй</p>
-                                </div>
-                            </div>
-                            </div>
-                        </div>    
-                        <div className='member'>
-                            {/* <img className='memberImg' src={imgMember1}></img> */}
-                            <div className='asideKeepLeft'>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio23}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Дядя (старший брат папы)</h3>
-                                    <p>Чумуочиэ</p>
-                                </div>
-                            </div>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio24}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Дядя учитель русского языка</h3>
-                                    <p>Чумуочиэ waawэч аруу ураричиичэлэҥ</p>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div className='member'>
-                            {/* <img className='memberImg' src={imgMember1}></img> */}
-                            <div className='asideKeepLeft'>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio25}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Дядя (младший брат папы)</h3>
-                                    <p>Өчидиэ</p>
-                                </div>
-                            </div>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio26}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Мой дядя спортсмен</h3>
-                                    <p>Мэт өчидиэ спортсменлэҥ</p>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div className='member'>
-                            {/* <img className='memberImg' src={imgMember1}></img> */}
-                            <div className='asideKeepLeft'>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio27}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Тётя (старшая сестра папы)</h3>
-                                    <p>Эпиэ</p>
-                                </div>
-                            </div>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio28}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Тётя работает в детском саду, она бухгалтер</h3>
-                                    <p>Эпиэ детсадха чаҕадьаануй, тудэл бухгалтер</p>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div className='member'>
-                            {/* <img className='memberImg' src={imgMember1}></img> */}
-                            <div className='asideKeepLeft'>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio29}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Тётя (младшая сестра папы)</h3>
-                                    <p>Эwдьуо</p>
-                                </div>
-                            </div>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio30}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Моя тётя швея</h3>
-                                    <p>Мэт эwдьуо иҥдьийиэ</p>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div className='member'>
-                            {/* <img className='memberImg' src={imgMember1}></img> */}
-                            <div className='asideKeepLeft'>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio31}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Невестка (жена брата)</h3>
-                                    <p>Иидиэ</p>
-                                </div>
-                            </div>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio32}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Невестка живет в Москве</h3>
-                                    <p>Иидиэ Москваҕа эннуй</p>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div className='member'>
-                            {/* <img className='memberImg' src={imgMember1}></img> */}
-                            <div className='asideKeepLeft'>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio33}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Зять (муж сестры)</h3>
-                                    <p>Пулийэ</p>
-                                </div>
-                            </div>
-                            <div className='asideKeep'>
-                                <SoundButton audio={audio34}/>
-                                <div className='asideVert'>
-                                    <h3 className='a'>Зятя зовут Дима</h3>
-                                    <p>Мэт пулийэ кирийэ Дима</p>
-                                </div>
-                            </div>
-                            </div>
-                            </div>
+                        {data1.map((e, i) => {
+                                return (
+                                        <OtherFamilyMember props={e} key={i}/>
+                                    );
+                                })
+                        }
                 </div>
             </div>
         </motion.div>

@@ -2,7 +2,7 @@ import React, {useContext, useState} from 'react';
 
 import {motion} from 'framer-motion';
 import { ViewContext } from './ViewContext';
-
+import Button from './components/Button';
 
 function PlaceholderPage() {
     const {setView} = useContext(ViewContext);
@@ -36,7 +36,8 @@ function PlaceholderPage() {
 
             </div>
             <div className="bottomNavbar">
-                <button className='buttonLearn' onClick={handleClick}>На главную</button>
+                {/* <motion.button className='buttonLearn' onClick={handleClick} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }}>На главную</motion.button> */}
+                <Button text='На главную' handleClick={handleClick}/>
             </div>
         
 

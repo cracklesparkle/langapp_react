@@ -22,6 +22,8 @@ import React, {useContext, useState, useRef, useEffect} from 'react';
 import {motion} from 'framer-motion';
 import { ViewContext } from './ViewContext';
 
+import Button from './components/Button';
+
 import image1  from './languages/yukaghir/clothes/image1.jpeg';
 import image2  from './languages/yukaghir/clothes/image2.jpeg';
 import image3  from './languages/yukaghir/clothes/image3.jpeg';
@@ -352,7 +354,8 @@ function Clothes() {
                         
                     </div>
                     <div className="bottomNavbar">
-                        <button className='buttonLearn' onClick={handleClick}>Вернуться к темам</button>
+                        {/* <button className='buttonLearn' onClick={handleClick}>Вернуться к темам</button> */}
+                        <Button text='Вернуться к темам' handleClick={handleClick}/>
                     </div>
         </ViewContext.Provider>
 

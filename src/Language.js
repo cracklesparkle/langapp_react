@@ -11,7 +11,10 @@ import yukaghir1_4 from './languages/yukaghir/yukaghir1-4.jpg';
 
 import {Navigate, Link} from 'react-router-dom';
 
+
 import {motion} from 'framer-motion';
+
+import Button from './components/Button';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
@@ -35,12 +38,18 @@ const Language = ({language}) =>{
                         <img className="photo" src={`${yukaghir1}`} alt=""></img>
                     </div> */}
                     <p>{language.Description}</p>
-                    <button onClick={()=> {
+                    {/* <button onClick={()=> {
                         setView('subjectSelect');
                         var key = JSON.parse(localStorage.getItem('1'));
                         key.available = 1;
                         localStorage.setItem(1, JSON.stringify(key));
-                    }} className='buttonLearn'>Перейти к изучению</button>
+                    }} className='buttonLearn'>Перейти к изучению</button> */}
+                    <Button text='Перейти к изучению' handleClick={()=> {
+                        setView('subjectSelect');
+                        var key = JSON.parse(localStorage.getItem('1'));
+                        key.available = 1;
+                        localStorage.setItem(1, JSON.stringify(key));
+                    }}/>
                     <div>
                         <Carousel className='carousel' 
                                 emulateTouch

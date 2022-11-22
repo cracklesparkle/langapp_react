@@ -10,12 +10,15 @@ import imgCulture2 from './languages/yukaghir/cultureFood/image2.jpg';
 import imgCulture3 from './languages/yukaghir/cultureFood/image3.jpg';
 import imgCulture4 from './languages/yukaghir/cultureFood/image4.jpg';
 
-import boy_1 from './languages/yukaghir/greeting/b_1.png';
-import girl_1 from './languages/yukaghir/greeting/g_1.png';
-import boy_2 from './languages/yukaghir/greeting/b_2.png';
-import girl_2 from './languages/yukaghir/greeting/g_2.png';
+import b_left from './languages/yukaghir/greeting/b_left.png';
+import b_right from './languages/yukaghir/greeting/b_right.png';
+import g_left from './languages/yukaghir/greeting/g_left.png';
+import g_right from './languages/yukaghir/greeting/g_right.png';
 
 import Bubble from './components/Bubble';
+
+import Button from './components/Button';
+import SoundButton from './components/SoundButton';
 
 import audio1 from "./languages/yukaghir/greeting/audio/1. доброе утро.mp3";
 import audio2 from "./languages/yukaghir/greeting/audio/2. добрый день.mp3";
@@ -204,7 +207,8 @@ function Greeting() {
                         </div>
             <div className="bottomNavbar">
                 
-                <button className='buttonLearn' onClick={handleClick}>Далее</button>
+                {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
+                <Button text='Далее' handleClick={handleClick}/>
             </div>
         
 
@@ -227,10 +231,10 @@ function Dialogue(props){
 
                         <div className='speechText'>
                             <div className="speech">
-                                <img className="personImage" src={boy_2}></img>
+                                <img className="personImage" src={props.dialogue[0].avatar == 'boy' ? b_left : g_left}></img>
                             </div>
                             <div className="speech">                      
-                                <img className="personImage" src={girl_2}></img>
+                                <img className="personImage" src={props.dialogue[1].avatar == 'boy' ? b_right : g_right}></img>
                             </div>
                         </div>
                             

@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react';
 
 import {motion} from 'framer-motion';
 import { ViewContext } from './ViewContext';
+import Button from './components/Button';
 
 import imgCulture1 from './languages/yukaghir/cultureFood/image1.jpg';
 import imgCulture2 from './languages/yukaghir/cultureFood/image2.jpg';
@@ -66,7 +67,8 @@ function FamousPeople() {
                         {page == 2 && <Third/>}
                     </div>
                     <div className="bottomNavbar">
-                        <button className='buttonLearn' onClick={handleClick}>Далее</button>
+                        {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
+                        <Button text='Далее' handleClick={handleClick}/>
                     </div>
         </ViewContext.Provider>
 
