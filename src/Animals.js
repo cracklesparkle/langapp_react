@@ -52,6 +52,7 @@ function Animals() {
             var key = JSON.parse(localStorage.getItem('5'));
             key.available = 1;
             localStorage.setItem(5, JSON.stringify(key));
+            window.scrollTo(0, 0);
         }
         window.scrollTo(0, 0);
     };

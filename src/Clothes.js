@@ -332,6 +332,7 @@ function Clothes() {
         var key = JSON.parse(localStorage.getItem('7'));
         key.available = 1;
         localStorage.setItem(7, JSON.stringify(key));
+        window.scrollTo(0, 0);
     };
 
 

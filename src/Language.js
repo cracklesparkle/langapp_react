@@ -49,6 +49,7 @@ const Language = ({language}) =>{
                         var key = JSON.parse(localStorage.getItem('1'));
                         key.available = 1;
                         localStorage.setItem(1, JSON.stringify(key));
+                        window.scrollTo(0, 0);
                     }}/>
                     <div>
                         <Carousel className='carousel' 

@@ -26,6 +26,7 @@ function CultureFood() {
             var key = JSON.parse(localStorage.getItem('6'));
             key.available = 1;
             localStorage.setItem(6, JSON.stringify(key));
+            window.scrollTo(0, 0);
         }
     };
 

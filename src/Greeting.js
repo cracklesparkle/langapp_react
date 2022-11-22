@@ -187,6 +187,7 @@ function Greeting() {
             var key = JSON.parse(localStorage.getItem('2'));
             key.available = 1;
             localStorage.setItem(2, JSON.stringify(key));
+            window.scrollTo(0, 0);
         }
 
         // window.scrollTo(0, 0);

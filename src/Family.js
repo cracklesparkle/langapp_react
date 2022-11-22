@@ -214,6 +214,7 @@ function Family() {
             var key = JSON.parse(localStorage.getItem('3'));
             key.available = 1;
             localStorage.setItem(3, JSON.stringify(key));
+            window.scrollTo(0, 0);
         }
 
         window.scrollTo(0, 0);

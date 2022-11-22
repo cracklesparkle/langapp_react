@@ -8,6 +8,7 @@ function LanguageCard ({language, colorId, langId}) {
     const handleClick = event =>{
         setView(language.View)
         localStorage.setItem('langId', JSON.stringify(langId));
+        window.scrollTo(0, 0);
     };
     // style={{backgroundImage: `url(${language.Background})`, backgroundSize:"contain", backgroundColor: '#6DB3F2'}}
     return (

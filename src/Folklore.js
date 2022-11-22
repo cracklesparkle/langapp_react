@@ -43,6 +43,7 @@ function Folklore() {
             var key = JSON.parse(localStorage.getItem('9'));
             key.available = 1;
             localStorage.setItem(9, JSON.stringify(key));
+            window.scrollTo(0, 0);
         }
 
     };

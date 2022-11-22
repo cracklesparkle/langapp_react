@@ -19,6 +19,7 @@ function Tale() {
         var key = JSON.parse(localStorage.getItem('8'));
         key.available = 1;
         localStorage.setItem(8, JSON.stringify(key));
+        window.scrollTo(0, 0);
     };
 
   return (

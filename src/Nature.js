@@ -24,20 +24,20 @@ import imgAnimals from './languages/yukaghir/nature/animals.jpg';
 import imgSaveNature from './languages/yukaghir/nature/savenature.jpg';
 
 import imgPlant1 from './languages/yukaghir/nature/plants/image1.jpg';
-import imgPlant2 from './languages/yukaghir/nature/plants/image2.jpg';
+import imgPlant2 from './languages/yukaghir/nature/plants/image2.png';
 import imgPlant3 from './languages/yukaghir/nature/plants/image3.jpg';
-import imgPlant4 from './languages/yukaghir/nature/plants/image4.jpg';
-import imgPlant5 from './languages/yukaghir/nature/plants/image5.jpg';
-import imgPlant6 from './languages/yukaghir/nature/plants/image6.jpg';
-import imgPlant7 from './languages/yukaghir/nature/plants/image7.jpg';
-import imgPlant8 from './languages/yukaghir/nature/plants/image8.jpg';
-import imgPlant9 from './languages/yukaghir/nature/plants/image9.jpg';
-import imgPlant10 from './languages/yukaghir/nature/plants/image10.jpg';
+import imgPlant4 from './languages/yukaghir/nature/plants/image4.png';
+import imgPlant5 from './languages/yukaghir/nature/plants/image5.png';
+import imgPlant6 from './languages/yukaghir/nature/plants/image6.png';
+import imgPlant7 from './languages/yukaghir/nature/plants/image7.png';
+import imgPlant8 from './languages/yukaghir/nature/plants/image8.png';
+import imgPlant9 from './languages/yukaghir/nature/plants/image9.png';
+import imgPlant10 from './languages/yukaghir/nature/plants/image10.PNG';
 import imgPlant11 from './languages/yukaghir/nature/plants/image11.jpg';
-import imgPlant12 from './languages/yukaghir/nature/plants/image12.jpg';
-import imgPlant13 from './languages/yukaghir/nature/plants/image13.jpg';
+import imgPlant12 from './languages/yukaghir/nature/plants/image12.png';
+import imgPlant13 from './languages/yukaghir/nature/plants/image13.png';
 import imgPlant14 from './languages/yukaghir/nature/plants/image14.jpg';
-import imgPlant15 from './languages/yukaghir/nature/plants/image15.jpg';
+import imgPlant15 from './languages/yukaghir/nature/plants/image15.png';
 
 
 import audio1 from "./languages/yukaghir/nature/audio/1. земля.mp3";
