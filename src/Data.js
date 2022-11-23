@@ -14,7 +14,6 @@ import Lang3bg from './languages/bg_evenki.png';
 import Lang4bg from './languages/bg_yukaghir.png';
 import Lang5bg from './languages/bg_chukot.png';
 import Lang6bg from './languages/bg_dolgan.png';
-
 export const languages = [
     {
     "Title": "Якутский",
