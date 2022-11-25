@@ -58,6 +58,20 @@ function FamousPeople() {
         window.scrollTo(0, 0);
     };
 
+    const handleBack = event =>{
+        if(page == 0){
+            setView('subjectSelect');
+        }
+        if(page == 1){
+            setPage(0)
+        }
+        if(page == 2){
+            setPage(1)
+        }
+
+        window.scrollTo(0, 0);
+    };
+
   return (
     <motion.div className='famousPeoplePage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
         <ViewContext.Provider value={{setView}}>
@@ -69,6 +83,7 @@ function FamousPeople() {
                     </div>
                     <div className="bottomNavbar">
                         {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
+                        <Button text='Назад' handleClick={handleBack}/>
                         <Button text='Далее' handleClick={handleClick}/>
                     </div>
         </ViewContext.Provider>

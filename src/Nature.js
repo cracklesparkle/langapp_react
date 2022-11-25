@@ -132,25 +132,6 @@ import audio87 from "./languages/yukaghir/nature/audio/87. налим.mp3";
 import ringer from './sounds/misc/ring06.wav';
 import SoundButton from './components/SoundButton';
 
-const Sound = () => {
-    const audio = new Audio(ringer);
-    audio.loop = true;
-  
-    return (
-      <div>
-        <button
-          onClick={() => {
-            audio.loop = false;
-            audio.play();
-          }}
-        >
-          Play
-        </button>
-        <button onClick={() => (audio.loop = false)}>Pause</button>
-      </div>
-    );
-  };
-
 function Nature() {
     const {setView} = useContext(ViewContext);
     var current = 0;
@@ -171,7 +152,17 @@ function Nature() {
         }
 
         window.scrollTo(0, 0)
-        
+    };
+
+    const handleBack = event =>{
+        if(page == 0){
+            setView('subjectSelect');
+        }
+        if(page == 1){
+            setPage(0)
+        }
+
+        window.scrollTo(0, 0);
     };
 
   return (
@@ -185,6 +176,7 @@ function Nature() {
                     </div>
                     <div className="bottomNavbar">
                         {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
+                        <Button text='Назад' handleClick={handleBack}/>
                         <Button text='Далее' handleClick={handleClick}/>
                     </div>
         </ViewContext.Provider>

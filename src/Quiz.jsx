@@ -11,113 +11,105 @@ import questions from "./questions.json";
 
 import {motion} from 'framer-motion';
 
-import boy_1 from './languages/yukaghir/greeting/b_left.png';
-import girl_1 from './languages/yukaghir/greeting/g_left.png';
-import boy_2 from './languages/yukaghir/greeting/b_right.png';
-import girl_2 from './languages/yukaghir/greeting/g_right.png';
+import QuizOption from "./components/QuizOption";
 
+// class Quiz extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             questionNumber: 0,
+//             numCorrect: 0,
+//             statusShown: false,
+//             currentQuestionCorrect: false,
+//         };
+//         this.questions = questions[this.props.subject];
 
-import ringer from './sounds/misc/ring06.wav';
+//         this.handleClick = this.handleClick.bind(this);
+//     }
 
-const Sound = () => {
-    const audio = new Audio(ringer);
-    audio.loop = true;
-  
-    return (
-      <div>
-        <button
-          onClick={() => {
-            audio.loop = false;
-            audio.play();
-          }}
-        >
-          Play
-        </button>
-        <button onClick={() => (audio.loop = false)}>Pause</button>
-      </div>
-    );
-  };
+//     handleClick(answer) {
+//         this.setState({ statusShown: true });
 
-class Quiz extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            questionNumber: 0,
-            numCorrect: 0,
-            statusShown: false,
-            currentQuestionCorrect: false,
-        };
-        this.questions = questions[this.props.subject];
+//         const correctAnswer =
+//             this.questions[this.state.questionNumber].correctAnswer;
 
-        this.handleClick = this.handleClick.bind(this);
-    }
+//         answer === correctAnswer
+//             ? this.setStatus("correct")
+//             : this.setStatus("wrong");
+//     }
 
-    handleClick(answer) {
-        this.setState({ statusShown: true });
+//     setStatus(status) {
+//         if (status === "correct") {
+//             this.setState(state => ({
+//                 numCorrect: state.numCorrect + 1,
+//                 currentQuestionCorrect: true,
+//             }));
+//         } else {
+//             this.setState({ currentQuestionCorrect: false });
+//         }
+//         setTimeout(() => this.switchQuestion(), 5);
+//     }
 
-        const correctAnswer =
-            this.questions[this.state.questionNumber].correctAnswer;
+//     switchQuestion() {
+//         this.setState(state => ({
+//             statusShown: false,
+//             questionNumber:
+//                 state.questionNumber < 11 ? state.questionNumber + 1 : false,
+//         }));
+//     }
 
-        answer === correctAnswer
-            ? this.setStatus("correct")
-            : this.setStatus("wrong");
-    }
+//     render() {
+//         const audio = new Audio(ringer);
+//         audio.loop = true;
 
-    setStatus(status) {
-        if (status === "correct") {
-            this.setState(state => ({
-                numCorrect: state.numCorrect + 1,
-                currentQuestionCorrect: true,
-            }));
-        } else {
-            this.setState({ currentQuestionCorrect: false });
-        }
-        setTimeout(() => this.switchQuestion(), 5);
-    }
+//         if (this.state.questionNumber !== false) {
+//             const question = this.questions[this.state.questionNumber].question;
+//             const answers = this.questions[this.state.questionNumber].answers;
+//             const translation = this.questions[this.state.questionNumber].translation;
 
-    switchQuestion() {
-        this.setState(state => ({
-            statusShown: false,
-            questionNumber:
-                state.questionNumber < 11 ? state.questionNumber + 1 : false,
-        }));
-    }
+//             return (
+//                 <motion.div className='quizPage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
+//                     <div className="dialogueContainer">
+//                         <motion.div className="dialogue">
+//                             <div className="speech">
+//                                 <Bubble sentence={question} translation={translation} audio={ringer}/>
+//                                 <img className="personImage " src={boy_2}></img>
+//                             </div>
+//                             <div className="speech">
+//                                 <Bubble sentence={question} translation={translation}/>
+//                                 <img className="personImage " src={girl_2}></img>
+//                             </div>
+//                         </motion.div>
+//                         {/* {this.state.statusShown && (
+//                             <Status correct={this.state.currentQuestionCorrect} />
+//                         )} */}
+//                     </div>
+//                     <div className="bottomNavbar">
+//                         <button onClick={this.handleClick} className='buttonLearn'>Далее</button>
+//                     </div>
+//                 </motion.div>
+//             );
+//         }
 
-    render() {
-        const audio = new Audio(ringer);
-        audio.loop = true;
+//         // return <EndQuiz numCorrect={this.state.numCorrect} />;
+//     }
+// }
 
-        if (this.state.questionNumber !== false) {
-            const question = this.questions[this.state.questionNumber].question;
-            const answers = this.questions[this.state.questionNumber].answers;
-            const translation = this.questions[this.state.questionNumber].translation;
-
-            return (
-                <motion.div className='quizPage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
-                    <div className="dialogueContainer">
-                        <motion.div className="dialogue">
-                            <div className="speech">
-                                <Bubble sentence={question} translation={translation} audio={ringer}/>
-                                <img className="personImage " src={boy_2}></img>
-                            </div>
-                            <div className="speech">
-                                <Bubble sentence={question} translation={translation}/>
-                                <img className="personImage " src={girl_2}></img>
-                            </div>
-                        </motion.div>
-                        {/* {this.state.statusShown && (
-                            <Status correct={this.state.currentQuestionCorrect} />
-                        )} */}
-                    </div>
-                    <div className="bottomNavbar">
-                        <button onClick={this.handleClick} className='buttonLearn'>Далее</button>
-                    </div>
-                </motion.div>
-            );
-        }
-
-        // return <EndQuiz numCorrect={this.state.numCorrect} />;
-    }
+function Quiz(props){
+    return(
+        <motion.div className='quizPage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
+            <div className="header">{props.quiz.questions[0].question}</div>
+            <div className="quizOptions">
+                {props.quiz.questions[0].answers.map((e, i) => {
+                    return (
+                                <QuizOption text={e}/>
+                            );
+                    })
+                }
+            </div>
+            
+        </motion.div>
+    )
 }
 
 export default Quiz;

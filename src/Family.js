@@ -5,6 +5,9 @@ import { ViewContext } from './ViewContext';
 import Button from './components/Button';
 import SoundButton from './components/SoundButton';
 
+import { quizData3 } from './quizData';
+import Quiz from './Quiz';
+
 import imgMember1 from './languages/yukaghir/family/image1.png';
 import imgMember2 from './languages/yukaghir/family/image2.png';
 import imgMember3 from './languages/yukaghir/family/image3.png';
@@ -210,11 +213,25 @@ function Family() {
             setPage(1)
         }
         if(page == 1){
+            setPage(2)
+        }
+        if(page == 2){
             setView('subjectSelect');
             var key = JSON.parse(localStorage.getItem('3'));
             key.available = 1;
             localStorage.setItem(3, JSON.stringify(key));
             window.scrollTo(0, 0);
+        }
+
+        window.scrollTo(0, 0);
+    };
+
+    const handleBack = event =>{
+        if(page == 0){
+            setView('subjectSelect');
+        }
+        if(page == 1){
+            setPage(0)
         }
 
         window.scrollTo(0, 0);
@@ -228,8 +245,10 @@ function Family() {
                     <h1 className='header'>Семья</h1>
                         {page == 0 && <Page1/>}
                         {page == 1 && <Page2/>}
+                        {page == 2 && <Quiz quiz={quizData3}/>}
                     </div>
                     <div className="bottomNavbar">
+                        <Button text='Назад' handleClick={handleBack}/>
                         {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
                         <Button text='Далее' handleClick={handleClick}/>
                     </div>
