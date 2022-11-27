@@ -25,12 +25,11 @@ function Quiz(props){
         answerLimit = 1
     }
 
-
+    const [canCheck, setCanCheck] = useState(false)
 
     //const [checkedState, setCheckedState] = useState(new Array(toppings.length).fill(false));
     const [checkedState, setCheckedState] = useState(new Array(props.quiz.questions[0].answers.length).fill(false));
 
-    const [total, setTotal] = useState(0);
     const [totalAnswers, setTotalAnswers] = useState();
 
     const handleOnChange = (position) => {
@@ -55,20 +54,55 @@ function Quiz(props){
         );
         setTotalAnswers(totalAnswers);
 
-        if(currentAnswerCount <= answerLimit) setCheckedState(updatedCheckedState)
-
-
+        if(currentAnswerCount <= answerLimit){
+            setCheckedState(updatedCheckedState)
+            setCanCheck(false)
+        }
+        if(currentAnswerCount >= answerLimit) setCanCheck(true)
     }
 
     const handleCheck = event =>{
         //console.log(totalAnswers)
         if(totalAnswers != null){
-            props.quiz.questions[0].correctAnswer.map((e, i) => {
-                //console.log(e)
-                totalAnswers.map((a, j) => {
-                    if (e == j + 1 && a) console.log('correct')
+            if(props.quiz.questions[0].answerSelectionType == "multiple"){
+                // props.quiz.questions[0].correctAnswer.map((correctAnswer, i) => {
+                //     //console.log(e)
+                //     totalAnswers.map((a, j) => {
+                //         if(a){
+                //             if (correctAnswer == j + 1 && a){
+                //                 console.log('correct ' + j)
+                //             } else{
+                //                 console.log('invalid ' + j)
+                //             }
+                //         }
+                        
+                //     })
+                // })
+
+                totalAnswers.map((a, i) => {
+                    if (a){
+                        props.quiz.questions[0].correctAnswer.map((correctAnswer, j) => {
+                            if (i + 1 == correctAnswer){
+                                console.log('correct ' + i)
+                            }
+                        })
+                        console.log('invalid ' + i)
+                    }
+                    
                 })
-            })
+            }
+            if(props.quiz.questions[0].answerSelectionType == "single"){
+                totalAnswers.map((a, j) => {
+                    if (a){
+                        if (props.quiz.questions[0].correctAnswer == j + 1){
+                            console.log('correct')
+                        } else{
+                            console.log('invalid')
+                        }
+                    }
+                    
+                })
+            }
         }
         //console.log(currentAnswerCount)
     };
@@ -77,6 +111,7 @@ function Quiz(props){
         <motion.div className='quizPage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
             <div className="header">{props.quiz.questions[0].question}</div>
             {props.quiz.questions[0].answerSelectionType == "multiple" && <p>Выберите несколько ({props.quiz.questions[0].correctAnswer.length}) вариантов ответа:</p>}
+            {props.quiz.questions[0].answerSelectionType == "single" && <p>Выберите правильный ответ:</p>}
             <div className="container">
                 <div className="quizOptions">
                     {props.quiz.questions[0].answers.map((e, index) => {
@@ -98,7 +133,7 @@ function Quiz(props){
             <div className="bottomNavbar">
                         <Button text='Назад'/>
                         {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
-                        <Button text='ПРОВЕРИТЬ' available={currentAnswerCount > 0 ? true : false } handleClick={handleCheck}/>
+                        <Button text='ПРОВЕРИТЬ' available={canCheck ? true : false } handleClick={handleCheck}/>
                     </div>
             
         </motion.div>

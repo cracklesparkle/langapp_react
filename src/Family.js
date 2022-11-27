@@ -248,7 +248,7 @@ function Family() {
                     <h1 className='header'>Семья</h1>
                         {page == 0 && <Page1/>}
                         {page == 1 && <Page2/>}
-                        {page == 2 && <Quiz quiz={quizData2}/>}
+                        {page == 2 && <Quiz quiz={quizData1}/>}
                     </div>
                     <div className="bottomNavbar">
                         <Button text='Назад' handleClick={handleBack}/>
