@@ -7,11 +7,11 @@ import EndQuiz from "./components/EndQuiz";
 
 import Bubble from "./components/Bubble";
 
-import questions from "./questions.json";
+//import questions from "./questions.json";
 
 import {motion} from 'framer-motion';
 
-import OptionList from "./components/OptionList";
+//import OptionList from "./components/OptionList";
 
 import Button from "./components/Button";
 
@@ -48,32 +48,7 @@ const toppings = [
     }
   ];
 
-const QuizOption = ({ label, value, onChange }) => {
-    return (
-      <motion.button
-      className={value ? 'quizOptionChecked' : 'quizOption'}
-      whileHover={{}}
-        whileTap={{ translateY: 3}}
-        onClick={onChange}
-        checked={value} onChange={onChange} 
-        >
-        {/* <input type="checkbox" checked={value} onChange={onChange} /> */}
-        {label}
-      </motion.button>
-    );
-  };
-
-  let nextId = 3;
-  const initialAnswers = [
-    { id: 0, title: 'Buy milk', done: false },
-    { id: 1, title: 'Eat tacos', done: false },
-    { id: 2, title: 'Brew tea', done: false },
-  ];
-  
-
 function Quiz(props){
-    const [checked, setChecked] = useState(false);
-
     //FCC
     const [checkedState, setCheckedState] = useState(new Array(toppings.length).fill(false));
 
@@ -84,18 +59,38 @@ function Quiz(props){
         index === position ? !item : item
         );
 
-    setCheckedState(updatedCheckedState);
+        setCheckedState(updatedCheckedState);
 
-    const totalPrice = updatedCheckedState.reduce(
-        (sum, currentState, index) => {
-            if (currentState === true) {
-            return sum + toppings[index].price;
-            }
-            return sum;
-        },
-        0
+        const totalPrice = updatedCheckedState.reduce(
+            (sum, currentState, index) => {
+                if (currentState === true) {
+                return sum + toppings[index].price;
+                }
+                return sum;
+            },
+            0
         );
         setTotal(totalPrice);
+
+        console.log('checked count: ' + updatedCheckedState.reduce(
+            (sum, currentState, index) => {
+                if (currentState === true) {
+                return sum + 1;
+                }
+                return sum;
+            },
+            0
+        ))
+
+        console.log('checked answers: ' + updatedCheckedState.reduce(
+            (sum, currentState, index) => {
+                if (currentState === true) {
+                return ` ${index} `;
+                }
+                return sum;
+            },
+            0
+        ))
     }
     //FCC
 
