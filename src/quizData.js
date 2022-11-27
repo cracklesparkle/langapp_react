@@ -27,6 +27,7 @@ export const quizData1 = {
       {
         "question": "Традиционные занятия юкагиров:",
         "questionType": "text",
+        "answerSelectionType": "single",
         "answers": [
           "оленеводство, коневодство",
           "оленеводство, рыболовство",
