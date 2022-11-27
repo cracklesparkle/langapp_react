@@ -42,7 +42,7 @@ const Checkbox = ({ label, value, onChange, props }) => {
         onClick={onChange}
         checked={value} onChange={onChange} 
         >
-        <input type="checkbox" checked={value} onChange={onChange} />
+        {/* <input type="checkbox" checked={value} onChange={onChange} /> */}
         {props.text}
       </motion.button>
     );

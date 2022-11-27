@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 import Header from "./components/Header";
 import AnswerCard from "./components/AnswerCard";
@@ -11,102 +11,121 @@ import questions from "./questions.json";
 
 import {motion} from 'framer-motion';
 
-import QuizOption from "./components/QuizOption";
+import OptionList from "./components/OptionList";
 
-// class Quiz extends React.Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             questionNumber: 0,
-//             numCorrect: 0,
-//             statusShown: false,
-//             currentQuestionCorrect: false,
-//         };
-//         this.questions = questions[this.props.subject];
+import Button from "./components/Button";
 
-//         this.handleClick = this.handleClick.bind(this);
-//     }
+const getFormattedPrice = (price) => `$${price.toFixed(2)}`;
 
-//     handleClick(answer) {
-//         this.setState({ statusShown: true });
+const toppings = [
+    {
+      name: "Capsicum",
+      price: 1.2
+    },
+    {
+      name: "Paneer",
+      price: 2.0
+    },
+    {
+      name: "Red Paprika",
+      price: 2.5
+    },
+    {
+      name: "Onions",
+      price: 3.0
+    },
+    {
+      name: "Extra Cheese",
+      price: 3.5
+    },
+    {
+      name: "Baby Corns",
+      price: 3.0
+    },
+    {
+      name: "Mushroom",
+      price: 2.0
+    }
+  ];
 
-//         const correctAnswer =
-//             this.questions[this.state.questionNumber].correctAnswer;
+const QuizOption = ({ label, value, onChange }) => {
+    return (
+      <motion.button
+      className={value ? 'quizOptionChecked' : 'quizOption'}
+      whileHover={{}}
+        whileTap={{ translateY: 3}}
+        onClick={onChange}
+        checked={value} onChange={onChange} 
+        >
+        {/* <input type="checkbox" checked={value} onChange={onChange} /> */}
+        {label}
+      </motion.button>
+    );
+  };
 
-//         answer === correctAnswer
-//             ? this.setStatus("correct")
-//             : this.setStatus("wrong");
-//     }
-
-//     setStatus(status) {
-//         if (status === "correct") {
-//             this.setState(state => ({
-//                 numCorrect: state.numCorrect + 1,
-//                 currentQuestionCorrect: true,
-//             }));
-//         } else {
-//             this.setState({ currentQuestionCorrect: false });
-//         }
-//         setTimeout(() => this.switchQuestion(), 5);
-//     }
-
-//     switchQuestion() {
-//         this.setState(state => ({
-//             statusShown: false,
-//             questionNumber:
-//                 state.questionNumber < 11 ? state.questionNumber + 1 : false,
-//         }));
-//     }
-
-//     render() {
-//         const audio = new Audio(ringer);
-//         audio.loop = true;
-
-//         if (this.state.questionNumber !== false) {
-//             const question = this.questions[this.state.questionNumber].question;
-//             const answers = this.questions[this.state.questionNumber].answers;
-//             const translation = this.questions[this.state.questionNumber].translation;
-
-//             return (
-//                 <motion.div className='quizPage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
-//                     <div className="dialogueContainer">
-//                         <motion.div className="dialogue">
-//                             <div className="speech">
-//                                 <Bubble sentence={question} translation={translation} audio={ringer}/>
-//                                 <img className="personImage " src={boy_2}></img>
-//                             </div>
-//                             <div className="speech">
-//                                 <Bubble sentence={question} translation={translation}/>
-//                                 <img className="personImage " src={girl_2}></img>
-//                             </div>
-//                         </motion.div>
-//                         {/* {this.state.statusShown && (
-//                             <Status correct={this.state.currentQuestionCorrect} />
-//                         )} */}
-//                     </div>
-//                     <div className="bottomNavbar">
-//                         <button onClick={this.handleClick} className='buttonLearn'>Далее</button>
-//                     </div>
-//                 </motion.div>
-//             );
-//         }
-
-//         // return <EndQuiz numCorrect={this.state.numCorrect} />;
-//     }
-// }
+  let nextId = 3;
+  const initialAnswers = [
+    { id: 0, title: 'Buy milk', done: false },
+    { id: 1, title: 'Eat tacos', done: false },
+    { id: 2, title: 'Brew tea', done: false },
+  ];
+  
 
 function Quiz(props){
+    const [checked, setChecked] = useState(false);
+
+    //FCC
+    const [checkedState, setCheckedState] = useState(new Array(toppings.length).fill(false));
+
+    const [total, setTotal] = useState(0);
+
+    const handleOnChange = (position) => {
+        const updatedCheckedState = checkedState.map((item, index) =>
+        index === position ? !item : item
+        );
+
+    setCheckedState(updatedCheckedState);
+
+    const totalPrice = updatedCheckedState.reduce(
+        (sum, currentState, index) => {
+            if (currentState === true) {
+            return sum + toppings[index].price;
+            }
+            return sum;
+        },
+        0
+        );
+        setTotal(totalPrice);
+    }
+    //FCC
+
     return(
         <motion.div className='quizPage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
             <div className="header">{props.quiz.questions[0].question}</div>
-            <div className="quizOptions">
-                {props.quiz.questions[0].answers.map((e, i) => {
-                    return (
-                                <QuizOption text={e}/>
-                            );
-                    })
-                }
+            <div className="container">
+                <div className="quizOptions">
+
+                    {toppings.map(({ name, price }, index) => {
+                        return (
+                            <motion.button 
+                                key={index}
+                                className={checkedState[index] ? 'quizOptionChecked' : 'quizOption'}
+                                whileHover={{}}
+                                whileTap={{ translateY: 3}}
+                                onClick={() => handleOnChange(index)}
+                                checked={checkedState[index]} 
+                                >
+                                {name}
+                            </motion.button>
+                        );
+                        })}
+                </div>
             </div>
+            <div className="bottomNavbar">
+                        <Button text='Назад'/>
+                        {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
+                        <Button text='Далее'/>
+                    </div>
             
         </motion.div>
     )
