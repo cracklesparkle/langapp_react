@@ -49,8 +49,17 @@ const toppings = [
   ];
 
 function Quiz(props){
-    //FCC
-    const [checkedState, setCheckedState] = useState(new Array(toppings.length).fill(false));
+    //Check answer count first
+    let currentAnswerCount = 0;
+    let answerLimit = 1;
+    if(props.quiz.questions[0].answerSelectionType == "multiple"){
+        answerLimit = props.quiz.questions[0].correctAnswer.length
+    } else{
+        answerLimit = 1
+    }
+
+    //const [checkedState, setCheckedState] = useState(new Array(toppings.length).fill(false));
+    const [checkedState, setCheckedState] = useState(new Array(props.quiz.questions[0].answers.length).fill(false));
 
     const [total, setTotal] = useState(0);
 
@@ -59,7 +68,18 @@ function Quiz(props){
         index === position ? !item : item
         );
 
-        setCheckedState(updatedCheckedState);
+        
+        currentAnswerCount = updatedCheckedState.reduce(
+            (sum, currentState, index) => {
+                if (currentState === true) {
+                return sum + 1;
+                }
+                return sum;
+            },
+            0
+        )
+
+        if(currentAnswerCount <= answerLimit) setCheckedState(updatedCheckedState);
 
         const totalPrice = updatedCheckedState.reduce(
             (sum, currentState, index) => {
@@ -72,25 +92,7 @@ function Quiz(props){
         );
         setTotal(totalPrice);
 
-        console.log('checked count: ' + updatedCheckedState.reduce(
-            (sum, currentState, index) => {
-                if (currentState === true) {
-                return sum + 1;
-                }
-                return sum;
-            },
-            0
-        ))
-
-        console.log('checked answers: ' + updatedCheckedState.reduce(
-            (sum, currentState, index) => {
-                if (currentState === true) {
-                return ` ${index} `;
-                }
-                return sum;
-            },
-            0
-        ))
+        
     }
     //FCC
 
@@ -100,7 +102,7 @@ function Quiz(props){
             <div className="container">
                 <div className="quizOptions">
 
-                    {toppings.map(({ name, price }, index) => {
+                    {/* {toppings.map(({ name, price }, index) => {
                         return (
                             <motion.button 
                                 key={index}
@@ -111,6 +113,21 @@ function Quiz(props){
                                 checked={checkedState[index]} 
                                 >
                                 {name}
+                            </motion.button>
+                        );
+                        })} */}
+
+                    {props.quiz.questions[0].answers.map((e, index) => {
+                        return (
+                            <motion.button 
+                                key={index}
+                                className={checkedState[index] ? 'quizOptionChecked' : 'quizOption'}
+                                whileHover={{}}
+                                whileTap={{ translateY: 3}}
+                                onClick={() => handleOnChange(index)}
+                                checked={checkedState[index]} 
+                                >
+                                {e}
                             </motion.button>
                         );
                         })}

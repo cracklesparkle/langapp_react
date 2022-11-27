@@ -5,7 +5,7 @@ import { ViewContext } from './ViewContext';
 import Button from './components/Button';
 import SoundButton from './components/SoundButton';
 
-import { quizData3 } from './quizData';
+import { quizData1, quizData3 } from './quizData';
 import Quiz from './Quiz';
 
 import imgMember1 from './languages/yukaghir/family/image1.png';
@@ -245,7 +245,7 @@ function Family() {
                     <h1 className='header'>Семья</h1>
                         {page == 0 && <Page1/>}
                         {page == 1 && <Page2/>}
-                        {page == 2 && <Quiz quiz={quizData3}/>}
+                        {page == 2 && <Quiz quiz={quizData1}/>}
                     </div>
                     <div className="bottomNavbar">
                         <Button text='Назад' handleClick={handleBack}/>
