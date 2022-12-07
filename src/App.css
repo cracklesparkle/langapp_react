@@ -93,7 +93,6 @@ p{
   justify-content: space-around;
 }
 
-
 .buttonLearn{
   position: relative;
   margin: 20px;
@@ -179,6 +178,43 @@ p{
 
 .quizOptionChecked:hover{
   cursor: pointer;
+}
+
+.quizBottom {
+  background-color: rgba(255, 255, 255, 0.8);
+  overflow: clip;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  border-radius: 0% 0% 30px 30px;
+  border-top: 3px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-around;
+}
+
+.quizBottom p{
+  text-align: left !important;
+}
+
+.quizBottom .result{
+  display: flex;
+  flex-direction: row;
+}
+
+.quizBottom .image{
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+
+.quizBottom .image img{
+  width: 50px;
+  height: 50px;
 }
 
 .app {

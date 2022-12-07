@@ -15,6 +15,9 @@ import {motion} from 'framer-motion';
 
 import Button from "./components/Button";
 
+import svgCheck from "./icons/ui/check.svg"
+import svgCross from "./icons/ui/cross.svg"
+
 function Quiz(props){
     //Check answer count first
     let currentAnswerCount = 0;
@@ -79,17 +82,28 @@ function Quiz(props){
                 //     })
                 // })
 
+                let checkedAnswers = []
                 totalAnswers.map((a, i) => {
+                    //TODO: 
                     if (a){
-                        props.quiz.questions[0].correctAnswer.map((correctAnswer, j) => {
-                            if (i + 1 == correctAnswer){
-                                console.log('correct ' + i)
-                            }
-                        })
-                        console.log('invalid ' + i)
+                        // props.quiz.questions[0].correctAnswer.map((correctAnswer, j) => {
+                        //     if (i + 1 == correctAnswer){
+                        //         console.log('correct ' + i)
+                        //     }
+                        // })
+                        // console.log('invalid ' + i)
+
+                        checkedAnswers.push(i + 1);
                     }
                     
                 })
+                //console.log(checkedAnswers)
+                //console.log(totalAnswers)
+                let intersection = checkedAnswers.filter(x => props.quiz.questions[0].correctAnswer.includes(x));
+                console.log('valid answers: ' + intersection)
+
+                let difference = checkedAnswers.filter(x => !props.quiz.questions[0].correctAnswer.includes(x));
+                console.log('invalid answers: ' + difference)
             }
             if(props.quiz.questions[0].answerSelectionType == "single"){
                 totalAnswers.map((a, j) => {
@@ -130,11 +144,32 @@ function Quiz(props){
                         })}
                 </div>
             </div>
-            <div className="bottomNavbar">
+            {/* <div className="bottomNavbar">
                         <Button text='Назад'/>
-                        {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
                         <Button text='ПРОВЕРИТЬ' available={canCheck ? true : false } handleClick={handleCheck}/>
-                    </div>
+            </div> */}
+            <div className="quizBottom">
+                        <div className="result">
+                            <div className="image">
+                                <img src={svgCheck}></img>
+                            </div>
+                            <div className="resultText">
+                                <p>
+                                    Правильный ответ:
+                                </p>
+                                {
+                                    props.quiz.questions[0].correctAnswer.map((e, index) => {
+                                        return (
+                                            <p key={index}>
+                                                {props.quiz.questions[0].answers[e-1]}
+                                            </p>
+                                        )
+                                    })
+                                }
+                            </div>
+                        </div>
+                        <Button text='ДАЛЕЕ' available={canCheck ? true : false } handleClick={handleCheck}/>
+            </div>
             
         </motion.div>
     )
