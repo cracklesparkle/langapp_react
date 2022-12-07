@@ -245,15 +245,15 @@ function Family() {
         <ViewContext.Provider value={{setView}}>
         
         <div className="container">
-                    <h1 className='header'>Семья</h1>
-                        {page == 0 && <Page1/>}
-                        {page == 1 && <Page2/>}
-                        {page == 2 && <Quiz quiz={quizData1}/>}
-                    </div>
+            <h1 className='header'>Семья</h1>
+            {page == 0 && <Page1/>}
+            {page == 1 && <Page2/>}
+        </div>
+                    {page == 2 && <Quiz quiz={quizData1}/>}
                     <div className="bottomNavbar">
-                        <Button text='Назад' handleClick={handleBack}/>
-                        {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
-                        <Button text='Далее' handleClick={handleClick}/>
+                            <Button text='Назад' handleClick={handleBack}/>
+                            {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
+                            <Button text='Далее' handleClick={handleClick}/>
                     </div>
         </ViewContext.Provider>
 

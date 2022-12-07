@@ -191,30 +191,57 @@ p{
   border-top: 3px solid rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-around;
+  align-items: center;
+}
+
+.quizBottom.correct{
+  background-color: rgb(215, 255, 184);
+}
+
+.quizBottom.wrong{
+  background-color: rgb(255, 223, 224);
 }
 
 .quizBottom p{
   text-align: left !important;
 }
 
+.quizBottom .bold{
+  font-weight: bold;
+}
+
 .quizBottom .result{
   display: flex;
   flex-direction: row;
+  margin: 15px;
 }
 
 .quizBottom .image{
-  width: 90px;
-  height: 90px;
+  margin-left: 15px;
   border-radius: 50%;
-  background-color: gray;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items:center;
+  align-self: center;
 }
 
 .quizBottom .image img{
-  width: 50px;
-  height: 50px;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 20px;
+}
+
+.quizBottom .resultText{
+  margin-left: 15px;
+}
+
+.quizBottom .resultText.correct{
+  color: rgb(61, 114, 0);
+}
+
+.quizBottom .resultText.wrong{
+  color: rgb(126, 14, 14);
 }
 
 .app {

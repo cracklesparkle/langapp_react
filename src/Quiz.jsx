@@ -19,6 +19,9 @@ import svgCheck from "./icons/ui/check.svg"
 import svgCross from "./icons/ui/cross.svg"
 
 function Quiz(props){
+    let correctAnswers = 0;
+    let currentQuestion = 0;
+
     //Check answer count first
     let currentAnswerCount = 0;
     let answerLimit = 1;
@@ -28,97 +31,80 @@ function Quiz(props){
         answerLimit = 1
     }
 
+    const [result, setResult] = useState("none");
+
     const [canCheck, setCanCheck] = useState(false)
 
-    //const [checkedState, setCheckedState] = useState(new Array(toppings.length).fill(false));
     const [checkedState, setCheckedState] = useState(new Array(props.quiz.questions[0].answers.length).fill(false));
 
     const [totalAnswers, setTotalAnswers] = useState();
 
     const handleOnChange = (position) => {
-        const updatedCheckedState = checkedState.map((item, index) =>
-        index === position ? !item : item
-        );
-        
-
-        currentAnswerCount = updatedCheckedState.reduce(
-            (sum, currentState, index) => {
-                if (currentState === true) {
-                return sum + 1;
-                }
-                return sum;
-            },
-            0
-        )
-
-
-        const totalAnswers = checkedState.map((item, index) =>
-        index === position ? !item : item
-        );
-        setTotalAnswers(totalAnswers);
-
-        if(currentAnswerCount <= answerLimit){
-            setCheckedState(updatedCheckedState)
-            setCanCheck(false)
+        if (result == "none"){
+            const updatedCheckedState = checkedState.map((item, index) =>
+            index === position ? !item : item
+            );
+    
+            currentAnswerCount = updatedCheckedState.reduce(
+                (sum, currentState, index) => {
+                    if (currentState === true) {
+                    return sum + 1;
+                    }
+                    return sum;
+                },
+                0
+            )
+    
+            const totalAnswers = checkedState.map((item, index) =>
+            index === position ? !item : item
+            );
+            setTotalAnswers(totalAnswers);
+    
+            if(currentAnswerCount <= answerLimit){
+                setCheckedState(updatedCheckedState)
+                setCanCheck(false)
+            }
+            if(currentAnswerCount >= answerLimit) setCanCheck(true)
         }
-        if(currentAnswerCount >= answerLimit) setCanCheck(true)
+        
     }
 
     const handleCheck = event =>{
-        //console.log(totalAnswers)
         if(totalAnswers != null){
             if(props.quiz.questions[0].answerSelectionType == "multiple"){
-                // props.quiz.questions[0].correctAnswer.map((correctAnswer, i) => {
-                //     //console.log(e)
-                //     totalAnswers.map((a, j) => {
-                //         if(a){
-                //             if (correctAnswer == j + 1 && a){
-                //                 console.log('correct ' + j)
-                //             } else{
-                //                 console.log('invalid ' + j)
-                //             }
-                //         }
-                        
-                //     })
-                // })
-
                 let checkedAnswers = []
                 totalAnswers.map((a, i) => {
                     //TODO: 
                     if (a){
-                        // props.quiz.questions[0].correctAnswer.map((correctAnswer, j) => {
-                        //     if (i + 1 == correctAnswer){
-                        //         console.log('correct ' + i)
-                        //     }
-                        // })
-                        // console.log('invalid ' + i)
-
                         checkedAnswers.push(i + 1);
                     }
                     
                 })
-                //console.log(checkedAnswers)
-                //console.log(totalAnswers)
                 let intersection = checkedAnswers.filter(x => props.quiz.questions[0].correctAnswer.includes(x));
-                console.log('valid answers: ' + intersection)
 
                 let difference = checkedAnswers.filter(x => !props.quiz.questions[0].correctAnswer.includes(x));
-                console.log('invalid answers: ' + difference)
+
+                if (intersection.length == props.quiz.questions[0].correctAnswer.length && difference.length == 0){
+                    setResult('correct')
+                    correctAnswers += 1;
+                } else{
+                    setResult('wrong')
+                }
             }
             if(props.quiz.questions[0].answerSelectionType == "single"){
                 totalAnswers.map((a, j) => {
                     if (a){
                         if (props.quiz.questions[0].correctAnswer == j + 1){
-                            console.log('correct')
+                            setResult('correct')
+                            correctAnswers += 1;
                         } else{
-                            console.log('invalid')
+                            setResult('wrong')
                         }
                     }
                     
                 })
             }
         }
-        //console.log(currentAnswerCount)
     };
 
     return(
@@ -144,17 +130,40 @@ function Quiz(props){
                         })}
                 </div>
             </div>
-            {/* <div className="bottomNavbar">
+            {result == 'none' && <div className="bottomNavbar">
                         <Button text='Назад'/>
                         <Button text='ПРОВЕРИТЬ' available={canCheck ? true : false } handleClick={handleCheck}/>
-            </div> */}
-            <div className="quizBottom">
+            </div>}
+            {result == 'correct' && <div className="quizBottom correct">
                         <div className="result">
                             <div className="image">
                                 <img src={svgCheck}></img>
                             </div>
-                            <div className="resultText">
-                                <p>
+                            <div className="resultText correct">
+                                <p className="bold">
+                                    Правильный ответ:
+                                </p>
+                                {
+                                    props.quiz.questions[0].correctAnswer.map((e, index) => {
+                                        return (
+                                            <p key={index}>
+                                                {props.quiz.questions[0].answers[e-1]}
+                                            </p>
+                                        )
+                                    })
+                                }
+                            </div>
+                        </div>
+                        <Button text='ДАЛЕЕ' available={canCheck ? true : false } handleClick={handleCheck}/>
+            </div>}
+
+            {result == 'wrong' && <div className="quizBottom wrong">
+                        <div className="result">
+                            <div className="image">
+                                <img src={svgCross}></img>
+                            </div>
+                            <div className="resultText wrong">
+                                <p className="bold">
                                     Правильный ответ:
                                 </p>
                                 {
@@ -170,6 +179,7 @@ function Quiz(props){
                         </div>
                         <Button text='ДАЛЕЕ' available={canCheck ? true : false } handleClick={handleCheck}/>
             </div>
+            }
             
         </motion.div>
     )
