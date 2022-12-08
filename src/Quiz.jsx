@@ -20,10 +20,11 @@ import Button from "./components/Button";
 import svgCheck from "./icons/ui/check.svg"
 import svgCross from "./icons/ui/cross.svg"
 
-let correctAnswers = 0;
 let currentQuestion = 0;
 
 function Quiz({questions, stateChanger, quizTitle}){
+    const [correctAnswers, setCorrectAnswers] = useState(0);
+
     const [currentQuestion, setCurrentQuestion] = useState(0);
 
     const {currentView, setView} = useContext(ViewContext);
@@ -50,9 +51,17 @@ function Quiz({questions, stateChanger, quizTitle}){
         if (currentQuestion < questions.length - 1){
             setCurrentQuestion(currentQuestion+1);
 
+            currentAnswerCount = 0;
+            answerLimit = 1;
+            if(questions[currentQuestion].answerSelectionType == "multiple"){
+                answerLimit = questions[currentQuestion].correctAnswer.length
+            } else{
+                answerLimit = 1
+            }
+
             setResult("none");
             setCanCheck(false);
-            setCheckedState(new Array(questions[currentQuestion].answers.length).fill(false))
+            setCheckedState(new Array(questions[currentQuestion+1].answers.length).fill(false))
             setTotalAnswers();
         }
         if (currentQuestion == questions.length - 1){
@@ -64,10 +73,11 @@ function Quiz({questions, stateChanger, quizTitle}){
 
     const handleOnChange = (position) => {
         if (result == "none"){
+
             const updatedCheckedState = checkedState.map((item, index) =>
             index === position ? !item : item
             );
-    
+
             currentAnswerCount = updatedCheckedState.reduce(
                 (sum, currentState, index) => {
                     if (currentState === true) {
@@ -109,7 +119,8 @@ function Quiz({questions, stateChanger, quizTitle}){
 
                 if (intersection.length == questions[currentQuestion].correctAnswer.length && difference.length == 0){
                     setResult('correct')
-                    correctAnswers += 1;
+                    //correctAnswers += 1;
+                    setCorrectAnswers(correctAnswers+1)
                 } else{
                     setResult('wrong')
                 }
@@ -119,7 +130,8 @@ function Quiz({questions, stateChanger, quizTitle}){
                     if (a){
                         if (questions[currentQuestion].correctAnswer == j + 1){
                             setResult('correct')
-                            correctAnswers += 1;
+                            //correctAnswers += 1;
+                            setCorrectAnswers(correctAnswers+1)
                         } else{
                             setResult('wrong')
                         }
@@ -155,7 +167,7 @@ function Quiz({questions, stateChanger, quizTitle}){
                     </motion.div>
                 </div>
                 
-                {result == 'none' && <motion.div className="bottomNavbar" initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 0.3}}>
+                {result == 'none' && <motion.div className="quizPage bottomNavbar" initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 0.3}}>
                             <Button text='Назад' handleClick={() => stateChanger(true)}/>
                             <Button text='ПРОВЕРИТЬ' available={canCheck ? true : false } handleClick={handleCheck}/>
                 </motion.div>}
@@ -196,7 +208,7 @@ function Quiz({questions, stateChanger, quizTitle}){
                 <div className="quizPage container">
                     <div className="quizPage header">Правильных ответов: {correctAnswers} из {questions.length}</div>
                 </div>
-                <motion.div className="bottomNavbar" initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 0.3}}>
+                <motion.div className="quizPage bottomNavbar" initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 0.3}}>
                             <Button text='Назад' handleClick={() => stateChanger(true)}/>
                             <Button text='ЗАКРЫТЬ' handleClick={()=>{setView('subjectSelect')}}/>
                 </motion.div>

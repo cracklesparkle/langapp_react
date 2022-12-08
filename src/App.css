@@ -96,8 +96,9 @@ p{
 .buttonLearn{
   position: relative;
   margin: 20px;
-  width: 15vw;
-  height: 50px;
+  padding: 5px;
+  min-width: 8rem;
+  min-height: 50px;
   background: rgb(83, 158, 201);
   border-radius: 20px;
   color: white;
@@ -117,8 +118,9 @@ p{
 .buttonDisabled{
   position: relative;
   margin: 20px;
-  width: 15vw;
-  height: 50px;
+  padding: 5px;
+  min-width: 8rem;
+  min-height: 50px;
   background: rgb(179, 179, 179);
   border-radius: 20px;
   color: white;
@@ -201,6 +203,14 @@ p{
 
 .quizBottom.wrong{
   background-color: rgb(255, 223, 224);
+}
+
+.quizBottom.wrong .buttonLearn{
+  background: rgb(255, 75, 75);
+}
+
+.quizBottom.correct .buttonLearn{
+  background: rgb(88, 204, 2);
 }
 
 .quizBottom p{
@@ -456,7 +466,6 @@ object-fit: contain;
   height: 150px;
   margin: 1.5rem;
   background: var(--card-bg-color);
-
   position: relative;
   border: 3px solid white;
   border-radius: 20px;
@@ -472,6 +481,8 @@ object-fit: contain;
 
 .language h3{
   font-size: 1rem !important;
+  text-transform: uppercase;
+  color: rgb(11, 52, 117) !important;
 }
 
 .subject img{
@@ -494,8 +505,6 @@ object-fit: contain;
 
 .language:hover {
   box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
-  transform: scale(1.05, 1.05);
-  
   cursor: pointer;
 }
 
@@ -1189,8 +1198,6 @@ a:active { text-decoration: none; }
     
   }
 
-
-
   .navbar {
     position: sticky !important;
     top: 0px;
@@ -1201,6 +1208,15 @@ a:active { text-decoration: none; }
 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     background-color: #f9f9f9;
+  }
+
+  .quizBottom, .quizPage.bottomNavbar{
+    position: fixed;
+    border-radius: 0;
+  }
+
+  .quizPage{
+    border-radius: 15px 15px;
   }
 
   .allLanguages img{

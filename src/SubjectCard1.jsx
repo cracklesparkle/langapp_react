@@ -1,29 +1,23 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import { ViewContext } from './ViewContext';
 
 import {motion} from 'framer-motion';
 
-function LanguageCard ({language, colorId, langId}) {
+function SubjectCard ({subject, index}) {
     const {setView} = useContext(ViewContext);
-
-    const handleClick = event =>{
-        setView(language.View)
-        localStorage.setItem('langId', JSON.stringify(langId));
-        window.scrollTo(0, 0);
-    };
+    
     // style={{backgroundImage: `url(${language.Background})`, backgroundSize:"contain", backgroundColor: '#6DB3F2'}}
     return (
-        <motion.div onClick={handleClick} className='language' id={colorId}
+        <motion.div onClick={()=>setView(subject.View)} className='language'
         whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.9 }}
-        >
+      whileTap={{ scale: 0.9 }}>
             <div className='images'>
-                <img src={language.Image}/>
-                <img src={language.Background}/>
+                <img src={subject.Image}/>
+                
             </div>
             <div>
-                <h3>{language.Title}</h3>
+                <h3>{subject.Title}</h3>
             </div>
             
         </motion.div>
@@ -42,4 +36,4 @@ function LanguageCard ({language, colorId, langId}) {
     // )
 }
 
-export default LanguageCard;
+export default SubjectCard;

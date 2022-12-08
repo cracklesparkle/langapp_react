@@ -159,7 +159,7 @@ function Greeting() {
     const {setView} = useContext(ViewContext);
 
     const [page, setPage] = useState(0);
-
+    console.log(currentDialogue)
     const handleClick = event =>{
         currentDialogue++;
         setPage(currentDialogue);

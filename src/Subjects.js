@@ -7,7 +7,7 @@ import Language from './Language';
 
 import { languages } from './Data';
 
-import SubjectCard from './SubjectCard';
+import SubjectCard from './SubjectCard1';
 import IntroductionIcon from './icons/introduction.png';
 import AnimalsIcon from './icons/animals.png';
 import ClothesIcon from './icons/clothes.png';
@@ -94,7 +94,7 @@ function Subjects(){
         "View": 'introductionView'
         },
         {
-        "Title": "Приветствие, знакомство",
+        "Title": "Знакомство",
         "Image": GreetingIcon,
         "Link": 'greeting',
         "View": 'greetingView'
