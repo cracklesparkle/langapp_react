@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 
 import {motion} from 'framer-motion';
 import { ViewContext } from './ViewContext';
@@ -202,11 +202,12 @@ const data1 = [
 ]
 
 function Family() {
-    const {setView} = useContext(ViewContext);
+    const {view, setView} = useContext(ViewContext);
     var current = 0;
 
     const [page, setPage] = useState(0);
 
+    
 
     const handleClick = event =>{
         if(page == 0){
@@ -227,6 +228,8 @@ function Family() {
     };
 
     const handleBack = event =>{
+        console.log('back')
+
         if(page == 0){
             setView('subjectSelect');
         }
@@ -240,21 +243,35 @@ function Family() {
         window.scrollTo(0, 0);
     };
 
+    //pass to quiz
+    const[state, setState]=useState(false);
+
+    useEffect(() => {
+        if(page == 2){
+            setPage(1)
+            setState(false)
+        }
+        
+    },[state])
+
   return (
     <motion.div className='familyPage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
-        <ViewContext.Provider value={{setView}}>
+        <ViewContext.Provider value={{view, setView}}>
         
-        <div className="container">
+        {page != 2 && <div className="container">
             <h1 className='header'>Семья</h1>
             {page == 0 && <Page1/>}
             {page == 1 && <Page2/>}
         </div>
-                    {page == 2 && <Quiz quiz={quizData1}/>}
-                    <div className="bottomNavbar">
-                            <Button text='Назад' handleClick={handleBack}/>
-                            {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
-                            <Button text='Далее' handleClick={handleClick}/>
-                    </div>
+        }
+        {page == 2 && 
+            <Quiz questions={quizData3.questions} quizTitle='Семья' stateChanger={setState}/>
+        }
+        {page !=2 && <div className="bottomNavbar">
+                <Button text='Назад' handleClick={handleBack}/>
+                {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
+                <Button text={page == 1 ? 'Перейти к тесту' : 'Далее'} handleClick={handleClick}/>
+        </div>}
         </ViewContext.Provider>
 
     </motion.div>

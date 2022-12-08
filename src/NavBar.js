@@ -14,7 +14,7 @@ function NavBar(){
                 </li>
                 {/* <li onClick={()=>{setView('subjectSelect')}}>Темы</li>
                 <li onClick={()=>{setView('languageSelect')}}>Языки</li> */}
-                {currentView != 'subjectSelect' && currentView != 'home' && currentView != 'languageSelect' && <li className='back' onClick={()=>{setView('subjectSelect')}}>Вернуться к темам</li>}
+                {currentView != 'subjectSelect' && currentView != 'home' && currentView != 'languageSelect' && currentView != 'placeholderView' && <li className='back' onClick={()=>{setView('subjectSelect')}}>Вернуться к темам</li>}
                 
             </ul>
         </div>

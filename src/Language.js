@@ -11,6 +11,7 @@ import yukaghir1_4 from './languages/yukaghir/yukaghir1-4.jpg';
 
 import {Navigate, Link} from 'react-router-dom';
 
+import Quiz from './Quiz';
 
 import {motion} from 'framer-motion';
 
@@ -33,59 +34,72 @@ const Language = ({language}) =>{
     return(
             <motion.div className='language-page' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>    
                 <ViewContext.Provider value={{setView}}>
-                    <h1 className='language-page-heading'>{language.Heading}</h1>
-                    {/* <div>
-                        <img className="photo" src={`${yukaghir1}`} alt=""></img>
-                    </div> */}
-                    <p>{language.Description}</p>
-                    {/* <button onClick={()=> {
-                        setView('subjectSelect');
-                        var key = JSON.parse(localStorage.getItem('1'));
-                        key.available = 1;
-                        localStorage.setItem(1, JSON.stringify(key));
-                    }} className='buttonLearn'>Перейти к изучению</button> */}
-                    <Button text='Перейти к изучению' handleClick={()=> {
-                        setView('subjectSelect');
-                        var key = JSON.parse(localStorage.getItem('1'));
-                        key.available = 1;
-                        localStorage.setItem(1, JSON.stringify(key));
-                        window.scrollTo(0, 0);
-                    }}/>
-                    <div>
-                        <Carousel className='carousel' 
-                                emulateTouch
-                                autoPlay
-                                dynamicHeight={false}
-                                centerMode
-                                centerSlidePercentage={100}
-                                showStatus={false}
-                                showArrows={false}
-                                showIndicators={false}
-                                showThumbs={false}
-                                axis={'horizontal'}
-                                interval={5000}
-                                transitionTime={1000}
-                                infiniteLoop={true}
-                            >
-                            <div>
-                                <img className="photo" src={`${yukaghir1}`} alt=""></img>
-                            </div>
-                            <div>
-                                <img className="photo" src={`${yukaghir1_1}`} alt=""></img>
-                            </div>
-                            <div>
-                                <img className="photo" src={`${yukaghir1_3}`} alt=""></img>
-                            </div>
-                            <div>
-                                <img className="photo" src={`${yukaghir1_4}`} alt=""></img>
-                            </div>
-                        </Carousel>
-                    </div>
+                    <Info language={language}/>
                     
                 </ViewContext.Provider>
                 
             </motion.div>     
     );
 };
+
+function Info({language}){
+    const {setView} = useContext(ViewContext);
+    return(
+        <>    
+            <ViewContext.Provider value={{setView}}>
+                <h1 className='language-page-heading'>{language.Heading}</h1>
+                {/* <div>
+                    <img className="photo" src={`${yukaghir1}`} alt=""></img>
+                </div> */}
+                <p>{language.Description}</p>
+                {/* <button onClick={()=> {
+                    setView('subjectSelect');
+                    var key = JSON.parse(localStorage.getItem('1'));
+                    key.available = 1;
+                    localStorage.setItem(1, JSON.stringify(key));
+                }} className='buttonLearn'>Перейти к изучению</button> */}
+                <Button text='Перейти к изучению' handleClick={()=> {
+                    setView('subjectSelect');
+                    var key = JSON.parse(localStorage.getItem('1'));
+                    key.available = 1;
+                    localStorage.setItem(1, JSON.stringify(key));
+                    window.scrollTo(0, 0);
+                }}/>
+                <div>
+                    <Carousel className='carousel' 
+                            emulateTouch
+                            autoPlay
+                            dynamicHeight={false}
+                            centerMode
+                            centerSlidePercentage={100}
+                            showStatus={false}
+                            showArrows={false}
+                            showIndicators={false}
+                            showThumbs={false}
+                            axis={'horizontal'}
+                            interval={5000}
+                            transitionTime={1000}
+                            infiniteLoop={true}
+                        >
+                        <div>
+                            <img className="photo" src={`${yukaghir1}`} alt=""></img>
+                        </div>
+                        <div>
+                            <img className="photo" src={`${yukaghir1_1}`} alt=""></img>
+                        </div>
+                        <div>
+                            <img className="photo" src={`${yukaghir1_3}`} alt=""></img>
+                        </div>
+                        <div>
+                            <img className="photo" src={`${yukaghir1_4}`} alt=""></img>
+                        </div>
+                    </Carousel>
+                </div>
+                
+            </ViewContext.Provider>
+            
+        </>     
+);
+}
 
 export default Language;

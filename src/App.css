@@ -130,6 +130,7 @@ p{
 }
 
 
+
 .quizPage p{
   text-align: center !important;
 }
@@ -248,24 +249,27 @@ p{
   padding: 2rem;
 
   display: flex;
-  justify-content: center;
+  justify-content:flex-start;
   align-items: center;
   flex-direction: column;
 
   overflow: clip;
+
+  min-height: 100vh;
 }
 
 .app .appBackground{
   position: absolute;
   z-index: -1;
   width: 100%;
+
+  overflow: clip;
   top: 0;
     left: 0;
     right: 0;
   opacity: 0.5;
   mix-blend-mode: normal;
-  object-fit: cover;
-  
+  object-fit:fill;
 }
 
 .subHeader{
@@ -617,7 +621,7 @@ object-fit: contain;
   overflow: auto;
   z-index: 4;
   width: 60%;
-  margin: auto auto 0 auto;
+  margin: 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   background-color: #f9f9f9;
 }
