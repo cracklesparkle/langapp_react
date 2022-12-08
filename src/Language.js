@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 
 import { ViewContext } from './ViewContext';
 
@@ -12,6 +12,7 @@ import yukaghir1_4 from './languages/yukaghir/yukaghir1-4.jpg';
 import {Navigate, Link} from 'react-router-dom';
 
 import Quiz from './Quiz';
+import { quizData1, quizData2, quizData3 } from './quizData';
 
 import {motion} from 'framer-motion';
 
@@ -31,18 +32,33 @@ const items = [
 const Language = ({language}) =>{
     const {setView} = useContext(ViewContext);
 
+    const [page, setPage] = useState(0);
+
+
+    //pass to quiz
+    const[state, setState]=useState(false);
+
+    useEffect(() => {
+        if(page == 1){
+            setPage(0)
+            setState(false)
+        }
+        
+    },[state])
+
     return(
             <motion.div className='language-page' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>    
                 <ViewContext.Provider value={{setView}}>
-                    <Info language={language}/>
                     
+                    {page == 0 && <Info language={language} pageChanger={setPage}/>}
+                    {page == 1 && <Quiz questions={quizData1.questions} quizTitle='Семья' stateChanger={setState}/>}
                 </ViewContext.Provider>
                 
             </motion.div>     
     );
 };
 
-function Info({language}){
+function Info({language, pageChanger}){
     const {setView} = useContext(ViewContext);
     return(
         <>    
@@ -51,7 +67,7 @@ function Info({language}){
                 {/* <div>
                     <img className="photo" src={`${yukaghir1}`} alt=""></img>
                 </div> */}
-                <p>{language.Description}</p>
+                <p className='description'>{language.Description}</p>
                 {/* <button onClick={()=> {
                     setView('subjectSelect');
                     var key = JSON.parse(localStorage.getItem('1'));
@@ -59,7 +75,7 @@ function Info({language}){
                     localStorage.setItem(1, JSON.stringify(key));
                 }} className='buttonLearn'>Перейти к изучению</button> */}
                 <Button text='Перейти к изучению' handleClick={()=> {
-                    setView('subjectSelect');
+                    pageChanger(1);
                     var key = JSON.parse(localStorage.getItem('1'));
                     key.available = 1;
                     localStorage.setItem(1, JSON.stringify(key));

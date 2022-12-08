@@ -194,8 +194,18 @@ function Greeting() {
     };
 
     const handleBack = event =>{
+        console.log(currentDialogue)
+        if (currentDialogue > 0){
+            currentDialogue--;
+            setPage(currentDialogue);
+        }
+        if (currentDialogue == 0){
 
-    }
+        }
+
+        window.scrollTo(0, 0);
+    };
+
   return (
     <ViewContext.Provider value={{setView}}>
     <motion.div className='greetingPage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
@@ -207,9 +217,9 @@ function Greeting() {
                             {page == 1 && <Birds/>} */}
                         </div>
             <div className="bottomNavbar">
-                
+                {currentDialogue != 0 ? <Button text='Назад' handleClick={handleBack}/> : <Button available={false} text='Назад'/>}
                 {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
-                <Button text='Далее' handleClick={handleClick}/>
+                <Button text={currentDialogue == data.length-1 ? 'Вернуться к темам' : 'Далее'} handleClick={handleClick}/>
             </div>
         
 

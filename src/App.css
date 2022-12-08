@@ -350,11 +350,6 @@ p{
   flex-wrap: wrap;
 }
 
-.language-page p {
-  margin-top: 10px;
-  font-size: 20px;
-  text-align: justify;
-}
 
 .language-page .buttonLearn{
   position: inherit;
@@ -381,7 +376,8 @@ p{
 }
 
 .language-page{
-  background: rgba(255,255,255,0.8);
+  /* background: rgba(255,255,255,0.8); */
+  background-color: white;
   border-radius: 30px;
   display: flex;
   width: 60vw;
@@ -393,7 +389,10 @@ p{
   padding: 10px;
 }
 
-.language-page p{
+.language-page .description{
+  margin-top: 10px;
+  font-size: 20px;
+  text-align: justify;
   padding: 30px;
 }
 
