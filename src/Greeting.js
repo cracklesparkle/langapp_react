@@ -1,19 +1,15 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 
 import {motion} from 'framer-motion';
 import { ViewContext } from './ViewContext';
-
-
-
-import imgCulture1 from './languages/yukaghir/cultureFood/image1.jpg';
-import imgCulture2 from './languages/yukaghir/cultureFood/image2.jpg';
-import imgCulture3 from './languages/yukaghir/cultureFood/image3.jpg';
-import imgCulture4 from './languages/yukaghir/cultureFood/image4.jpg';
 
 import b_left from './languages/yukaghir/greeting/b_left.png';
 import b_right from './languages/yukaghir/greeting/b_right.png';
 import g_left from './languages/yukaghir/greeting/g_left.png';
 import g_right from './languages/yukaghir/greeting/g_right.png';
+
+import Quiz from './Quiz';
+import { quizData1, quizData2, quizData3 } from './quizData';
 
 import Bubble from './components/Bubble';
 
@@ -159,70 +155,69 @@ function Greeting() {
     const {setView} = useContext(ViewContext);
 
     const [page, setPage] = useState(0);
-    console.log(currentDialogue)
+
+    const [dialogue, setDialogue] = useState(0);
+
     const handleClick = event =>{
-        currentDialogue++;
-        setPage(currentDialogue);
-        console.log(page);
-        // if(page == 0){
-        //     setPage(1)
-            
-        // }
-        // if(page == 1){
-        //     setPage(2)
-            
-        // }
-        // if(page == 2){
-        //     setPage(3)
-            
-        // }
-        // if(page == 3){
-        //     setPage(4)
-            
-        // }
-        if(page == data.length - 1){
-            currentDialogue = 0;
-            setView('subjectSelect');
+        
+        //currentDialogue++;
+        //setDialogue(currentDialogue);
+        setDialogue(dialogue+1)
 
-            var key = JSON.parse(localStorage.getItem('2'));
-            key.available = 1;
-            localStorage.setItem(2, JSON.stringify(key));
-            window.scrollTo(0, 0);
+        if(page == 0 && dialogue == data.length - 1){
+            setPage(1)
         }
+        // if(dialogue == data.length - 1){
+        //     currentDialogue = 0;
+        //     setView('subjectSelect');
 
-        // window.scrollTo(0, 0);
+        //     var key = JSON.parse(localStorage.getItem('2'));
+        //     key.available = 1;
+        //     localStorage.setItem(2, JSON.stringify(key));
+        //     window.scrollTo(0, 0);
+        // }
     };
 
     const handleBack = event =>{
-        console.log(currentDialogue)
-        if (currentDialogue > 0){
-            currentDialogue--;
-            setPage(currentDialogue);
-        }
-        if (currentDialogue == 0){
-
+        if (dialogue > 0){
+            //currentDialogue--;
+            //setDialogue(currentDialogue);
+            setDialogue(dialogue-1)
         }
 
         window.scrollTo(0, 0);
     };
 
+    //pass to quiz
+    const[state, setState]=useState(false);
+
+    useEffect(() => {
+        if(page == 1){
+            setPage(0)
+            setDialogue(dialogue-1)
+            setState(false)
+        }
+        
+    },[state])
+
   return (
     <ViewContext.Provider value={{setView}}>
     <motion.div className='greetingPage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
+            {page == 0 &&
+                <>
             
-            <div className="container">
-            <h1 className='header'>Приветствие и знакомство на тундренном юкагирском языке.</h1>
-                            {currentDialogue < data.length && <Dialogue dialogue={data[currentDialogue]}/>}
-                            {/* {page == 0 && <Animal/>}
-                            {page == 1 && <Birds/>} */}
-                        </div>
-            <div className="bottomNavbar">
-                {currentDialogue != 0 ? <Button text='Назад' handleClick={handleBack}/> : <Button available={false} text='Назад'/>}
-                {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
-                <Button text={currentDialogue == data.length-1 ? 'Вернуться к темам' : 'Далее'} handleClick={handleClick}/>
-            </div>
-        
-
+                    <div className="container">
+                        <h1 className='header'>Приветствие и знакомство на тундренном юкагирском языке.</h1>
+                        {dialogue < data.length && <Dialogue dialogue={data[dialogue]}/>}
+                    </div>
+                    <div className="bottomNavbar">
+                        {dialogue != 0 ? <Button text='Назад' handleClick={handleBack}/> : <Button available={false} text='Назад'/>}
+                        {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
+                        <Button text={dialogue == data.length-1 ? 'Перейти к тесту' : 'Далее'} handleClick={handleClick}/>
+                    </div>
+                </>
+            }
+            {page == 1 && <Quiz questions={quizData2.questions} quizTitle='Приветствие и знакомство на тундренном юкагирском языке.' stateChanger={setState}/>}
     </motion.div>
     </ViewContext.Provider>
   )
@@ -251,35 +246,6 @@ function Dialogue(props){
                             
         </motion.div>
     );
-}
-
-function Animal(){
-    return (
-        <div className='culture'>
-            <h1 className='header'>Культура юкагиров (яранга, оленеводство, рыболовство).</h1>
-            <div className='animal'>
-                <h1>Яранга – традиционное переносное жилище из жердей и оленьих шкур.</h1>
-                <h1>Wадун нимэ- тидаатэҥ хануойирэҥ иwильҕат wиэнунҥа, илэн саwаҕат иирэйуолнуни. </h1>
-                <div className='image'>
-                    <img src={imgCulture1}></img>
-                </div>
-            </div>
-        </div>
-      )
-}
-
-function Birds(){
-    return (
-        <div className='birds'>
-            <div className='animal'>
-                <h1>Уйэньэйрукунпэ</h1>
-                <h1>Птицы</h1>
-                <div className='image'>
-                    <img src={imgCulture1}></img>
-                </div>
-            </div>
-        </div>
-      )
 }
 
 export default Greeting

@@ -74,7 +74,7 @@ function Info({language, pageChanger}){
                     key.available = 1;
                     localStorage.setItem(1, JSON.stringify(key));
                 }} className='buttonLearn'>Перейти к изучению</button> */}
-                <Button text='Перейти к изучению' handleClick={()=> {
+                <Button text='Перейти к тесту' handleClick={()=> {
                     pageChanger(1);
                     var key = JSON.parse(localStorage.getItem('1'));
                     key.available = 1;
