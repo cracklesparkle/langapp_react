@@ -1,4 +1,4 @@
-import React, {useContext, useState, useRef} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 
 import {motion} from 'framer-motion';
 import { ViewContext } from './ViewContext';
@@ -129,8 +129,11 @@ import audio85 from "./languages/yukaghir/nature/audio/85. щука.mp3";
 import audio86 from "./languages/yukaghir/nature/audio/86. у щуки много зубов.mp3";
 import audio87 from "./languages/yukaghir/nature/audio/87. налим.mp3";
 
+import { quizData4 } from './quizData';
+
 import ringer from './sounds/misc/ring06.wav';
 import SoundButton from './components/SoundButton';
+import Quiz from './Quiz';
 
 function Nature() {
     const {setView} = useContext(ViewContext);
@@ -145,10 +148,12 @@ function Nature() {
             setPage(1)
         }
         if(page == 1){
-            setView('subjectSelect');
-            var key = JSON.parse(localStorage.getItem('4'));
-            key.available = 1;
-            localStorage.setItem(4, JSON.stringify(key));
+            // setView('subjectSelect');
+            // var key = JSON.parse(localStorage.getItem('4'));
+            // key.available = 1;
+            // localStorage.setItem(4, JSON.stringify(key));
+
+            setPage(2);
         }
 
         window.scrollTo(0, 0)
@@ -165,198 +170,103 @@ function Nature() {
         window.scrollTo(0, 0);
     };
 
+    //pass to quiz
+    const[state, setState]=useState(false);
+
+    useEffect(() => {
+        if(page == 2){
+            setPage(1)
+            setState(false)
+        }
+        
+    },[state])
+
   return (
     <motion.div className='naturePage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
         <ViewContext.Provider value={{setView}} >
             
-        <div className="container">
-                    <h1 className='header'>Природа</h1>
-                        {page == 0 && <Earth/>}
-                        {page == 1 && <Plants/>}
-                    </div>
-                    <div className="bottomNavbar">
-                        {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
-                        <Button text='Назад' handleClick={handleBack}/>
-                        <Button text='Далее' handleClick={handleClick}/>
-                    </div>
+        {page != 2 && <div className="container">
+            <h1 className='header'>Природа</h1>
+            {page == 0 && <Earth/>}
+            {page == 1 && <Plants/>}
+        </div>}
+        {page == 2 && <Quiz questions={quizData4.questions} quizTitle='Природа' stateChanger={setState}/>}
+        {page != 2 && <div className="bottomNavbar">
+            {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
+            <Button text='Назад' handleClick={handleBack}/>
+            <Button text={page == 1 ? 'Перейти к тесту' : 'Далее'} handleClick={handleClick}/>
+        </div>}
         </ViewContext.Provider>
                     
     </motion.div>
   )
 }
 
+function EarthCard(props){
+    return(
+        <div className='block'>
+            <div className='audio-text'>
+                <SoundButton audio={props.audio}/>
+                <h1>{props.header}</h1>
+            </div>
+            <h3>{props.subheader}</h3>
+            {props.image && <div className='image'>
+                <img src={props.image}></img>
+            </div>}
+        </div>
+    )
+}
+
+function PlantCard(props){
+    return(
+        <div className='block'>
+            <div className='audio-text'>
+                <SoundButton audio={props.audio1}/>
+                <h1>{props.header}</h1>
+            </div>
+            <h3>{props.subheader}</h3>
+            {props.sentence && <div className='audio-text'>
+                <SoundButton audio={props.audio2}/>
+                <p className='natureSentence'>{props.sentence}</p>
+            </div>}
+            <div className='image'>
+                <img src={props.image}></img>
+            </div>
+        </div>
+    )
+}
+
 function Earth(){
     return (
         <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}} className='earth'>
             <div className='aside'>
-                <div className='block'>
-                    <div className='audio-text'>
-                        <SoundButton audio={audio1}/>
-                        <h1>Лукул</h1>
-                    </div>
-                    <h3>Земля</h3>
-                    <div className='image'>
-                        <img src={imgEarth}></img>
-                    </div>
-                </div>
-        
-                <div className='block'>
-                <div className='audio-text'>
-                        <SoundButton audio={audio3}/>
-                    <h1>Лэwэйнбурэбэ</h1>
-                    </div>
-                    <h3>Родина. Природа</h3>
-                    <div className='image'>
-                        <img src={imgNature}></img>
-                    </div>
-                </div>
-        
-                <div className='block'>
-                <div className='audio-text'>
-                        <SoundButton audio={audio4}/>
-                    <h1>Лаwйэ</h1>
-                    </div>
-                    <h3>Вода</h3>
-                    <div className='image'>
-                        <img src={imgWater}></img>
-                    </div>
-                </div>
+                <EarthCard audio={audio1} header={'Лукул'} subheader={'Земля'} image={imgEarth}/>
+                <EarthCard audio={audio3} header={'Лэwэйнбурэбэ'} subheader={'Родина. Природа'} image={imgNature}/>
+                <EarthCard audio={audio4} header={'Лаwйэ'} subheader={'Вода'} image={imgWater}/>
             </div>
             
             <div className='aside'>
-                <div className='block'>
-                <div className='audio-text'>
-                        <SoundButton audio={audio5}/>
-                    <h1>Өнидьэ</h1>
-                    </div>
-                    <h3>Земля, песок.</h3>
-                    <div className='image'>
-                        <img src={imgDirt}></img>
-                    </div>
-                </div>
-                
-                <div className='block'>
-                <div className='audio-text'>
-                        <SoundButton audio={audio6}/>
-                    <h1>Йоссо</h1>
-                    </div>
-                    <h3>Мерзлота</h3>
-                    <div className='image'>
-                        <img src={imgPermafrost}></img>
-                    </div>
-                </div>
-                
-                <div className='block'>
-                <div className='audio-text'>
-                        <SoundButton audio={audio7}/>
-                    <h1>Саал</h1>
-                    </div>
-                    <h3>Дерево</h3>
-                    <div className='image'>
-                        <img src={imgTree}></img>
-                    </div>
-                </div>
+                <EarthCard audio={audio5} header={'Өнидьэ'} subheader={'Земля, песок.'} image={imgDirt}/>
+                <EarthCard audio={audio6} header={'Йоссо'} subheader={'Мерзлота'} image={imgPermafrost}/>
+                <EarthCard audio={audio7} header={'Саал'} subheader={'Дерево'} image={imgTree}/>
             </div>
             
             <div className='aside'>
-                <div className='block'>
-                <div className='audio-text'>
-                        <SoundButton audio={audio8}/>
-                        </div>
-                    <h1>Чаwул</h1>
-                    <h3>Море, океан</h3>
-                    <div className='image'>
-                        <img src={imgSeaOcean}></img>
-                    </div>
-                </div>
-        
-                <div className='block'>
-                <div className='audio-text'>
-                        <SoundButton audio={audio9}/>
-                    <h1>Эну</h1>
-                    </div>
-                    <h3>Река</h3>
-                    <div className='image'>
-                        <img src={imgRiver}></img>
-                    </div>
-                </div>
-        
-                <div className='block'>
-                <div className='audio-text'>
-                        <SoundButton audio={audio10}/>
-                    <h1>Йалҕил</h1>
-                </div>
-                    <h3>Озеро</h3>
-                    <div className='image'>
-                        <img src={imgLake}></img>
-                    </div>
-                </div>
+                <EarthCard audio={audio8} header={'Чаwул'} subheader={'Море, океан'} image={imgSeaOcean}/>
+                <EarthCard audio={audio9} header={'Эну'} subheader={'Река'} image={imgRiver}/>
+                <EarthCard audio={audio10} header={'Йалҕил'} subheader={'Озеро'} image={imgLake}/>
             </div>
             
             <div className='aside'>
-                <div className='block'>
-                <div className='audio-text'>
-                        <SoundButton audio={audio11}/>
-                    <h1>Йуорпурэ</h1>
-                    </div>
-                    <h3>Тундра</h3>
-                    <div className='image'>
-                        <img src={imgTundra}></img>
-                    </div>
-                </div>
-        
-                <div className='block'>
-                <div className='audio-text'>
-                        <SoundButton audio={audio12}/>
-                    <h1>Анаа</h1>
-                    </div>
-                    <h3>Гора</h3>
-                    <div className='image'>
-                        <img src={imgMountain}></img>
-                    </div>
-                </div>
+                <EarthCard audio={audio11} header={'Йуорпурэ'} subheader={'Тундра'} image={imgTundra}/>
+                <EarthCard audio={audio12} header={'Анаа'} subheader={'Гора'} image={imgMountain}/>
             </div>
             
-    
-            <div className='block'>
-            <div className='audio-text'>
-                        <SoundButton audio={audio13}/>
-                <h1>Лукулҕа пойуодьэ нотинэй льуолуол льэй.</h1>
-                </div>
-                <h3>На Земле есть много красивых мест.</h3>
-            </div>
-    
-            <div className='block'>
-            <div className='audio-text'>
-                        <SoundButton audio={ringer}/>
-                <h1>Лукулҕа пойуодьэ пулгидьилэ льэй.  </h1>
-                </div>
-                <h3>На земле есть много растений.</h3>
-            </div>
-            
-            <div className='block'>
-            <div className='audio-text'>
-                        <SoundButton audio={audio14}/>
-            <h1>Мит лукулҕа көдьэпэ, уйэньэйрукунпэ, йэлукунугурчэндьэрукунпэ эннуҥи.</h1>
-            </div>
-                <h3>На нашей земле живут насекомые, птицы, животные.</h3>
-            </div>
-
-            <div className='block'>
-                <div className='audio-text'>
-                    <SoundButton audio={ringer}/>
-                    <h1>Лукул – мит нимэ.</h1>
-                </div>
-                <h3>Земля - наш дом</h3>
-            </div>
-
-            <div className='block'>
-            <div className='audio-text'>
-                        <SoundButton audio={audio15}/>
-                <h1>Мит Лукул нотинэй, чайлэндьэ wиэҕа!</h1>
-                </div>
-                <h3>Сохраним нашу Планету красивой и чистой!</h3>
-            </div>
+            <EarthCard audio={audio13} header={'Лукулҕа пойуодьэ нотинэй льуолуол льэй.'} subheader={'На Земле есть много красивых мест.'}/>
+            <EarthCard audio={ringer} header={'Лукулҕа пойуодьэ пулгидьилэ льэй.'} subheader={'На земле есть много растений.'}/>
+            <EarthCard audio={audio14} header={'Мит лукулҕа көдьэпэ, уйэньэйрукунпэ, йэлукунугурчэндьэрукунпэ эннуҥи.'} subheader={'На нашей земле живут насекомые, птицы, животные.'}/>
+            <EarthCard audio={ringer} header={'Лукул – мит нимэ.'} subheader={'Земля - наш дом'}/>
+            <EarthCard audio={audio15} header={'Мит Лукул нотинэй, чайлэндьэ wиэҕа!'} subheader={'Сохраним нашу Планету красивой и чистой!'}/>
         </motion.div>
       )
 }
@@ -364,9 +274,6 @@ function Earth(){
 function Plants(){
     return (
         <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}} className='plants'>
-            <div className='aside'>
-
-            </div>
             <div className='block'>
             <div className='audio-text'>
                     <SoundButton audio={audio16}/>
@@ -377,204 +284,34 @@ function Plants(){
             </div>
 
             <div className='aside'>
-            <div className='block'>
-            <div className='audio-text'>
-                    <SoundButton audio={audio17}/>
-                <h1>Ульэгэ</h1>
-                </div>
-                <h3>Трава</h3>
-                <div className='audio-text'>
-                    <SoundButton audio={audio18}/>
-                <p>Ульэгэ хомоньэй. Трава зелёная.</p>
-                </div>
-                <div className='image'>
-                    <img src={imgPlant2}></img>
-                </div>
-            </div>
-    
-            <div className='block'><div className='audio-text'>
-                    <SoundButton audio={audio19}/>
-                <h1>Хаҕимэwуол</h1>
-                </div>
-                <h3>Багульник</h3>
-                <div className='audio-text'>
-                    <SoundButton audio={audio20}/>
-                <p>У багульника белые цветы. Хаҕимэwуол пулгидьилэги ньааwэй.</p>
-                </div>
-                <div className='image'>
-                    <img src={imgPlant3}></img>
-                </div>
-            </div>
-    
-            <div className='block'>
-            <div className='audio-text'>
-                    <SoundButton audio={audio21}/>
-                <h1>Пулгидьилэ</h1>
-                </div>
-                <h3>Цветок</h3>
-                <div className='audio-text'>
-                    <SoundButton audio={audio22}/>
-                <p>Пөдьэлдэ амучэ пулгидьилэк. Цветок с приятным запахом.</p>
-                </div>
-                <div className='image'>
-                    <img src={imgPlant4}></img>
-                </div>
-            </div>
+                <PlantCard audio1={audio17} audio2={audio18} header={'Ульэгэ'} subheader={'Трава'} sentence={'Ульэгэ хомоньэй. Трава зелёная.'} image={imgPlant2}/>
+                <PlantCard audio1={audio19} audio2={audio20} header={'Хаҕимэwуол'} subheader={'Багульник'} sentence={'У багульника белые цветы. Хаҕимэwуол пулгидьилэги ньааwэй.'} image={imgPlant3}/>
+                <PlantCard audio1={audio21} audio2={audio22} header={'Пулгидьилэ'} subheader={'Цветок'} sentence={'Пөдьэлдэ амучэ пулгидьилэк. Цветок с приятным запахом.'} image={imgPlant4}/>
             </div>
 
             
             <div className='aside'>
-            <div className='block'>
-            <div className='audio-text'>
-                    <SoundButton audio={audio23}/>
-                <h1>Саал</h1>
-                </div>
-                <h3>Дерево</h3>
-                <div className='audio-text'>
-                    <SoundButton audio={audio24}/>
-                <p>Саал хомоньэй. Дерево зеленое.</p>
-                </div>
-                <div className='image'>
-                    <img src={imgPlant5}></img>
-                </div>
-            </div>
-    
-            <div className='block'>
-            <div className='audio-text'>
-                    <SoundButton audio={audio25}/>
-                <h1>Йаа(ҥ)</h1>
-                </div>
-                <h3>Берёза</h3>
-                <div className='image'>
-                    <img src={imgPlant6}></img>
-                </div>
-            </div>
-    
-            <div className='block'>
-            <div className='audio-text'>
-                    <SoundButton audio={audio26}/>
-                <h1>Морхэ</h1>
-                </div>
-                <h3>Карликовая берёза</h3>
-                <div className='audio-text'>
-                    <SoundButton audio={audio27}/>
-                <p>Морхэ йуорпурэҕа пулгэйнуни. Карликовая береза растет в тундре.</p>
-                </div>
-                <div className='image'>
-                    <img src={imgPlant7}></img>
-                </div>
-            </div>
+                <PlantCard audio1={audio23} audio2={audio24} header={'Саал'} subheader={'Дерево'} sentence={'Саал хомоньэй. Дерево зеленое.'} image={imgPlant5}/>
+                <PlantCard audio1={audio25} header={'Йаа(ҥ)'} subheader={'Берёза'} sentence={''} image={imgPlant6}/>
+                <PlantCard audio1={audio26} audio2={audio27} header={'Морхэ'} subheader={'Карликовая берёза'} sentence={'Морхэ йуорпурэҕа пулгэйнуни. Карликовая береза растет в тундре.'} image={imgPlant7}/>
             </div>
 
         
             <div className='aside'>
-            <div className='block'>
-            <div className='audio-text'>
-                    <SoundButton audio={audio28}/>
-                <h1>Ньанмэ</h1>
-                </div>
-                <h3>Тальник, ива, верба</h3>
-                <div className='audio-text'>
-                    <SoundButton audio={audio29}/>
-                <p>Ньанмэролхэ. Заросли тальника.</p>
-                </div>
-                <div className='image'>
-                    <img src={imgPlant8}></img>
-                </div>
-            </div>
-    
-            <div className='block'>
-            <div className='audio-text'>
-                    <SoundButton audio={audio30}/>
-                <h1>Ньамучэндьэ пуриэ</h1>
-                </div>
-                <h3>Брусника</h3>
-                <div className='audio-text'>
-                    <SoundButton audio={audio31}/>
-                <p>Ньамучэндьэ пуриэ ньамучэньи. Брусника красного цвета.</p>
-                </div>
-                <div className='image'>
-                    <img src={imgPlant9}></img>
-                </div>
-            </div>
-    
-            <div className='block'>
-            <div className='audio-text'>
-                    <SoundButton audio={audio32}/>
-                <h1>Хомоньэй пуриэ</h1>
-                </div>
-                <h3>Голубика</h3>
-                <div className='audio-text'>
-                    <SoundButton audio={audio33}/>
-                <p>Хомоньэй пуриэ ньанбэличэ пуриэ. Голубика - вкусная ягода</p>
-                </div>
-                <div className='image'>
-                    <img src={imgPlant10}></img>
-                </div>
-            </div>
+                <PlantCard audio1={audio28} audio2={audio29} header={'Ньанмэ'} subheader={'Тальник, ива, верба'} sentence={'Ньанмэролхэ. Заросли тальника.'} image={imgPlant8}/>
+                <PlantCard audio1={audio30} audio2={audio31} header={'Ньамучэндьэ пуриэ'} subheader={'Брусника'} sentence={'Ньамучэндьэ пуриэ ньамучэньи. Брусника красного цвета.'} image={imgPlant9}/>
+                <PlantCard audio1={audio32} audio2={audio33} header={'Хомоньэй пуриэ'} subheader={'Голубика'} sentence={'Хомоньэй пуриэ ньанбэличэ пуриэ. Голубика - вкусная ягода'} image={imgPlant10}/>
             </div>
 
 
             <div className='aside'>
-            <div className='block'>
-            <div className='audio-text'>
-                    <SoundButton audio={audio34}/>
-                <h1>Ньоронпуриэ</h1>
-                </div>
-                <h3>Морошка</h3>
-                <div className='audio-text'>
-                    <SoundButton audio={audio35}/>
-                <p>Ньоронпуриэ йуорпурэҕа пулгэйнуни. Морошка растет в тундре.</p>
-                </div>
-                <div className='image'>
-                    <img src={imgPlant11}></img>
-                </div>
-            </div>
-    
-            <div className='block'>
-            <div className='audio-text'>
-                    <SoundButton audio={audio36}/>
-                <h1>Тороньэй пуриэ</h1>
-                </div>
-                <h3>Шикша, черника.</h3>
-                <div className='audio-text'>
-                    <SoundButton audio={audio37}/>
-                <p>Тороньэй пуриэ мэ тороньэй. Шикша черного цвета.</p>
-                </div>
-                <div className='image'>
-                    <img src={imgPlant12}></img>
-                </div>
-            </div>
-    
-            <div className='block'>
-            <div className='audio-text'>
-                    <SoundButton audio={audio38}/>
-                <h1>Хапньэпуриэ</h1>
-                </div>
-                <h3>Смородина</h3>
-                <div className='audio-text'>
-                    <SoundButton audio={audio39}/>
-                <p>Хапньэбуриэ амутнэҥ wалдьич. Смородина очень кислая.</p>
-                </div>
-                <div className='image'>
-                    <img src={imgPlant13}></img>
-                    
-                </div>
-            </div>
+                <PlantCard audio1={audio34} audio2={audio35} header={'Ньоронпуриэ'} subheader={'Морошка'} sentence={'Ньоронпуриэ йуорпурэҕа пулгэйнуни. Морошка растет в тундре.'} image={imgPlant11}/>
+                <PlantCard audio1={audio36} audio2={audio37} header={'Тороньэй пуриэ'} subheader={'Шикша, черника.'} sentence={'Тороньэй пуриэ мэ тороньэй. Шикша черного цвета.'} image={imgPlant12}/>
+                <PlantCard audio1={audio38} audio2={audio39} header={'Хапньэпуриэ'} subheader={'Смородина'} sentence={'Хапньэбуриэ амутнэҥ wалдьич. Смородина очень кислая.'} image={imgPlant13}/>
             </div>
             
-
-            <div className='block'>
-            <div className='audio-text'>
-            <div className='audio-text'>
-                    <SoundButton audio={audio40}/>
-                <h1>Самналдаҥньэ</h1>
-                </div>
-                </div>
-                <h3>Гриб</h3>
-                <div className='image'>
-                    <img src={imgPlant15}></img>
-                </div>
+            <div className='aside'>
+                <PlantCard audio1={audio40} header={'Самналдаҥньэ'} subheader={'Гриб'} image={imgPlant15}/>
             </div>
         </motion.div>
       )

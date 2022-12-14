@@ -228,8 +228,6 @@ function Family() {
     };
 
     const handleBack = event =>{
-        console.log('back')
-
         if(page == 0){
             setView('subjectSelect');
         }

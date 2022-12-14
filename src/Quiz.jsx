@@ -173,7 +173,7 @@ function Quiz({questions, stateChanger, quizTitle}){
                 </motion.div>}
                 {result != 'none' && <motion.div className={result == "correct" ? "quizBottom correct" : "quizBottom wrong"} initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 0.3}}>
                             <div className="result">
-                                <div className="image">
+                                <div className="resultImage">
                                     <img src={result == "correct" ? svgCheck : svgCross}></img>
                                 </div>
                                 <div className={result == "correct" ? "resultText correct" : "resultText wrong"}>

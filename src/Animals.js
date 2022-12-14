@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 
 import {motion} from 'framer-motion';
 import { ViewContext } from './ViewContext';
@@ -37,6 +37,10 @@ import imgBird12 from './languages/yukaghir/birds/image12.jpg';
 import imgBird13 from './languages/yukaghir/birds/image13.jpg';
 import imgBird14 from './languages/yukaghir/birds/image14.jpg';
 
+import { quizData5 } from './quizData';
+
+import Quiz from './Quiz';
+
 function Animals() {
     const {setView} = useContext(ViewContext);
 
@@ -45,14 +49,14 @@ function Animals() {
     const handleClick = event =>{
         if(page == 0){
             setPage(1)
-            
         }
         if(page == 1){
-            setView('subjectSelect');
-            var key = JSON.parse(localStorage.getItem('5'));
-            key.available = 1;
-            localStorage.setItem(5, JSON.stringify(key));
+            // setView('subjectSelect');
+            // var key = JSON.parse(localStorage.getItem('5'));
+            // key.available = 1;
+            // localStorage.setItem(5, JSON.stringify(key));
             window.scrollTo(0, 0);
+            setPage(2)
         }
         window.scrollTo(0, 0);
     };
@@ -68,18 +72,33 @@ function Animals() {
         window.scrollTo(0, 0);
     };
 
+    //pass to quiz
+    const[state, setState]=useState(false);
+
+    useEffect(() => {
+        if(page == 2){
+            setPage(1)
+            setState(false)
+        }
+        
+    },[state])
+
   return (
     <motion.div className='animalsPage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
         <ViewContext.Provider value={{setView}}>
-        <div className="container">
+            {page != 2 &&
+                <div className="container">
                         {page == 0 && <Animal/>}
                         {page == 1 && <Birds/>}
-                    </div>
-                    <div className="bottomNavbar">
-                        {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
-                        <Button text='Назад' handleClick={handleBack}/>
-                        <Button text='Далее' handleClick={handleClick}/>
-                    </div>
+                </div>
+            }
+            {page == 2 && <Quiz questions={quizData5.questions} quizTitle='Животные' stateChanger={setState}/>}
+        
+            {page != 2 && <div className="bottomNavbar">
+                {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
+                <Button text='Назад' handleClick={handleBack}/>
+                <Button text={page == 1 ? 'Перейти к тесту' : 'Далее'} handleClick={handleClick}/>
+            </div>}
         </ViewContext.Provider>
 
     </motion.div>
