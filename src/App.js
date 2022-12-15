@@ -20,7 +20,7 @@ function App(){
     const [currentView, setView] = useState(TypeScreen[1]);
     // style={{backgroundImage: `url(${Background1})`, backgroundSize:"cover", backgroundPosition: "center"}}
     return (
-        <div className='app' style={{backgroundImage: `url(${Background1})`, backgroundSize:"100% auto", backgroundPosition: "0% 0%", backgroundRepeat: "no-repeat"}}>
+        <div className='app' style={{backgroundImage: `url(${Background1})`, backgroundRepeat: "no-repeat"}}>
             {/* <img className='appBackground' src={Background1}></img> */}
             <Router>
                 <ViewContext.Provider value={{currentView, setView}}>

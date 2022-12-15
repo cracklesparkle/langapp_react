@@ -142,6 +142,9 @@ p{
   overflow: clip;
 
   min-height: 100vh;
+
+  background-size: 100% auto;
+  background-position: 0% 0%;
 }
 
 .app .appBackground{
@@ -1188,6 +1191,9 @@ a:active { text-decoration: none; }
 @media screen and (max-width: 600px) {
   .app {
     padding: 4rem 2rem;
+
+    background-size: 130% auto;
+    background-position: 35% 0%;
   }
   .app .appBackground{
     position: absolute;
@@ -1242,6 +1248,10 @@ a:active { text-decoration: none; }
     height: 30vh;
     object-fit: contain;
     /* box-shadow: 0 0 100px 100px rgb(204, 222, 235) inset; */
+  }
+
+  .languagesPage .chooseLang{
+    border-radius: 0px;
   }
 
   .language-page{
