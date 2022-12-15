@@ -136,7 +136,7 @@ function Subjects(){
         "View": 'taleView'
         },
         {
-        "Title": "Фольклор",
+        "Title": "Музыка",
         "Image": FolkloreIcon,
         "Link": 'folklore',
         "View": 'folkloreView'

@@ -96,7 +96,7 @@ p{
 .buttonLearn{
   position: relative;
   margin: 20px;
-  padding: 5px;
+  padding: 15px;
   min-width: 8rem;
   min-height: 50px;
   background: rgb(83, 158, 201);
@@ -104,7 +104,7 @@ p{
   color: white;
   font-family: 'Montserrat';
   font-weight: 600;
-  font-size: medium;
+  font-size: 0.9rem;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-bottom: solid 5px rgba(0, 0, 0, 0.1);
 }
@@ -118,7 +118,7 @@ p{
 .buttonDisabled{
   position: relative;
   margin: 20px;
-  padding: 5px;
+  padding: 15px;
   min-width: 8rem;
   min-height: 50px;
   background: rgb(179, 179, 179);
@@ -126,7 +126,7 @@ p{
   color: white;
   font-family: 'Montserrat';
   font-weight: 600;
-  font-size: medium;
+  font-size: 0.9rem;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-bottom: solid 5px rgb(179, 179, 179);
 }
@@ -263,7 +263,7 @@ p{
 
 .language-page .description{
   margin-top: 10px;
-  font-size: 20px;
+  font-size: 1.2rem;
   text-align: justify;
   padding: 30px;
 }
@@ -272,10 +272,13 @@ p{
   padding: 30px;
 }
 
+.language-page .slider-wrapper.axis-horizontal{
+  border-radius: 10px;
+}
 
 .photo{
   width:500px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 
 .subjectButtons{
@@ -339,10 +342,11 @@ object-fit: contain;
   background: var(--card-bg-color);
   position: relative;
   border: 3px solid white;
-  border-radius: 20px;
+  border-radius: 15%;
   overflow: clip !important;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
   box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+  -webkit-transform: translateZ(0);
 }
 
 .subject h3{
@@ -772,7 +776,7 @@ a:active { text-decoration: none; }
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  width: 100%;
+  width: fit-content;
 }
 
 .familyPage .member{
@@ -782,12 +786,13 @@ a:active { text-decoration: none; }
   margin: auto;
   
   align-items: center;
-  /* border-bottom: 5px solid rgba(0, 0, 0, 0.1); */
-  
+  border-bottom: 5px solid rgba(0, 0, 0, 0.1);
+  /* width: 100%; */
 }
 
 .familyPage .memberImg{
-  width: 250px;
+  /* width: 250px; */
+  width: 20vw;
 }
 
 .familyPage .a{
@@ -799,9 +804,15 @@ a:active { text-decoration: none; }
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  text-align: center;
+  width: fit-content;
+  margin: auto;
 }
+
 .familyPage .otherMembers .member{
-  margin-left: 25%;
+  width: 100%;
+  display: inline-block;
+  text-align: left;
 }
 
 
@@ -1112,6 +1123,8 @@ a:active { text-decoration: none; }
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 .quizBottom.correct{
@@ -1209,6 +1222,16 @@ a:active { text-decoration: none; }
     border-radius: 0;
   }
 
+  .quizBottom .resultImage{
+    margin: 0;
+  }
+
+  .quizBottom .resultImage img{
+    width: 1rem;
+    height: 1rem;
+    margin: 1rem;
+  }
+
   .quizPage{
     border-radius: 15px 15px;
   }
@@ -1298,15 +1321,15 @@ a:active { text-decoration: none; }
   .familyPage .member{
     display: flex;
     flex-direction: column;
-    padding: 35px;
-    margin: auto;
-    
+    padding: 5%;
+    margin: 0;
     align-items: center;
   }
   
   .familyPage .memberImg{
-    width: 30vw;
-    padding: 0;
+    width: 100%;
+    padding: 0% 15% 0% 15%;
+    margin: 0;
   }
   .familyPage .otherMembers .member{
     margin: 0;
