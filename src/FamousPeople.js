@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 
 import {motion} from 'framer-motion';
 import { ViewContext } from './ViewContext';
@@ -37,6 +37,9 @@ import thirdImg7 from './languages/yukaghir/famous/third/image7.jpeg';
 import thirdImg8 from './languages/yukaghir/famous/third/image8.jpeg';
 import thirdImg9 from './languages/yukaghir/famous/third/image9.jpeg';
 
+import { quizData10 } from './quizData';
+import Quiz from './Quiz';
+
 function FamousPeople() {
     const {setView} = useContext(ViewContext);
 
@@ -51,8 +54,9 @@ function FamousPeople() {
             setPage(2)
         }
         if(page == 2){
-            setView('subjectSelect');
+            //setView('subjectSelect');
             window.scrollTo(0, 0);
+            setPage(3)
         }
 
         window.scrollTo(0, 0);
@@ -72,20 +76,32 @@ function FamousPeople() {
         window.scrollTo(0, 0);
     };
 
+    //pass to quiz
+    const[state, setState]=useState(false);
+
+    useEffect(() => {
+        if(page == 3){
+            setPage(2)
+            setState(false)
+        }
+        
+    },[state])
+
   return (
     <motion.div className='famousPeoplePage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
         <ViewContext.Provider value={{setView}}>
         
-        <div className="container">
+        {page != 3 && <div className="container">
                         {page == 0 && <First/>}
                         {page == 1 && <Second/>}
                         {page == 2 && <Third/>}
-                    </div>
-                    <div className="bottomNavbar">
-                        {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
-                        <Button text='Назад' handleClick={handleBack}/>
-                        <Button text='Далее' handleClick={handleClick}/>
-                    </div>
+        </div>}
+        {page == 3 && <Quiz questions={quizData10.questions} quizTitle='Юкагирские писатели' stateChanger={setState}/>}
+        {page != 3 && <div className="bottomNavbar">
+            {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
+            <Button text='Назад' handleClick={handleBack}/>
+            <Button text={page == 2 ? 'Перейти к тесту' : 'Далее'} handleClick={handleClick}/>
+        </div>}
         </ViewContext.Provider>
 
     </motion.div>

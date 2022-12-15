@@ -68,6 +68,9 @@ import audio22 from "./languages/yukaghir/clothes/audio/22 штаны брюки
 
 import SoundButton from './components/SoundButton';
 
+import { quizData7 } from './quizData';
+import Quiz from './Quiz';
+
 const data = [
         {
             "header": "Wадун чии хандьэльэ, лэwэйльэ сукунньэҥи.",
@@ -328,36 +331,47 @@ function Clothes() {
     const [page, setPage] = useState(0);
 
     const handleClick = event =>{
-        setView('subjectSelect');
-        var key = JSON.parse(localStorage.getItem('7'));
-        key.available = 1;
-        localStorage.setItem(7, JSON.stringify(key));
-        window.scrollTo(0, 0);
+        if(page == 0){
+            // setView('subjectSelect');
+            // var key = JSON.parse(localStorage.getItem('6'));
+            // key.available = 1;
+            // localStorage.setItem(6, JSON.stringify(key));
+            window.scrollTo(0, 0);
+            setPage(1)
+        }
     };
 
+    //pass to quiz
+    const[state, setState]=useState(false);
 
+    useEffect(() => {
+        if(page == 1){
+            setPage(0)
+            setState(false)
+        }
+        
+    },[state])
 
   return (
     <motion.div className='clothesPage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
         <ViewContext.Provider value={{setView}}>
         
-        <div className="container">
-                        {/* {page == 0 && <Page1/>} */}
-                        <div className='culture'>
-                           <h1 className='header'>О национальной одежде юкагиров</h1>
-                           {data.map((e, i) => {
-                                return (
-                                            <Text props={e} key={i}/>
-                                        );
-                                })
-                            }
-                        </div>
-                        
-                    </div>
-                    <div className="bottomNavbar">
-                        {/* <button className='buttonLearn' onClick={handleClick}>Вернуться к темам</button> */}
-                        <Button text='Вернуться к темам' handleClick={handleClick}/>
-                    </div>
+        {page != 1 && <div className="container">
+            <div className='culture'>
+                <h1 className='header'>О национальной одежде юкагиров</h1>
+                {data.map((e, i) => {
+                    return (
+                                <Text props={e} key={i}/>
+                            );
+                    })
+                }
+            </div>
+        </div>}
+        {page == 1 && <Quiz questions={quizData7.questions} quizTitle='Национальная одежда юкагиров' stateChanger={setState}/>}
+        {page != 1 && <div className="bottomNavbar">
+            {/* <button className='buttonLearn' onClick={handleClick}>Вернуться к темам</button> */}
+            <Button text='Перейти к тесту' handleClick={handleClick}/>
+        </div>}
         </ViewContext.Provider>
 
     </motion.div>

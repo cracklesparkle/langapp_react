@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 
 import {motion} from 'framer-motion';
 import { ViewContext } from './ViewContext';
@@ -13,24 +13,8 @@ import Song2 from './languages/yukaghir/folklore/И.Курилов - Мэт йу
 import Song3 from './languages/yukaghir/folklore/И.Курилов - Мит эньиэ.mp3';
 import Song4 from './languages/yukaghir/folklore/И.Курилов - Йэрэгуутэгэ.mp3';
 
-const Sound1 = () => {
-    const audio = new Audio(Song1);
-    audio.loop = true;
-  
-    return (
-      <div>
-        <button
-          onClick={() => {
-            audio.loop = false;
-            audio.play();
-          }}
-        >
-          Play
-        </button>
-        <button onClick={() => (audio.loop = false)}>Pause</button>
-      </div>
-    );
-  };
+import { quizData9 } from './quizData';
+import Quiz from './Quiz';
 
 function Folklore() {
     const {setView} = useContext(ViewContext);
@@ -39,26 +23,40 @@ function Folklore() {
 
     const handleClick = event =>{
         if(page == 0){
-            setView('subjectSelect');
-            var key = JSON.parse(localStorage.getItem('9'));
-            key.available = 1;
-            localStorage.setItem(9, JSON.stringify(key));
+            // setView('subjectSelect');
+            // var key = JSON.parse(localStorage.getItem('9'));
+            // key.available = 1;
+            // localStorage.setItem(9, JSON.stringify(key));
+            // window.scrollTo(0, 0);
             window.scrollTo(0, 0);
+            setPage(1)
         }
 
     };
+
+    //pass to quiz
+    const[state, setState]=useState(false);
+
+    useEffect(() => {
+        if(page == 1){
+            setPage(0)
+            setState(false)
+        }
+        
+    },[state])
 
   return (
     <motion.div className='folklorePage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
         <ViewContext.Provider value={{setView}}>
         
-        <div className="container">
+        {page != 1 && <div className="container">
                         {page == 0 && <Page1/>}
-                    </div>
-                    <div className="bottomNavbar">
-                        {/* <button className='buttonLearn' onClick={handleClick}>Вернуться к темам</button> */}
-                        <Button text='Вернуться к темам' handleClick={handleClick}/>
-                    </div>
+        </div>}
+        {page == 1 && <Quiz questions={quizData9.questions} quizTitle='Юкагирские песни' stateChanger={setState}/>}
+        {page != 1 && <div className="bottomNavbar">
+            {/* <button className='buttonLearn' onClick={handleClick}>Вернуться к темам</button> */}
+            <Button text='Перейти к тесту' handleClick={handleClick}/>
+        </div>}
         </ViewContext.Provider>
 
     </motion.div>

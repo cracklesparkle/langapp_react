@@ -38,8 +38,8 @@ function CultureFood() {
     const[state, setState]=useState(false);
 
     useEffect(() => {
-        if(page == 2){
-            setPage(1)
+        if(page == 1){
+            setPage(0)
             setState(false)
         }
         
