@@ -1279,7 +1279,7 @@ a:active { text-decoration: none; }
 
   .buttonsContainer, .languagesPage .buttonsContainer{
     width: 100vw;
-    margin: 0 0 0 0;
+    margin: 0;
     margin-top: 1rem;
   
     display: flex !important;
