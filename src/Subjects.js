@@ -112,7 +112,7 @@ function Subjects(){
         "View": 'natureView'
         },
         {
-        "Title": "Животные",
+        "Title": "Животные и птицы",
         "Image": AnimalsIcon,
         "Link": 'animals',
         "View": 'animalsView'

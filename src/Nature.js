@@ -9,12 +9,12 @@ import imgNature from './languages/yukaghir/nature/image2.png';
 import imgWater from './languages/yukaghir/nature/image3.png';
 import imgDirt from './languages/yukaghir/nature/image4.png';
 import imgSand from './languages/yukaghir/nature/image2.png';
-import imgPermafrost from './languages/yukaghir/nature/image5.png';
+import imgPermafrost from './languages/yukaghir/nature/image5.jpg';
 import imgTree from './languages/yukaghir/nature/image6.png';
 import imgSeaOcean from './languages/yukaghir/nature/image7.png';
 import imgRiver from './languages/yukaghir/nature/image8.png';
 import imgLake from './languages/yukaghir/nature/image9.png';
-import imgTundra from './languages/yukaghir/nature/image10.png';
+import imgTundra from './languages/yukaghir/nature/image10.jpg';
 import imgMountain from './languages/yukaghir/nature/image11.png';
 import imgPlace1 from './languages/yukaghir/nature/places1.jpg';
 import imgPlace2 from './languages/yukaghir/nature/places2.jpg';
@@ -34,7 +34,7 @@ import imgPlant8 from './languages/yukaghir/nature/plants/image8.png';
 import imgPlant9 from './languages/yukaghir/nature/plants/image9.png';
 import imgPlant10 from './languages/yukaghir/nature/plants/image10.PNG';
 import imgPlant11 from './languages/yukaghir/nature/plants/image11.jpg';
-import imgPlant12 from './languages/yukaghir/nature/plants/image12.png';
+import imgPlant12 from './languages/yukaghir/nature/plants/image12.jpg';
 import imgPlant13 from './languages/yukaghir/nature/plants/image13.png';
 import imgPlant14 from './languages/yukaghir/nature/plants/image14.jpg';
 import imgPlant15 from './languages/yukaghir/nature/plants/image15.png';
@@ -205,7 +205,7 @@ function Nature() {
 function EarthCard(props){
     return(
         <div className='block'>
-            <div className='audio-text'>
+            <div className='audio-text-header'>
                 <SoundButton audio={props.audio}/>
                 <h1>{props.header}</h1>
             </div>
@@ -220,7 +220,7 @@ function EarthCard(props){
 function PlantCard(props){
     return(
         <div className='block'>
-            <div className='audio-text'>
+            <div className='audio-text-header'>
                 <SoundButton audio={props.audio1}/>
                 <h1>{props.header}</h1>
             </div>
@@ -228,6 +228,9 @@ function PlantCard(props){
             {props.sentence && <div className='audio-text'>
                 <SoundButton audio={props.audio2}/>
                 <p className='natureSentence'>{props.sentence}</p>
+            </div>}
+            {props.subsentence && <div>
+                <p className='natureSentence'>{props.subsentence}</p>
             </div>}
             <div className='image'>
                 <img src={props.image}></img>
@@ -274,40 +277,39 @@ function Earth(){
 function Plants(){
     return (
         <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}} className='plants'>
-            <div className='block'>
-            <div className='audio-text'>
+            <div className='block' id='block-header'>
+            <div className='audio-text-header'>
                     <SoundButton audio={audio16}/>
                 <h1>Пулгидьилэпэ</h1>
                 </div>
                 <h1>Растения</h1>
-                
             </div>
 
             <div className='aside'>
-                <PlantCard audio1={audio17} audio2={audio18} header={'Ульэгэ'} subheader={'Трава'} sentence={'Ульэгэ хомоньэй. Трава зелёная.'} image={imgPlant2}/>
-                <PlantCard audio1={audio19} audio2={audio20} header={'Хаҕимэwуол'} subheader={'Багульник'} sentence={'У багульника белые цветы. Хаҕимэwуол пулгидьилэги ньааwэй.'} image={imgPlant3}/>
-                <PlantCard audio1={audio21} audio2={audio22} header={'Пулгидьилэ'} subheader={'Цветок'} sentence={'Пөдьэлдэ амучэ пулгидьилэк. Цветок с приятным запахом.'} image={imgPlant4}/>
+                <PlantCard audio1={audio17} audio2={audio18} header={'Ульэгэ'} subheader={'Трава'} sentence={'Ульэгэ хомоньэй.'} subsentence={'Трава зелёная.'} image={imgPlant2}/>
+                <PlantCard audio1={audio19} audio2={audio20} header={'Хаҕимэwуол'} subheader={'Багульник'} sentence={'Хаҕимэwуол пулгидьилэги ньааwэй.'} subsentence={'У багульника белые цветы.'} image={imgPlant3}/>
+                <PlantCard audio1={audio21} audio2={audio22} header={'Пулгидьилэ'} subheader={'Цветок'} sentence={'Пөдьэлдэ амучэ пулгидьилэк.'} subsentence={'Цветок с приятным запахом.'} image={imgPlant4}/>
             </div>
 
             
             <div className='aside'>
-                <PlantCard audio1={audio23} audio2={audio24} header={'Саал'} subheader={'Дерево'} sentence={'Саал хомоньэй. Дерево зеленое.'} image={imgPlant5}/>
+                <PlantCard audio1={audio23} audio2={audio24} header={'Саал'} subheader={'Дерево'} sentence={'Саал хомоньэй.'} subsentence={'Дерево зеленое.'} image={imgPlant5}/>
                 <PlantCard audio1={audio25} header={'Йаа(ҥ)'} subheader={'Берёза'} sentence={''} image={imgPlant6}/>
-                <PlantCard audio1={audio26} audio2={audio27} header={'Морхэ'} subheader={'Карликовая берёза'} sentence={'Морхэ йуорпурэҕа пулгэйнуни. Карликовая береза растет в тундре.'} image={imgPlant7}/>
+                <PlantCard audio1={audio26} audio2={audio27} header={'Морхэ'} subheader={'Карликовая берёза'} sentence={'Морхэ йуорпурэҕа пулгэйнуни.'} subsentence={'Карликовая береза растет в тундре.'} image={imgPlant7}/>
             </div>
 
         
             <div className='aside'>
-                <PlantCard audio1={audio28} audio2={audio29} header={'Ньанмэ'} subheader={'Тальник, ива, верба'} sentence={'Ньанмэролхэ. Заросли тальника.'} image={imgPlant8}/>
-                <PlantCard audio1={audio30} audio2={audio31} header={'Ньамучэндьэ пуриэ'} subheader={'Брусника'} sentence={'Ньамучэндьэ пуриэ ньамучэньи. Брусника красного цвета.'} image={imgPlant9}/>
-                <PlantCard audio1={audio32} audio2={audio33} header={'Хомоньэй пуриэ'} subheader={'Голубика'} sentence={'Хомоньэй пуриэ ньанбэличэ пуриэ. Голубика - вкусная ягода'} image={imgPlant10}/>
+                <PlantCard audio1={audio28} audio2={audio29} header={'Ньанмэ'} subheader={'Тальник, ива, верба'} sentence={'Ньанмэролхэ.'} subsentence={'Заросли тальника.'} image={imgPlant8}/>
+                <PlantCard audio1={audio30} audio2={audio31} header={'Ньамучэндьэ пуриэ'} subheader={'Брусника'} sentence={'Ньамучэндьэ пуриэ ньамучэньи.'} subsentence={'Брусника красного цвета.'} image={imgPlant9}/>
+                <PlantCard audio1={audio32} audio2={audio33} header={'Хомоньэй пуриэ'} subheader={'Голубика'} sentence={'Хомоньэй пуриэ ньанбэличэ пуриэ.'} subsentence={'Голубика - вкусная ягода'} image={imgPlant10}/>
             </div>
 
 
             <div className='aside'>
-                <PlantCard audio1={audio34} audio2={audio35} header={'Ньоронпуриэ'} subheader={'Морошка'} sentence={'Ньоронпуриэ йуорпурэҕа пулгэйнуни. Морошка растет в тундре.'} image={imgPlant11}/>
-                <PlantCard audio1={audio36} audio2={audio37} header={'Тороньэй пуриэ'} subheader={'Шикша, черника.'} sentence={'Тороньэй пуриэ мэ тороньэй. Шикша черного цвета.'} image={imgPlant12}/>
-                <PlantCard audio1={audio38} audio2={audio39} header={'Хапньэпуриэ'} subheader={'Смородина'} sentence={'Хапньэбуриэ амутнэҥ wалдьич. Смородина очень кислая.'} image={imgPlant13}/>
+                <PlantCard audio1={audio34} audio2={audio35} header={'Ньоронпуриэ'} subheader={'Морошка'} sentence={'Ньоронпуриэ йуорпурэҕа пулгэйнуни.'} subsentence={'Морошка растет в тундре.'} image={imgPlant11}/>
+                <PlantCard audio1={audio36} audio2={audio37} header={'Тороньэй пуриэ'} subheader={'Шикша, черника.'} sentence={'Тороньэй пуриэ мэ тороньэй.'} subsentence={'Шикша черного цвета.'} image={imgPlant12}/>
+                <PlantCard audio1={audio38} audio2={audio39} header={'Хапньэпуриэ'} subheader={'Смородина'} sentence={'Хапньэбуриэ амутнэҥ wалдьич.'} subsentence={'Смородина очень кислая.'} image={imgPlant13}/>
             </div>
             
             <div className='aside'>

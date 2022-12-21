@@ -37,6 +37,57 @@ import imgBird12 from './languages/yukaghir/birds/image12.jpg';
 import imgBird13 from './languages/yukaghir/birds/image13.jpg';
 import imgBird14 from './languages/yukaghir/birds/image14.jpg';
 
+
+import audio41 from "./languages/yukaghir/nature/audio/41. животные.mp3";
+import audio42 from "./languages/yukaghir/nature/audio/42. медведь.mp3";
+import audio43 from "./languages/yukaghir/nature/audio/43. лошадь.mp3";
+import audio44 from "./languages/yukaghir/nature/audio/44. торойа5а.mp3";
+import audio45 from "./languages/yukaghir/nature/audio/45. олень.mp3";
+import audio46 from "./languages/yukaghir/nature/audio/46. олененок.mp3";
+import audio47 from "./languages/yukaghir/nature/audio/47. корова.mp3";
+import audio48 from "./languages/yukaghir/nature/audio/48. волк.mp3";
+import audio49 from "./languages/yukaghir/nature/audio/49. стая.mp3";
+import audio50 from "./languages/yukaghir/nature/audio/50. лиса.mp3";
+import audio51 from "./languages/yukaghir/nature/audio/51. собака.mp3";
+import audio52 from "./languages/yukaghir/nature/audio/52. заяц.mp3";
+import audio53 from "./languages/yukaghir/nature/audio/53. песец.mp3";
+import audio54 from "./languages/yukaghir/nature/audio/54. белка.mp3";
+import audio55 from "./languages/yukaghir/nature/audio/55. мышь.mp3";
+import audio56 from "./languages/yukaghir/nature/audio/56. росомаха.mp3";
+import audio57 from "./languages/yukaghir/nature/audio/57. рысь.mp3";
+import audio58 from "./languages/yukaghir/nature/audio/58. птицы.mp3";
+import audio59 from "./languages/yukaghir/nature/audio/59. это птица.mp3";
+import audio60 from "./languages/yukaghir/nature/audio/60. крыло.mp3";
+import audio61 from "./languages/yukaghir/nature/audio/61. клюв.mp3";
+import audio62 from "./languages/yukaghir/nature/audio/62. лапки.mp3";
+import audio63 from "./languages/yukaghir/nature/audio/63. шея.mp3";
+import audio64 from "./languages/yukaghir/nature/audio/64. утка.mp3";
+import audio65 from "./languages/yukaghir/nature/audio/65. гусь.mp3";
+import audio66 from "./languages/yukaghir/nature/audio/66. птичка.mp3";
+import audio67 from "./languages/yukaghir/nature/audio/67. чайка.mp3";
+import audio68 from "./languages/yukaghir/nature/audio/68. розовая чайка.mp3";
+import audio69 from "./languages/yukaghir/nature/audio/69. куропатка.mp3";
+import audio70 from "./languages/yukaghir/nature/audio/70. гагара.mp3";
+import audio71 from "./languages/yukaghir/nature/audio/71. турухтан.mp3";
+import audio72 from "./languages/yukaghir/nature/audio/72. сова.mp3";
+import audio73 from "./languages/yukaghir/nature/audio/73. орел.mp3";
+import audio74 from "./languages/yukaghir/nature/audio/74. лебедь.mp3";
+import audio75 from "./languages/yukaghir/nature/audio/75. стерх.mp3";
+import audio76 from "./languages/yukaghir/nature/audio/76. яранга традиционное переносное жилище.mp3";
+import audio77 from "./languages/yukaghir/nature/audio/77. оленеводство основная традиционная отрасль юкагиров.mp3";
+import audio78 from "./languages/yukaghir/nature/audio/78. это рыба.mp3";
+import audio79 from "./languages/yukaghir/nature/audio/79. чир.mp3";
+import audio80 from "./languages/yukaghir/nature/audio/80. чир большой.mp3";
+import audio81 from "./languages/yukaghir/nature/audio/81. юкола.mp3";
+import audio82 from "./languages/yukaghir/nature/audio/82. юкола висит.mp3";
+import audio83 from "./languages/yukaghir/nature/audio/83. строганина.mp3";
+import audio84 from "./languages/yukaghir/nature/audio/84. строганина вкусная.mp3";
+import audio85 from "./languages/yukaghir/nature/audio/85. щука.mp3";
+import audio86 from "./languages/yukaghir/nature/audio/86. у щуки много зубов.mp3";
+import audio87 from "./languages/yukaghir/nature/audio/87. налим.mp3";
+
+import SoundButton from './components/SoundButton';
+
 import { quizData5 } from './quizData';
 
 import Quiz from './Quiz';
@@ -84,10 +135,11 @@ function Animals() {
     },[state])
 
   return (
-    <motion.div className='animalsPage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
+    <motion.div className='naturePage' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
         <ViewContext.Provider value={{setView}}>
             {page != 2 &&
                 <div className="container">
+                        
                         {page == 0 && <Animal/>}
                         {page == 1 && <Birds/>}
                 </div>
@@ -107,267 +159,107 @@ function Animals() {
 
 function Animal(){
     return (
-        <div className='animals'>
-            <div className='animal'>
-                <h1>Йэлукунугурчэндьэрукунпэ</h1>
-                <h1>Животные</h1>
-                <div className='image'>
-                    <img src={imgAnimal1}></img>
+        <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}} className='earth'>
+            <div className='block' id='block-header'>
+                <div className='audio-text-header'>
+                    <SoundButton audio={audio41}/>
+                    <h1>Йэлукунугурчэндьэрукунпэ</h1>
                 </div>
+                <h3>Животные</h3>
             </div>
     
-            <div className='animal'>
-                <h1>Хайчиэтэгэ</h1>
-                <h1>Медведь</h1>
-                <div className='image'>
-                    <img src={imgAnimal2}></img>
-                </div>
+            <div className='aside'>
+                <EarthCard audio={audio42} header={'Хайчиэтэгэ'} subheader={'Медведь'} image={imgAnimal2}/>
+                <EarthCard audio={audio43} header={'Йоходилэ'} subheader={'Лошадь'} image={imgAnimal3}/>
+                <EarthCard audio={audio44} header={'Торойаҕа'} subheader={'Лось'} image={imgAnimal4}/>
             </div>
-    
-            <div className='animal'>
-                <h1>Йоходилэ</h1>
-                <h1>Лошадь</h1>
-                <div className='image'>
-                    <img src={imgAnimal3}></img>
-                </div>
+            <div className='aside'>
+                <PlantCard audio1={audio45} header={'Илэ'} subheader={'Олень'} sentence={'Энмур – рога'} image={imgAnimal5}/>
+                <EarthCard audio={audio46} header={'Йэwлидьэ'} subheader={'Оленёнок'} image={imgAnimal6}/>
+                <EarthCard audio={audio47} header={'Кэрэwэ'} subheader={'Корова'} image={imgAnimal7}/>
             </div>
-    
-            <div className='animal'>
-                <h1>Торойаҕа</h1>
-                <h1>Лось.</h1>
-                <div className='image'>
-                    <img src={imgAnimal4}></img>
-                </div>
+            <div className='aside'>
+                <EarthCard audio={audio48} header={'Надэ'} subheader={'Волк'} image={imgAnimal8}/>
+                <EarthCard audio={audio49} header={'Нулидьэ'} subheader={'Стая'} image={imgAnimal9}/>
+                <EarthCard audio={audio50} header={'Ньэтлэ'} subheader={'Лиса'} image={imgAnimal10}/>
             </div>
-            
-            <div className='animal'>
-                <h1>Илэ</h1>
-                <h1>Олень</h1>
-                <p>Энмур – рога</p>
-                <div className='image'>
-                    <img src={imgAnimal5}></img>
-                </div>
+            <div className='aside'>
+                <EarthCard audio={audio51} header={'Лаамэ'} subheader={'Собака'} image={imgAnimal11}/>
+                <EarthCard audio={audio52} header={'Өйэгэ'} subheader={'Заяц'} image={imgAnimal12}/>
+                <EarthCard audio={audio53} header={'Ньаwньиклиэ'} subheader={'Песец'} image={imgAnimal13}/>
             </div>
-            
-            <div className='animal'>
-                <h1>Йэwлидьэ</h1>
-                <h1>Оленёнок</h1>
-                <div className='image'>
-                    <img src={imgAnimal6}></img>
-                </div>
-            </div>
-    
-            <div className='animal'>
-                <h1>Кэрэwэ</h1>
-                <h1>Корова</h1>
-                <div className='image'>
-                    <img src={imgAnimal7}></img>
-                </div>
-            </div>
-    
-            <div className='animal'>
-                <h1>Надэ</h1>
-                <h1>Волк</h1>
-                <div className='image'>
-                    <img src={imgAnimal8}></img>
-                </div>
-            </div>
-    
-            <div className='animal'>
-                <h1>Нулидьэ</h1>
-                <h1>стая</h1>
-                <div className='image'>
-                    <img src={imgAnimal9}></img>
-                </div>
-            </div>
-    
-            <div className='animal'>
-                <h1>Ньэтлэ</h1>
-                <h1>Лиса</h1>
-                <div className='image'>
-                    <img src={imgAnimal10}></img>
-                </div>
-            </div>
-    
-            <div className='animal'>
-                <h1>Лаамэ</h1>
-                <h1>Собака</h1>
-                <div className='image'>
-                    <img src={imgAnimal11}></img>
-                </div>
-            </div>
-    
-            <div className='animal'>
-                <h1>Өйэгэ</h1>
-                <h1>Заяц</h1>
-                <div className='image'>
-                    <img src={imgAnimal12}></img>
-                </div>
-            </div>
-    
-            <div className='animal'>
-                <h1>Ньаwньиклиэ</h1>
-                <h1>Песец</h1>
-                <div className='image'>
-                    <img src={imgAnimal13}></img>
-                </div>
-            </div>
-    
-            <div className='animal'>
-                <h1>Йорчибэ</h1>
-                <h1>Белка</h1>
-                <div className='image'>
-                    <img src={imgAnimal14}></img>
-                </div>
+            <div className='aside'>
+                <EarthCard audio={audio54} header={'Йорчибэ'} subheader={'Белка'} image={imgAnimal14}/>
+                <EarthCard audio={audio55} header={'Сальил'} subheader={'Мышь'} image={imgAnimal15}/>
+                <EarthCard audio={audio56} header={'Инмэ'} subheader={'Росомаха'} image={imgAnimal16}/>
             </div>
 
-            <div className='animal'>
-                <h1>Сальил</h1>
-                <h1>Мышь</h1>
-                <div className='image'>
-                    <img src={imgAnimal15}></img>
-                </div>
+            <div className='aside'>
+                <EarthCard audio={audio57} header={'Өркөбө'} subheader={'Рысь'} image={imgAnimal17}/>
             </div>
-
-            <div className='animal'>
-                <h1>Инмэ</h1>
-                <h1>Росомаха</h1>
-                <div className='image'>
-                    <img src={imgAnimal16}></img>
-                </div>
-            </div>
-
-            <div className='animal'>
-                <h1>Өркөбө</h1>
-                <h1>Рысь</h1>
-                <div className='image'>
-                    <img src={imgAnimal17}></img>
-                </div>
-            </div>
-        </div>
+        </motion.div>
       )
 }
 
 function Birds(){
     return (
-        <div className='birds'>
-            <div className='animal'>
-                <h1>Уйэньэйрукунпэ</h1>
-                <h1>Птицы</h1>
-                <div className='image'>
-                    <img src={imgBird1}></img>
+        <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}} className='earth'>
+            <div className='block' id='block-header'>
+                <div className='audio-text-header'>
+                    <SoundButton audio={audio58}/>
+                    <h1>Уйэньэйрукунпэ</h1>
                 </div>
+                <h3>Птицы</h3>
             </div>
-    
-            <div className='animal'>
-                <h1>Тэн уйэньэйрукун.</h1>
-                <h1>Это птица.</h1>
-                <div className='image'>
-                    <img src={imgBird2}></img>
+            <div className='block'>
+                    <div className='audio-text-header'>
+                        <SoundButton audio={audio59}/>
+                        <h1>Тэн уйэньэйрукун</h1>
+                    </div>
+                    <h3>Это птица</h3>
+                    <div className='audio-text-container'>
+                        <div className='audio-text' id='sentence'>
+                            <SoundButton audio={audio60}/>
+                            <p className='natureSentence'>уйэ – крыло</p>
+                        </div>
+                        <div className='audio-text' id='sentence'>
+                            <SoundButton audio={audio61}/>
+                            <p className='natureSentence'>йоҕунраал – клюв</p>
+                        </div>
+                        <div className='audio-text' id='sentence'>
+                            <SoundButton audio={audio62}/>
+                            <p className='natureSentence'>угурчэ - лапки</p>
+                        </div>
+                        <div className='audio-text' id='sentence'>
+                            <SoundButton audio={audio63}/>
+                            <p className='natureSentence'>ньамиил – шея</p>
+                        </div>
+                    </div>
                 </div>
-                <p>уйэ – крыло</p>
-                <p>йоҕунраал – клюв</p>
-                <p>угурчэ - лапки</p>
-                <p>ньамиил – шея</p>
+
+            <div className='aside'>
+                
+                <EarthCard audio={audio64} header={'Ньолол'} subheader={'Утка'} image={imgBird3}/>
+                <EarthCard audio={audio65} header={'Йаҥдэ'} subheader={'Гусь'} image={imgBird4}/>
+                <EarthCard audio={audio66} header={'Чирэмэдиэ'} subheader={'Птичка'} image={imgBird5}/>
             </div>
-    
-            <div className='animal'>
-                <h1>Ньолол</h1>
-                <h1>Утка</h1>
-                <div className='image'>
-                    <img src={imgBird3}></img>
-                </div>
+            <div className='aside'>
+                <EarthCard audio={audio67} header={'Хулархаа'} subheader={'Чайка'} image={imgBird6}/>
+                <EarthCard audio={audio68} header={'Хальархаа'} subheader={'Розовая чайка'} image={imgBird7}/>
+                <EarthCard audio={audio69} header={'Лабунмэ'} subheader={'Куропатка'} image={imgBird8}/>
             </div>
-    
-            <div className='animal'>
-                <h1>Йаҥдэ</h1>
-                <h1>Гусь</h1>
-                <div className='image'>
-                    <img src={imgBird4}></img>
-                </div>
+            <div className='aside'>
+                <EarthCard audio={audio70} header={'Сальҕа'} subheader={'Гагара'} image={imgBird9}/>
+                <EarthCard audio={audio71} header={'Паанҕа'} subheader={'Турухтан'} image={imgBird10}/>
+                <EarthCard audio={audio72} header={'Сахлэ'} subheader={'Сова'} image={imgBird11}/>
             </div>
-            
-            <div className='animal'>
-                <h1>Чирэмэдиэ</h1>
-                <h1>Птичка</h1>
-                <div className='image'>
-                    <img src={imgBird5}></img>
-                </div>
-            </div>
-            
-            <div className='animal'>
-                <h1>Хулархаа</h1>
-                <h1>Чайка</h1>
-                <div className='image'>
-                    <img src={imgBird6}></img>
-                </div>
-            </div>
-    
-            <div className='animal'>
-                <h1>Хальархаа</h1>
-                <h1>Розовая чайка</h1>
-                <div className='image'>
-                    <img src={imgBird7}></img>
-                </div>
-            </div>
-    
-            <div className='animal'>
-                <h1>Лабунмэ</h1>
-                <h1>Куропатка</h1>
-                <div className='image'>
-                    <img src={imgBird8}></img>
-                </div>
-            </div>
-    
-            <div className='animal'>
-                <h1>Сальҕа</h1>
-                <h1>Гагара</h1>
-                <div className='image'>
-                    <img src={imgBird9}></img>
-                </div>
-            </div>
-    
-            <div className='animal'>
-                <h1>Паанҕа</h1>
-                <h1>Турухтан</h1>
-                <div className='image'>
-                    <img src={imgBird10}></img>
-                </div>
-            </div>
-    
-            <div className='animal'>
-                <h1>Сахлэ</h1>
-                <h1>Сова</h1>
-                <div className='image'>
-                    <img src={imgBird11}></img>
-                </div>
-            </div>
-    
-            <div className='animal'>
-                <h1>Ханьил</h1>
-                <h1>Орёл</h1>
-                <div className='image'>
-                    <img src={imgBird12}></img>
-                </div>
-            </div>
-    
-            <div className='animal'>
-                <h1>Ньамиидьиткэ</h1>
-                <h1>Лебедь</h1>
-                <div className='image'>
-                    <img src={imgBird13}></img>
-                </div>
-            </div>
-    
-            <div className='animal'>
-                <h1>Удиль</h1>
-                <h1>Стерх</h1>
-                <div className='image'>
-                    <img src={imgBird14}></img>
-                </div>
+            <div className='aside'>
+                <EarthCard audio={audio73} header={'Ханьил'} subheader={'Орёл'} image={imgBird12}/>
+                <EarthCard audio={audio74} header={'Ньамиидьиткэ'} subheader={'Лебедь'} image={imgBird13}/>
+                <EarthCard audio={audio75} header={'Удиль'} subheader={'Стерх'} image={imgBird14}/>
             </div>
 
-            <div className='text'>
+            <div className='poetry'>
                 <p>
                     <br></br>Муоха, суокур, ньуодьийэ,
                     <br></br>Лимха, көсльэ, умуйэ,
@@ -380,8 +272,42 @@ function Birds(){
                     <br></br><br></br><span>Улуро Адо</span><br></br>
                 </p>
             </div>
-        </div>
+        </motion.div>
       )
+}
+
+function EarthCard(props){
+    return(
+        <div className='block'>
+            <div className='audio-text-header'>
+                <SoundButton audio={props.audio}/>
+                <h1>{props.header}</h1>
+            </div>
+            <h3 className='subheader'>{props.subheader}</h3>
+            {props.image && <div className='image'>
+                <img src={props.image}></img>
+            </div>}
+        </div>
+    )
+}
+
+function PlantCard(props){
+    return(
+        <div className='block'>
+            <div className='audio-text-header' id='sentence'>
+                <SoundButton audio={props.audio1}/>
+                <h1>{props.header}</h1>
+            </div>
+            <h3 className='subheader'>{props.subheader}</h3>
+            {props.sentence && <div className='audio-text'>
+                <SoundButton audio={props.audio2}/>
+                <p className='natureSentence'>{props.sentence}</p>
+            </div>}
+            <div className='image'>
+                <img src={props.image}></img>
+            </div>
+        </div>
+    )
 }
 
 export default Animals

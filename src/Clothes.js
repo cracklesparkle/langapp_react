@@ -267,7 +267,7 @@ function Text({props}){
                             <SoundButton audio={props.audio}/>
                             <h1>{props.header}</h1>
                         </div>
-                        <h1>{props.subheader}</h1>
+                        <h3 className='subheader'>{props.subheader}</h3>
                     </div>
                 </div>
             </div>
@@ -282,7 +282,7 @@ function Text({props}){
                             <SoundButton audio={props.audio}/>
                             <h1>{props.header}</h1>
                         </div>
-                        <h1>{props.subheader}</h1>
+                        <h3 className='subheader'>{props.subheader}</h3>
                     </div>
                     <Images props={props.images}/>
                 </div>
@@ -299,7 +299,7 @@ function Text({props}){
                             <SoundButton audio={props.audio}/>
                             <h1>{props.header}</h1>
                         </div>
-                        <h1>{props.subheader}</h1>
+                        <h3 className='subheader'>{props.subheader}</h3>
                     </div>
                     <Images props={props.images}/>
                 </div>
@@ -316,7 +316,7 @@ function Text({props}){
                             <SoundButton audio={props.audio}/>
                             <h1>{props.header}</h1>
                         </div>
-                        <h1>{props.subheader}</h1>
+                        <h3 className='subheader'>{props.subheader}</h3>
                     </div>
                 </div>
             </div>
@@ -359,12 +359,67 @@ function Clothes() {
         {page != 1 && <div className="container">
             <div className='culture'>
                 <h1 className='header'>О национальной одежде юкагиров</h1>
-                {data.map((e, i) => {
+                {/* {data.map((e, i) => {
                     return (
                                 <Text props={e} key={i}/>
                             );
                     })
+                } */}
+                {data.slice(0, 7).map((e, i) => {
+                        return (
+                                    <Text props={e} key={i}/>
+                                );
+                        })
                 }
+                <div className='naturePage'>
+                    <div className='container'>
+                        <div className='earth'>
+                        <div className='aside'>
+                            {data.slice(7, 10).map((e, i) => {
+                                return (
+                                            <EarthCard audio={e.audio} header={e.header} subheader={e.subheader} image={e.images[0]}/>
+                                        );
+                                })
+                            }
+                        </div>
+                        <div className='aside'>
+                            {data.slice(10, 13).map((e, i) => {
+                                return (
+                                            <EarthCard audio={e.audio} header={e.header} subheader={e.subheader} image={e.images[0]}/>
+                                        );
+                                })
+                            }
+                        </div>
+                        <div className='aside'>
+                            {data.slice(13, 16).map((e, i) => {
+                                return (
+                                            <EarthCard audio={e.audio} header={e.header} subheader={e.subheader} image={e.images[0]}/>
+                                        );
+                                })
+                            }
+                        </div>
+                        <div className='aside'>
+                            {data.slice(16, 19).map((e, i) => {
+                                return (
+                                            <EarthCard audio={e.audio} header={e.header} subheader={e.subheader} image={e.images[0]}/>
+                                        );
+                                })
+                            }
+                        </div>
+                        <div className='aside'>
+                            {data.slice(19, 22).map((e, i) => {
+                                return (
+                                            <EarthCard audio={e.audio} header={e.header} subheader={e.subheader} image={e.images[0]}/>
+                                        );
+                                })
+                            }
+                        </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                
             </div>
         </div>}
         {page == 1 && <Quiz questions={quizData7.questions} quizTitle='Национальная одежда юкагиров' stateChanger={setState}/>}
@@ -415,6 +470,21 @@ function Page1(){
 
         </div>
       )
+}
+
+function EarthCard(props){
+    return(
+        <div className='block'>
+            <div className='audio-text-header'>
+                <SoundButton audio={props.audio}/>
+                <h1>{props.header}</h1>
+            </div>
+            <h3 className='subheader'>{props.subheader}</h3>
+            {props.image && <div className='image'>
+                <img src={props.image}></img>
+            </div>}
+        </div>
+    )
 }
 
 export default Clothes

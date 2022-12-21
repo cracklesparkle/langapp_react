@@ -84,16 +84,16 @@ function Info({language, pageChanger}){
                 <div>
                     <Carousel className='carousel' 
                             emulateTouch
-                            autoPlay
+                            autoPlay={true}
                             dynamicHeight={false}
                             centerMode
                             centerSlidePercentage={100}
                             showStatus={false}
-                            showArrows={false}
-                            showIndicators={false}
+                            showArrows={true}
+                            showIndicators={true}
                             showThumbs={false}
                             axis={'horizontal'}
-                            interval={5000}
+                            interval={2000}
                             transitionTime={1000}
                             infiniteLoop={true}
                         >
