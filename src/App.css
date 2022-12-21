@@ -128,8 +128,8 @@ p{
 
 .buttonLearn{
   position: relative;
-  margin: 20px;
-  padding: 15px;
+  margin: 10px;
+  padding: 5px;
   min-width: 8rem;
   min-height: 50px;
   background: rgb(83, 158, 201);
@@ -150,8 +150,8 @@ p{
 
 .buttonDisabled{
   position: relative;
-  margin: 20px;
-  padding: 15px;
+  margin: 10px;
+  padding: 5px;
   min-width: 8rem;
   min-height: 50px;
   background: rgb(179, 179, 179);
@@ -379,10 +379,18 @@ object-fit: contain;
   position: relative;
   border: 3px solid white;
   border-radius: 15%;
-  overflow: clip !important;
+  overflow: hidden !important;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
   box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
-  -webkit-transform: translateZ(0);
+
+  -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+}
+
+.language img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 15%;
 }
 
 .subject h3{
@@ -399,11 +407,6 @@ object-fit: contain;
 .subject img{
   width: 100%;
   height: 100%;
-  object-fit: contain;
-}
-
-.language img{
-  width: 100%;
   object-fit: contain;
 }
 
@@ -887,7 +890,7 @@ a:active { text-decoration: none; }
 .familyPage .member{
   display: flex;
   flex-direction: column;
-  padding: 35px;
+  padding: 3px;
   margin: auto;
   
   align-items: center;
@@ -1368,8 +1371,10 @@ a:active { text-decoration: none; }
   }
 
   .subject, .language{
-    width: 30vw !important;
-    height: 15vh !important;
+    /* width: 30vw !important;
+    height: 15vh !important; */
+    width: 30vw;
+    height: 30vw;
     margin: 1em;
   }
 
@@ -1379,7 +1384,7 @@ a:active { text-decoration: none; }
 
   .buttonsContainer, .languagesPage .buttonsContainer{
     width: 100vw;
-    margin: 0 0 0 0;
+    margin: 0;
     margin-top: 1rem;
   
     display: flex !important;
@@ -1436,16 +1441,22 @@ a:active { text-decoration: none; }
   .familyPage .member{
     display: flex;
     flex-direction: column;
-    padding: 5%;
+    padding: 5% 0px 5% 0px;
     margin: 0;
     align-items: center;
   }
   
   .familyPage .memberImg{
-    width: 100%;
-    padding: 0% 15% 0% 15%;
-    margin: 0;
+    max-width: 60%;
+    width: 25rem;
+    padding: 0px;
+    margin: 0px;
   }
+
+  .familyPage .memberImg img{
+    padding: 10px;
+  }
+
   .familyPage .otherMembers .member{
     margin: 0;
   }
@@ -1532,6 +1543,8 @@ a:active { text-decoration: none; }
   .app {
     padding: 4rem 1rem;
   }
+
+
 
   h1 {
     font-size: 2rem;
