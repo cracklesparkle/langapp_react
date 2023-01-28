@@ -1,16 +1,23 @@
 import React, {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
 import { ViewContext } from './ViewContext';
-
 import {motion} from 'framer-motion';
+import { LangContext } from './LangContext';
 
-function LanguageCard ({language, colorId, langId}) {
+function LanguageCard ({language, colorId, langId, lang}) {
+    const {currentLang, setLang} = useContext(LangContext);
     const {setView} = useContext(ViewContext);
 
     const handleClick = event =>{
+        
         setView(language.View)
+        
+        
         localStorage.setItem('langId', JSON.stringify(langId));
         window.scrollTo(0, 0);
+
+        setLang(lang)
+        console.log(currentLang)
     };
     // style={{backgroundImage: `url(${language.Background})`, backgroundSize:"contain", backgroundColor: '#6DB3F2'}}
     return (

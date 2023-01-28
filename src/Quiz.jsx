@@ -22,7 +22,7 @@ import svgCross from "./icons/ui/cross.svg"
 
 let currentQuestion = 0;
 
-function Quiz({questions, stateChanger, quizTitle}){
+function Quiz({questions, stateChanger, quizTitle, quizPics, quizCustomDescription, stateNavigate}){
     const [correctAnswers, setCorrectAnswers] = useState(0);
 
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -146,9 +146,10 @@ function Quiz({questions, stateChanger, quizTitle}){
             <>
                 <div className="quizPage container">
                     <h1 className='header'>{quizTitle}</h1>
-                    <div className="header">{questions[currentQuestion].question}</div>
+                    {!quizPics && <div className="header">{questions[currentQuestion].question}</div>}
                     {questions[currentQuestion].answerSelectionType == "multiple" && <p>Выберите несколько ({questions[currentQuestion].correctAnswer.length}) вариантов ответа:</p>}
-                    {questions[currentQuestion].answerSelectionType == "single" && <p>Выберите правильный ответ:</p>}
+                    {questions[currentQuestion].answerSelectionType == "single" && <p>{quizCustomDescription ? quizCustomDescription : 'Выберите правильный ответ:'}</p>}
+                    {quizPics && <img className="quizPic" width={'100%'} src={quizPics[currentQuestion]}></img>}
                     <motion.div className="quizPage quizOptions" initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 1}}>
                         {questions[currentQuestion].answers.map((e, index) => {
                             return (
@@ -210,7 +211,8 @@ function Quiz({questions, stateChanger, quizTitle}){
                 </div>
                 <motion.div className="quizPage bottomNavbar" initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: 0.3}}>
                             <Button text='Назад' handleClick={() => stateChanger(true)}/>
-                            <Button text='ЗАКРЫТЬ' handleClick={()=>{setView('subjectSelect')}}/>
+                            {/* <Button text='ЗАКРЫТЬ' handleClick={()=>{setView('subjectSelect')}}/> */}
+                            {stateNavigate ? <Button text='Далее' handleClick={()=>stateNavigate('next')}/> : <Button text='ЗАКРЫТЬ' handleClick={()=>{setView('subjectSelect')}}/>}
                 </motion.div>
                 
             </>

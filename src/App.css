@@ -71,10 +71,169 @@ h3{
 
 p{
   padding-top: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
   text-align: center;
   width: 100%;
   margin: auto;
 }
+
+
+/* YAKUT */
+/* SUBJECT THEME */
+.subjectTheme {
+  width: 100%;
+  height: 75px;
+  margin: 1.5rem;
+  background: var(--card-bg-color);
+  position: relative;
+  border: 3px solid white;
+  border-radius: 15px;
+  overflow: hidden !important;
+
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+
+  -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+}
+
+.subjectTheme img{
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 15%;
+}
+
+.subjectTheme h3{
+  font-size: 1rem !important;
+  text-transform: uppercase;
+  color: rgb(11, 52, 117) !important;
+}
+
+.subjectTheme:hover {
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.subjectTheme div:nth-of-type(1)  {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  color: #f9d3b4;
+  z-index: 2;
+  background-color: transparent;
+}
+
+.subjectTheme div:nth-of-type(2)  {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  padding: 5px;
+  z-index: 3;
+}
+
+.subjectTheme .images{
+  display: block;
+  overflow: clip;
+}
+.subjectTheme .images :nth-child(1){
+
+  position: absolute;
+  z-index: 2;
+}
+
+.subjectTheme .images :nth-child(2){
+  position: absolute;
+  z-index: 1;
+}
+
+.subjectTheme:hover .images :nth-child(2){
+  /* background-color:rgba(0, 0, 0, 1); */
+  transition: 0.3s;
+	filter: grayscale(100%) brightness(60%) sepia(100%) hue-rotate(-10deg) saturate(500%) contrast(0.8);
+}
+
+.subjectTheme div:nth-of-type(1){
+  opacity: 1 !important;
+  color: var(--main-dark-blue) !important;
+} 
+
+/* GREETING */
+.greeting-introduction p{
+  text-indent: 30px;
+  text-align: justify;
+}
+.greeting-introduction .imageSubtitle{
+  text-align: center;
+  padding: 10px;
+}
+.greeting-introduction .greetingImage{
+  width: 60%;
+  margin: auto;
+  padding: 20px;
+}
+.greeting-introduction .greetingImage img{
+  width: 100%;
+}
+.greeting-info{
+  padding: 20px;
+  font-style: italic;
+}
+.greeting-subheader{
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.greeting-introduction span{
+  font-weight: bold;
+}
+
+.letters .letter{
+  margin: 30px;
+}
+
+.dictionaryTable h3{
+  padding-top: 50px;
+}
+
+.taleImage{
+  display: flex;
+  max-height: 500px;
+  width: auto !important;
+  max-width: 100%;
+  margin: auto !important;
+  justify-content: center;
+}
+
+.taleContent p{
+  text-indent: 30px;
+  text-align: justify !important;
+}
+
+.tables, .dictionaryTable{
+  padding-bottom: 30px;
+}
+
+.quizPic{
+  height: 350px;
+  width: auto;
+  max-width: 100%;
+  margin: auto;
+}
+
+.greeting-dictionary .aside{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  padding: 30px;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.1);
+}
+
 
 .carousel-root{
   padding: 30px;
@@ -145,6 +304,35 @@ p{
 .buttonLearn:hover {
   box-shadow: 0px 15px 10px -8px rgba(0, 0, 0, 0.1);
   background: rgb(90, 171, 218);
+  cursor: pointer;
+}
+
+.letters{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.letter{
+  position: relative;
+  margin: 10px !important;
+  padding: 5px;
+  min-width: 50px;
+  min-height: 50px;
+  background: rgba(83, 158, 201, 0);
+  border-radius: 15px;
+  color: var(--subjectcard-title-color);
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 1rem;
+
+  border-bottom: solid 5px rgba(0, 0, 0, 0.1);
+}
+
+.letter:hover {
+  box-shadow: 0px 15px 10px -8px rgba(0, 0, 0, 0.1);
+  background: rgba(83, 158, 201, 0.24);
   cursor: pointer;
 }
 
@@ -618,7 +806,7 @@ a:active { text-decoration: none; }
 
 /* PAGES */
 .header{
-  padding: 30px;
+  padding: 25px;
   margin: auto;
   font-size: 1.5em;
   text-align: center;
@@ -952,6 +1140,34 @@ a:active { text-decoration: none; }
 
 .talePage video{
   width: 100%;
+}
+
+.taleImage{
+  display: flex;
+  max-height: 500px;
+  width: auto !important;
+  max-width: 100%;
+  margin: auto !important;
+  justify-content: center;
+}
+
+.taleContent p{
+  text-align: justify !important;
+}
+
+.taleContent .subSpan{
+  padding: 35px;
+  font-weight: normal;
+}
+
+.tale-introduction p{
+  text-align: justify !important;
+}
+
+.tale-introduction h3{
+  padding: 30px;
+  font-size: 1rem;
+  text-align: justify !important;
 }
 
 /* CLOTHES */
@@ -1296,7 +1512,36 @@ a:active { text-decoration: none; }
   color: rgb(126, 14, 14);
 }
 
+
+.greetingImage{
+  width: 100%;
+}
+
 @media screen and (max-width: 600px) {
+
+  /* YAKUT */
+  .greeting-introduction p{
+    text-align: justify;
+  }
+  .greeting-introduction .imageSubtitle{
+    text-align: center;
+    padding: 10px;
+  }
+  .greeting-introduction .greetingImage{
+    width: 60%;
+    margin: auto;
+  }
+  .greeting-introduction .greetingImage img{
+    width: 100%;
+  }
+
+  .greeting-dictionary .aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+  }
+
   .app {
     padding: 4rem 2rem;
 
@@ -1378,7 +1623,7 @@ a:active { text-decoration: none; }
     margin: 1em;
   }
 
-  .subject h3, .language h3{
+  .subject h3, .language h3, .subjectTheme h3{
     font-size: 0.7em !important;
   }
 

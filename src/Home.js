@@ -2,240 +2,82 @@ import React, {useContext, useState} from 'react';
 import {motion} from 'framer-motion';
 
 import {ViewContext, currentView} from './ViewContext';
+import { LangContext } from './LangContext';
 
 import Languages from './Languages';
-import Subjects from './Subjects';
-import Subject from './Subject';
-import Greeting from './Greeting';
-import Language from './Language';
-
-import Family from './Family';
-import Nature from './Nature';
-import Animals from './Animals';
-import CultureFood from './CultureFood';
-import Clothes from './Clothes';
-import Tale from './Tale';
-import Folklore from './Folklore';
-import FamousPeople from './FamousPeople';
-
 import PlaceholderPage from './PlaceholderPage';
+
+import YU_Subjects from './pages/yukaghir/Subjects';
+import YU_Greeting from './pages/yukaghir/Greeting';
+import YU_Language from './pages/yukaghir/Language';
+import YU_Family from './pages/yukaghir/Family';
+import YU_Nature from './pages/yukaghir/Nature';
+import YU_Animals from './pages/yukaghir/Animals';
+import YU_CultureFood from './pages/yukaghir/CultureFood';
+import YU_Clothes from './pages/yukaghir/Clothes';
+import YU_Tale from './pages/yukaghir/Tale';
+import YU_Folklore from './pages/yukaghir/Folklore';
+import YU_FamousPeople from './pages/yukaghir/FamousPeople';
+
+import YA_Subjects from './pages/yakut/Subjects';
+import YA_Greeting from './pages/yakut/Greeting';
+import YA_Language from './pages/yakut/Language';
+import YA_Family from './pages/yakut/Family';
+import YA_Nature from './pages/yakut/Nature';
+import YA_Animals from './pages/yakut/Animals';
+import YA_CultureFood from './pages/yakut/CultureFood';
+import YA_Clothes from './pages/yakut/Clothes';
+import YA_Tale from './pages/yakut/Tale';
+import YA_Folklore from './pages/yakut/Folklore';
+import YA_FamousPeople from './pages/yakut/FamousPeople';
+
 
 import { languages } from './Data';
 
-const TypeScreen = ['home', 'languageSelect', 'subjectSelect', 'introductionView', 'greetingView', 'familyView', 'natureView', 'animalsView', 'cultureFoodView', 'clothesView', 'taleView', 'folkloreView', 'famousPeopleView', 'placeholderView'];
-
 function Home(){
-
-    
     //const [currentView, setView] = useState(TypeScreen[0]);
+    const {currentLang, setLang} = useContext(LangContext);
 
     const {currentView, setView} = useContext(ViewContext);
 
-    if (currentView == TypeScreen[0]){
-        console.log(currentView);
-        
-        return(
-            <motion.div 
-                className='homeContainer'
-                initial={{opacity: 0}}
-                animate={{opacity: 1}}
-                exit={{opacity: 0}}
-                >
-                <button onClick={()=>setView(TypeScreen[1])} className='buttonLearn'>Выбрать язык</button>
-            </motion.div>
-        )
-    }
-    if (currentView == TypeScreen[1]){
-        
-        console.log(currentView);
-        return(
-            <ViewContext.Provider value={{currentView, setView}}>
+    return(
+        <LangContext.Provider value={{currentLang, setLang}}>
+        <ViewContext.Provider value={{currentView, setView}}>
                 <motion.div
                     initial={{opacity: 0}}
                     animate={{opacity: 1}}
                     exit={{opacity: 0}}
                     >
-                    <Languages />
+                    {currentView === 'placeholderView' && <PlaceholderPage/>}
+                    {currentView === 'languageSelect' && <Languages/>}
+                    
+                    {currentView === 'YU_subjectSelect' && <YU_Subjects/>}
+                    {currentView === 'YU_introductionView' && <YU_Language language={languages[localStorage.getItem('langId')]}/>}
+                    {currentView === 'YU_greetingView' && <YU_Greeting/>}
+                    {currentView === 'YU_familyView' && <YU_Family/>}
+                    {currentView === 'YU_natureView' && <YU_Nature/>}
+                    {currentView === 'YU_animalsView' && <YU_Animals/>}
+                    {currentView === 'YU_cultureFoodView' && <YU_CultureFood/>}
+                    {currentView === 'YU_clothesView' && <YU_Clothes/>}
+                    {currentView === 'YU_taleView' && <YU_Tale/>}
+                    {currentView === 'YU_folkloreView' && <YU_Folklore/>}
+                    {currentView === 'YU_famousPeopleView' && <YU_FamousPeople/>}
+                    
+                    {currentView === 'YA_subjectSelect' && <YA_Subjects/>}
+                    {currentView === 'YA_introductionView' && <YA_Language language={languages[localStorage.getItem('langId')]}/>}
+                    {currentView === 'YA_greetingView' && <YA_Greeting/>}
+                    {currentView === 'YA_familyView' && <YA_Family/>}
+                    {currentView === 'YA_natureView' && <YA_Nature/>}
+                    {currentView === 'YA_animalsView' && <YA_Animals/>}
+                    {currentView === 'YA_cultureFoodView' && <YA_CultureFood/>}
+                    {currentView === 'YA_clothesView' && <YA_Clothes/>}
+                    {currentView === 'YA_taleView' && <YA_Tale/>}
+                    {currentView === 'YA_folkloreView' && <YA_Folklore/>}
+                    {currentView === 'YA_famousPeopleView' && <YA_FamousPeople/>}
                 </motion.div>
             </ViewContext.Provider>
-        )
-    }
-    if (currentView == TypeScreen[2]){
-        console.log(currentView);
-        return(
-            <ViewContext.Provider value={{currentView, setView}}>
-                <motion.div
-                    initial={{opacity: 0}}
-                    animate={{opacity: 1}}
-                    exit={{opacity: 0}}
-                    >
-                    <Subjects/>
-                </motion.div>
-            </ViewContext.Provider>
-        )
-    }
-
-    if (currentView == TypeScreen[3]){
-        console.log(currentView);
-        return(
-            <ViewContext.Provider value={{currentView, setView}}>
-                <motion.div
-                    initial={{opacity: 0}}
-                    animate={{opacity: 1}}
-                    exit={{opacity: 0}}
-                    >
-                    <Language language={languages[localStorage.getItem('langId')]}/>
-                </motion.div>
-            </ViewContext.Provider>
-        )
-    }
-
-    if (currentView == TypeScreen[4]){
-        console.log(currentView);
-        return(
-            <ViewContext.Provider value={{currentView, setView}}>
-                <motion.div
-                    initial={{opacity: 0}}
-                    animate={{opacity: 1}}
-                    exit={{opacity: 0}}
-                    >
-                    <Greeting/>
-                </motion.div>
-            </ViewContext.Provider>
-        )
-    }
-
-    
-
-    if (currentView == TypeScreen[5]){
-        console.log(currentView);
-        return(
-            <ViewContext.Provider value={{currentView, setView}}>
-                <motion.div
-                    initial={{opacity: 0}}
-                    animate={{opacity: 1}}
-                    exit={{opacity: 0}}
-                    >
-                    <Family/>
-                </motion.div>
-            </ViewContext.Provider>
-        )
-    }
-
-    if (currentView == TypeScreen[6]){
-        console.log(currentView);
-        return(
-            <ViewContext.Provider value={{currentView, setView}}>
-                <motion.div
-                    initial={{opacity: 0}}
-                    animate={{opacity: 1}}
-                    exit={{opacity: 0}}
-                    >
-                    <Nature/>
-                </motion.div>
-            </ViewContext.Provider>
-        )
-    }
-
-    if (currentView == TypeScreen[7]){
-        console.log(currentView);
-        return(
-            <ViewContext.Provider value={{currentView, setView}}>
-                <motion.div
-                    initial={{opacity: 0}}
-                    animate={{opacity: 1}}
-                    exit={{opacity: 0}}
-                    >
-                    <Animals/>
-                </motion.div>
-            </ViewContext.Provider>
-        )
-    }
-
-    if (currentView == TypeScreen[8]){
-        console.log(currentView);
-        return(
-            <ViewContext.Provider value={{currentView, setView}}>
-                <motion.div
-                    initial={{opacity: 0}}
-                    animate={{opacity: 1}}
-                    exit={{opacity: 0}}
-                    >
-                    <CultureFood/>
-                </motion.div>
-            </ViewContext.Provider>
-        )
-    }
-    if (currentView == TypeScreen[9]){
-        console.log(currentView);
-        return(
-            <ViewContext.Provider value={{currentView, setView}}>
-                <motion.div
-                    initial={{opacity: 0}}
-                    animate={{opacity: 1}}
-                    exit={{opacity: 0}}
-                    >
-                    <Clothes/>
-                </motion.div>
-            </ViewContext.Provider>
-        )
-    }
-    if (currentView == TypeScreen[10]){
-        console.log(currentView);
-        return(
-            <ViewContext.Provider value={{currentView, setView}}>
-                <motion.div
-                    initial={{opacity: 0}}
-                    animate={{opacity: 1}}
-                    exit={{opacity: 0}}
-                    >
-                    <Tale/>
-                </motion.div>
-            </ViewContext.Provider>
-        )
-    }
-    if (currentView == TypeScreen[11]){
-        console.log(currentView);
-        return(
-            <ViewContext.Provider value={{currentView, setView}}>
-                <motion.div
-                    initial={{opacity: 0}}
-                    animate={{opacity: 1}}
-                    exit={{opacity: 0}}
-                    >
-                    <Folklore/>
-                </motion.div>
-            </ViewContext.Provider>
-        )
-    }
-    if (currentView == TypeScreen[12]){
-        console.log(currentView);
-        return(
-            <ViewContext.Provider value={{currentView, setView}}>
-                <motion.div
-                    initial={{opacity: 0}}
-                    animate={{opacity: 1}}
-                    exit={{opacity: 0}}
-                    >
-                    <FamousPeople/>
-                </motion.div>
-            </ViewContext.Provider>
-        )
-    }
-    if (currentView == TypeScreen[13]){
-        console.log(currentView);
-        return(
-            <ViewContext.Provider value={{currentView, setView}}>
-                <motion.div
-                    initial={{opacity: 0}}
-                    animate={{opacity: 1}}
-                    exit={{opacity: 0}}
-                    >
-                    <PlaceholderPage/>
-                </motion.div>
-            </ViewContext.Provider>
-        )
-    }
+            </LangContext.Provider>
+    )
 }
 
 export default Home;
