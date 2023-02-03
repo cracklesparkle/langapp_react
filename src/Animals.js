@@ -37,7 +37,6 @@ import imgBird12 from './languages/yukaghir/birds/image12.jpg';
 import imgBird13 from './languages/yukaghir/birds/image13.jpg';
 import imgBird14 from './languages/yukaghir/birds/image14.jpg';
 
-
 import audio41 from "./languages/yukaghir/nature/audio/41. животные.mp3";
 import audio42 from "./languages/yukaghir/nature/audio/42. медведь.mp3";
 import audio43 from "./languages/yukaghir/nature/audio/43. лошадь.mp3";
