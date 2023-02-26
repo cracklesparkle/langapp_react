@@ -433,45 +433,6 @@ function Clothes() {
   )
 }
 
-function Page1(){
-    return (
-        <div className='culture'>
-            <h1 className='header'>О национальной одежде юкагиров</h1>
-            
-            <div className='animal'>
-                <h3>Wадун чии хандьэльэ, лэwэйльэ сукунньэҥи.</h3>
-                <br></br>
-                <h3>У юкагиров есть зимняя и летняя одежда.</h3>
-                <br></br>
-                <div className='image'>
-                    <img src={image1}></img>
-                </div>
-            </div>
-    
-            <div className='animal'>
-                <h3>Илэн  саwаҕат иириэнунҥа.</h3>
-                <br></br>
-                <h3>Шьют из шкуры оленя.</h3>
-                <br></br>
-                <div className='image'>
-                    <img src={image2}></img>
-                </div>
-            </div>
-    
-            <div className='animal' >
-                <h3>Летняя одежда из замши.</h3>
-                <br></br>
-                <h3>Лэwэймэҥ эл пугучэндьэ маҕиньаанунҥи.</h3>
-                <br></br>
-                <div className='image'>
-                    <img src={image3}></img>
-                </div>
-            </div>
-
-        </div>
-      )
-}
-
 function EarthCard(props){
     return(
         <div className='block'>

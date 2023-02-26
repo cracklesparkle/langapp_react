@@ -8,6 +8,8 @@ import b_right from '../../languages/yukaghir/greeting/b_right.png';
 import g_left from '../../languages/yukaghir/greeting/g_left.png';
 import g_right from '../../languages/yukaghir/greeting/g_right.png';
 
+import SubjectCard from '../../SubjectCard2';
+
 import Quiz from '../../Quiz';
 import { quizGreeting1, quizGreeting2, quizGreeting3 } from '../../pages/yakut/quizData';
 
@@ -15,7 +17,7 @@ import Bubble from '../../components/Bubble';
 
 import Button from '../../components/Button';
 import SoundButton from '../../components/SoundButton';
-
+//import SubjectCard from '../../SubjectCard1';
 
 import image1 from "../../languages/yakut/greeting/greeting.png";
 
@@ -1403,17 +1405,17 @@ const subjects = [
         "View": 2
     },
     {
-        "Title": "Приветствие, вежливое отношение / Эҕэрдэлэһии, эйэҕэс сыһыан",
+        "Title": "Приветствие, вежливое отношение",
         "Image": IntroductionIcon,
         "View": 3
     },
     {
-        "Title": "Давайте познакомимся / Билсиһиэххэ эрэ",
+        "Title": "Давайте познакомимся",
         "Image": IntroductionIcon,
         "View": 4
     },
     {
-        "Title": "Знакомство со студентом / Устудьуону кытта билсиһии",
+        "Title": "Знакомство со студентом",
         "Image": IntroductionIcon,
         "View": 5
     }
@@ -1468,11 +1470,11 @@ function Greeting() {
             <SubjectContext.Provider value={{ currentSubject, setCurrentSubject }}>
                 <motion.div className='subjectsPage' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                     {currentSubject === 0 && <div className='buttonsContainer'>
-                        <SubjectCard subject={subjects[0]} index='coloredCard1'/>
-                        <SubjectCard subject={subjects[1]} index='coloredCard2'/>
-                        <SubjectCard subject={subjects[2]} index='coloredCard3'/>
-                        <SubjectCard subject={subjects[3]} index='coloredCard4'/>
-                        <SubjectCard subject={subjects[4]} index='coloredCard5'/>
+                        <SubjectCard subject={subjects[0]} index='coloredCard1' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[1]} index='coloredCard2' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[2]} index='coloredCard3' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[3]} index='coloredCard4' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[4]} index='coloredCard5' subjectContext={SubjectContext}/>
                     </div>}
                     {currentSubject === 1 && <Page1 />}
                     {currentSubject === 2 && <Page2 />}
@@ -1760,35 +1762,6 @@ function Dialogue(props) {
 
         </motion.div>
     );
-}
-
-function SubjectCard({ subject, index }) {
-    const { setCurrentSubject } = useContext(SubjectContext);
-
-    // style={{backgroundImage: `url(${language.Background})`, backgroundSize:"contain", backgroundColor: '#6DB3F2'}}
-    return (
-        // <motion.button 
-        //     key={index}
-        //     className='quizOption'
-        //     whileHover={{ scale: 1.05 }}
-        //     whileTap={{ scale: 0.9 }}
-        //     onClick={() => setCurrentSubject(subject.View)}
-        //     >
-        //     <h4>{subject.Title}</h4>
-        // </motion.button>
-
-        <motion.div onClick={() => setCurrentSubject(subject.View)} className='subjectTheme' id={index}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.9 }}>
-            <div className='images'>
-                <img src={subject.Image} />
-            </div>
-            <div>
-                <h3>{subject.Title}</h3>
-            </div>
-
-        </motion.div>
-    )
 }
 
 export default Greeting

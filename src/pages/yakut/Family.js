@@ -8,6 +8,8 @@ import SoundButton from '../../components/SoundButton';
 import { quizFamily1 } from '../../pages/yakut/quizData';
 import Quiz from '../../Quiz';
 
+import SubjectCard from '../../SubjectCard2';
+
 import imgMember1 from '../../languages/yukaghir/family/image1.png';
 import imgMember2 from '../../languages/yukaghir/family/image2.png';
 import imgMember3 from '../../languages/yukaghir/family/image3.png';
@@ -1063,13 +1065,13 @@ function Family() {
             <SubjectContext.Provider value={{ currentSubject, setCurrentSubject }}>
                 <motion.div className='subjectsPage' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1 }}>
                     {currentSubject === 0 && <div className='buttonsContainer'>
-                        <SubjectCard subject={subjects[0]} index='coloredCard1'/>
-                        <SubjectCard subject={subjects[1]} index='coloredCard2'/>
-                        <SubjectCard subject={subjects[2]} index='coloredCard3'/>
-                        <SubjectCard subject={subjects[3]} index='coloredCard4'/>
-                        <SubjectCard subject={subjects[4]} index='coloredCard5'/>
-                        <SubjectCard subject={subjects[5]} index='coloredCard6'/>
-                        <SubjectCard subject={subjects[6]} index='coloredCard7'/>
+                        <SubjectCard subject={subjects[0]} index='coloredCard1' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[1]} index='coloredCard2' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[2]} index='coloredCard3' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[3]} index='coloredCard4' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[4]} index='coloredCard5' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[5]} index='coloredCard6' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[6]} index='coloredCard7' subjectContext={SubjectContext}/>
                     </div>}
                     {currentSubject === 1 && <Introduction />}
                     {currentSubject === 2 && <Dictionary />}
@@ -1468,35 +1470,6 @@ function Page2() {
             </div>
         </motion.div>
     );
-}
-
-function SubjectCard({ subject, index }) {
-    const { setCurrentSubject } = useContext(SubjectContext);
-
-    // style={{backgroundImage: `url(${language.Background})`, backgroundSize:"contain", backgroundColor: '#6DB3F2'}}
-    return (
-        // <motion.button 
-        //     key={index}
-        //     className='quizOption'
-        //     whileHover={{ scale: 1.05 }}
-        //     whileTap={{ scale: 0.9 }}
-        //     onClick={() => setCurrentSubject(subject.View)}
-        //     >
-        //     <h4>{subject.Title}</h4>
-        // </motion.button>
-
-        <motion.div onClick={() => setCurrentSubject(subject.View)} className='subjectTheme' id={index}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.9 }}>
-            <div className='images'>
-                <img src={subject.Image} />
-            </div>
-            <div>
-                <h3>{subject.Title}</h3>
-            </div>
-
-        </motion.div>
-    )
 }
 
 export default Family

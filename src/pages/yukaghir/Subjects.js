@@ -2,9 +2,6 @@ import React, {useContext, useState, useEffect} from 'react';
 
 import { ViewContext } from '../../ViewContext';
 
-import Language from '../../Language';
-
-
 import { languages } from '../../Data';
 
 import SubjectCard from '../../SubjectCard1';

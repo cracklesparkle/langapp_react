@@ -8,14 +8,7 @@ import SoundButton from '../../components/SoundButton';
 import { quizAnimals1 } from '../../pages/yakut/quizData';
 import Quiz from '../../Quiz';
 
-import imgMember1 from '../../languages/yukaghir/family/image1.png';
-import imgMember2 from '../../languages/yukaghir/family/image2.png';
-import imgMember3 from '../../languages/yukaghir/family/image3.png';
-import imgMember4 from '../../languages/yukaghir/family/image4.png';
-import imgMember5 from '../../languages/yukaghir/family/image5.png';
-import imgMember6 from '../../languages/yukaghir/family/image6.png';
-import imgMember7 from '../../languages/yukaghir/family/image7.png';
-import imgMember8 from '../../languages/yukaghir/family/image8.png';
+import SubjectCard from '../../SubjectCard2';
 
 import image1 from '../../languages/yakut/animals/Screenshot_7.jpg';
 import image2 from '../../languages/yakut/animals/белый медведь.jpg';
@@ -41,42 +34,6 @@ import imageQuiz8 from '../../languages/yakut/animals/quiz/8.png';
 import imageQuiz9 from '../../languages/yakut/animals/quiz/9.png';
 import imageQuiz10 from '../../languages/yakut/animals/quiz/10.png';
 
-import audio1 from "../../languages/yukaghir/family/audio/1. мама.mp3";
-import audio2 from "../../languages/yukaghir/family/audio/2. маму зовут анна.mp3";
-import audio3 from "../../languages/yukaghir/family/audio/3. папа.mp3";
-import audio4 from "../../languages/yukaghir/family/audio/4. папу зовут николай.mp3";
-import audio5 from "../../languages/yukaghir/family/audio/5. бабушка.mp3";
-import audio6 from "../../languages/yukaghir/family/audio/6. бабушка красиво поет.mp3";
-import audio7 from "../../languages/yukaghir/family/audio/7. дедушка.mp3";
-import audio8 from "../../languages/yukaghir/family/audio/8. мой дедушка рыбак.mp3";
-import audio9 from "../../languages/yukaghir/family/audio/9. старший брат.mp3";
-import audio10 from "../../languages/yukaghir/family/audio/10. мой старший брат учится в десятом классе.mp3";
-import audio11 from "../../languages/yukaghir/family/audio/11. старшая сестра.mp3";
-import audio12 from "../../languages/yukaghir/family/audio/12. старшая сестра учится в университете.mp3";
-import audio13 from "../../languages/yukaghir/family/audio/13. младший брат сестра.mp3";
-import audio14 from "../../languages/yukaghir/family/audio/14. моя сестренка учится в четвертом классе.mp3";
-import audio15 from "../../languages/yukaghir/family/audio/15. дядя старший брат мамы.mp3";
-import audio16 from "../../languages/yukaghir/family/audio/16. дядя работает на электростанции.mp3";
-import audio17 from "../../languages/yukaghir/family/audio/17. дядя младший брат мамы.mp3";
-import audio18 from "../../languages/yukaghir/family/audio/18. дядя работает в жкх.mp3";
-import audio19 from "../../languages/yukaghir/family/audio/19. тетя старшая сестра мамы.mp3";
-import audio20 from "../../languages/yukaghir/family/audio/20. моя тетя врач.mp3";
-import audio21 from "../../languages/yukaghir/family/audio/21. тетя младшая сестра мамы.mp3";
-import audio22 from "../../languages/yukaghir/family/audio/22. у тети трое детей.mp3";
-import audio23 from "../../languages/yukaghir/family/audio/23. дядя старший брат папы.mp3";
-import audio24 from "../../languages/yukaghir/family/audio/24. дядя учитель русского языка.mp3";
-import audio25 from "../../languages/yukaghir/family/audio/25. дядя младший брат папы.mp3";
-import audio26 from "../../languages/yukaghir/family/audio/26. мой дядя спортсмен.mp3";
-import audio27 from "../../languages/yukaghir/family/audio/27. тетя старгая сестра папы.mp3";
-import audio28 from "../../languages/yukaghir/family/audio/28. тетя работает в детском саду она бухгалтер.mp3";
-import audio29 from "../../languages/yukaghir/family/audio/29. тетя младшая сестра папы.mp3";
-import audio30 from "../../languages/yukaghir/family/audio/30. моя тетя швея.mp3";
-import audio31 from "../../languages/yukaghir/family/audio/31. невестка жена брата.mp3";
-import audio32 from "../../languages/yukaghir/family/audio/32. невестка живет в москве.mp3";
-import audio33 from "../../languages/yukaghir/family/audio/33. зять муж сестры.mp3";
-import audio34 from "../../languages/yukaghir/family/audio/34. зятя зовут дима.mp3";
-
-
 import IntroductionIcon from '../../icons/introduction.png';
 import AnimalsIcon from '../../icons/animals.png';
 import ClothesIcon from '../../icons/clothes.png';
@@ -95,37 +52,37 @@ const subjects = [
         "View": 1
     },
     {
-        "Title": "Словарь. Звери.",
+        "Title": "Звери.",
         "Image": IntroductionIcon,
         "View": 2
     },
     {
-        "Title": "Словарь. Возрастные название крупного рогатого скота",
+        "Title": "Возрастные названия крупного рогатого скота",
         "Image": IntroductionIcon,
         "View": 3
     },
     {
-        "Title": "Словарь. Возрастные название конного скота",
+        "Title": "Возрастные названия конного скота",
         "Image": IntroductionIcon,
         "View": 4
     },
     {
-        "Title": "Словарь. Возрастные название оленей",
+        "Title": "Возрастные названия оленей",
         "Image": IntroductionIcon,
         "View": 5
     },
     {
-        "Title": "Словарь. Птицы.",
+        "Title": "Птицы.",
         "Image": IntroductionIcon,
         "View": 6
     },
     {
-        "Title": "Словарь. Рыба",
+        "Title": "Рыба",
         "Image": IntroductionIcon,
         "View": 7
     },
     {
-        "Title": "Словарь. Насекомые",
+        "Title": "Насекомые",
         "Image": IntroductionIcon,
         "View": 8
     },
@@ -185,17 +142,17 @@ function Animals() {
             <SubjectContext.Provider value={{ currentSubject, setCurrentSubject }}>
                 <motion.div className='subjectsPage' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1 }}>
                     {currentSubject === 0 && <div className='buttonsContainer'>
-                        <SubjectCard subject={subjects[0]} index='coloredCard1' />
-                        <SubjectCard subject={subjects[1]} index='coloredCard2'/>
-                        <SubjectCard subject={subjects[2]} index='coloredCard3'/>
-                        <SubjectCard subject={subjects[3]} index='coloredCard4'/>
-                        <SubjectCard subject={subjects[4]} index='coloredCard5'/>
-                        <SubjectCard subject={subjects[5]} index='coloredCard6'/>
-                        <SubjectCard subject={subjects[6]} index='coloredCard7'/>
-                        <SubjectCard subject={subjects[7]} index='coloredCard1'/>
-                        <SubjectCard subject={subjects[8]} index='coloredCard2'/>
-                        <SubjectCard subject={subjects[9]} index='coloredCard3'/>
-                        <SubjectCard subject={subjects[10]} index='coloredCard4' />
+                        <SubjectCard subject={subjects[0]} index='coloredCard1' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[1]} index='coloredCard2' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[2]} index='coloredCard3' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[3]} index='coloredCard4' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[4]} index='coloredCard5' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[5]} index='coloredCard6' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[6]} index='coloredCard7' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[7]} index='coloredCard1' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[8]} index='coloredCard2' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[9]} index='coloredCard3' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[10]} index='coloredCard4' subjectContext={SubjectContext}/>
                     </div>}
                     {currentSubject === 1 && <Introduction />}
                     {currentSubject === 2 && <Dictionary />}
@@ -214,62 +171,10 @@ function Animals() {
                         {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
                         <Button text={currentSubject === 11 ? 'Вернуться к теме' : 'Далее'} handleClick={handleClick} />
                     </div>}
-
-
-
-
                 </motion.div>
             </SubjectContext.Provider>
         </ViewContext.Provider>
     )
-}
-
-function FamilyMember({ props }) {
-    return (
-        <div className='member'>
-            {/* <img className='memberImg' src={imgMember5}></img> */}
-            <Images props={props.images} />
-            <div className='asideKeepLeft'>
-                <div className='asideKeep'>
-                    <SoundButton audio={props.audio1} />
-                    <div className='asideVert'>
-                        <h3 className='a'>{props.header1}</h3>
-                        <p>{props.subheader1}</p>
-                    </div>
-                </div>
-                <div className='asideKeep'>
-                    <SoundButton audio={props.audio2} />
-                    <div className='asideVert'>
-                        <h3 className='a'>{props.header2}</h3>
-                        <p>{props.subheader2}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-}
-
-function OtherFamilyMember({ props }) {
-    return (
-        <div className='member'>
-            <div className='asideKeepLeft'>
-                <div className='asideKeep'>
-                    <SoundButton audio={props.audio1} />
-                    <div className='asideVert'>
-                        <h3 className='a'>{props.header1}</h3>
-                        <p>{props.subheader1}</p>
-                    </div>
-                </div>
-                {props.header2 && <div className='asideKeep'>
-                    <SoundButton audio={props.audio2} />
-                    <div className='asideVert'>
-                        <h3 className='a'>{props.header2}</h3>
-                        <p>{props.subheader2}</p>
-                    </div>
-                </div>}
-            </div>
-        </div>
-    );
 }
 
 function Images({ props }) {
@@ -1607,35 +1512,6 @@ function Test() {
 
             </motion.div>
         </PageContext.Provider>
-    )
-}
-
-function SubjectCard({ subject, index }) {
-    const { setCurrentSubject } = useContext(SubjectContext);
-
-    // style={{backgroundImage: `url(${language.Background})`, backgroundSize:"contain", backgroundColor: '#6DB3F2'}}
-    return (
-        // <motion.button 
-        //     key={index}
-        //     className='quizOption'
-        //     whileHover={{ scale: 1.05 }}
-        //     whileTap={{ scale: 0.9 }}
-        //     onClick={() => setCurrentSubject(subject.View)}
-        //     >
-        //     <h4>{subject.Title}</h4>
-        // </motion.button>
-
-        <motion.div onClick={() => setCurrentSubject(subject.View)} className='subjectTheme' id={index}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.9 }}>
-            <div className='images'>
-                <img src={subject.Image} />
-            </div>
-            <div>
-                <h3>{subject.Title}</h3>
-            </div>
-
-        </motion.div>
     )
 }
 

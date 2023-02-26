@@ -8,6 +8,8 @@ import SoundButton from '../../components/SoundButton';
 import { quizFamily1, quizTales } from '../../pages/yakut/quizData';
 import Quiz from '../../Quiz';
 
+import SubjectCard from '../../SubjectCard2';
+
 import Tale1 from './Tale1.jsx';
 import Tale2 from './Tale2.jsx';
 import Tale3 from './Tale3.jsx';
@@ -1022,52 +1024,52 @@ const subjects = [
     },
     {
         "Title": "Бэйбэрикээн",
-        "Image": IntroductionIcon,
+        "Image": imageTale1,
         "View": 2
     },
     {
         "Title": "Водяная крыса и птичка",
-        "Image": IntroductionIcon,
+        "Image": imageTale2,
         "View": 3
     },
     {
         "Title": "Гагара и ворон",
-        "Image": IntroductionIcon,
+        "Image": imageTale3,
         "View": 4
     },
     {
         "Title": "Три брата",
-        "Image": IntroductionIcon,
+        "Image": imageTale4,
         "View": 5
     },
     {
         "Title": "Как лягушка верхом ездила",
-        "Image": IntroductionIcon,
+        "Image": imageTale5,
         "View": 6
     },
     {
         "Title": "Лиса и медведь",
-        "Image": IntroductionIcon,
+        "Image": imageTale6,
         "View": 7
     },
     {
         "Title": "Мышь и лось",
-        "Image": IntroductionIcon,
+        "Image": imageTale7,
         "View": 8
     },
     {
         "Title": "Мэник Мэнигийээн",
-        "Image": IntroductionIcon,
+        "Image": imageTale8,
         "View": 9
     },
     {
         "Title": "Облегчивший поклажу",
-        "Image": IntroductionIcon,
+        "Image": imageTale9,
         "View": 10
     },
     {
         "Title": "Старуха Тэбэнэкээн",
-        "Image": IntroductionIcon,
+        "Image": imageTale10,
         "View": 11
     },
     {
@@ -1116,18 +1118,18 @@ function Tale() {
             <SubjectContext.Provider value={{ currentSubject, setCurrentSubject }}>
                 <motion.div className='talePage' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1 }}>
                     {currentSubject === 0 && <div className='buttonsContainer'>
-                        <SubjectCard subject={subjects[0]} index='coloredCard1' />
-                        <SubjectCard subject={subjects[1]} index='coloredCard2' />
-                        <SubjectCard subject={subjects[2]} index='coloredCard3' />
-                        <SubjectCard subject={subjects[3]} index='coloredCard4' />
-                        <SubjectCard subject={subjects[4]} index='coloredCard5' />
-                        <SubjectCard subject={subjects[5]} index='coloredCard6' />
-                        <SubjectCard subject={subjects[6]} index='coloredCard7' />
-                        <SubjectCard subject={subjects[7]} index='coloredCard1' />
-                        <SubjectCard subject={subjects[8]} index='coloredCard2' />
-                        <SubjectCard subject={subjects[9]} index='coloredCard3' />
-                        <SubjectCard subject={subjects[10]} index='coloredCard4' />
-                        <SubjectCard subject={subjects[11]} index='coloredCard5' />
+                        <SubjectCard subject={subjects[0]} index='coloredCard1' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[1]} index='coloredCard2' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[2]} index='coloredCard3' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[3]} index='coloredCard4' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[4]} index='coloredCard5' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[5]} index='coloredCard6' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[6]} index='coloredCard7' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[7]} index='coloredCard1' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[8]} index='coloredCard2' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[9]} index='coloredCard3' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[10]} index='coloredCard4' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[11]} index='coloredCard5' subjectContext={SubjectContext}/>
                     </div>}
                     {currentSubject === 1 && <Introduction />}
                     {currentSubject === 2 && <Tale1 />}
@@ -1147,10 +1149,6 @@ function Tale() {
                         {/* <button className='buttonLearn' onClick={handleClick}>Далее</button> */}
                         <Button text={currentSubject === 12 ? 'Вернуться к теме' : 'Далее'} handleClick={handleClick} />
                     </div>}
-
-
-
-
                 </motion.div>
             </SubjectContext.Provider>
         </ViewContext.Provider>
@@ -1257,35 +1255,6 @@ function Test() {
                 }
             </motion.div>
         </PageContext.Provider>
-    )
-}
-
-function SubjectCard({ subject, index }) {
-    const { setCurrentSubject } = useContext(SubjectContext);
-
-    // style={{backgroundImage: `url(${language.Background})`, backgroundSize:"contain", backgroundColor: '#6DB3F2'}}
-    return (
-        // <motion.button 
-        //     key={index}
-        //     className='quizOption'
-        //     whileHover={{ scale: 1.05 }}
-        //     whileTap={{ scale: 0.9 }}
-        //     onClick={() => setCurrentSubject(subject.View)}
-        //     >
-        //     <h4>{subject.Title}</h4>
-        // </motion.button>
-
-        <motion.div onClick={() => setCurrentSubject(subject.View)} className='subjectTheme' id={index}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.9 }}>
-            <div className='images'>
-                <img src={subject.Image} />
-            </div>
-            <div>
-                <h3>{subject.Title}</h3>
-            </div>
-
-        </motion.div>
     )
 }
 
