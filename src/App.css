@@ -27,6 +27,9 @@ img{
   --lang5-color: linear-gradient(180deg, #ADD7E9 0%, rgba(255,255,255,1) 100%);
   --lang6-color: linear-gradient(180deg, #AABCFF 0%, rgba(255,255,255,1) 100%);
   --lang7-color: linear-gradient(180deg, #CBC8FF 0%, rgba(255,255,255,1) 100%);
+  --dictionary-odd-color: rgba(233, 218, 12, 0.2);
+  --dictionary-even-color: rgba(12, 233, 185, 0.2);
+
 }
 
 body {
@@ -197,7 +200,23 @@ p{
 }
 
 .dictionaryTable h3{
-  padding-top: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+}
+
+.dictionaryTable p{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: center;
+  width: 100%;
+  margin: 0;
 }
 
 .taleImage{
@@ -225,13 +244,38 @@ p{
   margin: auto;
 }
 
+.story .aside p{
+  margin: 0;
+}
+
+.story .aside{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
+}
+
+.story .aside :nth-child(1){
+  border-right: 2px solid rgba(0, 0, 0, 0.1);
+}
+
 .greeting-dictionary .aside{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
-  padding: 30px;
+  /* padding: 30px; */
   border-bottom: 5px solid rgba(0, 0, 0, 0.1);
+}
+
+.greeting-dictionary .aside :nth-child(1){
+  border-right: 2px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--dictionary-odd-color);
+}
+
+.greeting-dictionary .aside :nth-child(2){
+  background-color: var(--dictionary-even-color);
 }
 
 
@@ -1535,11 +1579,40 @@ a:active { text-decoration: none; }
     width: 100%;
   }
 
+  .story .aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .story .aside :nth-child(1){
+    border-right: 0px;
+  }
+
   .greeting-dictionary .aside{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     width: 100%;
+    border-bottom: 10px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .greeting-dictionary .aside :nth-child(1){
+    border-right: 0px;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .greeting-dictionary .aside :nth-child(2){
+    background-color: rgb(255, 255, 255);
+  }
+
+  .dictionaryTable :nth-child(odd) :nth-child(1), .dictionaryTable :nth-child(odd) :nth-child(2){
+    background-color: var(--dictionary-odd-color);
+  }
+  
+  .dictionaryTable :nth-child(even) :nth-child(1), .dictionaryTable :nth-child(even) :nth-child(2){
+    background-color: var(--dictionary-even-color);
   }
 
   .app {

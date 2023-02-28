@@ -57,21 +57,6 @@ const subjects = [
         "View": 2
     },
     {
-        "Title": "Возрастные названия крупного рогатого скота",
-        "Image": IntroductionIcon,
-        "View": 3
-    },
-    {
-        "Title": "Возрастные названия конного скота",
-        "Image": IntroductionIcon,
-        "View": 4
-    },
-    {
-        "Title": "Возрастные названия оленей",
-        "Image": IntroductionIcon,
-        "View": 5
-    },
-    {
         "Title": "Птицы.",
         "Image": IntroductionIcon,
         "View": 6
@@ -85,6 +70,21 @@ const subjects = [
         "Title": "Насекомые",
         "Image": IntroductionIcon,
         "View": 8
+    },
+    {
+        "Title": "Возрастные названия крупного рогатого скота",
+        "Image": IntroductionIcon,
+        "View": 3
+    },
+    {
+        "Title": "Возрастные названия конного скота",
+        "Image": IntroductionIcon,
+        "View": 4
+    },
+    {
+        "Title": "Возрастные названия оленей",
+        "Image": IntroductionIcon,
+        "View": 5
     },
     {
         "Title": "Чтение. Заяц.",

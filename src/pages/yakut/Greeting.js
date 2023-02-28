@@ -1515,9 +1515,12 @@ function Page2() {
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1 }} className="greeting-dictionary">
             <div className="container">
                 <h1 className='header'>Словарь. Тылдьыт.</h1>
-                <h3>Приветствие. Знакомство</h3>
-                <h3>Эҕэрдэлэһии. Билсиһии</h3>
+                
                 <div className='dictionaryTable'>
+                    <div className='aside'>
+                        <h3>Приветствие. Знакомство</h3>
+                        <h3>Эҕэрдэлэһии. Билсиһии</h3>
+                    </div>
                     {dictionary.map((e, i) => {
                         return (
                             <div className='aside'>

@@ -426,12 +426,12 @@ const text3 = [
 
 //Словарь / Тылдьыт
 const dictionary = [
-    {
-        "sentence": "Семья",
-        "translation": "дьиэ кэргэн, ыал",
-        "avatar": "boy",
-        "audio": audio1
-    },
+    // {
+    //     "sentence": "Семья",
+    //     "translation": "Дьиэ кэргэн, ыал",
+    //     "avatar": "boy",
+    //     "audio": audio1
+    // },
     {
         "sentence": "Родители",
         "translation": "төрөппүттэр",
@@ -1210,10 +1210,13 @@ function Dictionary() {
     return (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1 }} className="greeting-dictionary">
             <div className="container">
-                <h1 className='header'>Словарь</h1>
-                <h3 className='greeting-subheader'>Тылдьыт</h3>
-                {/* <h3>Приветствие. Знакомство / Эҕэрдэлэһии. Билсиһии</h3> */}
+                <h1 className='header'>Словарь. Тылдьыт.</h1>
+
                 <div className='dictionaryTable'>
+                    <div className='aside'>
+                        <h3>Семья</h3>
+                        <h3>Дьиэ кэргэн, ыал</h3>
+                    </div>
                     {dictionary.map((e, i) => {
                         return (
                             <div>
@@ -1243,34 +1246,18 @@ function Text1() {
                 <h3 className='greeting-subheader'>(Рассказ школьника / үөрэнээччи кэпсээнэ)</h3>
                 <img className='greetingImage' src={image3}></img>
                 <div className='tables'>
-                    {/* <div className='family'>
-                            {data.map((e, i) => {
-                                    return (
-                                            <FamilyMember props={e} key={i}/>
-                                        );
-                                    })
-                            }
-                        </div> */}
-                    {/* <div className='otherMembers'>
+                    <div className='story'>
                         {text1.map((e, i) => {
                             return (
-                                <OtherFamilyMember props={e} key={i} />
+                                <div className='aside'>
+                                    <p>{e.header1}</p>
+                                    <p>{e.subheader1}</p>
+                                </div>
                             );
                         })
                         }
-                    </div> */}
-                    {text1.map((e, i) => {
-                        return (
-                            <div>
-                                <div>
-                                <p>{e.header1}</p>
-                                <p style={{fontStyle: 'italic'}}>{e.subheader1}</p>
-                                </div>
-                                
-                            </div>
-                        );
-                    })
-                    }
+                    </div>
+                    
                 </div>
             </div>
         </motion.div>
@@ -1284,34 +1271,18 @@ function Text2() {
                 <h1 className='header'>Моя семья / Мин дьиэ кэргэним</h1>
                 <h3 className='greeting-subheader'>(Рассказ школьника/ үөрэнээччи кэпсээнэ)</h3>
                 <div className='tables'>
-                    {/* <div className='family'>
-                            {data.map((e, i) => {
-                                    return (
-                                            <FamilyMember props={e} key={i}/>
-                                        );
-                                    })
-                            }
-                        </div> */}
-                    {/* <div className='otherMembers'>
+                    <div className='story'>
                         {text2.map((e, i) => {
                             return (
-                                <OtherFamilyMember props={e} key={i} />
-                            );
-                        })
-                        }
-                    </div> */}
-                    {text2.map((e, i) => {
-                            return (
-                                <div>
-                                    <div>
+                                    <div className='aside'>
                                     <p>{e.header1}</p>
-                                    <p style={{fontStyle: 'italic'}}>{e.subheader1}</p>
+                                    <p>{e.subheader1}</p>
                                     </div>
-                
-                                </div>
                             );
                         })
                         }
+                    </div>
+                    
                 </div>
             </div>
         </motion.div>
@@ -1325,34 +1296,18 @@ function Text3() {
                 <h1 className='header'>Моя семья / Мин дьиэ кэргэним</h1>
                 <h3 className='greeting-subheader'>(Рассказ школьника/ үөрэнээччи кэпсээнэ)</h3>
                 <div className='tables'>
-                    {/* <div className='family'>
-                            {data.map((e, i) => {
-                                    return (
-                                            <FamilyMember props={e} key={i}/>
-                                        );
-                                    })
-                            }
-                        </div> */}
-                    {/* <div className='otherMembers'>
+                    <div className='story'>
                         {text3.map((e, i) => {
                             return (
-                                <OtherFamilyMember props={e} key={i} />
-                            );
-                        })
-                        }
-                    </div> */}
-                    {text3.map((e, i) => {
-                            return (
-                                <div>
-                                    <div>
-                                    <p>{e.header1}</p>
-                                    <p style={{fontStyle: 'italic'}}>{e.subheader1}</p>
+                                    <div className='aside'>
+                                        <p>{e.header1}</p>
+                                        <p>{e.subheader1}</p>
                                     </div>
-                
-                                </div>
                             );
                         })
                         }
+                    </div>
+                    
                 </div>
             </div>
         </motion.div>

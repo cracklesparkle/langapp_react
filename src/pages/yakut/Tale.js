@@ -51,6 +51,17 @@ import imageTale8 from '../../languages/yakut/tales/МЭНИК МЭНИГИЙЭ�
 import imageTale9 from '../../languages/yakut/tales/ОБЛЕГЧИВШИЙ ПОКЛАЖУ..png';
 import imageTale10 from '../../languages/yakut/tales/СТАРУХА ТЭБЭНЭКЭЭН..png';
 
+import taleIcon1 from '../../languages/yakut/tales/subjectIcons/СТАРУХА БЯЙБЯРИКЯН С ПЯТЬЮ КОРОВАМИ.png';
+import taleIcon2 from '../../languages/yakut/tales/subjectIcons/ВОДЯНАЯ КРЫСА И ПТИЧКА.png';
+import taleIcon3 from '../../languages/yakut/tales/subjectIcons/ГАГАРА И ВОРОН.png';
+import taleIcon4 from '../../languages/yakut/tales/subjectIcons/КАК ТРИ БРАТА ОГОНЬ ДОБЫЛИ.png';
+import taleIcon5 from '../../languages/yakut/tales/subjectIcons/КАК ЛЯГУШКА ВЕРХОМ ЕЗДИЛА.png';
+import taleIcon6 from '../../languages/yakut/tales/subjectIcons/ЛИСА И МЕДВЕД1.png';
+import taleIcon7 from '../../languages/yakut/tales/subjectIcons/МЫШЬ И ЛОСЬ..png';
+import taleIcon8 from '../../languages/yakut/tales/subjectIcons/МЭНИК МЭНИГИЙЭЭН..png';
+import taleIcon9 from '../../languages/yakut/tales/subjectIcons/ОБЛЕГЧИВШИЙ ПОКЛАЖУ..png';
+import taleIcon10 from '../../languages/yakut/tales/subjectIcons/СТАРУХА ТЭБЭНЭКЭЭН..png';
+
 import audio1 from "../../languages/yukaghir/family/audio/1. мама.mp3";
 import audio2 from "../../languages/yukaghir/family/audio/2. маму зовут анна.mp3";
 import audio3 from "../../languages/yukaghir/family/audio/3. папа.mp3";
@@ -1024,52 +1035,52 @@ const subjects = [
     },
     {
         "Title": "Бэйбэрикээн",
-        "Image": imageTale1,
+        "Image": taleIcon1,
         "View": 2
     },
     {
         "Title": "Водяная крыса и птичка",
-        "Image": imageTale2,
+        "Image": taleIcon2,
         "View": 3
     },
     {
         "Title": "Гагара и ворон",
-        "Image": imageTale3,
+        "Image": taleIcon3,
         "View": 4
     },
     {
         "Title": "Три брата",
-        "Image": imageTale4,
+        "Image": taleIcon4,
         "View": 5
     },
     {
         "Title": "Как лягушка верхом ездила",
-        "Image": imageTale5,
+        "Image": taleIcon5,
         "View": 6
     },
     {
         "Title": "Лиса и медведь",
-        "Image": imageTale6,
+        "Image": taleIcon6,
         "View": 7
     },
     {
         "Title": "Мышь и лось",
-        "Image": imageTale7,
+        "Image": taleIcon7,
         "View": 8
     },
     {
         "Title": "Мэник Мэнигийээн",
-        "Image": imageTale8,
+        "Image": taleIcon8,
         "View": 9
     },
     {
         "Title": "Облегчивший поклажу",
-        "Image": imageTale9,
+        "Image": taleIcon9,
         "View": 10
     },
     {
         "Title": "Старуха Тэбэнэкээн",
-        "Image": imageTale10,
+        "Image": taleIcon10,
         "View": 11
     },
     {
