@@ -11,14 +11,15 @@ function NavBar(){
     return(
         <div className='navbar'>
             <ul>
-                <li className='navbarHome' onClick={()=>{setView('languageSelect')}}>
+                <li className='navbarHome' onClick={()=>{setView('subjectSelect')}}>
                     <img className='navbarHomeImage' width={'15px'} src={homeLogo}></img>Главная
                 </li>
                 {/* <li onClick={()=>{setView('subjectSelect')}}>Темы</li>
                 <li onClick={()=>{setView('languageSelect')}}>Языки</li> */}
+                {currentView != 'subjectSelect' && currentView != 'languageSelect' && currentView != 'placeholderView' && <li className='back' onClick={()=>{setView('subjectSelect')}}>Вернуться к темам</li>}
                 {/* {currentView != 'subjectSelect' && currentView != 'languageSelect' && currentView != 'placeholderView' && <li className='back' onClick={()=>{setView('subjectSelect')}}>Вернуться к темам</li>} */}
-                {currentLang == 'YA' && <li className='back' onClick={()=>{setView('YA_subjectSelect')}}>Вернуться к темам</li>}
-                {currentLang == 'YU' && <li className='back' onClick={()=>{setView('YU_subjectSelect')}}>Вернуться к темам</li>}
+                {/* {currentLang == 'YA' && <li className='back' onClick={()=>{setView('subjectSelect')}}>Вернуться к темам</li>}
+                {currentLang == 'YU' && <li className='back' onClick={()=>{setView('subjectSelect')}}>Вернуться к темам</li>} */}
             </ul>
         </div>
     )

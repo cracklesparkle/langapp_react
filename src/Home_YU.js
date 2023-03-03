@@ -53,8 +53,8 @@ function Home({view, lang}){
                     {currentView === 'placeholderView' && <PlaceholderPage/>}
                     {currentView === 'languageSelect' && <Languages/>}
                     
-                    {currentView === 'YU_subjectSelect' && <YU_Subjects/>}
-                    {currentView === 'YU_introductionView' && <YU_Language language={languages[localStorage.getItem('langId')]}/>}
+                    {currentView === 'subjectSelect' && <YU_Subjects/>}
+                    {currentView === 'YU_introductionView' && <YU_Language language={languages[3]}/>}
                     {currentView === 'YU_greetingView' && <YU_Greeting/>}
                     {currentView === 'YU_familyView' && <YU_Family/>}
                     {currentView === 'YU_natureView' && <YU_Nature/>}
@@ -64,18 +64,6 @@ function Home({view, lang}){
                     {currentView === 'YU_taleView' && <YU_Tale/>}
                     {currentView === 'YU_folkloreView' && <YU_Folklore/>}
                     {currentView === 'YU_famousPeopleView' && <YU_FamousPeople/>}
-                    
-                    {currentView === 'YA_subjectSelect' && <YA_Subjects/>}
-                    {currentView === 'YA_introductionView' && <YA_Language language={languages[localStorage.getItem('langId')]}/>}
-                    {currentView === 'YA_greetingView' && <YA_Greeting/>}
-                    {currentView === 'YA_familyView' && <YA_Family/>}
-                    {currentView === 'YA_natureView' && <YA_Nature/>}
-                    {currentView === 'YA_animalsView' && <YA_Animals/>}
-                    {currentView === 'YA_cultureFoodView' && <YA_CultureFood/>}
-                    {currentView === 'YA_clothesView' && <YA_Clothes/>}
-                    {currentView === 'YA_taleView' && <YA_Tale/>}
-                    {currentView === 'YA_folkloreView' && <YA_Folklore/>}
-                    {currentView === 'YA_famousPeopleView' && <YA_FamousPeople/>}
                 </motion.div>
             </ViewContext.Provider>
             </LangContext.Provider>

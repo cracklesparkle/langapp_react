@@ -10,6 +10,8 @@ import Quiz from '../../Quiz';
 
 import SubjectCard from '../../SubjectCard2';
 
+import { animals } from './audio';
+
 import image1 from '../../languages/yakut/animals/Screenshot_7.jpg';
 import image2 from '../../languages/yakut/animals/белый медведь.jpg';
 import image3 from '../../languages/yakut/animals/ЗАЯЦ.png';

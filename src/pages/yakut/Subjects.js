@@ -92,13 +92,11 @@ function Subjects(){
         },
         {
         "Title": "Знакомство",
-        "Image": GreetingIcon,
         "Link": 'greeting',
         "View": 'YA_greetingView'
         },
         {
         "Title": "Семья",
-        "Image": FamilyIcon,
         "Link": 'family',
         "View": 'YA_familyView'
         },
@@ -110,7 +108,6 @@ function Subjects(){
         },
         {
         "Title": "Животные",
-        "Image": AnimalsIcon,
         "Link": 'animals',
         "View": 'YA_animalsView'
         },
@@ -128,7 +125,6 @@ function Subjects(){
         },
         {
         "Title": "Сказки",
-        "Image": MoonGirlIcon,
         "Link": 'moon-girl',
         "View": 'YA_taleView'
         },

@@ -10,6 +10,8 @@ import Quiz from '../../Quiz';
 
 import SubjectCard from '../../SubjectCard2';
 
+import { tales } from './audio';
+
 import Tale1 from './Tale1.jsx';
 import Tale2 from './Tale2.jsx';
 import Tale3 from './Tale3.jsx';

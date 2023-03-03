@@ -89,7 +89,7 @@ import greeting_dictionary014 from "../../languages/yakut/greeting/audio/diction
 import greeting_dictionary015 from "../../languages/yakut/greeting/audio/dictionary/за это вам спасибо.mp3"
 import greeting_dictionary016 from "../../languages/yakut/greeting/audio/dictionary/спасибо за совет (помощь).mp3"
 import greeting_dictionary017 from "../../languages/yakut/greeting/audio/dictionary/как я рад.mp3"
-import greeting_dictionary018 from "../../languages/yakut/greeting/audio/dictionary/как приятно!.mp3"
+import greeting_dictionary018 from "../../languages/yakut/greeting/audio/dictionary/как приятно.mp3"
 import greeting_dictionary019 from "../../languages/yakut/greeting/audio/dictionary/извините.mp3"
 import greeting_dictionary020 from "../../languages/yakut/greeting/audio/dictionary/всего наилучшего.mp3"
 import greeting_dictionary021 from "../../languages/yakut/greeting/audio/dictionary/все хорошо.mp3"
@@ -219,7 +219,6 @@ import greeting_dictionary144 from "../../languages/yakut/greeting/audio/diction
 import greeting_dictionary145 from "../../languages/yakut/greeting/audio/dictionary/спасибо за подарок.mp3"
 import greeting_dictionary146 from "../../languages/yakut/greeting/audio/dictionary/сердечно благодарен за теплый прием.mp3"
 
-
 //FAMILY
 
 //dialogue1
@@ -235,7 +234,6 @@ import family_dialogue1_05_l from "../../languages/yakut/family/audio/dialogue1/
 import family_dialogue1_05_r from "../../languages/yakut/family/audio/dialogue1/хорошо.mp3"
 
 
-
 //dialogue2
 import family_dialogue2_01_l from "../../languages/yakut/family/audio/dialogue2/твоя семья большая или маленькая.mp3"
 import family_dialogue2_01_r from "../../languages/yakut/family/audio/dialogue2/ни большая ни маленькая.mp3"
@@ -249,6 +247,7 @@ import family_dialogue2_05_l from "../../languages/yakut/family/audio/dialogue2/
 import family_dialogue2_05_r from "../../languages/yakut/family/audio/dialogue2/мой папа работает сейчас.mp3"
 import family_dialogue2_06_l from "../../languages/yakut/family/audio/dialogue2/а где твоя сестренка сейчас.mp3"
 import family_dialogue2_06_r from "../../languages/yakut/family/audio/dialogue2/я уверен что она смотрит мультики.mp3"
+
 
 //dictionary
 import family_dictionary001 from "../../languages/yakut/family/audio/dictionary/семья.mp3"
@@ -294,6 +293,7 @@ import family_dictionary040 from "../../languages/yakut/family/audio/dictionary/
 import family_dictionary041 from "../../languages/yakut/family/audio/dictionary/дом.mp3"
 import family_dictionary042 from "../../languages/yakut/family/audio/dictionary/усадьба.mp3"
 import family_dictionary043 from "../../languages/yakut/family/audio/dictionary/двор.mp3"
+
 
 //phrases
 import family_phrases001 from "../../languages/yakut/family/audio/phrases/моя семья дружная.mp3"
@@ -381,7 +381,6 @@ import family_story030 from "../../languages/yakut/family/audio/story/нашег
 import family_story031 from "../../languages/yakut/family/audio/story/наша семья очень дружная.mp3"
 import family_story032 from "../../languages/yakut/family/audio/story/я хочу чтобы она оставалась такой всегда.mp3"
 
-
 //ANIMALS
 
 import animals_01 from "../../languages/yakut/animals/audio/5 урок куропатка - вырезанная.mp3"
@@ -391,3 +390,400 @@ import animals_03 from "../../languages/yakut/animals/audio/5 урок живо�
 //TALES
 import tales_01 from "../../languages/yakut/tales/audio/8 урок - гагара вырезанная.mp3"
 import tales_02 from "../../languages/yakut/tales/audio/8 урок - водяная крыса вырезанная.mp3"
+
+
+export const greeting_dialogue1 = {
+    greeting_dialogue1_01_l,
+    greeting_dialogue1_01_r,
+    greeting_dialogue1_02_l,
+    greeting_dialogue1_02_r,
+    greeting_dialogue1_03_l,
+    greeting_dialogue1_03_r,
+    greeting_dialogue1_04_l,
+    greeting_dialogue1_04_r,
+    greeting_dialogue1_05_l
+}
+
+export const greeting_dialogue2 = {
+    greeting_dialogue2_01_l,
+    greeting_dialogue2_01_r,
+    greeting_dialogue2_02_l,
+    greeting_dialogue2_02_r,
+    greeting_dialogue2_03_l,
+    greeting_dialogue2_03_r,
+    greeting_dialogue2_04_l,
+    greeting_dialogue2_04_r,
+    greeting_dialogue2_05_l,
+    greeting_dialogue2_05_r,
+    greeting_dialogue2_06_l,
+    greeting_dialogue2_06_r,
+    greeting_dialogue2_07_l,
+    greeting_dialogue2_07_r
+}
+
+export const greeting_dialogue3 = {
+    greeting_dialogue3_01_l,
+    greeting_dialogue3_01_r,
+    greeting_dialogue3_02_l,
+    greeting_dialogue3_02_r,
+    greeting_dialogue3_03_l,
+    greeting_dialogue3_03_r,
+    greeting_dialogue3_04_l,
+    greeting_dialogue3_04_r,
+    greeting_dialogue3_05_l,
+    greeting_dialogue3_05_r,
+    greeting_dialogue3_06_l,
+    greeting_dialogue3_06_r,
+    greeting_dialogue3_07_l,
+    greeting_dialogue3_07_r,
+    greeting_dialogue3_08_l,
+    greeting_dialogue3_08_r,
+    greeting_dialogue3_09_l,
+    greeting_dialogue3_09_r,
+    greeting_dialogue3_10_l,
+    greeting_dialogue3_10_r,
+    greeting_dialogue3_11_l,
+    greeting_dialogue3_11_r,
+    greeting_dialogue3_12_l,
+    greeting_dialogue3_12_r,
+    greeting_dialogue3_13_l,
+    greeting_dialogue3_13_r,
+    greeting_dialogue3_14_l,
+    greeting_dialogue3_14_r,
+    greeting_dialogue3_15_l,
+    greeting_dialogue3_15_r,
+    greeting_dialogue3_16_l,
+    greeting_dialogue3_16_r,
+    greeting_dialogue3_17_l,
+    greeting_dialogue3_17_r,
+    greeting_dialogue3_18_l,
+    greeting_dialogue3_18_r,
+    greeting_dialogue3_19_l,
+    greeting_dialogue3_19_r,
+    greeting_dialogue3_20_l,
+    greeting_dialogue3_20_r,
+    greeting_dialogue3_21_l,
+    greeting_dialogue3_21_r
+}
+
+export const greeting_dictionary = {
+    greeting_dictionary001,
+    greeting_dictionary002,
+    greeting_dictionary003,
+    greeting_dictionary004,
+    greeting_dictionary005,
+    greeting_dictionary006,
+    greeting_dictionary007,
+    greeting_dictionary008,
+    greeting_dictionary009,
+    greeting_dictionary010,
+    greeting_dictionary011,
+    greeting_dictionary012,
+    greeting_dictionary013,
+    greeting_dictionary014,
+    greeting_dictionary015,
+    greeting_dictionary016,
+    greeting_dictionary017,
+    greeting_dictionary018,
+    greeting_dictionary019,
+    greeting_dictionary020,
+    greeting_dictionary021,
+    greeting_dictionary022,
+    greeting_dictionary023,
+    greeting_dictionary024,
+    greeting_dictionary025,
+    greeting_dictionary026,
+    greeting_dictionary027,
+    greeting_dictionary028,
+    greeting_dictionary029,
+    greeting_dictionary030,
+    greeting_dictionary031,
+    greeting_dictionary032,
+    greeting_dictionary033,
+    greeting_dictionary034,
+    greeting_dictionary035,
+    greeting_dictionary036,
+    greeting_dictionary037,
+    greeting_dictionary038,
+    greeting_dictionary039,
+    greeting_dictionary040,
+    greeting_dictionary041,
+    greeting_dictionary042,
+    greeting_dictionary043,
+    greeting_dictionary044,
+    greeting_dictionary045,
+    greeting_dictionary046,
+    greeting_dictionary047,
+    greeting_dictionary048,
+    greeting_dictionary049,
+    greeting_dictionary050,
+    greeting_dictionary051,
+    greeting_dictionary052,
+    greeting_dictionary053,
+    greeting_dictionary054,
+    greeting_dictionary055,
+    greeting_dictionary056,
+    greeting_dictionary057,
+    greeting_dictionary058,
+    greeting_dictionary059,
+    greeting_dictionary060,
+    greeting_dictionary061,
+    greeting_dictionary062,
+    greeting_dictionary063,
+    greeting_dictionary064,
+    greeting_dictionary065,
+    greeting_dictionary066,
+    greeting_dictionary067,
+    greeting_dictionary068,
+    greeting_dictionary069,
+    greeting_dictionary070,
+    greeting_dictionary071,
+    greeting_dictionary072,
+    greeting_dictionary073,
+    greeting_dictionary074,
+    greeting_dictionary075,
+    greeting_dictionary076,
+    greeting_dictionary077,
+    greeting_dictionary078,
+    greeting_dictionary079,
+    greeting_dictionary080,
+    greeting_dictionary081,
+    greeting_dictionary082,
+    greeting_dictionary083,
+    greeting_dictionary084,
+    greeting_dictionary085,
+    greeting_dictionary086,
+    greeting_dictionary087,
+    greeting_dictionary088,
+    greeting_dictionary089,
+    greeting_dictionary090,
+    greeting_dictionary091,
+    greeting_dictionary092,
+    greeting_dictionary093,
+    greeting_dictionary094,
+    greeting_dictionary095,
+    greeting_dictionary096,
+    greeting_dictionary097,
+    greeting_dictionary098,
+    greeting_dictionary099,
+    greeting_dictionary100,
+    greeting_dictionary101,
+    greeting_dictionary102,
+    greeting_dictionary103,
+    greeting_dictionary104,
+    greeting_dictionary105,
+    greeting_dictionary106,
+    greeting_dictionary107,
+    greeting_dictionary108,
+    greeting_dictionary109,
+    greeting_dictionary110,
+    greeting_dictionary111,
+    greeting_dictionary112,
+    greeting_dictionary113,
+    greeting_dictionary114,
+    greeting_dictionary115,
+    greeting_dictionary116,
+    greeting_dictionary117,
+    greeting_dictionary118,
+    greeting_dictionary119,
+    greeting_dictionary120,
+    greeting_dictionary121,
+    greeting_dictionary122,
+    greeting_dictionary123,
+    greeting_dictionary124,
+    greeting_dictionary125,
+    greeting_dictionary126,
+    greeting_dictionary127,
+    greeting_dictionary128,
+    greeting_dictionary129,
+    greeting_dictionary130,
+    greeting_dictionary131,
+    greeting_dictionary132,
+    greeting_dictionary133,
+    greeting_dictionary134,
+    greeting_dictionary135,
+    greeting_dictionary136,
+    greeting_dictionary137,
+    greeting_dictionary138,
+    greeting_dictionary139,
+    greeting_dictionary140,
+    greeting_dictionary141,
+    greeting_dictionary142,
+    greeting_dictionary143,
+    greeting_dictionary144,
+    greeting_dictionary145,
+    greeting_dictionary146
+}
+
+export const family_dialogue1 = {
+    family_dialogue1_01_l,
+    family_dialogue1_01_r,
+    family_dialogue1_02_l,
+    family_dialogue1_02_r,
+    family_dialogue1_03_l,
+    family_dialogue1_03_r,
+    family_dialogue1_04_l,
+    family_dialogue1_04_r,
+    family_dialogue1_05_l,
+    family_dialogue1_05_r
+}
+
+export const family_dialogue2 = {
+    family_dialogue2_01_l,
+    family_dialogue2_01_r,
+    family_dialogue2_02_l,
+    family_dialogue2_02_r,
+    family_dialogue2_03_l,
+    family_dialogue2_03_r,
+    family_dialogue2_04_l,
+    family_dialogue2_04_r,
+    family_dialogue2_05_l,
+    family_dialogue2_05_r,
+    family_dialogue2_06_l,
+    family_dialogue2_06_r
+}
+
+export const family_dictionary = {
+    family_dictionary001,
+    family_dictionary002,
+    family_dictionary003,
+    family_dictionary004,
+    family_dictionary005,
+    family_dictionary006,
+    family_dictionary007,
+    family_dictionary008,
+    family_dictionary009,
+    family_dictionary010,
+    family_dictionary011,
+    family_dictionary012,
+    family_dictionary013,
+    family_dictionary014,
+    family_dictionary015,
+    family_dictionary016,
+    family_dictionary017,
+    family_dictionary018,
+    family_dictionary019,
+    family_dictionary020,
+    family_dictionary021,
+    family_dictionary022,
+    family_dictionary023,
+    family_dictionary024,
+    family_dictionary025,
+    family_dictionary026,
+    family_dictionary027,
+    family_dictionary028,
+    family_dictionary029,
+    family_dictionary030,
+    family_dictionary031,
+    family_dictionary032,
+    family_dictionary033,
+    family_dictionary034,
+    family_dictionary035,
+    family_dictionary036,
+    family_dictionary037,
+    family_dictionary038,
+    family_dictionary039,
+    family_dictionary040,
+    family_dictionary041,
+    family_dictionary042,
+    family_dictionary043
+}
+
+export const family_phrases = {
+    family_phrases001,
+    family_phrases002,
+    family_phrases003,
+    family_phrases004,
+    family_phrases005,
+    family_phrases006,
+    family_phrases007,
+    family_phrases008,
+    family_phrases009,
+    family_phrases010,
+    family_phrases011,
+    family_phrases012,
+    family_phrases013,
+    family_phrases014,
+    family_phrases015,
+    family_phrases016,
+    family_phrases017,
+    family_phrases018,
+    family_phrases019,
+    family_phrases020,
+    family_phrases021,
+    family_phrases022,
+    family_phrases023,
+    family_phrases024,
+    family_phrases025,
+    family_phrases026,
+    family_phrases027,
+    family_phrases028,
+    family_phrases029,
+    family_phrases030,
+    family_phrases031,
+    family_phrases032,
+    family_phrases033,
+    family_phrases034,
+    family_phrases035,
+    family_phrases036,
+    family_phrases037,
+    family_phrases038,
+    family_phrases039,
+    family_phrases040,
+    family_phrases041,
+    family_phrases042,
+    family_phrases043,
+    family_phrases044,
+    family_phrases045,
+    family_phrases046,
+    family_phrases047,
+    family_phrases048,
+    family_phrases049,
+    family_phrases050
+}
+
+export const family_story = {
+    family_story001,
+    family_story002,
+    family_story003,
+    family_story004,
+    family_story005,
+    family_story006,
+    family_story007,
+    family_story008,
+    family_story009,
+    family_story010,
+    family_story011,
+    family_story012,
+    family_story013,
+    family_story014,
+    family_story015,
+    family_story016,
+    family_story017,
+    family_story018,
+    family_story019,
+    family_story020,
+    family_story021,
+    family_story022,
+    family_story023,
+    family_story024,
+    family_story025,
+    family_story026,
+    family_story027,
+    family_story028,
+    family_story029,
+    family_story030,
+    family_story031,
+    family_story032
+}
+
+export const animals = {
+    animals_01,
+    animals_02,
+    animals_03
+}
+
+export const tales = {
+    tales_01,
+    tales_02
+}

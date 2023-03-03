@@ -53,19 +53,7 @@ function Home({view, lang}){
                     {currentView === 'placeholderView' && <PlaceholderPage/>}
                     {currentView === 'languageSelect' && <Languages/>}
                     
-                    {currentView === 'YU_subjectSelect' && <YU_Subjects/>}
-                    {currentView === 'YU_introductionView' && <YU_Language language={languages[localStorage.getItem('langId')]}/>}
-                    {currentView === 'YU_greetingView' && <YU_Greeting/>}
-                    {currentView === 'YU_familyView' && <YU_Family/>}
-                    {currentView === 'YU_natureView' && <YU_Nature/>}
-                    {currentView === 'YU_animalsView' && <YU_Animals/>}
-                    {currentView === 'YU_cultureFoodView' && <YU_CultureFood/>}
-                    {currentView === 'YU_clothesView' && <YU_Clothes/>}
-                    {currentView === 'YU_taleView' && <YU_Tale/>}
-                    {currentView === 'YU_folkloreView' && <YU_Folklore/>}
-                    {currentView === 'YU_famousPeopleView' && <YU_FamousPeople/>}
-                    
-                    {currentView === 'YA_subjectSelect' && <YA_Subjects/>}
+                    {currentView === 'subjectSelect' && <YA_Subjects/>}
                     {currentView === 'YA_introductionView' && <YA_Language language={languages[localStorage.getItem('langId')]}/>}
                     {currentView === 'YA_greetingView' && <YA_Greeting/>}
                     {currentView === 'YA_familyView' && <YA_Family/>}

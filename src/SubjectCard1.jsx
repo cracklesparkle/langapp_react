@@ -13,7 +13,7 @@ function SubjectCard ({subject, index}) {
         whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.9 }}>
             <div className='images'>
-                <img src={subject.Image}/>
+                {subject.Image  && <img src={subject.Image}/>}
                 
             </div>
             <div>
