@@ -115,7 +115,7 @@ function Animal(){
             <PlantCard audio1={audio81} audio2={audio82} header={'Тэльиэдальҕа'} subheader={'Юкола'} sentence={'Тэльиэдальҕа wалуонь'} subsentence={'Юкола висит.'} image={imgCulture8}/>
             
             <PlantCard audio1={audio83} audio2={audio84} header={'Чааха'} subheader={'Строганина'} sentence={'Чааха ньанбэлич.'} subsentence={'Строганина вкусная.'}/>
-            <PlantCard audio1={audio85} audio2={audio86} header={'Умуйэ'} subheader={'Щука'} sentence={'Умуйэ пойуодьэ сальҕарииньэй wалуонь'} subsentence={'У щуки много зубов.'} image={imgCulture6}/>
+            <PlantCard audio1={audio85} audio2={audio86} header={'Умуйэ'} subheader={'Щука'} sentence={'Умуйэ пойуодьэ сальҕарииньэй.'} subsentence={'У щуки много зубов.'} image={imgCulture6}/>
             <PlantCard audio1={audio87} header={'Көсльэ'} subheader={'Налим'} image={imgCulture5}/>
         </motion.div>
       )

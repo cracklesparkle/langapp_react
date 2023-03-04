@@ -54,7 +54,9 @@ import audio10 from "../../languages/yukaghir/nature/audio/10. озеро.mp3";
 import audio11 from "../../languages/yukaghir/nature/audio/11 тундра.mp3";
 import audio12 from "../../languages/yukaghir/nature/audio/12. гора.mp3";
 import audio13 from "../../languages/yukaghir/nature/audio/13. на земле есть много красивых мест.mp3";
-import audio14 from "../../languages/yukaghir/nature/audio/14. на нашей земле живут насекомые птицы животные земля наш дом.mp3";
+import audio14 from "../../languages/yukaghir/nature/audio/14. на земле есть много растений.mp3";
+import audio14_1 from "../../languages/yukaghir/nature/audio/14. на нашей земле живут насекомые, птицы, животные.mp3";
+import audio14_2 from "../../languages/yukaghir/nature/audio/14. земля - наш дом.mp3";
 import audio15 from "../../languages/yukaghir/nature/audio/15. сохраним нашу планету красивой и чистой.mp3";
 import audio16 from "../../languages/yukaghir/nature/audio/16. растения.mp3";
 import audio17 from "../../languages/yukaghir/nature/audio/17. трава.mp3";
@@ -266,9 +268,9 @@ function Earth(){
             </div>
             
             <EarthCard audio={audio13} header={'Лукулҕа пойуодьэ нотинэй льуолуол льэй.'} subheader={'На Земле есть много красивых мест.'}/>
-            <EarthCard audio={ringer} header={'Лукулҕа пойуодьэ пулгидьилэ льэй.'} subheader={'На земле есть много растений.'}/>
-            <EarthCard audio={audio14} header={'Мит лукулҕа көдьэпэ, уйэньэйрукунпэ, йэлукунугурчэндьэрукунпэ эннуҥи.'} subheader={'На нашей земле живут насекомые, птицы, животные.'}/>
-            <EarthCard audio={ringer} header={'Лукул – мит нимэ.'} subheader={'Земля - наш дом'}/>
+            <EarthCard audio={audio14} header={'Лукулҕа пойуодьэ пулгидьилэ льэй.'} subheader={'На земле есть много растений.'}/>
+            <EarthCard audio={audio14_1} header={'Мит лукулҕа көдьэпэ, уйэньэйрукунпэ, йэлукунугурчэндьэрукунпэ эннуҥи.'} subheader={'На нашей земле живут насекомые, птицы, животные.'}/>
+            <EarthCard audio={audio14_2} header={'Лукул – мит нимэ.'} subheader={'Земля - наш дом'}/>
             <EarthCard audio={audio15} header={'Мит Лукул нотинэй, чайлэндьэ wиэҕа!'} subheader={'Сохраним нашу Планету красивой и чистой!'}/>
         </motion.div>
       )

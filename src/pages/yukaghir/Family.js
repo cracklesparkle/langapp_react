@@ -67,7 +67,7 @@ const data = [
         "subheader1": "Амаа",
         "audio1": audio3,
         "header2": "Папу зовут Николай",
-        "subheader2": "Эньиэ кирийэ Николай.",
+        "subheader2": "Амаа кирийэ Николай.",
         "audio2": audio4,
         "images": [imgMember6]
     },
