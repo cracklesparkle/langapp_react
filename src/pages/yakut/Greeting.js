@@ -19,6 +19,8 @@ import Button from '../../components/Button';
 import SoundButton from '../../components/SoundButton';
 //import SubjectCard from '../../SubjectCard1';
 
+import ringer from '../../sounds/misc/ring06.wav';
+
 import image1 from "../../languages/yakut/greeting/greeting.png";
 
 import { greeting_dialogue1, greeting_dialogue2, greeting_dialogue3, greeting_dictionary } from './audio';
@@ -1515,8 +1517,14 @@ function Page2() {
                     {dictionary.map((e, i) => {
                         return (
                             <div className='aside'>
-                                <p>{e.sentence}</p>
-                                <p>{e.translation}</p>
+                                <div className='colored-sentence-left'>
+                                    <p>{e.sentence}</p>
+                                </div>
+                                <div className='colored-sentence-right'>
+                                    <SoundButton audio={e.audio}/>
+                                    <p>{e.translation}</p>
+                                </div>
+                                
                             </div>
                         );
                     })

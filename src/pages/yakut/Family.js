@@ -940,12 +940,12 @@ function Family() {
 
     const handleClick = event => {
         setCurrentSubject(currentSubject + 1)
-        if(currentSubject === 7) setCurrentSubject(0)
+        if (currentSubject === 7) setCurrentSubject(0)
     };
 
     const handleBack = event => {
         setCurrentSubject(currentSubject - 1)
-        
+
 
         window.scrollTo(0, 0);
     };
@@ -966,13 +966,13 @@ function Family() {
             <SubjectContext.Provider value={{ currentSubject, setCurrentSubject }}>
                 <motion.div className='subjectsPage' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1 }}>
                     {currentSubject === 0 && <div className='buttonsContainer'>
-                        <SubjectCard subject={subjects[0]} index='coloredCard1' subjectContext={SubjectContext}/>
-                        <SubjectCard subject={subjects[1]} index='coloredCard2' subjectContext={SubjectContext}/>
-                        <SubjectCard subject={subjects[2]} index='coloredCard3' subjectContext={SubjectContext}/>
-                        <SubjectCard subject={subjects[3]} index='coloredCard4' subjectContext={SubjectContext}/>
-                        <SubjectCard subject={subjects[4]} index='coloredCard5' subjectContext={SubjectContext}/>
-                        <SubjectCard subject={subjects[5]} index='coloredCard6' subjectContext={SubjectContext}/>
-                        <SubjectCard subject={subjects[6]} index='coloredCard7' subjectContext={SubjectContext}/>
+                        <SubjectCard subject={subjects[0]} index='coloredCard1' subjectContext={SubjectContext} />
+                        <SubjectCard subject={subjects[1]} index='coloredCard2' subjectContext={SubjectContext} />
+                        <SubjectCard subject={subjects[2]} index='coloredCard3' subjectContext={SubjectContext} />
+                        <SubjectCard subject={subjects[3]} index='coloredCard4' subjectContext={SubjectContext} />
+                        <SubjectCard subject={subjects[4]} index='coloredCard5' subjectContext={SubjectContext} />
+                        <SubjectCard subject={subjects[5]} index='coloredCard6' subjectContext={SubjectContext} />
+                        <SubjectCard subject={subjects[6]} index='coloredCard7' subjectContext={SubjectContext} />
                     </div>}
                     {currentSubject === 1 && <Introduction />}
                     {currentSubject === 2 && <Dictionary />}
@@ -1073,35 +1073,35 @@ function Introduction() {
     return (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1 }} className='greeting-introduction'>
             <div className='container'>
-                    <h1 className='header'>Урок № 3 / Үһүс дьарык</h1>
-                    <h3 className='greeting-subheader'>Тема урока: “Семья”. Цель занятия — научить использовать в своей речи лексику на заданную тему, создавать связный текст по теме и принимать участие в простых диалогах.</h3>
-                    <p>
-                        Cамое дорогое, что может быть у человека – семья. Величайшее в жизни счастье — это уверенность в том, твоя семья тебя любит, любит за то, что мы такие, какие мы есть, или несмотря на то, что мы такие, какие мы есть.
-                    </p>
-                    <p>
-                        Семья – главная ценность любого общества. Это крепкий дом, это дети и внуки, это наша поддержка и опора, это самое дорогое, что у нас есть. Залог семейного счастья – это создание и поддержка гармоничных, теплых взаимоотношений, основанных на доверии, уважении и любви.
-                    </p>
-                    <p>
-                        В семьях саха всегда почитали мать – жену, хозяйку, воспитателя детей. По мнению многих исследователей, женщины в якутском обществе никогда не находились в подчиненном положении. Одним из доказательств этого суждения является первостепенное значение образа женщины в народном эпосе – олонхо.
-                    </p>
-                    <p>
-                        Мужчина как добытчик, как основной содержатель благополучия семьи, постоянно находился вне дома. Домой он приходил, когда дети уже спали и уходил из дому, когда дети еще спали.
-                    </p>
-                    <p>
-                        Женщина сама воспитывала детей до подросткового возраста. В большинстве случаев отец не вмешивался в воспитание. Когда достигали подросткового периода, то их приучали к трудовой деятельности. Мальчики начинали ходить с отцом на охоту, занимались скотоводством, а девочек мать учила шить, готовить, помогать по хозяйству.
-                    </p>
-                    <p>
-                        В девочке прежде всего воспитывали такие качества, как скромность, целомудренность. Это считалось основой морали. Мальчика учили быть ответственным, выносливым, сильным духом и телом.
-                    </p>
-                    <p>
-                        Современная якутская семья мало отличается от среднестатистической российской. Средняя численность семей составляет 3-5 человек. В большинстве случаев связь между родителями и их детьми в якутском обществе поддерживается на протяжении всей жизни.
-                    </p>
+                <h1 className='header'>Урок № 3 / Үһүс дьарык</h1>
+                <h3 className='greeting-subheader'>Тема урока: “Семья”. Цель занятия — научить использовать в своей речи лексику на заданную тему, создавать связный текст по теме и принимать участие в простых диалогах.</h3>
+                <p>
+                    Cамое дорогое, что может быть у человека – семья. Величайшее в жизни счастье — это уверенность в том, твоя семья тебя любит, любит за то, что мы такие, какие мы есть, или несмотря на то, что мы такие, какие мы есть.
+                </p>
+                <p>
+                    Семья – главная ценность любого общества. Это крепкий дом, это дети и внуки, это наша поддержка и опора, это самое дорогое, что у нас есть. Залог семейного счастья – это создание и поддержка гармоничных, теплых взаимоотношений, основанных на доверии, уважении и любви.
+                </p>
+                <p>
+                    В семьях саха всегда почитали мать – жену, хозяйку, воспитателя детей. По мнению многих исследователей, женщины в якутском обществе никогда не находились в подчиненном положении. Одним из доказательств этого суждения является первостепенное значение образа женщины в народном эпосе – олонхо.
+                </p>
+                <p>
+                    Мужчина как добытчик, как основной содержатель благополучия семьи, постоянно находился вне дома. Домой он приходил, когда дети уже спали и уходил из дому, когда дети еще спали.
+                </p>
+                <p>
+                    Женщина сама воспитывала детей до подросткового возраста. В большинстве случаев отец не вмешивался в воспитание. Когда достигали подросткового периода, то их приучали к трудовой деятельности. Мальчики начинали ходить с отцом на охоту, занимались скотоводством, а девочек мать учила шить, готовить, помогать по хозяйству.
+                </p>
+                <p>
+                    В девочке прежде всего воспитывали такие качества, как скромность, целомудренность. Это считалось основой морали. Мальчика учили быть ответственным, выносливым, сильным духом и телом.
+                </p>
+                <p>
+                    Современная якутская семья мало отличается от среднестатистической российской. Средняя численность семей составляет 3-5 человек. В большинстве случаев связь между родителями и их детьми в якутском обществе поддерживается на протяжении всей жизни.
+                </p>
 
-                    <img className='greetingImage' src={image1}></img>
-                    <img className='greetingImage' src={image2}></img>
-                    <div>
-                        <p className='greeting-info'>Использованы фотографии ГБУ РС(Я) «Якутский государственный объединенный музей истории и культуры народов Севера им. Ем. Ярославского» и  победителей конкурса “Семья года”</p>
-                    </div>
+                <img className='greetingImage' src={image1}></img>
+                <img className='greetingImage' src={image2}></img>
+                <div>
+                    <p className='greeting-info'>Использованы фотографии ГБУ РС(Я) «Якутский государственный объединенный музей истории и культуры народов Севера им. Ем. Ярославского» и  победителей конкурса “Семья года”</p>
+                </div>
             </div>
         </motion.div>
     );
@@ -1120,12 +1120,14 @@ function Dictionary() {
                     </div>
                     {dictionary.map((e, i) => {
                         return (
-                            <div>
-                                <div className='aside'>
+                            <div className='aside'>
+                                <div className='colored-sentence-left'>
                                     <p>{e.sentence}</p>
+                                </div>
+                                <div className='colored-sentence-right'>
+                                    <SoundButton audio={e.audio} />
                                     <p>{e.translation}</p>
                                 </div>
-                                
                             </div>
                         );
                     })
@@ -1151,14 +1153,20 @@ function Text1() {
                         {text1.map((e, i) => {
                             return (
                                 <div className='aside'>
-                                    <p>{e.header1}</p>
-                                    <p>{e.subheader1}</p>
+                                    <div className='story-sentence-left'>
+                                        <p>{e.header1}</p>
+                                    </div>
+                                    <div className='story-sentence-right'>
+                                        <SoundButton audio={e.audio1} />
+                                        <p>{e.subheader1}</p>
+                                    </div>
+
                                 </div>
                             );
                         })
                         }
                     </div>
-                    
+
                 </div>
             </div>
         </motion.div>
@@ -1175,15 +1183,21 @@ function Text2() {
                     <div className='story'>
                         {text2.map((e, i) => {
                             return (
-                                    <div className='aside'>
-                                    <p>{e.header1}</p>
-                                    <p>{e.subheader1}</p>
+                                <div className='aside'>
+                                    <div className='story-sentence-left'>
+                                        <p>{e.header1}</p>
                                     </div>
+                                    <div className='story-sentence-right'>
+                                        <SoundButton audio={e.audio1} />
+                                        <p>{e.subheader1}</p>
+                                    </div>
+
+                                </div>
                             );
                         })
                         }
                     </div>
-                    
+
                 </div>
             </div>
         </motion.div>
@@ -1200,15 +1214,21 @@ function Text3() {
                     <div className='story'>
                         {text3.map((e, i) => {
                             return (
-                                    <div className='aside'>
+                                <div className='aside'>
+                                    <div className='story-sentence-left'>
                                         <p>{e.header1}</p>
+                                    </div>
+                                    <div className='story-sentence-right'>
+                                        <SoundButton audio={e.audio1} />
                                         <p>{e.subheader1}</p>
                                     </div>
+
+                                </div>
                             );
                         })
                         }
                     </div>
-                    
+
                 </div>
             </div>
         </motion.div>
@@ -1224,12 +1244,15 @@ function Phrases() {
                 <div className='dictionaryTable'>
                     {phrases.map((e, i) => {
                         return (
-                            <div>
-                                <div className='aside'>
-                                <p>{e.sentence}</p>
-                                <p>{e.translation}</p>
+                            <div className='aside'>
+                                <div className='colored-sentence-left'>
+                                    <p>{e.sentence}</p>
                                 </div>
-                                
+                                <div className='colored-sentence-right'>
+                                    <SoundButton audio={e.audio} />
+                                    <p>{e.translation}</p>
+                                </div>
+
                             </div>
                         );
                     })
@@ -1271,18 +1294,18 @@ function Test() {
     };
 
     //pass to quiz
-    const[stateNavigate, setStateNavigate]=useState('none');
+    const [stateNavigate, setStateNavigate] = useState('none');
 
     useEffect(() => {
-        if(stateNavigate == 'next') setCurrentSubject(0);
-    },[stateNavigate])
+        if (stateNavigate == 'next') setCurrentSubject(0);
+    }, [stateNavigate])
 
     return (
         <PageContext.Provider value={{ currentPage, setCurrentPage }}>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1 }} className="">
                 {/* <h1 className='header'>Тест / тургутук</h1> */}
-                {currentPage === 0 && 
-                    <Quiz questions={quizFamily1.questions} quizTitle={quizFamily1.quizTitle} stateNavigate={setStateNavigate}/>
+                {currentPage === 0 &&
+                    <Quiz questions={quizFamily1.questions} quizTitle={quizFamily1.quizTitle} stateNavigate={setStateNavigate} />
                 }
             </motion.div>
         </PageContext.Provider>

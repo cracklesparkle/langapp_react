@@ -209,7 +209,9 @@ p{
   margin: auto;
 }
 
-.dictionaryTable p{
+.dictionaryTable .colored-sentence-left, .dictionaryTable .colored-sentence-right{
+  display: flex;
+  align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 30px;
@@ -217,6 +219,10 @@ p{
   text-align: center;
   width: 100%;
   margin: 0;
+}
+
+.dictionaryTable p{
+  padding: 0;
 }
 
 .taleImage{
@@ -256,8 +262,19 @@ p{
   /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
 }
 
-.story .aside :nth-child(1){
+.story .aside div{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.story .aside .story-sentence-left{
   border-right: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.story .aside div .soundButton{
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .greeting-dictionary .aside{
@@ -269,12 +286,12 @@ p{
   border-bottom: 5px solid rgba(0, 0, 0, 0.1);
 }
 
-.greeting-dictionary .aside :nth-child(1){
+.greeting-dictionary .aside .colored-sentence-left{
   border-right: 2px solid rgba(0, 0, 0, 0.1);
   background-color: var(--dictionary-odd-color);
 }
 
-.greeting-dictionary .aside :nth-child(2){
+.greeting-dictionary .aside .colored-sentence-right{
   background-color: var(--dictionary-even-color);
 }
 
@@ -1596,23 +1613,6 @@ a:active { text-decoration: none; }
     justify-content: space-around;
     width: 100%;
     border-bottom: 10px solid rgba(0, 0, 0, 0.2);
-  }
-
-  .greeting-dictionary .aside :nth-child(1){
-    border-right: 0px;
-    background-color: rgb(255, 255, 255);
-  }
-  
-  .greeting-dictionary .aside :nth-child(2){
-    background-color: rgb(255, 255, 255);
-  }
-
-  .dictionaryTable :nth-child(odd) :nth-child(1), .dictionaryTable :nth-child(odd) :nth-child(2){
-    background-color: var(--dictionary-odd-color);
-  }
-  
-  .dictionaryTable :nth-child(even) :nth-child(1), .dictionaryTable :nth-child(even) :nth-child(2){
-    background-color: var(--dictionary-even-color);
   }
 
   .app {

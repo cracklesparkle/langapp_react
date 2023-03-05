@@ -392,7 +392,7 @@ import tales_01 from "../../languages/yakut/tales/audio/8 урок - гагар�
 import tales_02 from "../../languages/yakut/tales/audio/8 урок - водяная крыса вырезанная.mp3"
 
 
-export const greeting_dialogue1 = {
+export const greeting_dialogue1 = [
     greeting_dialogue1_01_l,
     greeting_dialogue1_01_r,
     greeting_dialogue1_02_l,
@@ -402,9 +402,9 @@ export const greeting_dialogue1 = {
     greeting_dialogue1_04_l,
     greeting_dialogue1_04_r,
     greeting_dialogue1_05_l
-}
+]
 
-export const greeting_dialogue2 = {
+export const greeting_dialogue2 = [
     greeting_dialogue2_01_l,
     greeting_dialogue2_01_r,
     greeting_dialogue2_02_l,
@@ -418,10 +418,10 @@ export const greeting_dialogue2 = {
     greeting_dialogue2_06_l,
     greeting_dialogue2_06_r,
     greeting_dialogue2_07_l,
-    greeting_dialogue2_07_r
-}
+    greeting_dialogue2_07_r]
 
-export const greeting_dialogue3 = {
+
+export const greeting_dialogue3 = [
     greeting_dialogue3_01_l,
     greeting_dialogue3_01_r,
     greeting_dialogue3_02_l,
@@ -464,9 +464,9 @@ export const greeting_dialogue3 = {
     greeting_dialogue3_20_r,
     greeting_dialogue3_21_l,
     greeting_dialogue3_21_r
-}
+]
 
-export const greeting_dictionary = {
+export const greeting_dictionary = [
     greeting_dictionary001,
     greeting_dictionary002,
     greeting_dictionary003,
@@ -613,9 +613,9 @@ export const greeting_dictionary = {
     greeting_dictionary144,
     greeting_dictionary145,
     greeting_dictionary146
-}
+]
 
-export const family_dialogue1 = {
+export const family_dialogue1 = [
     family_dialogue1_01_l,
     family_dialogue1_01_r,
     family_dialogue1_02_l,
@@ -626,9 +626,9 @@ export const family_dialogue1 = {
     family_dialogue1_04_r,
     family_dialogue1_05_l,
     family_dialogue1_05_r
-}
+]
 
-export const family_dialogue2 = {
+export const family_dialogue2 = [
     family_dialogue2_01_l,
     family_dialogue2_01_r,
     family_dialogue2_02_l,
@@ -641,9 +641,9 @@ export const family_dialogue2 = {
     family_dialogue2_05_r,
     family_dialogue2_06_l,
     family_dialogue2_06_r
-}
+]
 
-export const family_dictionary = {
+export const family_dictionary = [
     family_dictionary001,
     family_dictionary002,
     family_dictionary003,
@@ -687,9 +687,9 @@ export const family_dictionary = {
     family_dictionary041,
     family_dictionary042,
     family_dictionary043
-}
+]
 
-export const family_phrases = {
+export const family_phrases = [
     family_phrases001,
     family_phrases002,
     family_phrases003,
@@ -740,9 +740,9 @@ export const family_phrases = {
     family_phrases048,
     family_phrases049,
     family_phrases050
-}
+]
 
-export const family_story = {
+export const family_story = [
     family_story001,
     family_story002,
     family_story003,
@@ -775,15 +775,15 @@ export const family_story = {
     family_story030,
     family_story031,
     family_story032
-}
+]
 
-export const animals = {
+export const animals = [
     animals_01,
     animals_02,
     animals_03
-}
+]
 
-export const tales = {
+export const tales = [
     tales_01,
     tales_02
-}
+]
