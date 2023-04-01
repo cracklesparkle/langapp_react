@@ -23,7 +23,6 @@ import YA_Subjects from './pages/yakut/Subjects';
 import YA_Greeting from './pages/yakut/Greeting';
 import YA_Language from './pages/yakut/Language';
 import YA_Family from './pages/yakut/Family';
-import YA_Nature from './pages/yakut/Nature';
 import YA_Animals from './pages/yakut/Animals';
 import YA_CultureFood from './pages/yakut/CultureFood';
 import YA_Clothes from './pages/yakut/Clothes';
@@ -57,7 +56,6 @@ function Home({view, lang}){
                     {currentView === 'YA_introductionView' && <YA_Language language={languages[localStorage.getItem('langId')]}/>}
                     {currentView === 'YA_greetingView' && <YA_Greeting/>}
                     {currentView === 'YA_familyView' && <YA_Family/>}
-                    {currentView === 'YA_natureView' && <YA_Nature/>}
                     {currentView === 'YA_animalsView' && <YA_Animals/>}
                     {currentView === 'YA_cultureFoodView' && <YA_CultureFood/>}
                     {currentView === 'YA_clothesView' && <YA_Clothes/>}

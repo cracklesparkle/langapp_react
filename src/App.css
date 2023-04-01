@@ -898,7 +898,9 @@ a:active { text-decoration: none; }
 }
 
 .personImage{
-  width: 12vw;
+  /* width: 12vw; */
+  height: 40vh;
+  width: auto;
   position: relative;
 }
 
@@ -1724,7 +1726,9 @@ a:active { text-decoration: none; }
 }
 
 .personImage{
-  width: 30vw;
+  /* width: 30vw; */
+  height: 30vh;
+  width: auto;
   position: relative;
 }
 

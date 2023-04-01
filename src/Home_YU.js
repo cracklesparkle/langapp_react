@@ -19,18 +19,6 @@ import YU_Tale from './pages/yukaghir/Tale';
 import YU_Folklore from './pages/yukaghir/Folklore';
 import YU_FamousPeople from './pages/yukaghir/FamousPeople';
 
-import YA_Subjects from './pages/yakut/Subjects';
-import YA_Greeting from './pages/yakut/Greeting';
-import YA_Language from './pages/yakut/Language';
-import YA_Family from './pages/yakut/Family';
-import YA_Nature from './pages/yakut/Nature';
-import YA_Animals from './pages/yakut/Animals';
-import YA_CultureFood from './pages/yakut/CultureFood';
-import YA_Clothes from './pages/yakut/Clothes';
-import YA_Tale from './pages/yakut/Tale';
-import YA_Folklore from './pages/yakut/Folklore';
-import YA_FamousPeople from './pages/yakut/FamousPeople';
-
 
 import { languages } from './Data';
 

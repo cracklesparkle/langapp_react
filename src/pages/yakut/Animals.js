@@ -36,71 +36,67 @@ import imageQuiz8 from '../../languages/yakut/animals/quiz/8.png';
 import imageQuiz9 from '../../languages/yakut/animals/quiz/9.png';
 import imageQuiz10 from '../../languages/yakut/animals/quiz/10.png';
 
-import IntroductionIcon from '../../icons/introduction.png';
-import AnimalsIcon from '../../icons/animals.png';
-import ClothesIcon from '../../icons/clothes.png';
-import CultureFoodIcon from '../../icons/culture-food.png';
-import FamilyIcon from '../../icons/family.png';
-import FamousPeopleIcon from '../../icons/famous-people.png';
-import FolkloreIcon from '../../icons/folklore.png';
-import GreetingIcon from '../../icons/greeting.png';
-import MoonGirlIcon from '../../icons/moon-girl.png';
-import NatureIcon from '../../icons/nature.png';
+import IntroductionIcon from '../../icons/yakut/introduction.png';
+import DictionaryIcon from '../../icons/yakut/dictionary.png';
+import PhrasebookIcon from '../../icons/yakut/phrasebook.png';
+import BookIcon from '../../icons/yakut/book.png';
+import DialogueIcon from '../../icons/yakut/dialogue.png';
+import QuizIcon from '../../icons/yakut/quiz.png';
 
 const subjects = [
     {
-        "Title": "Вводная часть",
+        "Title": "Введение",
         "Image": IntroductionIcon,
         "View": 1
     },
     {
-        "Title": "Звери.",
-        "Image": IntroductionIcon,
+        "Title": "Звери",
+        "Image": BookIcon,
         "View": 2
     },
     {
-        "Title": "Птицы.",
-        "Image": IntroductionIcon,
+        "Title": "Птицы",
+        "Image": BookIcon,
         "View": 6
     },
     {
         "Title": "Рыба",
-        "Image": IntroductionIcon,
+        "Image": BookIcon,
         "View": 7
     },
     {
         "Title": "Насекомые",
-        "Image": IntroductionIcon,
+        "Image": BookIcon,
         "View": 8
     },
     {
         "Title": "Возрастные названия крупного рогатого скота",
-        "Image": IntroductionIcon,
+        "Image": BookIcon,
         "View": 3
     },
     {
         "Title": "Возрастные названия конного скота",
-        "Image": IntroductionIcon,
+        "Image": BookIcon,
         "View": 4
     },
     {
         "Title": "Возрастные названия оленей",
-        "Image": IntroductionIcon,
+        "Image": BookIcon,
         "View": 5
     },
     {
         "Title": "Чтение. Заяц.",
-        "Image": IntroductionIcon,
+        "Image": BookIcon,
         "View": 9
     },
     {
         "Title": "Чтение. Куропатка.",
-        "Image": IntroductionIcon,
+        "Image": BookIcon,
         "View": 10
     },
     {
         "Title": "Тест",
-        "Image": IntroductionIcon,
+        "Image": QuizIcon,
         "View": 11
     }
 ];
